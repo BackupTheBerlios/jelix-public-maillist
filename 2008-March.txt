@@ -1,0 +1,1696 @@
+From laurent at xulfr.org  Wed Mar  5 19:47:39 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Wed, 05 Mar 2008 19:47:39 +0100
+Subject: [Jelix-public] checkin SVN-786 (julieni)
+Message-ID: <47CEEACB.mailK721DOI61@xulfr.org>
+
+julieni
+2008-03-05 19:47:38 +0100 (Wed, 05 Mar 2008)
+73
+ticket #417: added support of Session Name in jSession. p=Julien Issler
+
+U   branches/1.0.x/lib/jelix/CREDITS
+U   branches/1.0.x/lib/jelix/core/defaultconfig.ini.php
+U   branches/1.0.x/lib/jelix/core/jSession.class.php
+U   branches/1.0.x/lib/jelix/core-modules/jelix/locales/en_EN/errors.ISO-8859-1.properties
+U   branches/1.0.x/lib/jelix/core-modules/jelix/locales/en_EN/errors.UTF-8.properties
+U   branches/1.0.x/lib/jelix/core-modules/jelix/locales/en_US/errors.ISO-8859-1.properties
+U   branches/1.0.x/lib/jelix/core-modules/jelix/locales/en_US/errors.UTF-8.properties
+U   branches/1.0.x/lib/jelix/core-modules/jelix/locales/fr_FR/errors.ISO-8859-1.properties
+U   branches/1.0.x/lib/jelix/core-modules/jelix/locales/fr_FR/errors.UTF-8.properties
+U   branches/1.0.x/lib/jelix-scripts/templates/var/config/defaultconfig.ini.php.tpl
+U   trunk/lib/jelix/CREDITS
+U   trunk/lib/jelix/core/defaultconfig.ini.php
+U   trunk/lib/jelix/core/jSession.class.php
+U   trunk/lib/jelix/core-modules/jelix/locales/en_EN/errors.ISO-8859-1.properties
+U   trunk/lib/jelix/core-modules/jelix/locales/en_EN/errors.UTF-8.properties
+U   trunk/lib/jelix/core-modules/jelix/locales/en_US/errors.ISO-8859-1.properties
+U   trunk/lib/jelix/core-modules/jelix/locales/en_US/errors.UTF-8.properties
+U   trunk/lib/jelix/core-modules/jelix/locales/fr_FR/errors.ISO-8859-1.properties
+U   trunk/lib/jelix/core-modules/jelix/locales/fr_FR/errors.UTF-8.properties
+U   trunk/lib/jelix-scripts/templates/var/config/defaultconfig.ini.php.tpl
+
+
+From laurent at xulfr.org  Wed Mar  5 23:18:42 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Wed, 05 Mar 2008 23:18:42 +0100
+Subject: [Jelix-public] checkin SVN-787 (laurentj)
+Message-ID: <47CF1C42.mailALJ1DKCNV@xulfr.org>
+
+laurentj
+2008-03-05 23:18:41 +0100 (Wed, 05 Mar 2008)
+93
+ticket #475: fixed a little bug in pagelinks plugin, some links were not disabled. p=benjamin
+
+U   branches/1.0.x/build/manifests/testapp.mn
+U   branches/1.0.x/lib/jelix/plugins/tpl/html/function.pagelinks.php
+A   branches/1.0.x/testapp/modules/jelix_tests/templates/test_plugin_pagelinks.tpl
+U   branches/1.0.x/testapp/modules/jelix_tests/tests/jtpl.plugins.html.php
+U   trunk/build/manifests/testapp.mn
+U   trunk/lib/jelix/plugins/tpl/html/function.pagelinks.php
+A   trunk/testapp/modules/jelix_tests/templates/test_plugin_pagelinks.tpl
+U   trunk/testapp/modules/jelix_tests/tests/jtpl.plugins.html.php
+
+
+From laurent at xulfr.org  Wed Mar  5 23:24:13 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Wed, 05 Mar 2008 23:24:13 +0100
+Subject: [Jelix-public] checkin SVN-788 (laurentj)
+Message-ID: <47CF1D8D.mailB7H1C0Q5J@xulfr.org>
+
+laurentj
+2008-03-05 23:24:13 +0100 (Wed, 05 Mar 2008)
+74
+ticket #481: fixed bug in form plugin : bad check of the parameters number
+
+U   branches/1.0.x/lib/jelix/plugins/tpl/html/block.form.php
+U   trunk/lib/jelix/plugins/tpl/html/block.form.php
+
+
+From laurent at xulfr.org  Thu Mar  6 00:08:12 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Thu, 06 Mar 2008 00:08:12 +0100
+Subject: [Jelix-public] checkin SVN-789 (laurentj)
+Message-ID: <47CF27DC.mailFFU11CO6T@xulfr.org>
+
+laurentj
+2008-03-06 00:08:11 +0100 (Thu, 06 Mar 2008)
+101
+ticket #482: fixed bug, formcontrols: it shouldn't display submit control if there is a single submit
+
+U   branches/1.0.x/lib/jelix/forms/jFormsCompiler.class.php
+U   branches/1.0.x/lib/jelix/plugins/tpl/html/block.formcontrols.php
+U   trunk/lib/jelix/forms/jFormsCompiler.class.php
+U   trunk/lib/jelix/plugins/tpl/html/block.formcontrols.php
+
+
+From laurent at xulfr.org  Thu Mar  6 00:21:38 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Thu, 06 Mar 2008 00:21:38 +0100
+Subject: [Jelix-public] checkin SVN-790 (laurentj)
+Message-ID: <47CF2B02.mailG361ZC0AY@xulfr.org>
+
+laurentj
+2008-03-06 00:21:37 +0100 (Thu, 06 Mar 2008)
+77
+ticket #484: html builder : cols and rows attributes are required on textarea
+
+U   branches/1.0.x/lib/jelix/forms/jFormsBuilderBase.class.php
+U   branches/1.0.x/lib/jelix/forms/jFormsControl.class.php
+U   branches/1.0.x/testapp/modules/testapp/forms/sample.form.xml
+U   trunk/lib/jelix/forms/jFormsControl.class.php
+U   trunk/lib/jelix/plugins/jforms/html/html.jformsbuilder.php
+U   trunk/testapp/modules/testapp/forms/sample.form.xml
+
+
+From laurent at xulfr.org  Thu Mar  6 01:02:40 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Thu, 06 Mar 2008 01:02:40 +0100
+Subject: [Jelix-public] checkin SVN-791 (laurentj)
+Message-ID: <47CF34A0.mailNVC1W8AUW@xulfr.org>
+
+laurentj
+2008-03-06 01:02:38 +0100 (Thu, 06 Mar 2008)
+58
+ticket #473: added default properties files in iso-8859-15
+
+U   branches/1.0.x/build/manifests/jelix-lib.mn
+A   branches/1.0.x/lib/jelix/core-modules/jelix/locales/en_EN/acldb.ISO-8859-15.properties
+A   branches/1.0.x/lib/jelix/core-modules/jelix/locales/en_EN/auth.ISO-8859-15.properties
+A   branches/1.0.x/lib/jelix/core-modules/jelix/locales/en_EN/common.ISO-8859-15.properties
+A   branches/1.0.x/lib/jelix/core-modules/jelix/locales/en_EN/crud.ISO-8859-15.properties
+A   branches/1.0.x/lib/jelix/core-modules/jelix/locales/en_EN/dao.ISO-8859-15.properties
+A   branches/1.0.x/lib/jelix/core-modules/jelix/locales/en_EN/daoxml.ISO-8859-15.properties
+A   branches/1.0.x/lib/jelix/core-modules/jelix/locales/en_EN/db.ISO-8859-15.properties
+A   branches/1.0.x/lib/jelix/core-modules/jelix/locales/en_EN/errors.ISO-8859-15.properties
+U   branches/1.0.x/lib/jelix/core-modules/jelix/locales/en_EN/format.ISO-8859-1.properties
+A   branches/1.0.x/lib/jelix/core-modules/jelix/locales/en_EN/format.ISO-8859-15.properties
+U   branches/1.0.x/lib/jelix/core-modules/jelix/locales/en_EN/format.UTF-8.properties
+A   branches/1.0.x/lib/jelix/core-modules/jelix/locales/en_EN/formserr.ISO-8859-15.properties
+A   branches/1.0.x/lib/jelix/core-modules/jelix/locales/en_EN/jelix.ISO-8859-15.properties
+A   branches/1.0.x/lib/jelix/core-modules/jelix/locales/en_EN/ui.ISO-8859-15.properties
+A   branches/1.0.x/lib/jelix/core-modules/jelix/locales/en_US/acldb.ISO-8859-15.properties
+A   branches/1.0.x/lib/jelix/core-modules/jelix/locales/en_US/auth.ISO-8859-15.properties
+A   branches/1.0.x/lib/jelix/core-modules/jelix/locales/en_US/common.ISO-8859-15.properties
+A   branches/1.0.x/lib/jelix/core-modules/jelix/locales/en_US/crud.ISO-8859-15.properties
+A   branches/1.0.x/lib/jelix/core-modules/jelix/locales/en_US/dao.ISO-8859-15.properties
+A   branches/1.0.x/lib/jelix/core-modules/jelix/locales/en_US/daoxml.ISO-8859-15.properties
+A   branches/1.0.x/lib/jelix/core-modules/jelix/locales/en_US/db.ISO-8859-15.properties
+A   branches/1.0.x/lib/jelix/core-modules/jelix/locales/en_US/errors.ISO-8859-15.properties
+A   branches/1.0.x/lib/jelix/core-modules/jelix/locales/en_US/format.ISO-8859-15.properties
+A   branches/1.0.x/lib/jelix/core-modules/jelix/locales/en_US/formserr.ISO-8859-15.properties
+A   branches/1.0.x/lib/jelix/core-modules/jelix/locales/en_US/jelix.ISO-8859-15.properties
+A   branches/1.0.x/lib/jelix/core-modules/jelix/locales/en_US/ui.ISO-8859-15.properties
+A   branches/1.0.x/lib/jelix/core-modules/jelix/locales/fr_FR/acldb.ISO-8859-15.properties
+A   branches/1.0.x/lib/jelix/core-modules/jelix/locales/fr_FR/auth.ISO-8859-15.properties
+A   branches/1.0.x/lib/jelix/core-modules/jelix/locales/fr_FR/common.ISO-8859-15.properties
+A   branches/1.0.x/lib/jelix/core-modules/jelix/locales/fr_FR/crud.ISO-8859-15.properties
+A   branches/1.0.x/lib/jelix/core-modules/jelix/locales/fr_FR/dao.ISO-8859-15.properties
+A   branches/1.0.x/lib/jelix/core-modules/jelix/locales/fr_FR/daoxml.ISO-8859-15.properties
+A   branches/1.0.x/lib/jelix/core-modules/jelix/locales/fr_FR/db.ISO-8859-15.properties
+A   branches/1.0.x/lib/jelix/core-modules/jelix/locales/fr_FR/errors.ISO-8859-15.properties
+A   branches/1.0.x/lib/jelix/core-modules/jelix/locales/fr_FR/format.ISO-8859-15.properties
+A   branches/1.0.x/lib/jelix/core-modules/jelix/locales/fr_FR/formserr.ISO-8859-15.properties
+A   branches/1.0.x/lib/jelix/core-modules/jelix/locales/fr_FR/jelix.ISO-8859-15.properties
+A   branches/1.0.x/lib/jelix/core-modules/jelix/locales/fr_FR/ui.ISO-8859-15.properties
+A   branches/1.0.x/lib/jelix-modules/jauth/locales/en_EN/auth.ISO-8859-15.properties
+A   branches/1.0.x/lib/jelix-modules/jauth/locales/en_EN/autherror.ISO-8859-15.properties
+A   branches/1.0.x/lib/jelix-modules/jauth/locales/en_US/auth.ISO-8859-15.properties
+A   branches/1.0.x/lib/jelix-modules/jauth/locales/en_US/autherror.ISO-8859-15.properties
+A   branches/1.0.x/lib/jelix-modules/jauth/locales/fr_FR/auth.ISO-8859-15.properties
+A   branches/1.0.x/lib/jelix-modules/jauth/locales/fr_FR/autherror.ISO-8859-15.properties
+U   trunk/build/manifests/jelix-lib.mn
+A   trunk/lib/jelix/core-modules/jelix/locales/en_EN/acldb.ISO-8859-15.properties
+A   trunk/lib/jelix/core-modules/jelix/locales/en_EN/auth.ISO-8859-15.properties
+A   trunk/lib/jelix/core-modules/jelix/locales/en_EN/common.ISO-8859-15.properties
+A   trunk/lib/jelix/core-modules/jelix/locales/en_EN/crud.ISO-8859-15.properties
+A   trunk/lib/jelix/core-modules/jelix/locales/en_EN/dao.ISO-8859-15.properties
+A   trunk/lib/jelix/core-modules/jelix/locales/en_EN/daoxml.ISO-8859-15.properties
+A   trunk/lib/jelix/core-modules/jelix/locales/en_EN/db.ISO-8859-15.properties
+A   trunk/lib/jelix/core-modules/jelix/locales/en_EN/errors.ISO-8859-15.properties
+U   trunk/lib/jelix/core-modules/jelix/locales/en_EN/format.ISO-8859-1.properties
+A   trunk/lib/jelix/core-modules/jelix/locales/en_EN/format.ISO-8859-15.properties
+U   trunk/lib/jelix/core-modules/jelix/locales/en_EN/format.UTF-8.properties
+A   trunk/lib/jelix/core-modules/jelix/locales/en_EN/formserr.ISO-8859-15.properties
+A   trunk/lib/jelix/core-modules/jelix/locales/en_EN/jelix.ISO-8859-15.properties
+A   trunk/lib/jelix/core-modules/jelix/locales/en_EN/ui.ISO-8859-15.properties
+A   trunk/lib/jelix/core-modules/jelix/locales/en_US/acldb.ISO-8859-15.properties
+A   trunk/lib/jelix/core-modules/jelix/locales/en_US/auth.ISO-8859-15.properties
+A   trunk/lib/jelix/core-modules/jelix/locales/en_US/common.ISO-8859-15.properties
+A   trunk/lib/jelix/core-modules/jelix/locales/en_US/crud.ISO-8859-15.properties
+A   trunk/lib/jelix/core-modules/jelix/locales/en_US/dao.ISO-8859-15.properties
+A   trunk/lib/jelix/core-modules/jelix/locales/en_US/daoxml.ISO-8859-15.properties
+A   trunk/lib/jelix/core-modules/jelix/locales/en_US/db.ISO-8859-15.properties
+A   trunk/lib/jelix/core-modules/jelix/locales/en_US/errors.ISO-8859-15.properties
+A   trunk/lib/jelix/core-modules/jelix/locales/en_US/format.ISO-8859-15.properties
+A   trunk/lib/jelix/core-modules/jelix/locales/en_US/formserr.ISO-8859-15.properties
+A   trunk/lib/jelix/core-modules/jelix/locales/en_US/jelix.ISO-8859-15.properties
+A   trunk/lib/jelix/core-modules/jelix/locales/en_US/ui.ISO-8859-15.properties
+A   trunk/lib/jelix/core-modules/jelix/locales/fr_FR/acldb.ISO-8859-15.properties
+A   trunk/lib/jelix/core-modules/jelix/locales/fr_FR/auth.ISO-8859-15.properties
+A   trunk/lib/jelix/core-modules/jelix/locales/fr_FR/common.ISO-8859-15.properties
+A   trunk/lib/jelix/core-modules/jelix/locales/fr_FR/crud.ISO-8859-15.properties
+A   trunk/lib/jelix/core-modules/jelix/locales/fr_FR/dao.ISO-8859-15.properties
+A   trunk/lib/jelix/core-modules/jelix/locales/fr_FR/daoxml.ISO-8859-15.properties
+A   trunk/lib/jelix/core-modules/jelix/locales/fr_FR/db.ISO-8859-15.properties
+A   trunk/lib/jelix/core-modules/jelix/locales/fr_FR/errors.ISO-8859-15.properties
+A   trunk/lib/jelix/core-modules/jelix/locales/fr_FR/format.ISO-8859-15.properties
+A   trunk/lib/jelix/core-modules/jelix/locales/fr_FR/formserr.ISO-8859-15.properties
+A   trunk/lib/jelix/core-modules/jelix/locales/fr_FR/jelix.ISO-8859-15.properties
+A   trunk/lib/jelix/core-modules/jelix/locales/fr_FR/ui.ISO-8859-15.properties
+A   trunk/lib/jelix-modules/jauth/locales/en_EN/auth.ISO-8859-15.properties
+A   trunk/lib/jelix-modules/jauth/locales/en_EN/autherror.ISO-8859-15.properties
+A   trunk/lib/jelix-modules/jauth/locales/en_US/auth.ISO-8859-15.properties
+A   trunk/lib/jelix-modules/jauth/locales/en_US/autherror.ISO-8859-15.properties
+A   trunk/lib/jelix-modules/jauth/locales/fr_FR/auth.ISO-8859-15.properties
+A   trunk/lib/jelix-modules/jauth/locales/fr_FR/autherror.ISO-8859-15.properties
+
+
+From laurent at xulfr.org  Thu Mar  6 01:12:24 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Thu, 06 Mar 2008 01:12:24 +0100
+Subject: [Jelix-public] checkin SVN-792 (laurentj)
+Message-ID: <47CF36E8.mail5EN11AFF6@xulfr.org>
+
+laurentj
+2008-03-06 01:12:23 +0100 (Thu, 06 Mar 2008)
+55
+ticket #488: jResponseZip : addHttpHeaders didn't exist
+
+U   branches/1.0.x/lib/jelix/core/response/jResponseZip.class.php
+U   trunk/lib/jelix/core/response/jResponseZip.class.php
+
+
+From laurent at xulfr.org  Fri Mar  7 15:21:21 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Fri, 07 Mar 2008 15:21:21 +0100
+Subject: [Jelix-public] checkin SVN-793 (laurentj)
+Message-ID: <47D14F61.mailBWX11NG9L@xulfr.org>
+
+laurentj
+2008-03-07 15:21:20 +0100 (Fri, 07 Mar 2008)
+22
+fixed a unit test fail
+
+U   branches/1.0.x/build/manifests/testapp.mn
+U   branches/1.0.x/testapp/modules/jelix_tests/tests/jforms.htmlbuilder.html.php
+U   trunk/lib/jelix/core/jController.class.php
+U   trunk/lib/jelix/plugins/tpl/html/function.pagelinks.php
+U   trunk/testapp/modules/jelix_tests/tests/jforms.htmlbuilder.html_cli.php
+
+
+From laurent at xulfr.org  Fri Mar  7 22:00:18 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Fri, 07 Mar 2008 22:00:18 +0100
+Subject: [Jelix-public] checkin SVN-794 (laurentj)
+Message-ID: <47D1ACE2.mailB6E16E3AC@xulfr.org>
+
+laurentj
+2008-03-07 22:00:12 +0100 (Fri, 07 Mar 2008)
+58
+fixed a bug on the count of unit tests in junitests module
+
+U   branches/1.0.x/lib/jelix-modules/junittests/controllers/default.classic.php
+U   trunk/lib/jelix-modules/junittests/controllers/default.classic.php
+
+
+From laurent at xulfr.org  Mon Mar 10 16:23:06 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Mon, 10 Mar 2008 16:23:06 +0100
+Subject: [Jelix-public] checkin SVN-795 (laurentj)
+Message-ID: <47D5525A.mail23C1CJ2DJ@xulfr.org>
+
+laurentj
+2008-03-10 16:23:05 +0100 (Mon, 10 Mar 2008)
+39
+added postgresqlSQL scripts for install
+
+U   branches/1.0.x/build/manifests/jelix-lib.mn
+A   branches/1.0.x/lib/jelix/core-modules/jelix/install/sql/delete.pgsql.sql
+A   branches/1.0.x/lib/jelix/core-modules/jelix/install/sql/install_jacl.datas.pgsql.sql
+A   branches/1.0.x/lib/jelix/core-modules/jelix/install/sql/install_jacl.schema.pgsql.sql
+A   branches/1.0.x/lib/jelix/core-modules/jelix/install/sql/install_jsession.schema.pgsql.sql
+U   branches/1.0.x/testapp/install/install.pgsql.sql
+U   trunk/build/manifests/jelix-lib.mn
+A   trunk/lib/jelix/core-modules/jelix/install/sql/delete.pgsql.sql
+A   trunk/lib/jelix/core-modules/jelix/install/sql/install_jacl.datas.pgsql.sql
+A   trunk/lib/jelix/core-modules/jelix/install/sql/install_jacl.schema.pgsql.sql
+A   trunk/lib/jelix/core-modules/jelix/install/sql/install_jsession.schema.pgsql.sql
+U   trunk/testapp/install/install.pgsql.sql
+
+
+From laurent at xulfr.org  Wed Mar 12 10:52:24 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Wed, 12 Mar 2008 10:52:24 +0100
+Subject: [Jelix-public] checkin SVN-796 (laurentj)
+Message-ID: <47D7A7D8.mailJD815S5I6@xulfr.org>
+
+laurentj
+2008-03-12 10:52:24 +0100 (Wed, 12 Mar 2008)
+60
+ticket #492: bad error message in jDaoCompiler. p=M. Thiriot
+
+U   branches/1.0.x/lib/jelix/dao/jDaoCompiler.class.php
+U   trunk/lib/jelix/core-modules/jelix/install/sql/install_jacl.schema.mysql.sql
+U   trunk/lib/jelix/dao/jDaoCompiler.class.php
+
+
+From laurent at xulfr.org  Wed Mar 12 10:55:30 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Wed, 12 Mar 2008 10:55:30 +0100
+Subject: [Jelix-public] checkin SVN-797 (laurentj)
+Message-ID: <47D7A892.mailJJR11GH55@xulfr.org>
+
+laurentj
+2008-03-12 10:55:30 +0100 (Wed, 12 Mar 2008)
+84
+ticket #494: jResponseZip : impossible to set the name of the zip. p=Bastien Jaillot
+
+U   branches/1.0.x/lib/jelix/CREDITS
+U   branches/1.0.x/lib/jelix/core/response/jResponseZip.class.php
+U   trunk/lib/jelix/core/response/jResponseZip.class.php
+
+
+From laurent at xulfr.org  Wed Mar 12 11:02:27 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Wed, 12 Mar 2008 11:02:27 +0100
+Subject: [Jelix-public] checkin SVN-798 (laurentj)
+Message-ID: <47D7AA33.mailK951880I8@xulfr.org>
+
+laurentj
+2008-03-12 11:02:26 +0100 (Wed, 12 Mar 2008)
+103
+ticket #418: no cmdline controller by default when creating a cmdline application. p=Christophe Thiriot
+
+U   branches/1.0.x/lib/jelix-scripts/CREDITS
+U   branches/1.0.x/lib/jelix-scripts/commands/createapp.cmd.php
+U   branches/1.0.x/lib/jelix-scripts/includes/utils.lib.php
+U   trunk/lib/jelix/CREDITS
+U   trunk/lib/jelix-scripts/CREDITS
+U   trunk/lib/jelix-scripts/commands/createapp.cmd.php
+U   trunk/lib/jelix-scripts/includes/utils.lib.php
+
+
+From laurent at xulfr.org  Wed Mar 12 11:07:54 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Wed, 12 Mar 2008 11:07:54 +0100
+Subject: [Jelix-public] checkin SVN-799 (laurentj)
+Message-ID: <47D7AB7A.mailKMA11RQ82@xulfr.org>
+
+laurentj
+2008-03-12 11:07:53 +0100 (Wed, 12 Mar 2008)
+98
+ticket #487: Impossibility to indicate our own conditions in jControllerDaoCrud. p=Bastien Jaillot
+
+U   branches/1.0.x/lib/jelix/CREDITS
+U   branches/1.0.x/lib/jelix/controllers/jControllerDaoCrud.class.php
+U   trunk/lib/jelix/CREDITS
+U   trunk/lib/jelix/controllers/jControllerDaoCrud.class.php
+
+
+From laurent at xulfr.org  Wed Mar 12 11:14:49 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Wed, 12 Mar 2008 11:14:49 +0100
+Subject: [Jelix-public] checkin SVN-800 (laurentj)
+Message-ID: <47D7AD19.mailLUR1JEAC1@xulfr.org>
+
+laurentj
+2008-03-12 11:14:49 +0100 (Wed, 12 Mar 2008)
+68
+ticket #474: new plugin 'image' for jtpl. p=K?\195?\169vin Lepeltier
+
+U   branches/1.0.x/lib/jelix/CREDITS
+U   trunk/lib/jelix/CREDITS
+A   trunk/lib/jelix/plugins/tpl/html/function.image.php
+
+
+From laurent at xulfr.org  Wed Mar 12 11:15:30 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Wed, 12 Mar 2008 11:15:30 +0100
+Subject: [Jelix-public] checkin SVN-801 (laurentj)
+Message-ID: <47D7AD42.mailLXT11J8E5@xulfr.org>
+
+laurentj
+2008-03-12 11:15:30 +0100 (Wed, 12 Mar 2008)
+13
+forgot a file
+
+A   branches/1.0.x/lib/jelix/plugins/tpl/html/function.image.php
+
+
+From laurent at xulfr.org  Wed Mar 12 11:44:46 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Wed, 12 Mar 2008 11:44:46 +0100
+Subject: [Jelix-public] checkin SVN-802 (laurentj)
+Message-ID: <47D7B41E.mail1OV12WMZX@xulfr.org>
+
+laurentj
+2008-03-12 11:44:46 +0100 (Wed, 12 Mar 2008)
+47
+forgot to include new image plugin in the build
+
+U   branches/1.0.x/build/manifests/jelix-lib.mn
+U   trunk/build/manifests/jelix-lib.mn
+
+
+From laurent at xulfr.org  Fri Mar 14 23:44:22 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Fri, 14 Mar 2008 23:44:22 +0100
+Subject: [Jelix-public] checkin SVN-803 (laurentj)
+Message-ID: <47DAFFC6.mailHRB1FHHUX@xulfr.org>
+
+laurentj
+2008-03-14 23:44:21 +0100 (Fri, 14 Mar 2008)
+32
+added some few tests for jLocale
+
+U   branches/1.0.x/lib/jelix/core/jLocale.class.php
+U   branches/1.0.x/testapp/modules/jelix_tests/tests/core.jlocale.html.php
+U   trunk/lib/jelix/core/jLocale.class.php
+U   trunk/testapp/modules/jelix_tests/tests/core.jlocale.html_cli.php
+
+
+From laurent at xulfr.org  Sat Mar 15 00:06:12 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Sat, 15 Mar 2008 00:06:12 +0100
+Subject: [Jelix-public] checkin SVN-804 (laurentj)
+Message-ID: <47DB04E4.mailJ8K16QT58@xulfr.org>
+
+laurentj
+2008-03-15 00:06:12 +0100 (Sat, 15 Mar 2008)
+38
+forgot a little thing in previous test
+
+U   branches/1.0.x/testapp/modules/jelix_tests/tests/core.jlocale.html.php
+U   trunk/testapp/modules/jelix_tests/tests/core.jlocale.html_cli.php
+
+
+From laurent at xulfr.org  Sat Mar 15 10:28:31 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Sat, 15 Mar 2008 10:28:31 +0100
+Subject: [Jelix-public] checkin SVN-805 (laurentj)
+Message-ID: <47DB96BF.mail75C112RUS@xulfr.org>
+
+laurentj
+2008-03-15 10:28:31 +0100 (Sat, 15 Mar 2008)
+21
+updated jlocale tests
+
+U   trunk/testapp/modules/jelix_tests/tests/core.jlocale.html_cli.php
+
+
+From laurent at xulfr.org  Sat Mar 15 21:26:53 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Sat, 15 Mar 2008 21:26:53 +0100
+Subject: [Jelix-public] checkin SVN-806 (bastnic)
+Message-ID: <47DC310D.mailBNW1VLFFQ@xulfr.org>
+
+bastnic
+2008-03-15 21:26:52 +0100 (Sat, 15 Mar 2008)
+84
+worked on ticket #480 : add jelix logo for the future default application template
+
+U   branches/1.0.x/build/manifests/jelix-lib.mn
+A   branches/1.0.x/lib/jelix-www/design/images/
+A   branches/1.0.x/lib/jelix-www/design/images/logo_jelix_moyen.png
+U   trunk/build/manifests/jelix-lib.mn
+A   trunk/lib/jelix-www/design/images/
+A   trunk/lib/jelix-www/design/images/logo_jelix_moyen.png
+
+
+From laurent at xulfr.org  Sun Mar 16 02:35:13 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Sun, 16 Mar 2008 02:35:13 +0100
+Subject: [Jelix-public] checkin SVN-807 (julieni)
+Message-ID: <47DC7951.mailM4V11PTHB@xulfr.org>
+
+julieni
+2008-03-16 02:35:10 +0100 (Sun, 16 Mar 2008)
+68
+ticket #442: fixed bug about infinite loop with non-existent charset
+
+U   branches/1.0.x/lib/jelix/CREDITS
+U   branches/1.0.x/lib/jelix/core/jException.lib.php
+U   branches/1.0.x/lib/jelix/core/jSelector.class.php
+U   branches/1.0.x/testapp/modules/jelix_tests/tests/core.jlocale.html.php
+U   trunk/lib/jelix/CREDITS
+U   trunk/lib/jelix/core/jException.lib.php
+U   trunk/lib/jelix/core/jSelector.class.php
+U   trunk/testapp/modules/jelix_tests/tests/core.jlocale.html_cli.php
+
+
+From laurent at xulfr.org  Sun Mar 16 02:43:00 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Sun, 16 Mar 2008 02:43:00 +0100
+Subject: [Jelix-public] checkin SVN-808 (julieni)
+Message-ID: <47DC7B24.mailMNH11RUSP@xulfr.org>
+
+julieni
+2008-03-16 02:43:00 +0100 (Sun, 16 Mar 2008)
+45
+Incomplete comments in unit tests for jLocale
+
+U   branches/1.0.x/testapp/modules/jelix_tests/tests/core.jlocale.html.php
+U   trunk/testapp/modules/jelix_tests/tests/core.jlocale.html_cli.php
+
+
+From laurent at xulfr.org  Sun Mar 16 15:14:38 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Sun, 16 Mar 2008 15:14:38 +0100
+Subject: [Jelix-public] checkin SVN-809 (laurentj)
+Message-ID: <47DD2B4E.mailJ0A1A10UY@xulfr.org>
+
+laurentj
+2008-03-16 15:14:37 +0100 (Sun, 16 Mar 2008)
+93
+changed the syntax in template of jelix-scripts to allow to create template of jtpl templates
+
+U   branches/1.0.x/lib/jelix-scripts/includes/command.class.php
+U   branches/1.0.x/lib/jelix-scripts/templates/application.init.php.tpl
+U   branches/1.0.x/lib/jelix-scripts/templates/controller.cmdline.tpl
+U   branches/1.0.x/lib/jelix-scripts/templates/controller.daocrud.tpl
+U   branches/1.0.x/lib/jelix-scripts/templates/controller.tpl
+U   branches/1.0.x/lib/jelix-scripts/templates/dao.xml.tpl
+U   branches/1.0.x/lib/jelix-scripts/templates/dao_empty.xml.tpl
+U   branches/1.0.x/lib/jelix-scripts/templates/form.xml.tpl
+U   branches/1.0.x/lib/jelix-scripts/templates/scripts/cmdline.php.tpl
+U   branches/1.0.x/lib/jelix-scripts/templates/var/config/cmdline/config.ini.php.tpl
+U   branches/1.0.x/lib/jelix-scripts/templates/var/config/index/config.ini.php.tpl
+U   branches/1.0.x/lib/jelix-scripts/templates/var/config/jsonrpc/config.ini.php.tpl
+U   branches/1.0.x/lib/jelix-scripts/templates/var/config/xmlrpc/config.ini.php.tpl
+U   branches/1.0.x/lib/jelix-scripts/templates/www/index.php.tpl
+U   branches/1.0.x/lib/jelix-scripts/templates/www/jsonrpc.php.tpl
+U   branches/1.0.x/lib/jelix-scripts/templates/www/rdf.php.tpl
+U   branches/1.0.x/lib/jelix-scripts/templates/www/xmlrpc.php.tpl
+U   branches/1.0.x/lib/jelix-scripts/templates/zone.tpl
+U   trunk/lib/jelix-scripts/includes/command.class.php
+U   trunk/lib/jelix-scripts/templates/application.init.php.tpl
+U   trunk/lib/jelix-scripts/templates/controller.cmdline.tpl
+U   trunk/lib/jelix-scripts/templates/controller.daocrud.tpl
+U   trunk/lib/jelix-scripts/templates/controller.tpl
+U   trunk/lib/jelix-scripts/templates/dao.xml.tpl
+U   trunk/lib/jelix-scripts/templates/dao_empty.xml.tpl
+U   trunk/lib/jelix-scripts/templates/form.xml.tpl
+U   trunk/lib/jelix-scripts/templates/scripts/cmdline.php.tpl
+U   trunk/lib/jelix-scripts/templates/var/config/cmdline/config.ini.php.tpl
+U   trunk/lib/jelix-scripts/templates/var/config/index/config.ini.php.tpl
+U   trunk/lib/jelix-scripts/templates/var/config/jsonrpc/config.ini.php.tpl
+U   trunk/lib/jelix-scripts/templates/var/config/xmlrpc/config.ini.php.tpl
+U   trunk/lib/jelix-scripts/templates/www/index.php.tpl
+U   trunk/lib/jelix-scripts/templates/www/jsonrpc.php.tpl
+U   trunk/lib/jelix-scripts/templates/www/rdf.php.tpl
+U   trunk/lib/jelix-scripts/templates/www/xmlrpc.php.tpl
+U   trunk/lib/jelix-scripts/templates/zone.tpl
+
+
+From laurent at xulfr.org  Sun Mar 16 16:16:23 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Sun, 16 Mar 2008 16:16:23 +0100
+Subject: [Jelix-public] checkin SVN-810 (bastnic)
+Message-ID: <47DD39C7.mailNI41NDXGY@xulfr.org>
+
+bastnic
+2008-03-16 16:16:22 +0100 (Sun, 16 Mar 2008)
+59
+fixed ticket #496: createapp create a default html response
+
+U   branches/1.0.x/build/manifests/jelix-dev.mn
+U   branches/1.0.x/lib/jelix/core-modules/jelix/locales/en_EN/jelix.ISO-8859-1.properties
+U   branches/1.0.x/lib/jelix/core-modules/jelix/locales/en_EN/jelix.ISO-8859-15.properties
+U   branches/1.0.x/lib/jelix/core-modules/jelix/locales/en_EN/jelix.UTF-8.properties
+U   branches/1.0.x/lib/jelix/core-modules/jelix/locales/en_US/jelix.ISO-8859-1.properties
+U   branches/1.0.x/lib/jelix/core-modules/jelix/locales/en_US/jelix.ISO-8859-15.properties
+U   branches/1.0.x/lib/jelix/core-modules/jelix/locales/en_US/jelix.UTF-8.properties
+U   branches/1.0.x/lib/jelix/core-modules/jelix/locales/fr_FR/jelix.ISO-8859-1.properties
+U   branches/1.0.x/lib/jelix/core-modules/jelix/locales/fr_FR/jelix.ISO-8859-15.properties
+U   branches/1.0.x/lib/jelix/core-modules/jelix/locales/fr_FR/jelix.UTF-8.properties
+U   branches/1.0.x/lib/jelix-scripts/commands/createapp.cmd.php
+A   branches/1.0.x/lib/jelix-scripts/templates/main.tpl.tpl
+A   branches/1.0.x/lib/jelix-scripts/templates/myHtmlResponse.class.php.tpl
+U   branches/1.0.x/lib/jelix-scripts/templates/var/config/defaultconfig.ini.php.tpl
+U   trunk/build/manifests/jelix-dev.mn
+U   trunk/lib/jelix/core-modules/jelix/locales/en_EN/jelix.ISO-8859-1.properties
+U   trunk/lib/jelix/core-modules/jelix/locales/en_EN/jelix.ISO-8859-15.properties
+U   trunk/lib/jelix/core-modules/jelix/locales/en_EN/jelix.UTF-8.properties
+U   trunk/lib/jelix/core-modules/jelix/locales/en_US/jelix.ISO-8859-1.properties
+U   trunk/lib/jelix/core-modules/jelix/locales/en_US/jelix.ISO-8859-15.properties
+U   trunk/lib/jelix/core-modules/jelix/locales/en_US/jelix.UTF-8.properties
+U   trunk/lib/jelix/core-modules/jelix/locales/fr_FR/jelix.ISO-8859-1.properties
+U   trunk/lib/jelix/core-modules/jelix/locales/fr_FR/jelix.ISO-8859-15.properties
+U   trunk/lib/jelix/core-modules/jelix/locales/fr_FR/jelix.UTF-8.properties
+U   trunk/lib/jelix-scripts/commands/createapp.cmd.php
+A   trunk/lib/jelix-scripts/templates/main.tpl.tpl
+A   trunk/lib/jelix-scripts/templates/myHtmlResponse.class.php.tpl
+U   trunk/lib/jelix-scripts/templates/var/config/defaultconfig.ini.php.tpl
+
+
+From laurent at xulfr.org  Sun Mar 16 16:34:33 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Sun, 16 Mar 2008 16:34:33 +0100
+Subject: [Jelix-public] checkin SVN-811 (laurentj)
+Message-ID: <47DD3E09.mailOIA111BL5@xulfr.org>
+
+laurentj
+2008-03-16 16:34:33 +0100 (Sun, 16 Mar 2008)
+84
+ticket #500: support of CR and LF in firebug log. p=lipki
+updated also CREDITS files
+
+U   branches/1.0.x/lib/jelix/CREDITS
+U   branches/1.0.x/lib/jelix/core/response/jResponseHtml.class.php
+U   branches/1.0.x/lib/jelix/core/response/jResponseXul.class.php
+U   branches/1.0.x/lib/jelix-scripts/CREDITS
+U   trunk/lib/jelix/CREDITS
+U   trunk/lib/jelix/core/response/jResponseHtml.class.php
+U   trunk/lib/jelix/core/response/jResponseXul.class.php
+U   trunk/lib/jelix-scripts/CREDITS
+
+
+From laurent at xulfr.org  Mon Mar 17 00:44:52 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Mon, 17 Mar 2008 00:44:52 +0100
+Subject: [Jelix-public] checkin SVN-812 (laurentj)
+Message-ID: <47DDB0F4.mailCID1T95FC@xulfr.org>
+
+laurentj
+2008-03-17 00:44:50 +0100 (Mon, 17 Mar 2008)
+65
+worked on ticket #31: install system for applications and modules
+
+U   trunk/build/manifests/jelix-dev.mn
+U   trunk/build/manifests/jelix-lib.mn
+U   trunk/build/manifests/testapp.mn
+A   trunk/lib/jelix/installer/
+A   trunk/lib/jelix/installer/jIInstallReporter.iface.php
+A   trunk/lib/jelix/installer/jInstallerApp.class.php
+A   trunk/lib/jelix/installer/jInstallerBase.class.php
+A   trunk/lib/jelix/installer/jInstallerModule.class.php
+A   trunk/lib/jelix/installer/jInstallerPlugin.class.php
+U   trunk/lib/jelix/plugins/db/mysql/mysql.dbtools.php
+U   trunk/lib/jelix/plugins/db/pgsql/pgsql.dbtools.php
+A   trunk/lib/jelix-scripts/commands/installapp.cmd.php
+U   trunk/lib/jelix-scripts/scripts.conf.php
+A   trunk/testapp/install/installer.php
+U   trunk/testapp/project.xml
+
+
+From laurent at xulfr.org  Mon Mar 17 00:46:30 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Mon, 17 Mar 2008 00:46:30 +0100
+Subject: [Jelix-public] checkin SVN-813 (laurentj)
+Message-ID: <47DDB156.mailEXY1FG6IF@xulfr.org>
+
+laurentj
+2008-03-17 00:46:30 +0100 (Mon, 17 Mar 2008)
+64
+fixed bug in  jDbTools::execSQLScript for mysql and pgsql driver
+
+U   branches/1.0.x/lib/jelix/plugins/db/mysql/mysql.dbtools.php
+U   branches/1.0.x/lib/jelix/plugins/db/pgsql/pgsql.dbtools.php
+
+
+From laurent at xulfr.org  Mon Mar 17 22:43:46 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Mon, 17 Mar 2008 22:43:46 +0100
+Subject: [Jelix-public] checkin SVN-814 (laurentj)
+Message-ID: <47DEE612.mailAL61VPM4V@xulfr.org>
+
+laurentj
+2008-03-17 22:43:45 +0100 (Mon, 17 Mar 2008)
+82
+ticket #377: soap support. Part 1: added wshelper librairie. p=Sylvain de Vathaire
+
+U   trunk/build/manifests/jelix-lib.mn
+A   trunk/lib/wshelper/
+A   trunk/lib/wshelper/CREDITS
+A   trunk/lib/wshelper/IPPhpDoc.class.php
+A   trunk/lib/wshelper/IPReflectionClass.class.php
+A   trunk/lib/wshelper/IPReflectionCommentParser.class.php
+A   trunk/lib/wshelper/IPReflectionMethod.class.php
+A   trunk/lib/wshelper/IPReflectionProperty.class.php
+A   trunk/lib/wshelper/IPXMLSchema.class.php
+A   trunk/lib/wshelper/LICENCE
+A   trunk/lib/wshelper/README
+A   trunk/lib/wshelper/WSDLException.class.php
+A   trunk/lib/wshelper/WSDLStruct.class.php
+A   trunk/lib/wshelper/WSException.class.php
+A   trunk/lib/wshelper/jelix.diff
+
+
+From laurent at xulfr.org  Tue Mar 18 13:00:26 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Tue, 18 Mar 2008 13:00:26 +0100
+Subject: [Jelix-public] checkin SVN-815 (laurentj)
+Message-ID: <47DFAEDA.mailOCY16J20V@xulfr.org>
+
+laurentj
+2008-03-18 13:00:20 +0100 (Tue, 18 Mar 2008)
+180
+removed most of unuseful JELIX_LIB_* constants. Only JELIX_LIB_PATH, JELIX_LIB_CORE_PATH and JELIX_LIB_UTILS_PATH still exist. Removed also JELIX_PLUGINS_PATH and JELIX_MODULE_PATH
+
+U   trunk/lib/jelix/auth/jAuthDummyUser.class.php
+U   trunk/lib/jelix/core/jCoordinator.class.php
+U   trunk/lib/jelix/core/jRequest.class.php
+U   trunk/lib/jelix/core/jSelector.class.php
+U   trunk/lib/jelix/core/response/jResponseAtom10.class.php
+U   trunk/lib/jelix/core/response/jResponseHtml.class.php
+U   trunk/lib/jelix/core/response/jResponseRedirect.class.php
+U   trunk/lib/jelix/core/response/jResponseRedirectUrl.class.php
+U   trunk/lib/jelix/core/response/jResponseRss20.class.php
+U   trunk/lib/jelix/core/response/jResponseXml.class.php
+U   trunk/lib/jelix/core/response/jResponseXul.class.php
+U   trunk/lib/jelix/core/response/jResponseXulDialog.class.php
+U   trunk/lib/jelix/core/response/jResponseXulOverlay.class.php
+U   trunk/lib/jelix/core/response/jResponseXulPage.class.php
+U   trunk/lib/jelix/dao/jDao.class.php
+U   trunk/lib/jelix/dao/jDaoCompiler.class.php
+U   trunk/lib/jelix/dao/jDaoGenerator.class.php
+U   trunk/lib/jelix/db/jDb.class.php
+U   trunk/lib/jelix/events/jEvent.class.php
+U   trunk/lib/jelix/forms/jForms.class.php
+U   trunk/lib/jelix/forms/jFormsBase.class.php
+U   trunk/lib/jelix/forms/jFormsCompiler.class.php
+U   trunk/lib/jelix/init.php
+U   trunk/lib/jelix/plugins/coord/auth/auth.coord.php
+U   trunk/lib/jelix/plugins/coord/jacl/jacl.coord.php
+U   trunk/lib/jelix-scripts/commands/createapp.cmd.php
+U   trunk/lib/jelix-scripts/templates/myHtmlResponse.class.php.tpl
+U   trunk/testapp/modules/jelix_tests/tests/jdao.conditions.html_cli.php
+U   trunk/testapp/modules/jelix_tests/tests/jdao.generator.html_cli.php
+U   trunk/testapp/modules/jelix_tests/tests/jdao.generator_select.html_cli.php
+U   trunk/testapp/modules/jelix_tests/tests/jdao.parser.html_cli.php
+U   trunk/testapp/modules/jelix_tests/tests/jdao.parser2.html_cli.php
+U   trunk/testapp/modules/jelix_tests/tests/jdao.parser_update.html_cli.php
+U   trunk/testapp/modules/jelix_tests/tests/jforms.check_datas.html_cli.php
+U   trunk/testapp/modules/jelix_tests/tests/jforms.compiler.html_cli.php
+U   trunk/testapp/modules/jelix_tests/tests/jforms.html_cli.php
+U   trunk/testapp/modules/jelix_tests/tests/jforms.htmlbuilder.html_cli.php
+U   trunk/testapp/modules/jelix_tests/tests/jforms.with_dao.html_cli.php
+U   trunk/testapp/modules/jelix_tests/tests/jtpl.compiler.html_cli.php
+U   trunk/testapp/modules/jelix_tests/tests/jtpl.expressions_parsing.html_cli.php
+U   trunk/testapp/responses/myHtmlResponse.class.php
+
+
+From laurent at xulfr.org  Tue Mar 18 13:22:26 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Tue, 18 Mar 2008 13:22:26 +0100
+Subject: [Jelix-public] checkin SVN-816 (laurentj)
+Message-ID: <47DFB402.mail31211UL9O@xulfr.org>
+
+laurentj
+2008-03-18 13:22:25 +0100 (Tue, 18 Mar 2008)
+65
+replaced some require_once instructions by require.
+removed myapp
+
+U   trunk/build/buildapp.php
+D   trunk/build/manifests/myapp.mn
+U   trunk/lib/jelix-scripts/templates/www/index.php.tpl
+U   trunk/lib/jelix-scripts/templates/www/jsonrpc.php.tpl
+U   trunk/lib/jelix-scripts/templates/www/rdf.php.tpl
+U   trunk/lib/jelix-scripts/templates/www/xmlrpc.php.tpl
+D   trunk/myapp/
+U   trunk/testapp/www/check.php
+U   trunk/testapp/www/foo/bar.php
+U   trunk/testapp/www/index.php
+U   trunk/testapp/www/jsonrpc.php
+U   trunk/testapp/www/testnews.php
+U   trunk/testapp/www/xmlrpc.php
+
+
+From laurent at xulfr.org  Tue Mar 18 22:46:23 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Tue, 18 Mar 2008 22:46:23 +0100
+Subject: [Jelix-public] checkin SVN-817 (laurentj)
+Message-ID: <47E0382F.mail20C1SBZ52@xulfr.org>
+
+laurentj
+2008-03-18 22:46:23 +0100 (Tue, 18 Mar 2008)
+78
+ticket #508: call of deprecated method of jTpl in jZone. p=Sylvain de Vathaire
+
+U   branches/1.0.x/lib/jelix/CREDITS
+U   branches/1.0.x/lib/jelix/utils/jZone.class.php
+U   trunk/lib/jelix/CREDITS
+U   trunk/lib/jelix/utils/jZone.class.php
+
+
+From laurent at xulfr.org  Tue Mar 18 23:11:04 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Tue, 18 Mar 2008 23:11:04 +0100
+Subject: [Jelix-public] checkin SVN-818 (laurentj)
+Message-ID: <47E03DF8.mail6ZM1EZVGB@xulfr.org>
+
+laurentj
+2008-03-18 23:11:03 +0100 (Tue, 18 Mar 2008)
+63
+ticket #470: in some case, no error when an ini file is invalid
+
+U   branches/1.0.x/lib/jelix/core/jConfigCompiler.class.php
+U   branches/1.0.x/lib/jelix/core/jCoordinator.class.php
+U   trunk/lib/jelix/core/jConfigCompiler.class.php
+U   trunk/lib/jelix/core/jCoordinator.class.php
+
+
+From laurent at xulfr.org  Wed Mar 19 01:23:34 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Wed, 19 Mar 2008 01:23:34 +0100
+Subject: [Jelix-public] checkin SVN-819 (bastnic)
+Message-ID: <47E05D06.mailA00116RH5@xulfr.org>
+
+bastnic
+2008-03-19 01:23:33 +0100 (Wed, 19 Mar 2008)
+56
+ticket #480 : add default template when creating new app
+
+U   branches/1.0.x/build/manifests/jelix-lib.mn
+U   branches/1.0.x/lib/jelix/CREDITS
+U   branches/1.0.x/lib/jelix/checker.php
+A   branches/1.0.x/lib/jelix/core-modules/jelix/templates/en_EN/
+A   branches/1.0.x/lib/jelix/core-modules/jelix/templates/en_EN/check_install.tpl
+A   branches/1.0.x/lib/jelix/core-modules/jelix/templates/en_US/
+A   branches/1.0.x/lib/jelix/core-modules/jelix/templates/en_US/check_install.tpl
+A   branches/1.0.x/lib/jelix/core-modules/jelix/templates/fr_FR/
+A   branches/1.0.x/lib/jelix/core-modules/jelix/templates/fr_FR/check_install.tpl
+A   branches/1.0.x/lib/jelix/core-modules/jelix/zones/
+A   branches/1.0.x/lib/jelix/core-modules/jelix/zones/check_install.zone.php
+U   branches/1.0.x/lib/jelix-scripts/templates/controller.tpl
+U   branches/1.0.x/lib/jelix-scripts/templates/var/config/defaultconfig.ini.php.tpl
+U   branches/1.0.x/lib/jelix-www/design/jelix.css
+U   trunk/build/manifests/jelix-lib.mn
+U   trunk/lib/jelix/CREDITS
+U   trunk/lib/jelix/checker.php
+A   trunk/lib/jelix/core-modules/jelix/templates/en_EN/
+A   trunk/lib/jelix/core-modules/jelix/templates/en_EN/check_install.tpl
+A   trunk/lib/jelix/core-modules/jelix/templates/en_US/
+A   trunk/lib/jelix/core-modules/jelix/templates/en_US/check_install.tpl
+A   trunk/lib/jelix/core-modules/jelix/templates/fr_FR/
+A   trunk/lib/jelix/core-modules/jelix/templates/fr_FR/check_install.tpl
+A   trunk/lib/jelix/core-modules/jelix/zones/
+A   trunk/lib/jelix/core-modules/jelix/zones/check_install.zone.php
+U   trunk/lib/jelix-scripts/templates/controller.tpl
+U   trunk/lib/jelix-scripts/templates/var/config/defaultconfig.ini.php.tpl
+U   trunk/lib/jelix-www/design/jelix.css
+
+
+From laurent at xulfr.org  Thu Mar 20 01:45:55 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Thu, 20 Mar 2008 01:45:55 +0100
+Subject: [Jelix-public] checkin SVN-820 (julieni)
+Message-ID: <47E1B3C3.mailG2B11PWA8@xulfr.org>
+
+julieni
+2008-03-20 01:45:55 +0100 (Thu, 20 Mar 2008)
+62
+ticket #445: disabled session start for command line requests.
+
+U   branches/1.0.x/lib/jelix/core/jSession.class.php
+U   trunk/lib/jelix/core/jSession.class.php
+
+
+From laurent at xulfr.org  Thu Mar 20 02:03:03 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Thu, 20 Mar 2008 02:03:03 +0100
+Subject: [Jelix-public] checkin SVN-821 (julieni)
+Message-ID: <47E1B7C7.mailH2J118EWG@xulfr.org>
+
+julieni
+2008-03-20 02:03:03 +0100 (Thu, 20 Mar 2008)
+86
+ticket #504: moved some session configuration process from jCoordinator into jSession.
+
+U   branches/1.0.x/lib/jelix/core/jCoordinator.class.php
+U   branches/1.0.x/lib/jelix/core/jSession.class.php
+U   trunk/lib/jelix/core/jCoordinator.class.php
+U   trunk/lib/jelix/core/jSession.class.php
+
+
+From laurent at xulfr.org  Thu Mar 20 02:08:30 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Thu, 20 Mar 2008 02:08:30 +0100
+Subject: [Jelix-public] checkin SVN-822 (julieni)
+Message-ID: <47E1B90E.mailHCB1N4LJY@xulfr.org>
+
+julieni
+2008-03-20 02:08:30 +0100 (Thu, 20 Mar 2008)
+24
+Forgot to update credits
+
+U   branches/1.0.x/lib/jelix/CREDITS
+U   trunk/lib/jelix/CREDITS
+
+
+From laurent at xulfr.org  Thu Mar 20 02:32:23 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Thu, 20 Mar 2008 02:32:23 +0100
+Subject: [Jelix-public] checkin SVN-823 (julieni)
+Message-ID: <47E1BEA7.mailJHB11RTRY@xulfr.org>
+
+julieni
+2008-03-20 02:32:21 +0100 (Thu, 20 Mar 2008)
+60
+Fixed misswrited path in createapp command for jelix-scripts
+
+U   trunk/lib/jelix-scripts/commands/createapp.cmd.php
+
+
+From laurent at xulfr.org  Thu Mar 20 09:08:10 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Thu, 20 Mar 2008 09:08:10 +0100
+Subject: [Jelix-public] checkin SVN-824 (laurentj)
+Message-ID: <47E21B6A.mail4O51T1L6K@xulfr.org>
+
+laurentj
+2008-03-20 09:08:09 +0100 (Thu, 20 Mar 2008)
+58
+worked on the installer
+added a new class jIniFileModifier
+
+U   trunk/build/manifests/jelix-lib.mn
+U   trunk/build/manifests/testapp.mn
+U   trunk/lib/jelix/core/jConfigCompiler.class.php
+U   trunk/lib/jelix/init.php
+U   trunk/lib/jelix/installer/jIInstallReporter.iface.php
+U   trunk/lib/jelix/installer/jInstallerApp.class.php
+U   trunk/lib/jelix/installer/jInstallerBase.class.php
+U   trunk/lib/jelix/installer/jInstallerModule.class.php
+U   trunk/lib/jelix/installer/jInstallerPlugin.class.php
+A   trunk/lib/jelix/utils/jIniFileModifier.class.php
+U   trunk/lib/jelix-scripts/commands/installapp.cmd.php
+U   trunk/testapp/install/installer.php
+A   trunk/testapp/modules/jelix_tests/tests/utils.jinifilemodifier.html_cli.php
+
+
+From laurent at xulfr.org  Thu Mar 20 17:25:37 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Thu, 20 Mar 2008 17:25:37 +0100
+Subject: [Jelix-public] checkin SVN-825 (laurentj)
+Message-ID: <47E29001.mail16V117PRV@xulfr.org>
+
+laurentj
+2008-03-20 17:25:36 +0100 (Thu, 20 Mar 2008)
+63
+fixed an exception thrown during the execution of jelix-scripts
+
+U   branches/1.0.x/lib/jelix/core/jConfigCompiler.class.php
+
+
+From laurent at xulfr.org  Thu Mar 20 18:37:09 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Thu, 20 Mar 2008 18:37:09 +0100
+Subject: [Jelix-public] checkin SVN-826 (laurentj)
+Message-ID: <47E2A0C5.mailHJ41LA8IK@xulfr.org>
+
+laurentj
+2008-03-20 18:37:06 +0100 (Thu, 20 Mar 2008)
+42
+BUILD: changed version number in the trunk
+
+U   trunk/Makefile
+U   trunk/build/buildapp.php
+U   trunk/build/buildjelix.php
+U   trunk/lib/jelix/VERSION
+U   trunk/testapp/VERSION
+
+
+From laurent at xulfr.org  Fri Mar 21 00:19:17 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Fri, 21 Mar 2008 00:19:17 +0100
+Subject: [Jelix-public] checkin SVN-827 (laurentj)
+Message-ID: <47E2F0F5.mailM4R196B2Q@xulfr.org>
+
+laurentj
+2008-03-21 00:19:16 +0100 (Fri, 21 Mar 2008)
+31
+finished class jIniFileModifier
+
+U   trunk/lib/jelix/installer/jInstallerBase.class.php
+U   trunk/lib/jelix/utils/jIniFileModifier.class.php
+U   trunk/testapp/modules/jelix_tests/tests/utils.jinifilemodifier.html_cli.php
+
+
+From laurent at xulfr.org  Fri Mar 21 03:20:40 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Fri, 21 Mar 2008 03:20:40 +0100
+Subject: [Jelix-public] checkin SVN-828 (bastnic)
+Message-ID: <47E31B78.mail1W159DX8@xulfr.org>
+
+bastnic
+2008-03-21 03:20:39 +0100 (Fri, 21 Mar 2008)
+110
+ fixed #516 and #519 : a great enchacement on new app default zone/template and a little bug on myhtmlresponse
+
+U   branches/1.0.x/lib/jelix/core-modules/jelix/templates/en_EN/check_install.tpl
+U   branches/1.0.x/lib/jelix/core-modules/jelix/templates/en_US/check_install.tpl
+U   branches/1.0.x/lib/jelix/core-modules/jelix/templates/fr_FR/check_install.tpl
+U   branches/1.0.x/lib/jelix-scripts/templates/myHtmlResponse.class.php.tpl
+A   branches/1.0.x/lib/jelix-www/design/images/fond-bandeau.png
+A   branches/1.0.x/lib/jelix-www/design/images/fond-cellule.png
+A   branches/1.0.x/lib/jelix-www/design/images/jelix_powered.png
+U   branches/1.0.x/lib/jelix-www/design/jelix.css
+U   trunk/lib/jelix/core-modules/jelix/templates/en_EN/check_install.tpl
+U   trunk/lib/jelix/core-modules/jelix/templates/en_US/check_install.tpl
+U   trunk/lib/jelix/core-modules/jelix/templates/fr_FR/check_install.tpl
+U   trunk/lib/jelix-scripts/templates/myHtmlResponse.class.php.tpl
+A   trunk/lib/jelix-www/design/images/fond-bandeau.png
+A   trunk/lib/jelix-www/design/images/fond-cellule.png
+A   trunk/lib/jelix-www/design/images/jelix_powered.png
+U   trunk/lib/jelix-www/design/jelix.css
+
+
+From laurent at xulfr.org  Fri Mar 21 03:30:23 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Fri, 21 Mar 2008 03:30:23 +0100
+Subject: [Jelix-public] checkin SVN-829 (bastnic)
+Message-ID: <47E31DBF.mailQE11HMWS@xulfr.org>
+
+bastnic
+2008-03-21 03:30:22 +0100 (Fri, 21 Mar 2008)
+41
+forgot to add new files in build/manifest
+
+U   branches/1.0.x/build/manifests/jelix-lib.mn
+U   trunk/build/manifests/jelix-lib.mn
+
+
+From laurent at xulfr.org  Fri Mar 21 07:24:48 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Fri, 21 Mar 2008 07:24:48 +0100
+Subject: [Jelix-public] checkin SVN-830 (laurentj)
+Message-ID: <47E354B0.mail4EC11NLNN@xulfr.org>
+
+laurentj
+2008-03-21 07:24:41 +0100 (Fri, 21 Mar 2008)
+69
+worked on ticket #31: the base class of the installer is now finished
+
+U   trunk/lib/jelix/installer/jInstallerApp.class.php
+U   trunk/lib/jelix/installer/jInstallerBase.class.php
+U   trunk/testapp/install/installer.php
+
+
+From laurent at xulfr.org  Fri Mar 21 08:19:27 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Fri, 21 Mar 2008 08:19:27 +0100
+Subject: [Jelix-public] checkin SVN-831 (laurentj)
+Message-ID: <47E3617F.mail62K1ZTM9N@xulfr.org>
+
+laurentj
+2008-03-21 08:19:26 +0100 (Fri, 21 Mar 2008)
+46
+ticket #212: support of hidden field in jforms
+
+U   trunk/lib/jelix/docs/ns/jforms.rng
+U   trunk/lib/jelix/forms/jFormsBase.class.php
+U   trunk/lib/jelix/forms/jFormsCompiler.class.php
+U   trunk/lib/jelix/forms/jFormsControl.class.php
+U   trunk/lib/jelix/plugins/jforms/html/html.jformsbuilder.php
+U   trunk/lib/jelix/plugins/jforms/html/html.jformscompiler.php
+U   trunk/lib/jelix/plugins/tpl/html/block.form.php
+U   trunk/lib/jelix/plugins/tpl/html/block.formcontrols.php
+U   trunk/lib/jelix/plugins/tpl/html/block.formsubmits.php
+U   trunk/lib/jelix/plugins/tpl/html/cfunction.formfull.php
+U   trunk/lib/jelix/plugins/tpl/html/function.ctrl_control.php
+U   trunk/lib/jelix/plugins/tpl/html/function.ctrl_label.php
+U   trunk/lib/jelix/plugins/tpl/html/function.ctrl_value.php
+U   trunk/lib/jelix/plugins/tpl/html/function.formdatasfull.php
+U   trunk/testapp/modules/jelix_tests/tests/jforms.check_datas.html_cli.php
+U   trunk/testapp/modules/jelix_tests/tests/jforms.compiler.html_cli.php
+U   trunk/testapp/modules/jelix_tests/tests/jforms.htmlbuilder.html_cli.php
+U   trunk/testapp/modules/testapp/forms/sample.form.xml
+
+
+From laurent at xulfr.org  Fri Mar 21 11:47:25 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Fri, 21 Mar 2008 11:47:25 +0100
+Subject: [Jelix-public] checkin SVN-832 (bastnic)
+Message-ID: <47E3923D.mailJ5V117MDP@xulfr.org>
+
+bastnic
+2008-03-21 11:47:25 +0100 (Fri, 21 Mar 2008)
+60
+fixed bug #519  : removeDir crash if there are a link inside
+
+U   branches/1.0.x/lib/jelix/CREDITS
+U   branches/1.0.x/lib/jelix/utils/jFile.class.php
+U   trunk/lib/jelix/CREDITS
+U   trunk/lib/jelix/utils/jFile.class.php
+
+
+From laurent at xulfr.org  Fri Mar 21 15:51:41 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Fri, 21 Mar 2008 15:51:41 +0100
+Subject: [Jelix-public] checkin SVN-833 (bastnic)
+Message-ID: <47E3CB7D.mail4BK11LS8A@xulfr.org>
+
+bastnic
+2008-03-21 15:51:39 +0100 (Fri, 21 Mar 2008)
+73
+fixed #520 : add an -addinstallzone option on createmodule and createctrl
+
+U   branches/1.0.x/build/manifests/jelix-dev.mn
+U   branches/1.0.x/lib/jelix-scripts/CREDITS
+U   branches/1.0.x/lib/jelix-scripts/commands/createapp.cmd.php
+U   branches/1.0.x/lib/jelix-scripts/commands/createctrl.cmd.php
+U   branches/1.0.x/lib/jelix-scripts/commands/createmodule.cmd.php
+A   branches/1.0.x/lib/jelix-scripts/templates/controller.newapp.tpl
+U   branches/1.0.x/lib/jelix-scripts/templates/controller.tpl
+U   trunk/build/manifests/jelix-dev.mn
+U   trunk/lib/jelix-scripts/CREDITS
+U   trunk/lib/jelix-scripts/commands/createapp.cmd.php
+U   trunk/lib/jelix-scripts/commands/createctrl.cmd.php
+U   trunk/lib/jelix-scripts/commands/createmodule.cmd.php
+A   trunk/lib/jelix-scripts/templates/controller.newapp.tpl
+U   trunk/lib/jelix-scripts/templates/controller.tpl
+
+
+From laurent at xulfr.org  Mon Mar 24 22:23:41 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Mon, 24 Mar 2008 22:23:41 +0100
+Subject: [Jelix-public] checkin SVN-834 (doubleface)
+Message-ID: <47E81BDD.mail8N319CQB3@xulfr.org>
+
+doubleface
+2008-03-24 22:23:41 +0100 (Mon, 24 Mar 2008)
+75
+fixed bug #522: added jSelectorIface and made jSelectorInterface deprecated
+
+U   trunk/lib/jelix/core/jSelector.class.php
+
+
+From laurent at xulfr.org  Mon Mar 24 22:34:47 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Mon, 24 Mar 2008 22:34:47 +0100
+Subject: [Jelix-public] checkin SVN-835 (doubleface)
+Message-ID: <47E81E77.mail9MI1WOLQ0@xulfr.org>
+
+doubleface
+2008-03-24 22:34:47 +0100 (Mon, 24 Mar 2008)
+84
+fixed bug #522 in 1.0.x: added jSelectorIface and made jSelectorInterface deprecated
+
+U   branches/1.0.x/lib/jelix/core/jSelector.class.php
+
+
+From laurent at xulfr.org  Mon Mar 24 23:20:42 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Mon, 24 Mar 2008 23:20:42 +0100
+Subject: [Jelix-public] checkin SVN-836 (laurentj)
+Message-ID: <47E8293A.mailEB915O83E@xulfr.org>
+
+laurentj
+2008-03-24 23:20:40 +0100 (Mon, 24 Mar 2008)
+155
+ticket #381: jforms, added support of type=html on input/textarea element
+Rewrote the jforms compiler;
+some few code improvements in jFormsControl classes.
+
+U   trunk/lib/jelix/forms/jForms.class.php
+U   trunk/lib/jelix/forms/jFormsBase.class.php
+U   trunk/lib/jelix/forms/jFormsBuilderBase.class.php
+U   trunk/lib/jelix/forms/jFormsCompiler.class.php
+U   trunk/lib/jelix/forms/jFormsControl.class.php
+U   trunk/lib/jelix/forms/jFormsDataContainer.class.php
+U   trunk/lib/jelix/forms/jFormsDatasource.class.php
+U   trunk/lib/jelix/forms/jIFormsBuilderCompiler.iface.php
+U   trunk/lib/jelix/plugins/jforms/html/html.jformsbuilder.php
+U   trunk/lib/jelix/plugins/jforms/html/html.jformscompiler.php
+U   trunk/lib/jelix/plugins/tpl/html/function.ctrl_value.php
+U   trunk/lib/jelix/utils/jDatatype.class.php
+U   trunk/lib/jelix/utils/jFilter.class.php
+U   trunk/testapp/modules/jelix_tests/tests/jforms.compiler.html_cli.php
+U   trunk/testapp/modules/jelix_tests/tests/utils.jfilter.html_cli.php
+U   trunk/testapp/modules/testapp/forms/sample.form.xml
+
+
+From laurent at xulfr.org  Mon Mar 24 23:46:09 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Mon, 24 Mar 2008 23:46:09 +0100
+Subject: [Jelix-public] checkin SVN-837 (laurentj)
+Message-ID: <47E82F31.mailG5611I7E2@xulfr.org>
+
+laurentj
+2008-03-24 23:46:09 +0100 (Mon, 24 Mar 2008)
+49
+ticket #521: error in the name of the class jHttp
+
+U   trunk/lib/jelix/utils/jHttp.class.php
+
+
+From laurent at xulfr.org  Tue Mar 25 00:04:21 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Tue, 25 Mar 2008 00:04:21 +0100
+Subject: [Jelix-public] checkin SVN-838 (laurentj)
+Message-ID: <47E83375.mailHCC11V1YC@xulfr.org>
+
+laurentj
+2008-03-25 00:04:20 +0100 (Tue, 25 Mar 2008)
+80
+ticket #499: plugins section in configuration should be renamed to coordplugins.
+
+U   trunk/lib/jelix/core/defaultconfig.ini.php
+U   trunk/lib/jelix/core/jController.class.php
+U   trunk/lib/jelix/core/jCoordinator.class.php
+U   trunk/lib/jelix-scripts/templates/var/config/defaultconfig.ini.php.tpl
+U   trunk/lib/jelix-scripts/templates/var/config/index/config.ini.php.tpl
+U   trunk/lib/jelix-scripts/templates/var/config/jsonrpc/config.ini.php.tpl
+U   trunk/lib/jelix-scripts/templates/var/config/xmlrpc/config.ini.php.tpl
+U   trunk/testapp/var/config/defaultconfig.ini.php
+U   trunk/testapp/var/config/jsonrpc/config.ini.php
+U   trunk/testapp/var/config/xmlrpc/config.ini.php
+
+
+From laurent at xulfr.org  Tue Mar 25 08:41:15 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Tue, 25 Mar 2008 08:41:15 +0100
+Subject: [Jelix-public] checkin SVN-839 (laurentj)
+Message-ID: <47E8AC9B.mail9101154SU@xulfr.org>
+
+laurentj
+2008-03-25 08:41:12 +0100 (Tue, 25 Mar 2008)
+462
+ticket #468: bad spelling in some methods and properties. step 1: changed datas to data
+template plugin formdatasfull renamed to formdatafull
+template plugin formdatas renamed to formdata
+jFormsBase::getDatas() renamed to getAllData()
+jFormsDatasource::getDatas() renamed to getData()
+jFormsDatasource:: renamed to 
+jFormsDataContainer:: renamed to 
+jResponseJson:: renamed to 
+jResponseRdf:: renamed to 
+jControllerDaoCrud::_checkDatas() renamed to _checkData()
+
+U   trunk/build/manifests/jelix-lib.mn
+U   trunk/lib/jelix/acl/jAcl.class.php
+U   trunk/lib/jelix/auth/jAuth.class.php
+U   trunk/lib/jelix/controllers/jControllerDaoCrud.class.php
+U   trunk/lib/jelix/core/jRequest.class.php
+U   trunk/lib/jelix/core/jUrl.class.php
+U   trunk/lib/jelix/core/request/jCmdLineRequest.class.php
+U   trunk/lib/jelix/core/response/jResponseJson.class.php
+U   trunk/lib/jelix/core/response/jResponseJsonrpc.class.php
+U   trunk/lib/jelix/core/response/jResponseRdf.class.php
+U   trunk/lib/jelix/core/response/jResponseXmlrpc.class.php
+U   trunk/lib/jelix/core-modules/jelix/controllers/error.rdf.php
+A   trunk/lib/jelix/core-modules/jelix/install/sql/install_jacl.data.mysql.sql
+A   trunk/lib/jelix/core-modules/jelix/install/sql/install_jacl.data.pgsql.sql
+D   trunk/lib/jelix/core-modules/jelix/install/sql/install_jacl.datas.mysql.sql
+D   trunk/lib/jelix/core-modules/jelix/install/sql/install_jacl.datas.pgsql.sql
+U   trunk/lib/jelix/core-modules/jelix/templates/crud_view.tpl
+U   trunk/lib/jelix/dao/jDaoGenerator.class.php
+U   trunk/lib/jelix/dao/jDaoParser.class.php
+U   trunk/lib/jelix/events/jEvent.class.php
+U   trunk/lib/jelix/forms/jForms.class.php
+U   trunk/lib/jelix/forms/jFormsBase.class.php
+U   trunk/lib/jelix/forms/jFormsCompiler.class.php
+U   trunk/lib/jelix/forms/jFormsControl.class.php
+U   trunk/lib/jelix/forms/jFormsDataContainer.class.php
+U   trunk/lib/jelix/forms/jFormsDatasource.class.php
+U   trunk/lib/jelix/plugins/coord/auth/auth.coord.ini.php.dist
+U   trunk/lib/jelix/plugins/db/oci/oci.daobuilder.php
+U   trunk/lib/jelix/plugins/db/pgsql/pgsql.daobuilder.php
+U   trunk/lib/jelix/plugins/jforms/html/html.jformsbuilder.php
+U   trunk/lib/jelix/plugins/tpl/html/block.form.php
+A   trunk/lib/jelix/plugins/tpl/html/block.formdata.php
+D   trunk/lib/jelix/plugins/tpl/html/block.formdatas.php
+A   trunk/lib/jelix/plugins/tpl/html/function.formdatafull.php
+D   trunk/lib/jelix/plugins/tpl/html/function.formdatasfull.php
+U   trunk/lib/jelix/plugins/urls/significant/significant.urls.php
+U   trunk/lib/jelix/plugins/urls/simple/simple.urls.php
+U   trunk/lib/jelix/utils/jIniFile.class.php
+U   trunk/lib/jelix/utils/jXmlRpc.class.php
+U   trunk/lib/jelix-modules/jauth/install/var/config/auth.coord.ini.php
+U   trunk/testapp/modules/jelix_tests/tests/core.selectors_action.html.php
+U   trunk/testapp/modules/jelix_tests/tests/jforms.check_datas.html_cli.php
+U   trunk/testapp/modules/jelix_tests/tests/jforms.compiler.html_cli.php
+U   trunk/testapp/modules/jelix_tests/tests/jforms.html_cli.php
+U   trunk/testapp/modules/jelix_tests/tests/jforms.htmlbuilder.html_cli.php
+U   trunk/testapp/modules/jelix_tests/tests/jforms.with_dao.html_cli.php
+U   trunk/testapp/modules/testapp/templates/forms_edit.tpl
+U   trunk/testapp/modules/testapp/templates/forms_liste.tpl
+
+
+From laurent at xulfr.org  Tue Mar 25 15:40:31 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Tue, 25 Mar 2008 15:40:31 +0100
+Subject: [Jelix-public] checkin SVN-840 (laurentj)
+Message-ID: <47E90EDF.mailAM113L2DH@xulfr.org>
+
+laurentj
+2008-03-25 15:40:30 +0100 (Tue, 25 Mar 2008)
+69
+ticket #248: added support of <captcha> element in jforms type=turing
+
+U   trunk/build/manifests/jelix-lib.mn
+A   trunk/lib/jelix/core-modules/jelix/locales/en_EN/captcha.ISO-8859-1.properties
+A   trunk/lib/jelix/core-modules/jelix/locales/en_EN/captcha.ISO-8859-15.properties
+A   trunk/lib/jelix/core-modules/jelix/locales/en_EN/captcha.UTF-8.properties
+A   trunk/lib/jelix/core-modules/jelix/locales/en_US/captcha.ISO-8859-1.properties
+A   trunk/lib/jelix/core-modules/jelix/locales/en_US/captcha.ISO-8859-15.properties
+A   trunk/lib/jelix/core-modules/jelix/locales/en_US/captcha.UTF-8.properties
+A   trunk/lib/jelix/core-modules/jelix/locales/fr_FR/captcha.ISO-8859-1.properties
+A   trunk/lib/jelix/core-modules/jelix/locales/fr_FR/captcha.ISO-8859-15.properties
+A   trunk/lib/jelix/core-modules/jelix/locales/fr_FR/captcha.UTF-8.properties
+U   trunk/lib/jelix/forms/jFormsCompiler.class.php
+U   trunk/lib/jelix/forms/jFormsControl.class.php
+U   trunk/lib/jelix/forms/jFormsDataContainer.class.php
+U   trunk/lib/jelix/plugins/jforms/html/html.jformsbuilder.php
+U   trunk/lib/jelix/plugins/tpl/html/block.formcontrols.php
+U   trunk/lib/jelix/plugins/tpl/html/function.ctrl_label.php
+U   trunk/lib/jelix/plugins/tpl/html/function.ctrl_value.php
+U   trunk/lib/jelix/plugins/tpl/html/function.formdatafull.php
+U   trunk/testapp/modules/jelix_tests/tests/jforms.check_datas.html_cli.php
+U   trunk/testapp/modules/jelix_tests/tests/jforms.compiler.html_cli.php
+U   trunk/testapp/modules/jelix_tests/tests/jforms.htmlbuilder.html_cli.php
+U   trunk/testapp/modules/testapp/forms/sample.form.xml
+
+
+From laurent at xulfr.org  Tue Mar 25 18:47:45 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Tue, 25 Mar 2008 18:47:45 +0100
+Subject: [Jelix-public] checkin SVN-841 (laurentj)
+Message-ID: <47E93AC1.mailO9C1118TG@xulfr.org>
+
+laurentj
+2008-03-25 18:47:36 +0100 (Tue, 25 Mar 2008)
+97
+worked on ticket #215: implementation of <htmleditor> in jforms. Some unit tests are still bad...
+
+U   trunk/build/manifests/jelix-lib.mn
+U   trunk/lib/jelix/core/defaultconfig.ini.php
+U   trunk/lib/jelix/forms/jFormsBase.class.php
+U   trunk/lib/jelix/forms/jFormsCompiler.class.php
+U   trunk/lib/jelix/forms/jFormsControl.class.php
+U   trunk/lib/jelix/plugins/jforms/html/html.jformsbuilder.php
+U   trunk/lib/jelix/plugins/tpl/html/block.form.php
+A   trunk/lib/jelix-www/wymeditor/config/
+A   trunk/lib/jelix-www/wymeditor/config/simple.js
+U   trunk/testapp/modules/jelix_tests/tests/jforms.compiler.html_cli.php
+U   trunk/testapp/modules/jelix_tests/tests/jforms.htmlbuilder.html_cli.php
+U   trunk/testapp/modules/testapp/forms/sample.form.xml
+
+
+From laurent at xulfr.org  Tue Mar 25 22:25:22 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Tue, 25 Mar 2008 22:25:22 +0100
+Subject: [Jelix-public] checkin SVN-842 (laurentj)
+Message-ID: <47E96DC2.mailJ2O1BY229@xulfr.org>
+
+laurentj
+2008-03-25 22:25:22 +0100 (Tue, 25 Mar 2008)
+54
+ticket #149: template plugin cycle. p=Philippe Schelte
+
+U   trunk/build/manifests/jelix-lib.mn
+U   trunk/lib/jelix/CREDITS
+U   trunk/lib/jelix/core-modules/jelix/locales/en_EN/errors.ISO-8859-1.properties
+U   trunk/lib/jelix/core-modules/jelix/locales/en_EN/errors.ISO-8859-15.properties
+U   trunk/lib/jelix/core-modules/jelix/locales/en_EN/errors.UTF-8.properties
+U   trunk/lib/jelix/core-modules/jelix/locales/en_US/errors.ISO-8859-1.properties
+U   trunk/lib/jelix/core-modules/jelix/locales/en_US/errors.ISO-8859-15.properties
+U   trunk/lib/jelix/core-modules/jelix/locales/en_US/errors.UTF-8.properties
+U   trunk/lib/jelix/core-modules/jelix/locales/fr_FR/errors.ISO-8859-1.properties
+U   trunk/lib/jelix/core-modules/jelix/locales/fr_FR/errors.ISO-8859-15.properties
+U   trunk/lib/jelix/core-modules/jelix/locales/fr_FR/errors.UTF-8.properties
+A   trunk/lib/jelix/plugins/tpl/common/function.cycle.php
+A   trunk/lib/jelix/plugins/tpl/common/function.cycle_init.php
+A   trunk/lib/jelix/plugins/tpl/common/function.cycle_reset.php
+U   trunk/lib/jelix/tpl/locales/fr.php
+
+
+From laurent at xulfr.org  Wed Mar 26 00:30:26 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Wed, 26 Mar 2008 00:30:26 +0100
+Subject: [Jelix-public] checkin SVN-843 (laurentj)
+Message-ID: <47E98B12.mail32N118E2H@xulfr.org>
+
+laurentj
+2008-03-26 00:30:24 +0100 (Wed, 26 Mar 2008)
+57
+ticket #215: finished to implement <htmleditor> in jforms
+
+U   trunk/lib/jelix/core/defaultconfig.ini.php
+U   trunk/lib/jelix/plugins/tpl/html/block.form.php
+U   trunk/lib/jelix/utils/jFilter.class.php
+U   trunk/lib/jelix/utils/jIniFile.class.php
+U   trunk/testapp/modules/jelix_tests/tests/jforms.htmlbuilder.html_cli.php
+
+
+From laurent at xulfr.org  Wed Mar 26 12:47:17 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Wed, 26 Mar 2008 12:47:17 +0100
+Subject: [Jelix-public] checkin SVN-844 (laurentj)
+Message-ID: <47EA37C5.mail4QK1PU4X5@xulfr.org>
+
+laurentj
+2008-03-26 12:47:14 +0100 (Wed, 26 Mar 2008)
+78
+Added a new method jForms::clean(), to destroy old and unused forms in session
+
+U   trunk/lib/jelix/CREDITS
+U   trunk/lib/jelix/forms/jForms.class.php
+U   trunk/lib/jelix/forms/jFormsBase.class.php
+U   trunk/lib/jelix/forms/jFormsDataContainer.class.php
+
+
+From laurent at xulfr.org  Thu Mar 27 10:24:42 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Thu, 27 Mar 2008 10:24:42 +0100
+Subject: [Jelix-public] checkin SVN-845 (laurentj)
+Message-ID: <47EB67DA.mailJET11WIEZ@xulfr.org>
+
+laurentj
+2008-03-27 10:24:42 +0100 (Thu, 27 Mar 2008)
+76
+Made little performance improvement during retrieving of the response object
+
+U   trunk/lib/jelix/core/jConfigCompiler.class.php
+U   trunk/lib/jelix/core/jCoordinator.class.php
+U   trunk/lib/jelix/core/jRequest.class.php
+U   trunk/testapp/var/config/index/config.ini.php
+
+
+From laurent at xulfr.org  Thu Mar 27 20:17:43 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Thu, 27 Mar 2008 20:17:43 +0100
+Subject: [Jelix-public] checkin SVN-846 (laurentj)
+Message-ID: <47EBF2D7.mailD7J111HRN@xulfr.org>
+
+laurentj
+2008-03-27 20:17:42 +0100 (Thu, 27 Mar 2008)
+68
+ticket #351: jforms, we can now know fields which have been modified
+
+U   trunk/lib/jelix/forms/jForms.class.php
+U   trunk/lib/jelix/forms/jFormsBase.class.php
+
+
+From laurent at xulfr.org  Fri Mar 28 01:14:28 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Fri, 28 Mar 2008 01:14:28 +0100
+Subject: [Jelix-public] checkin SVN-847 (bastnic)
+Message-ID: <47EC3864.mail2X01DL3VN@xulfr.org>
+
+bastnic
+2008-03-28 01:14:26 +0100 (Fri, 28 Mar 2008)
+72
+fixed bug #526 : fixed a little bug in jZone::clearAll called with param
+
+U   branches/1.0.x/lib/jelix/utils/jZone.class.php
+U   trunk/lib/jelix/utils/jZone.class.php
+
+
+From laurent at xulfr.org  Sat Mar 29 01:34:02 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Sat, 29 Mar 2008 01:34:02 +0100
+Subject: [Jelix-public] checkin SVN-848 (laurentj)
+Message-ID: <47ED8E7A.mailLYQ1Z6OIB@xulfr.org>
+
+laurentj
+2008-03-29 01:34:00 +0100 (Sat, 29 Mar 2008)
+278
+ticket #515: jInstallChecker should not warn about magicquotes if the plugin magicquotes is activated. p=Bastien Jaillot
+Also other improvements by Laurent :
+- improvements in the template and css of the start page
+- automatic detection of the language in the check_install zone
+
+U   branches/1.0.x/lib/jelix/CREDITS
+U   branches/1.0.x/lib/jelix/core/jInstallChecker.class.php
+U   branches/1.0.x/lib/jelix/core-modules/jelix/templates/en_EN/check_install.tpl
+U   branches/1.0.x/lib/jelix/core-modules/jelix/templates/en_US/check_install.tpl
+U   branches/1.0.x/lib/jelix/core-modules/jelix/templates/fr_FR/check_install.tpl
+U   branches/1.0.x/lib/jelix/core-modules/jelix/zones/check_install.zone.php
+U   branches/1.0.x/lib/jelix-scripts/templates/controller.newapp.tpl
+U   branches/1.0.x/lib/jelix-scripts/templates/main.tpl.tpl
+U   branches/1.0.x/lib/jelix-scripts/templates/var/config/defaultconfig.ini.php.tpl
+U   branches/1.0.x/lib/jelix-www/design/jelix.css
+U   trunk/lib/jelix/CREDITS
+U   trunk/lib/jelix/core/jInstallChecker.class.php
+U   trunk/lib/jelix/core-modules/jelix/templates/en_EN/check_install.tpl
+U   trunk/lib/jelix/core-modules/jelix/templates/en_US/check_install.tpl
+U   trunk/lib/jelix/core-modules/jelix/templates/fr_FR/check_install.tpl
+U   trunk/lib/jelix/core-modules/jelix/zones/check_install.zone.php
+U   trunk/lib/jelix-scripts/templates/controller.newapp.tpl
+U   trunk/lib/jelix-scripts/templates/main.tpl.tpl
+U   trunk/lib/jelix-scripts/templates/var/config/defaultconfig.ini.php.tpl
+U   trunk/lib/jelix-www/design/jelix.css
+
+
+From laurent at xulfr.org  Sun Mar 30 14:40:27 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Sun, 30 Mar 2008 14:40:27 +0200
+Subject: [Jelix-public] checkin SVN-849 (doubleface)
+Message-ID: <47EF8A3B.mail33V11XDEC@xulfr.org>
+
+doubleface
+2008-03-30 14:40:19 +0200 (Sun, 30 Mar 2008)
+132
+ticket #528: corected errors in junittests:default_module and junittests:default_single in command line mode p=doubleface r=laurentj
+
+U   trunk/lib/jelix-modules/junittests/controllers/default.cmdline.php
+
+
+From laurent at xulfr.org  Sun Mar 30 15:01:02 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Sun, 30 Mar 2008 15:01:02 +0200
+Subject: [Jelix-public] checkin SVN-850 (doubleface)
+Message-ID: <47EF8F0E.mail48S114NRE@xulfr.org>
+
+doubleface
+2008-03-30 15:01:02 +0200 (Sun, 30 Mar 2008)
+132
+ticket #528: corected errors in junittests:default_module and junittests:default_single in command line mode p=doubleface r=laurentj
+
+U   trunk/lib/jelix-modules/junittests/controllers/default.cmdline.php
+
+
+From laurent at xulfr.org  Sun Mar 30 15:17:16 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Sun, 30 Mar 2008 15:17:16 +0200
+Subject: [Jelix-public] checkin SVN-851 (laurentj)
+Message-ID: <47EF92DC.mail56H1JD79Z@xulfr.org>
+
+laurentj
+2008-03-30 15:17:15 +0200 (Sun, 30 Mar 2008)
+118
+backport into 1.0.x branch tests in CLI context, to improve continues integrations on the jelix server for this branch
+
+U   branches/1.0.x/Makefile
+U   branches/1.0.x/build/buildapp.php
+U   branches/1.0.x/build/buildjelix.php
+U   branches/1.0.x/build/manifests/jelix-dev.mn
+U   branches/1.0.x/build/manifests/testapp.mn
+U   branches/1.0.x/lib/jelix/VERSION
+A   branches/1.0.x/lib/jelix-modules/junittests/classes/jtextrespreporter.class.php
+A   branches/1.0.x/lib/jelix-modules/junittests/controllers/default.cmdline.php
+A   branches/1.0.x/lib/jelix-modules/junittests/install/application-cli.init.php
+A   branches/1.0.x/lib/jelix-modules/junittests/install/scripts/
+A   branches/1.0.x/lib/jelix-modules/junittests/install/scripts/tests.php
+A   branches/1.0.x/lib/jelix-modules/junittests/install/var/
+A   branches/1.0.x/lib/jelix-modules/junittests/install/var/config/
+A   branches/1.0.x/lib/jelix-modules/junittests/install/var/config/cmdline/
+A   branches/1.0.x/lib/jelix-modules/junittests/install/var/config/cmdline/configtests.ini.php
+A   branches/1.0.x/lib/jelix-modules/junittests/install/var/log-cli/
+U   branches/1.0.x/testapp/VERSION
+A   branches/1.0.x/testapp/application-cli.init.php
+D   branches/1.0.x/testapp/modules/jelix_tests/tests/core.jlocale.html.php
+A   branches/1.0.x/testapp/modules/jelix_tests/tests/core.jlocale.html_cli.php
+D   branches/1.0.x/testapp/modules/jelix_tests/tests/core.selectors_module.html.php
+A   branches/1.0.x/testapp/modules/jelix_tests/tests/core.selectors_module.html_cli.php
+D   branches/1.0.x/testapp/modules/jelix_tests/tests/core.urls_parsing.html.php
+A   branches/1.0.x/testapp/modules/jelix_tests/tests/core.urls_parsing.html_cli.php
+D   branches/1.0.x/testapp/modules/jelix_tests/tests/events.simple_test.html.php
+A   branches/1.0.x/testapp/modules/jelix_tests/tests/events.simple_test.html_cli.php
+D   branches/1.0.x/testapp/modules/jelix_tests/tests/jacl.main_api.html.php
+A   branches/1.0.x/testapp/modules/jelix_tests/tests/jacl.main_api.html_cli.php
+D   branches/1.0.x/testapp/modules/jelix_tests/tests/jacl.manager.html.php
+A   branches/1.0.x/testapp/modules/jelix_tests/tests/jacl.manager.html_cli.php
+D   branches/1.0.x/testapp/modules/jelix_tests/tests/jacl.users_and_groups.html.php
+A   branches/1.0.x/testapp/modules/jelix_tests/tests/jacl.users_and_groups.html_cli.php
+D   branches/1.0.x/testapp/modules/jelix_tests/tests/jdao.conditions.html.php
+A   branches/1.0.x/testapp/modules/jelix_tests/tests/jdao.conditions.html_cli.php
+D   branches/1.0.x/testapp/modules/jelix_tests/tests/jdao.generator.html.php
+A   branches/1.0.x/testapp/modules/jelix_tests/tests/jdao.generator.html_cli.php
+D   branches/1.0.x/testapp/modules/jelix_tests/tests/jdao.generator_select.html.php
+A   branches/1.0.x/testapp/modules/jelix_tests/tests/jdao.generator_select.html_cli.php
+D   branches/1.0.x/testapp/modules/jelix_tests/tests/jdao.main_api.html.php
+A   branches/1.0.x/testapp/modules/jelix_tests/tests/jdao.main_api.html_cli.php
+D   branches/1.0.x/testapp/modules/jelix_tests/tests/jdao.main_api_with_pdo.html.php
+A   branches/1.0.x/testapp/modules/jelix_tests/tests/jdao.main_api_with_pdo.html_cli.php
+D   branches/1.0.x/testapp/modules/jelix_tests/tests/jdao.parser.html.php
+A   branches/1.0.x/testapp/modules/jelix_tests/tests/jdao.parser.html_cli.php
+D   branches/1.0.x/testapp/modules/jelix_tests/tests/jdao.parser2.html.php
+A   branches/1.0.x/testapp/modules/jelix_tests/tests/jdao.parser2.html_cli.php
+D   branches/1.0.x/testapp/modules/jelix_tests/tests/jdao.parser_update.html.php
+A   branches/1.0.x/testapp/modules/jelix_tests/tests/jdao.parser_update.html_cli.php
+D   branches/1.0.x/testapp/modules/jelix_tests/tests/jdb.0_profiles.html.php
+A   branches/1.0.x/testapp/modules/jelix_tests/tests/jdb.0_profiles.html_cli.php
+D   branches/1.0.x/testapp/modules/jelix_tests/tests/jdb.1_queries.html.php
+A   branches/1.0.x/testapp/modules/jelix_tests/tests/jdb.1_queries.html_cli.php
+D   branches/1.0.x/testapp/modules/jelix_tests/tests/jdb.2_queries_with_pdo.html.php
+A   branches/1.0.x/testapp/modules/jelix_tests/tests/jdb.2_queries_with_pdo.html_cli.php
+D   branches/1.0.x/testapp/modules/jelix_tests/tests/jdb.pgsql.html.php
+A   branches/1.0.x/testapp/modules/jelix_tests/tests/jdb.pgsql.html_cli.php
+D   branches/1.0.x/testapp/modules/jelix_tests/tests/jdb.sqlite.html.php
+A   branches/1.0.x/testapp/modules/jelix_tests/tests/jdb.sqlite.html_cli.php
+D   branches/1.0.x/testapp/modules/jelix_tests/tests/jforms.check_datas.html.php
+A   branches/1.0.x/testapp/modules/jelix_tests/tests/jforms.check_datas.html_cli.php
+D   branches/1.0.x/testapp/modules/jelix_tests/tests/jforms.compiler.html.php
+A   branches/1.0.x/testapp/modules/jelix_tests/tests/jforms.compiler.html_cli.php
+D   branches/1.0.x/testapp/modules/jelix_tests/tests/jforms.html.php
+A   branches/1.0.x/testapp/modules/jelix_tests/tests/jforms.html_cli.php
+D   branches/1.0.x/testapp/modules/jelix_tests/tests/jforms.htmlbuilder.html.php
+A   branches/1.0.x/testapp/modules/jelix_tests/tests/jforms.htmlbuilder.html_cli.php
+D   branches/1.0.x/testapp/modules/jelix_tests/tests/jforms.with_dao.html.php
+A   branches/1.0.x/testapp/modules/jelix_tests/tests/jforms.with_dao.html_cli.php
+U   branches/1.0.x/testapp/scripts/cmdline.php
+A   branches/1.0.x/testapp/scripts/tests.php
+A   branches/1.0.x/testapp/var/config/cmdline/configtests.ini.php
+A   branches/1.0.x/testapp/var/log-cli/
+
+
+From laurent at xulfr.org  Sun Mar 30 15:26:06 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Sun, 30 Mar 2008 15:26:06 +0200
+Subject: [Jelix-public] checkin SVN-852 (doubleface)
+Message-ID: <47EF94EE.mail5S111Y2F2@xulfr.org>
+
+doubleface
+2008-03-30 15:26:06 +0200 (Sun, 30 Mar 2008)
+39
+correct previous double checkin...sorry
+
+U   trunk/lib/jelix-modules/junittests/controllers/default.cmdline.php
+
+
+From laurent at xulfr.org  Sun Mar 30 15:33:19 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Sun, 30 Mar 2008 15:33:19 +0200
+Subject: [Jelix-public] checkin SVN-853 (laurentj)
+Message-ID: <47EF969F.mail63J11U6S2@xulfr.org>
+
+laurentj
+2008-03-30 15:33:19 +0200 (Sun, 30 Mar 2008)
+37
+forgot a file for make tests in 1.0.x
+
+A   branches/1.0.x/build/config/jelix-test2.ini
+U   branches/1.0.x/lib/jelix-modules/junittests/controllers/default.cmdline.php
+
+
+From laurent at xulfr.org  Sun Mar 30 15:37:40 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Sun, 30 Mar 2008 15:37:40 +0200
+Subject: [Jelix-public] checkin SVN-854 (laurentj)
+Message-ID: <47EF97A4.mail68K18CFAM@xulfr.org>
+
+laurentj
+2008-03-30 15:37:40 +0200 (Sun, 30 Mar 2008)
+29
+oups, bad typo in last commit
+
+U   branches/1.0.x/lib/jelix-modules/junittests/controllers/default.cmdline.php
+
+
+From laurent at xulfr.org  Sun Mar 30 16:12:43 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Sun, 30 Mar 2008 16:12:43 +0200
+Subject: [Jelix-public] checkin SVN-855 (doubleface)
+Message-ID: <47EF9FDB.mail8XJ1UTA56@xulfr.org>
+
+doubleface
+2008-03-30 16:12:43 +0200 (Sun, 30 Mar 2008)
+63
+ticket #529: small mistake in jCmdUtils p=doubleface r=laurentj
+
+U   trunk/lib/jelix/utils/jCmdUtils.class.php
+
+
+From laurent at xulfr.org  Sun Mar 30 16:16:01 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Sun, 30 Mar 2008 16:16:01 +0200
+Subject: [Jelix-public] checkin SVN-856 (doubleface)
+Message-ID: <47EFA0A1.mail95J169335@xulfr.org>
+
+doubleface
+2008-03-30 16:16:01 +0200 (Sun, 30 Mar 2008)
+78
+ticket #529: small mistake in jCmdUtils in branch 1.0x p=doubleface r=laurentj
+
+U   branches/1.0.x/lib/jelix/utils/jCmdUtils.class.php
+
+
+From laurent at xulfr.org  Sun Mar 30 22:14:32 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Sun, 30 Mar 2008 22:14:32 +0200
+Subject: [Jelix-public] checkin SVN-857 (laurentj)
+Message-ID: <47EFF4A8.mail64G1YYXL5@xulfr.org>
+
+laurentj
+2008-03-30 22:14:31 +0200 (Sun, 30 Mar 2008)
+23
+release of Jelix 1.0.3.
+
+U   branches/1.0.x/lib/jelix/VERSION
+U   branches/1.0.x/testapp/VERSION
+A   tags/release_1.0.3/
+U   tags/release_1.0.3/lib/jelix/VERSION
+U   tags/release_1.0.3/testapp/VERSION
+
+
+From laurent at xulfr.org  Mon Mar 31 01:24:56 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Mon, 31 Mar 2008 01:24:56 +0200
+Subject: [Jelix-public] checkin SVN-858 (laurentj)
+Message-ID: <47F02148.mailJEE1D4LB0@xulfr.org>
+
+laurentj
+2008-03-31 01:24:51 +0200 (Mon, 31 Mar 2008)
+64
+just fixed a little thing about design in the check_install zone
+
+U   branches/1.0.x/lib/jelix/core-modules/jelix/zones/check_install.zone.php
+U   tags/release_1.0.3/lib/jelix/core-modules/jelix/zones/check_install.zone.php
+U   trunk/lib/jelix/core-modules/jelix/zones/check_install.zone.php
+
+

@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Jelix-public] Hello
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/jelix-public/2006-January/index.html" >
+   <LINK REL="made" HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20Hello&In-Reply-To=%3Cafc7097d0601031555n78ce81act%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000003.html">
+   <LINK REL="Next"  HREF="000005.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Jelix-public] Hello</H1>
+    <B>dMp</B> 
+    <A HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20Hello&In-Reply-To=%3Cafc7097d0601031555n78ce81act%40mail.gmail.com%3E"
+       TITLE="[Jelix-public] Hello">viapanda at gmail.com
+       </A><BR>
+    <I>Wed Jan  4 00:55:17 CET 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000003.html">[Jelix-public] Hello
+</A></li>
+        <LI>Next message: <A HREF="000005.html">[Jelix-public] Hello
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4">[ date ]</a>
+              <a href="thread.html#4">[ thread ]</a>
+              <a href="subject.html#4">[ subject ]</a>
+              <a href="author.html#4">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;<i> [snip digest]
+</I>&gt;<i> Faut voir :-) Je ne connais pas digest.
+</I>
+Ben &#231;a poutre :p
+&quot;Basic&quot;, ou toute forme d'authentification &quot;POST&quot;, repose
+intrins&#232;quement sur la transmission du login et du password en clair.
+(et, non, hasher le pass en md5 avec javascript ne sert strictement &#224;
+rien).
+
+Digest est tr&#232;s diff&#233;rent en cela que le serveur transmet un
+challenge, &#224; partir duquel le client le client g&#233;n&#232;re un hash qui lui
+sert &#224; s'authentifier.
+
+Du point de vue s&#233;curit&#233;, &#231;a n'a tout simplement rien &#224; voir.
+
+&gt;<i> &gt; Toujours question http, pourquoi ne pas:
+</I>&gt;<i> &gt; - gzipper les contenus &#224; la vol&#233;e (apr&#232;s avoir v&#233;rifi&#233; que le client
+</I>&gt;<i> &gt; peut lire, et que le serveur peut compresser)
+</I>&gt;<i>
+</I>&gt;<i> C'est pas apache qui le fait automatiquement avec mod_gzip je crois ?
+</I>&gt;<i> Est ce vraiment le r&#244;le du framework ?
+</I>
+Oui (IMHO).
+On peut effectivement confer apache pour gzipper les contenus
+&quot;statiques&quot; (js, css); par contre il est assez facile de faire la m&#234;me
+chose en pur php, et ainsi de gzipper n'importe quel contenu g&#233;n&#233;r&#233;
+dynamiquement.
+Est-ce que &#231;a vaut le coup?
+=&gt; &#224; savoir: est-ce int&#233;ressant en terme de volume?
+Je pense que dans tous les cas, tout ce qui r&#233;duit le traffic est bon &#224; prendre.
+On peut m&#234;me pousser le vice jusqu'&#224; stocker en cache une version
+gzipp&#233;e et une vanilla...
+
+&gt;<i> [cache]
+</I>&gt;<i> C'est un point compliqu&#233;.. &#192; &#233;tudier.
+</I>
+Oui.
+
+&gt;<i> [php configuration]
+</I>&gt;<i> &#192; quelles particularit&#233;s penses-tu ?
+</I>
+Comment se comporte l'appli avec les magic quotes? avec
+session_auto_start? avec le safe_mode?
+
+- dMp
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000003.html">[Jelix-public] Hello
+</A></li>
+	<LI>Next message: <A HREF="000005.html">[Jelix-public] Hello
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4">[ date ]</a>
+              <a href="thread.html#4">[ thread ]</a>
+              <a href="subject.html#4">[ subject ]</a>
+              <a href="author.html#4">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/jelix-public">More information about the Jelix-public
+mailing list</a><br>
+</body></html>

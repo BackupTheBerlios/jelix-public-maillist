@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Jelix-public] Re: [Jelix-public] Deux ou trois choses que j'ai du mal &#224; comprendre...
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/jelix-public/2006-January/index.html" >
+   <LINK REL="made" HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20%3D%3FISO-8859-1%3FQ%3FRe%3D3A_%3D5BJelix-public%3D5D_Deux_ou_trois_%3F%3D%0A%20%3D%3FISO-8859-1%3FQ%3Fchoses_que_j%3D27ai_du_mal_%3DE0_comprendre%3D2E%3D2E%3F%3D%0A%20%3D%3FISO-8859-1%3FQ%3F%3D2E%3F%3D&In-Reply-To=%3C43BB815F.6030309%40bballizlife.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000002.html">
+   <LINK REL="Next"  HREF="000007.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Jelix-public] Re: [Jelix-public] Deux ou trois choses que j'ai du mal &#224; comprendre...</H1>
+    <B>Loic Mathaud</B> 
+    <A HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20%3D%3FISO-8859-1%3FQ%3FRe%3D3A_%3D5BJelix-public%3D5D_Deux_ou_trois_%3F%3D%0A%20%3D%3FISO-8859-1%3FQ%3Fchoses_que_j%3D27ai_du_mal_%3DE0_comprendre%3D2E%3D2E%3F%3D%0A%20%3D%3FISO-8859-1%3FQ%3F%3D2E%3F%3D&In-Reply-To=%3C43BB815F.6030309%40bballizlife.com%3E"
+       TITLE="[Jelix-public] Re: [Jelix-public] Deux ou trois choses que j'ai du mal &#224; comprendre...">yoop at bballizlife.com
+       </A><BR>
+    <I>Wed Jan  4 09:03:43 CET 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000002.html">[Jelix-public] Deux ou trois choses que j'ai du mal &#224; comprendre...
+</A></li>
+        <LI>Next message: <A HREF="000007.html">[Jelix-public] Re: [Jelix-public] Re: [Jelix-public] Deux ou trois choses que j'ai du mal &#224; comprendre...
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#6">[ date ]</a>
+              <a href="thread.html#6">[ thread ]</a>
+              <a href="subject.html#6">[ subject ]</a>
+              <a href="author.html#6">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>dMp a &#233;crit :
+&gt;<i> Tu pardonneras ma n00bitude avec Jelix... J'essaie de comprendre par
+</I>&gt;<i> l&#224; o&#249; je peux...
+</I>&gt;<i> Donc, quelques questions / remarques:
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> Fichier: lib/jelix/dao/jDAOBase.class.php
+</I>&gt;<i> Ligne: 154
+</I>&gt;<i> 
+</I>&gt;<i>    protected function  _fetchAllRecords ($query, $class,
+</I>&gt;<i> $limitOffset=null, $limitCount=null){
+</I>&gt;<i>         $rs = $this-&gt;_getResultSetFromQuery ($query, $limitOffset, $limitCount);
+</I>&gt;<i>         $result = array();
+</I>&gt;<i>         if ($rs){
+</I>&gt;<i>             while($res = &amp; $rs-&gt;fetchRecord ($recordName)){
+</I>&gt;<i>                 $result[] = &amp; $res;
+</I>&gt;<i>             }
+</I>&gt;<i>         }
+</I>&gt;<i>         return $result;
+</I>&gt;<i>     }
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> Je ne vois nulle part dans la code base _getResultSetFromQuery ()?
+</I>&gt;<i> D'autre part, cette fonction mentionne la variable $recordName qui
+</I>&gt;<i> n'existe (probablement) pas dans le contexte de la fonction....
+</I>&gt;<i> 
+</I>
+A premi&#232;re vue, cette fonction est dans la classe jDAOFactoryBase qui
+est d&#233;clar&#233;e abstraite. Cette classe devra donc &#234;tre &#233;tendue et ce sont
+les classes h&#233;riti&#232;res qui impl&#233;menteraient _getResultSetFromQuery().
+C'est vrai qu'il faudrait peut-&#234;tre par contre donner le prototype :
+
+abstract protected function _getResultSetFromQuery($query, $limitOffset,
+$limitCount);
+
+Maintenant je connais pas vraiment le code et ma r&#233;ponse n'est pas
+forc&#233;ment juste. Laurent saura nous le dire.
+
+&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> ligne: 251
+</I>&gt;<i> 
+</I>&gt;<i> D'o&#249; vient la variable $principal ?
+</I>&gt;<i> 
+</I>
+Bonne question ;)
+
+&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> Ligne 272:
+</I>&gt;<i> 
+</I>&gt;<i> on peut simplifier tout ce qui suit dans la condition par:
+</I>&gt;<i>             $value = $value === null ? 'NULL' : (int) $value;
+</I>&gt;<i> 
+</I>&gt;<i> Non?
+</I>&gt;<i> 
+</I>
+Euh, oui il me semble. Mais pour ma part je trouve plus lisible le code
+actuel. Question de go&#251;t peut-&#234;tre.
+
+&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> Fichier: lib/jelix/db/drivers/mysql/jDbTools.mysql.class.php
+</I>&gt;<i> Ligne: 88
+</I>&gt;<i> 
+</I>&gt;<i> D'o&#249; vient la var $p_result_line ?
+</I>&gt;<i> 
+</I>
+Pas trouv&#233; non plus o&#249; elle &#233;tait d&#233;clar&#233;e.
+
+&gt;<i> 
+</I>&gt;<i> Fichier: lib/jelix-scripts/commands/createmodule.cmd.php
+</I>&gt;<i> Ligne: 34
+</I>&gt;<i> 
+</I>&gt;<i> $module?
+</I>&gt;<i> 
+</I>
+Devrait &#234;tre $this-&gt;_parameters['module'] normalement.
+
+&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> Regards
+</I>&gt;<i> 
+</I>&gt;<i> - dMp
+</I>
+--
+Loic Mathaud
+&lt;mail&gt;<A HREF="https://lists.berlios.de/mailman/listinfo/jelix-public">loic at mathaud.net</A>&lt;/mail&gt;
+
+&gt;<i> _______________________________________________
+</I>&gt;<i> Jelix-public mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/jelix-public">Jelix-public at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="http://lists.berlios.de/mailman/listinfo/jelix-public">http://lists.berlios.de/mailman/listinfo/jelix-public</A>
+</I>&gt;<i> 
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000002.html">[Jelix-public] Deux ou trois choses que j'ai du mal &#224; comprendre...
+</A></li>
+	<LI>Next message: <A HREF="000007.html">[Jelix-public] Re: [Jelix-public] Re: [Jelix-public] Deux ou trois choses que j'ai du mal &#224; comprendre...
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#6">[ date ]</a>
+              <a href="thread.html#6">[ thread ]</a>
+              <a href="subject.html#6">[ subject ]</a>
+              <a href="author.html#6">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/jelix-public">More information about the Jelix-public
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,148 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Jelix-public] Formulaire XFORMS - implementation dans jelix - Lien	avec OOo
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/jelix-public/2007-February/index.html" >
+   <LINK REL="made" HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20Formulaire%20XFORMS%20-%20implementation%20dans%20jelix%20-%0A%20Lien%09avec%20OOo&In-Reply-To=%3C45D45E53.7070006%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000163.html">
+   <LINK REL="Next"  HREF="000165.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Jelix-public] Formulaire XFORMS - implementation dans jelix - Lien	avec OOo</H1>
+    <B>JEUDY Nicolas</B> 
+    <A HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20Formulaire%20XFORMS%20-%20implementation%20dans%20jelix%20-%0A%20Lien%09avec%20OOo&In-Reply-To=%3C45D45E53.7070006%40gmail.com%3E"
+       TITLE="[Jelix-public] Formulaire XFORMS - implementation dans jelix - Lien	avec OOo">njeudy at gmail.com
+       </A><BR>
+    <I>Thu Feb 15 14:21:23 CET 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000163.html">[Jelix-public] Formulaire XFORMS - implementation dans jelix - Lien	avec OOo
+</A></li>
+        <LI>Next message: <A HREF="000165.html">[Jelix-public] Jcms et type de contenu
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#164">[ date ]</a>
+              <a href="thread.html#164">[ thread ]</a>
+              <a href="subject.html#164">[ subject ]</a>
+              <a href="author.html#164">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>laurent a &#233;crit :
+&gt;<i> JEUDY Nicolas wrote:
+</I>&gt;<i>   
+</I>&gt;&gt;<i> BOnjour,
+</I>&gt;&gt;<i>     
+</I>&gt;<i>
+</I>&gt;<i> Salut
+</I>&gt;<i>
+</I>&gt;<i>   
+</I>&gt;&gt;<i> Voila, j'ai commenc&#233; &#224; regarder ce qui pouvait etre fait entre OOo, 
+</I>&gt;&gt;<i> xform et jelix ...
+</I>&gt;&gt;<i> J'en ai discuter un peu sur irc, et voila des id&#233;es que j'ai:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> J'ai cr&#233;er un form xml tr&#232;s simple sous OOo avec les outils graphiques 
+</I>&gt;&gt;<i> (en pi&#232;ce jointe si la ML l'accepte)
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> ensuite voila ca que je me dit:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> - la d&#233;claration du form sur ce type de donn&#233;e n'est pas tr&#232;s complexe 
+</I>&gt;&gt;<i> et ressemble a ce qu'on peut trouver dans jform (au moin sur la partie 
+</I>&gt;&gt;<i> donn&#233;e)
+</I>&gt;&gt;<i> - la cr&#233;ation du form est graphique.
+</I>&gt;&gt;<i> - c'est puissant, je n'ai pas regard&#233; encore tout les types de donn&#233;es, 
+</I>&gt;&gt;<i> les liste d&#233;roulante, mais dans OOo c'est possible.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Donc, pourquoi pas mari&#233; les deux mondes et pouvoir faire des forms sous 
+</I>&gt;&gt;<i> Ooo, les int&#233;grer &#224; jelix dans les applis ou meme, utiliser dans 
+</I>&gt;&gt;<i> certains cas utiliser OOo pour poster les donn&#233;es du forms &#224; un serveur 
+</I>&gt;&gt;<i> (jelix) en http ...
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> J'avais juste une question:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Est ce que je fichier qui est en attache vous parait complexe &#224; parser 
+</I>&gt;&gt;<i> et a int&#233;grer &#224; jelix de la mm maniere que jform (pour ceux qui on fait 
+</I>&gt;&gt;<i> jform)
+</I>&gt;&gt;<i>     
+</I>&gt;<i>
+</I>&gt;<i> Tr&#232;s franchement, tu as vu la t&#234;te du fichier ? ;-)
+</I>&gt;<i>
+</I>&gt;<i> C'est super lourd. Et pas envisageable avec ooo, pour plusieurs raisons :
+</I>&gt;<i>
+</I>&gt;<i> 1) si on prend en charge xforms, c'est pas 50% de la spec, mais 100% de 
+</I>&gt;<i> la spec, sinon &#231;a ne sert &#224; rien. Les gens qui utiliseront un g&#233;n&#233;rateur 
+</I>&gt;<i> de formulaire (comme toi ici avec ooo), ne doivent pas devoir savoir ce 
+</I>&gt;<i> qu'ils peuvent faire ou non, sachant qu'en plus, il faudrait qu'ils 
+</I>&gt;<i> v&#233;rifient le contenu du xforms g&#233;n&#233;r&#233; (le g&#233;n&#233;rateur pourrait g&#233;n&#233;rer 
+</I>&gt;<i> des trucs non pris en charge par jelix)
+</I>&gt;<i>
+</I>&gt;<i>   
+</I>Ok je vois le soucis ...
+&gt;<i> 2) le fichier que tu as donn&#233;, ce n'est pas que du xforms. y a 3 balises 
+</I>&gt;<i> xforms au milieu de dizaines et dizaines de balises qui ne nous 
+</I>&gt;<i> interressent pas du tout.
+</I>&gt;<i>
+</I>&gt;<i>   
+</I>oui j'ai fait juste une copie de ce qui sort ... juste pour voir la 
+tronche du fichier ..
+
+&gt;<i> 3) toujours dans ce fichier, il n'y a que quelques balises xforms qui 
+</I>&gt;<i> sont utilis&#233;es. Ce n'est pas un formulaire xforms au complet. Par 
+</I>&gt;<i> exemple, pour les champs de saisie, les balises xforms ne sont pas 
+</I>&gt;<i> utilis&#233;s, et &#224; la place il est utilis&#233; un dialect propre &#224; ooo. Si en 
+</I>&gt;<i> plus de xforms on doit prendre en charge les dialectes ooo, on ne va pas 
+</I>&gt;<i> s'en sortir...
+</I>&gt;<i>
+</I>&gt;<i>   
+</I>ouai, ca je peut faire qqchose ... j'ai pas regard&#233; encore ..
+
+&gt;<i> Bref, moi en tout cas, je ne vais pas m'occuper d'un parser de document 
+</I>&gt;<i> ooo. C'est beaucoup trop de boulot et de complexit&#233;.
+</I>&gt;<i>
+</I>&gt;<i> Xforms tout seul, j'aurais bien aim&#233;, c'&#233;tait m&#234;me mon intention 
+</I>&gt;<i> premi&#232;re pour jForms, mais vu la complexit&#233; de la spec, c'est un boulot 
+</I>&gt;<i> titanesque (parce qu'en plus, qui dit Xforms, dit aussi Xml-Schema, au 
+</I>&gt;<i> moins...)
+</I>&gt;<i>   
+</I>En fait, je crois que je fichier que je t'ai pass&#233; fait partie de la 
+norme ISO ODF (opendocument format).
+Donc, eventuellement, il doit exister des lib qui le font ...
+
+je continue mon investigation, et au pire je ferais la partie serveur 
+(recup des donn&#233;es + traitement) en jelix et la saisie via le doc 
+Openffice.org, ce qui en entreprise ne change pas trop les habitudes ...
+
+je replonge dans xform.
+
+Nicolas JEUDY
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000163.html">[Jelix-public] Formulaire XFORMS - implementation dans jelix - Lien	avec OOo
+</A></li>
+	<LI>Next message: <A HREF="000165.html">[Jelix-public] Jcms et type de contenu
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#164">[ date ]</a>
+              <a href="thread.html#164">[ thread ]</a>
+              <a href="subject.html#164">[ subject ]</a>
+              <a href="author.html#164">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/jelix-public">More information about the Jelix-public
+mailing list</a><br>
+</body></html>

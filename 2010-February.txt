@@ -1,0 +1,283 @@
+From laurent at jelix.org  Fri Feb 19 14:51:50 2010
+From: laurent at jelix.org (Laurent)
+Date: Fri, 19 Feb 2010 14:51:50 +0100
+Subject: [Jelix-public] Changement de cap pour Jelix
+Message-ID: <4B7E9776.10202@jelix.org>
+
+Bonjour,
+
+(if you are an english reader, please let me know, and I will translate 
+this mail. It talks about the future of the project)
+
+Comme vous l'avez sous doute remarqu?, l'activit? du projet jelix semble 
+au ralenti. Il n'y a pas eu de release majeure depuis un an, alors m?me 
+que l'on avait annonc? une acc?l?ration des releases. (m?me si on 
+commite r?guli?rement http://hg.jelix.org/jelix/jelix-trunk)
+
+La faute ? beaucoup de choses, principalement au manque de temps. Depuis 
+un an, suite ? un changement professionnel, j'ai beaucoup moins de temps 
+? consacrer ? Jelix qu'auparavant. Avant je pouvais bosser au moins une 
+journ?e compl?te par semaine (des fois c'?tait 2, voire 3), sans compter 
+mon temps libre personnel. Depuis un an, je n'ai plus que mon temps libre.
+
+Le probl?me, est que le nombre de contributeurs n'a quasiment pas 
+augment? (voir r?gress? ?), et que nous n'avons plus le temps de 
+maintenir cette organisation de "gros" projet, que l'on avait pu mettre 
+en place ces derni?res ann?es (une forge, un serveur d?di?, une roadmap 
+ambitieuse etc...).
+
+Je ne vous cache pas que je ne vais pas pouvoir continuer longtemps ? 
+supporter toute cette charge, physiquement et psychologiquement 
+(l'avanc?e de la concurrence n'aide pas ? garder le moral). Et j'ai bien 
+l'impression que si j'arr?te, le projet s'arr?tera.
+
+Hier nous en avons discut? sur IRC, et nous en sommes arriv?s ? la 
+conclusion, qu'il fallait que l'on se bouge un peu les fesses, mais 
+surtout qu'on se r?organise, qu'on ait une charge de travail de petite 
+?quipe (ce que nous sommes), et qu'on revoit ? la baisse nos ambitions, 
+en ce qui concerne en tout cas l'infrastructure du projet.
+
+Voici ce que nous avons ?voqu? comme ?volutions.
+
+* les sites jelix.org, le serveur
+
+Nous avions d? d?m?nager de serveur il y a quelques semaines. ?a a ?t? 
+particuli?rement energivore, ?a nous a bouff? un temps monstre. La forge 
+en est responsable pour une grosse partie. On a bascul? sur une debian 
+plus r?cente, donc version de trac diff?rente, donc migration ? faire 
+des environnements trac etc...
+
+Dans l'?tat actuel des ressources humaines : plus jamais ?a. D'ailleurs, 
+on n'a pas encore eu le temps d'adapter les templates pour que ?a ait le 
+look "jelix" (le nouveau langage de template de trac ?tant 
+particuli?rement d?courageant). Ajoutons le fait aussi que la forge, 
+m?me si peu utilis?e, nous bouffes des ressources syst?mes, et est 
+probablement responsable des plantages qui sont survenus r?guli?rement 
+depuis le d?m?nagement. La forge, par rapport au service qu'elle rend et 
+du nombre d'utilisateurs, n'est absolument pas "rentable".
+
+premi?re d?cision : on va fermer la forge. Il existe maintenant bien 
+plus de forges sur le web qu'? l'?poque (github, bitbucket etc..), mieux 
+fait que sourceforge ou autre. Ceux qui sont dans la forge jelix ne 
+perdrons donc rien au change, en d?m?nageant vers ces forges nouvelles 
+g?n?rations. Je donnerai des d?tails dans un autre mail sur cette 
+suppression de forge, et j'avertirai par mail les propri?taires des 
+projets. Ne vous inqui?tez pas, on ne va pas fermer brutalement.
+
+deuxi?me d?cision : faire une sorte de addons.mozilla.org. La forge 
+disparait mais il nous est tout de m?me indispensable d'avoir un endroit 
+o? on recense les modules, plugins et autres applications r?alis?es avec 
+jelix. C'est le but de ce nouveau site. Il est en grande partie 
+d?velopp?. Olivier (foxmask), a d?j? fait des d?veloppements en ce sens, 
+qui ont ?t? int?gr?s dans l'ex futur site de la forge (pas mis en 
+ligne). ? priori, il y aura peu de d?veloppement ? faire pour r?utiliser 
+ce qu'a fait Olivier pour ce nouveau site.
+
+Parall?lement ? ?a, essayer de simplifier les dependances, les 
+"requirements" techniques des sites et du processus de releases, avec le 
+serveur. Dans l'id?al, faudrait tenir sur du mutualis?, mais des choses 
+nous empechera certainement (trac + depots hg, cron pour les nightlies, 
+scripts divers pour le backup, les releases etc..). Objectif donc : 
+diminuer au maximum la charge de travail pour administrer la machine.
+
+
+* la roadmap
+
+Trop de tickets dans les roadmaps, temps de d?veloppements qui n'en 
+finissent plus. Du coup, impression de projet mort, au ralenti. De plus, 
+review souvent trop longue, trop de ticket. Tout ?a d?courage les gens ? 
+utiliser jelix et ? contribuer.
+
+Troisi?me d?cision : changement du cycle de release. ?a sera dor?navant 
+des releases ultra courtes (3 mois ?), se focalisant sur 1 ou 2 point 
+importants, donc comportant peu de tickets. (je dis n'importe quoi, mais 
+?a peut ?tre : 1.3=am?liorations dans jForms  1.4=am?liorations dans jDB 
+etc.). Bien s?r, si il y a des contributeurs qui proposent des patchs 
+sur d'autres trucs, et qui sont pr?t ? ?tre int?gr?, on int?gre. Apr?s 
+chaque release, il y aura une r?union IRC/mail pour d?finir les 
+objectifs de la suivante.
+
+Cons?quence :
+
+- release d'une beta 1.2 d?s que possible. Il reste un point assez 
+essentiel ? faire je pense : le script de migration 1.1 vers 1.2, qui 
+consiste principalement ? remanier les fichiers de conf et ? installer 
+"virtuellement" les modules pr?sents de l'application. (sp?ciale 
+dedicace ? foxmask pour son probl?me de passage ? jelix 1.2 avec 
+havefnubb :-)
+
+- release de la 1.2 peu apr?s : pas de nouvelle features, juste les bugs 
+corrig?s trouv?s dans la beta. Tout le reste des tickets pr?vus 
+initialement pour la 1.2 seront re tri?s et on d?finira la roadmap pour 
+les prochaines versions.
+
+- LTS : on d?finira des releases LTS, des versions qu'on supporte sur le 
+long terme. Car ? la fin de l'ann?e, avec le rythme de release accrue, 
+?a va nous faire un paquet de branche ? maintenir. Donc on ne 
+maintiendra les versions classiques qu'un an (ou plus ? ou moins ?), et 
+les autres 2-3 ans. C'est ? rediscuter.
+
+Quatri?me d?cision : Arr?t prochain de la maintenance de la branche 
+1.0.x. Toujours dans l'optique d'all?ger notre charge de travail, ou en 
+tout cas, d'utiliser ce temps ? des choses plus importantes.
+
+
+* process de release
+
+Un truc que l'on a d?tect? comme ?tant une charge de travail importante, 
+c'est la sortie d'une nouvelle version. Il y a un paquet de truc que 
+l'on fait plus ou moins ? la main ( 
+http://developer.jelix.org/wiki/en/howto_release ), ?a prend des fois 
+des heures pour le faire, alors que l'on pourrait automatiser bien plus. 
+Si on veut sortir des release plus souvent, il faut absolument 
+automatiser un maximum.
+
+J'ai commenc? ? y r?fl?chir, ?a aboutit ? ?a 
+http://developer.jelix.org/wiki/en/futur_release_process
+
+J'ai commenc? un peu un module "release" pour ?a, mais un peu d'aide ne 
+ferait pas de mal, en tout cas pour la partie visible sur le site. Je me 
+concentrerai ainsi sur le script principale de release.
+
+
+* l'organisation des ?quipes
+
+Il faut se reorganiser, et distribuer les t?ches. Je ne peux plus faire 
+tout tout seul. 0n avait essay? de monter des ?quipes, mais cela n'a pas 
+fonctionn? ( http://developer.jelix.org/wiki/fr/equipes )
+
+Peut ?tre qu'il faudrait juste des responsables, des r?ferents pour 
+chaque domaine, et que ces personnes aient *vraiment* du temps ? passer 
+pour contribuer. Charge aussi ? ce responsable de se monter une ?quipe, 
+de motiver les troupes.
+
+
+* marketing
+
+Il faut nous faire connaitre un peu plus, pour attirer les utilisateurs, 
+donc les contributeurs, qui permettront de faire avancer le projet un 
+peu mieux, ce qui attirera alors d'autres utilisateurs etc.
+
+Plusieurs moyens :
+
+- mettre plus en avant la liste des sites et projets reposant sur jelix, 
+en indiquant par ex en page d'accueil nos "killer" app. Pour l'instant 
+on peut mettre en avant HavefnuBB, Overblog... On en a une qui est aussi 
+en cours de dev, Rarangi (http://forge.jelix.org/projects/rarangi/) qui 
+pourrait int?resser pas mal les d?veloppeurs (un phpdoc ++ avec moteur 
+de recherche)
+
+- des news plus souvent
+
+- autres...
+
+
+
+Conclusion :
+
+Dans l'ordre des priorit?s :
+1) d?finir des responsables pour chaque domaine : dev, doc, site web, 
+marketing
+2) d?veloppement du nouveau processus de release
+3) sur la home, mise en avant des applis actuelles bas?es sur jelix.
+4) sortie de la 1.2 beta
+5) fermeture de la forge
+6) d?veloppement du site addict.jelix.org (ou autre nom :-))
+
+
+J'attends vos questions, vos propositions, vos id?es, vos remarques, vos 
+envies et surtout, j'aimerais savoir si il y a encore des volontaires 
+dans la salle pour nous aider :-)
+
+
+Laurent
+
+
+
+
+
+
+From mr.thiriot at gmail.com  Sat Feb 20 22:54:43 2010
+From: mr.thiriot at gmail.com (Christophe Thiriot)
+Date: Sat, 20 Feb 2010 22:54:43 +0100
+Subject: [Jelix-public] [Jelix-dev] Changement de cap pour Jelix
+In-Reply-To: <4B7E9776.10202@jelix.org>
+References: <4B7E9776.10202@jelix.org>
+Message-ID: <829794f91002201354m2d7706dbpb1454c931f789a5@mail.gmail.com>
+
+Bonjour,
+
+En ce qui me concerne, je ne peux pas faire autant de contributions que ce
+que je voudrais. Donc, honn?tement, ma contribution va en rester quelques
+patchs de temps en temps et la livraison peut-?tre un jour de mon module
+pour PHPUnit (que j'utilise au boulot mais qui est encore sp?cifique et pas
+totalement g?n?rique).
+
+Je suis toujours ce qui se passe sur le Wiki, la timeline de trac, et le
+forum.
+
+premi?re d?cision : on va fermer la forge. Il existe maintenant bien
+> plus de forges sur le web qu'? l'?poque (github, bitbucket etc..)
+>
+
+Tout ? fait d'accord, il me semble m?me qu'il serait pas mal d'en faire
+autant en ce qui concerne les repositories de jelix lui-m?me. Et leur
+syst?me de tickets me semble bien valoir celui de trac (ainsi que le wiki de
+trac). Par contre, en ce qui concerne une ?ventuelle migration (des tickets
+et du wiki), ?a risque de pas ?tre de la tarte!
+
+
+
+>
+> deuxi?me d?cision : faire une sorte de addons.mozilla.org. La forge
+> disparait mais il nous est tout de m?me indispensable d'avoir un endroit
+> o? on recense les modules, plugins et autres applications r?alis?es avec
+> jelix. C'est le but de ce nouveau site. Il est en grande partie
+> d?velopp?. Olivier (foxmask), a d?j? fait des d?veloppements en ce sens,
+> qui ont ?t? int?gr?s dans l'ex futur site de la forge (pas mis en
+> ligne). ? priori, il y aura peu de d?veloppement ? faire pour r?utiliser
+> ce qu'a fait Olivier pour ce nouveau site.
+>
+
+
+Super id?e : moins de boulot et peu donner de la visiblit? (en mettant un
+flux RSS associ? dans le planet PHP par exemple)
+
+
+>
+>
+> Troisi?me d?cision : changement du cycle de release. ?a sera dor?navant
+> des releases ultra courtes (3 mois ?), se focalisant sur 1 ou 2 point
+> importants, donc comportant peu de tickets. (je dis n'importe quoi, mais
+> ?a peut ?tre : 1.3=am?liorations dans jForms  1.4=am?liorations dans jDB
+> etc.). Bien s?r, si il y a des contributeurs qui proposent des patchs
+> sur d'autres trucs, et qui sont pr?t ? ?tre int?gr?, on int?gre. Apr?s
+> chaque release, il y aura une r?union IRC/mail pour d?finir les
+> objectifs de la suivante.
+>
+
+Je vais faire mon chieur, mais je n'ai pas acc?s ? IRC depuis le boulot et
+je peux pas ?tre beaucoup devant le PC ? la maison. Je serais plus pour un
+moyen de communication plus accessible depuis le web "corporate"... Je suis
+le seul dans ce cas? Par contre, je vois pas d'?quivalent web ? IRC (et
+twitter et identica sont peut-?tre un peu limit?s...)
+
+
+
+> Conclusion :
+>
+> Dans l'ordre des priorit?s :
+> 1) d?finir des responsables pour chaque domaine : dev, doc, site web,
+> marketing
+>
+
+Je ne peux participer qu'au dev et surement un peu plus ? la doc
+
+6) d?veloppement du site addict.jelix.org (ou autre nom :-))
+>
+>
+http://gallery.jelix.org   ?
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/jelix-public/attachments/20100220/5eeedd21/attachment.html>
+

@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Jelix-public] checkin SVN-737 (laurentj)
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/jelix-public/2008-January/index.html" >
+   <LINK REL="made" HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20checkin%20SVN-737%20%28laurentj%29&In-Reply-To=%3C478CC165.mail4JA11WV94%40xulfr.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000562.html">
+   <LINK REL="Next"  HREF="000564.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Jelix-public] checkin SVN-737 (laurentj)</H1>
+    <B>laurent at xulfr.org</B> 
+    <A HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20checkin%20SVN-737%20%28laurentj%29&In-Reply-To=%3C478CC165.mail4JA11WV94%40xulfr.org%3E"
+       TITLE="[Jelix-public] checkin SVN-737 (laurentj)">laurent at xulfr.org
+       </A><BR>
+    <I>Tue Jan 15 15:21:25 CET 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000562.html">[Jelix-public] checkin SVN-736 (laurentj)
+</A></li>
+        <LI>Next message: <A HREF="000564.html">[Jelix-public] checkin SVN-738 (laurentj)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#563">[ date ]</a>
+              <a href="thread.html#563">[ thread ]</a>
+              <a href="subject.html#563">[ subject ]</a>
+              <a href="author.html#563">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>laurentj
+2008-01-15 15:21:24 +0100 (Tue, 15 Jan 2008)
+193
+fixed bug #412: sql error on dbAclDriver::getRight when a user is not in a group
+Added also a listener for jAclDb which allow to register automatically a user in jAclDb when the user is created
+
+U   branches/1.0.x/build/manifests/jelix-lib.mn
+U   branches/1.0.x/lib/jelix/core/defaultconfig.ini.php
+U   branches/1.0.x/lib/jelix/plugins/acl/db/db.acl.php
+A   branches/1.0.x/lib/jelix-modules/jacldb/
+A   branches/1.0.x/lib/jelix-modules/jacldb/classes/
+A   branches/1.0.x/lib/jelix-modules/jacldb/classes/jacldb.listener.php
+A   branches/1.0.x/lib/jelix-modules/jacldb/events.xml
+A   branches/1.0.x/lib/jelix-modules/jacldb/module.xml
+U   tags/release_1.0beta3/Makefile
+U   tags/release_1.0beta3.1/Makefile
+U   trunk/build/manifests/jelix-lib.mn
+U   trunk/lib/jelix/core/defaultconfig.ini.php
+U   trunk/lib/jelix/plugins/acl/db/db.acl.php
+A   trunk/lib/jelix-modules/jacldb/
+A   trunk/lib/jelix-modules/jacldb/classes/
+A   trunk/lib/jelix-modules/jacldb/classes/jacldb.listener.php
+A   trunk/lib/jelix-modules/jacldb/events.xml
+A   trunk/lib/jelix-modules/jacldb/module.xml
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000562.html">[Jelix-public] checkin SVN-736 (laurentj)
+</A></li>
+	<LI>Next message: <A HREF="000564.html">[Jelix-public] checkin SVN-738 (laurentj)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#563">[ date ]</a>
+              <a href="thread.html#563">[ thread ]</a>
+              <a href="subject.html#563">[ subject ]</a>
+              <a href="author.html#563">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/jelix-public">More information about the Jelix-public
+mailing list</a><br>
+</body></html>

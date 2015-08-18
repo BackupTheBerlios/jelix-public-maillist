@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Jelix-public] Search Engine
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/jelix-public/2009-February/index.html" >
+   <LINK REL="made" HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20Search%20Engine&In-Reply-To=%3C38192f840902161101p1d365ea5p88b414f67492deee%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000817.html">
+   <LINK REL="Next"  HREF="000816.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Jelix-public] Search Engine</H1>
+    <B>S&#233;bastien De Bollivier</B> 
+    <A HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20Search%20Engine&In-Reply-To=%3C38192f840902161101p1d365ea5p88b414f67492deee%40mail.gmail.com%3E"
+       TITLE="[Jelix-public] Search Engine">sebastien.debollivier at webarome.net
+       </A><BR>
+    <I>Mon Feb 16 20:01:03 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000817.html">[Jelix-public] Search Engine
+</A></li>
+        <LI>Next message: <A HREF="000816.html">[Jelix-public] Search Engine
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#818">[ date ]</a>
+              <a href="thread.html#818">[ thread ]</a>
+              <a href="subject.html#818">[ subject ]</a>
+              <a href="author.html#818">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Bonjour,
+J'ai exp&#233;riment&#233; les solutions suivantes pendant que je bossais sur un
+moteur de recherche sur le vin : - lucene avec le Zend Framework, des soucis
+de performance ou incompr&#233;hensible parfois sur une grosse base d'indexation
+en php et recherche en php...Souvent des erreurs de fichiers, j'ai mis de
+c&#244;t&#233;.
+- Apache Solr : serveur ind&#233;pendant en Java (tomcat et compagnie) c'est
+plut&#244;t bien foutu et surtout &#231;a tient bien la charge, simple &#224; utiliser avec
+php mais ne rentre pas dans ton cas de figure.
+- MySQL : avec match against on obtient des r&#233;sultats pas mal m&#234;me s'il faut
+bien tout prendre en compte (cf la doc)
+
+Voil&#224; le petit retour que j'ai...J'ai pas vraiment aim&#233; l'impl&#233;mentation
+lucene de Zend, et le manque de retour sur ces erreurs m'ont fait abandonner
+cette orientation.
+
+2009/2/16 Lepeltier k&#233;vin &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/jelix-public">kevin at lepeltier.info</A>&gt;
+
+&gt;<i> test
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Jelix-public mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/jelix-public">Jelix-public at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/jelix-public">https://lists.berlios.de/mailman/listinfo/jelix-public</A>
+</I>&gt;<i>
+</I>
+
+
+-- 
+S&#233;bastien De Bollivier
+Skype : deboll_s
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/jelix-public/attachments/20090216/4c8a24cd/attachment.html">https://lists.berlios.de/pipermail/jelix-public/attachments/20090216/4c8a24cd/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000817.html">[Jelix-public] Search Engine
+</A></li>
+	<LI>Next message: <A HREF="000816.html">[Jelix-public] Search Engine
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#818">[ date ]</a>
+              <a href="thread.html#818">[ thread ]</a>
+              <a href="subject.html#818">[ subject ]</a>
+              <a href="author.html#818">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/jelix-public">More information about the Jelix-public
+mailing list</a><br>
+</body></html>

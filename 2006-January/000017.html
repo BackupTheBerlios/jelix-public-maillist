@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Jelix-public] &#224; propos de la 1.0pre-alpha
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/jelix-public/2006-January/index.html" >
+   <LINK REL="made" HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20%3D%3FISO-8859-1%3FQ%3F%3DE0_propos_de_la_1%3D2E0%3F%3D%0A%20%3D%3FISO-8859-1%3FQ%3Fpre-alpha%3F%3D&In-Reply-To=%3C43CECC49.1070105%40xulfr.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000016.html">
+   <LINK REL="Next"  HREF="000018.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Jelix-public] &#224; propos de la 1.0pre-alpha</H1>
+    <B>Laurent Jouanneau</B> 
+    <A HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20%3D%3FISO-8859-1%3FQ%3F%3DE0_propos_de_la_1%3D2E0%3F%3D%0A%20%3D%3FISO-8859-1%3FQ%3Fpre-alpha%3F%3D&In-Reply-To=%3C43CECC49.1070105%40xulfr.org%3E"
+       TITLE="[Jelix-public] &#224; propos de la 1.0pre-alpha">laurent at xulfr.org
+       </A><BR>
+    <I>Thu Jan 19 00:16:25 CET 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000016.html">[Jelix-public] &#224; propos de la 1.0pre-alpha
+</A></li>
+        <LI>Next message: <A HREF="000018.html">[Jelix-public] Design pour jelix.org
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#17">[ date ]</a>
+              <a href="thread.html#17">[ thread ]</a>
+              <a href="subject.html#17">[ subject ]</a>
+              <a href="author.html#17">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Loic Mathaud wrote:
+&gt;<i> J'ai r&#233;cup&#233;r&#233; la 1.0pre-alpha. Voici dors et d&#233;j&#224; quelques remarques :
+</I>&gt;<i> 
+</I>&gt;<i> A propos du script jelix.php :
+</I>&gt;<i> 
+</I>&gt;<i> - commande createag :
+</I>&gt;<i> 
+</I>&gt;<i> elle cr&#233;e bien un fichier actiongroup avec une m&#233;thode GetDefault() par
+</I>&gt;<i> d&#233;faut. Mais il y a une erreur dans cette fonction :
+</I>&gt;<i> 	$rep = $this-&gt;_getResponse('default');
+</I>&gt;<i> au lieu de :
+</I>&gt;<i> 	$rep = $this-&gt;getResponse('default');
+</I>
+Ok, corrig&#233;. Il faut savoir que la plupart des fichiers g&#233;n&#233;r&#233;s par les 
+commandes le sont &#224; partir de templates situ&#233;s dans le repertoire 
+jelix-scripts/templates/ (ce ne sont pas des templates jtpl)
+
+&gt;<i> 
+</I>&gt;<i> - commande createdao :
+</I>&gt;<i> Pour ce que j'ai fait pour le moment, elle cr&#233;e bien les fichiers DAO
+</I>&gt;<i> en fonction des tables demand&#233;es.
+</I>&gt;<i> Je ferais juste une remarque c'est qu'elle ne g&#233;n&#232;re que l'attribut
+</I>&gt;<i> &quot;name&quot; des &quot;property&quot;. Ces attributs prennent le nom du champ dans la
+</I>&gt;<i> table pour valeur. J'aime chipoter et je pense qu'il serait plus
+</I>&gt;<i> judicieux de cr&#233;er &#224; la fois les attributs &quot;name&quot; et &quot;fieldname&quot;, avec
+</I>&gt;<i> bien s&#251;r les m&#234;mes valeurs. Ceci permettant de rapidement renommer les
+</I>&gt;<i> &quot;name&quot; pour donner des alias aux champs. Actuellement on doit &#233;crire les
+</I>&gt;<i> &quot;fieldname&quot; puis renommer les &quot;name&quot;.
+</I>&gt;<i> J'avais dit que je chipotais, mais je suis partisan du &quot;il n'y a pas de
+</I>&gt;<i> petites &#233;conomies&quot; ;)
+</I>
+ok, remarque prise en compte :-)
+
+
+&gt;<i> 
+</I>&gt;<i> Toujours pour les DAO :
+</I>&gt;<i> Probl&#232;me sur le nom de l'attribut &quot;type&quot; des &quot;property&quot;. En effet, fichier :
+</I>&gt;<i> lib/dao/jDAOParser.class.php, classe jDAOProperty, on attend
+</I>&gt;<i> un attribut nomm&#233; &quot;datatype&quot;
+</I>&gt;<i> J'ai du coup une erreur :
+</I>&gt;<i> 
+</I>&gt;<i> [error 512] DAO dao:jblog~post,Attribut &quot;type&quot; obligatoire dans une
+</I>&gt;<i> balise &quot;field&quot; (fichier
+</I>&gt;<i> www/jelix_1.0pre-alpha/jblog/modules/jblog/daos/post.dao.xml)
+</I>&gt;<i> www/jelix_1.0pre-alpha/lib/jelix/dao/jDAOCompiler.class.php 85
+</I>&gt;<i> 
+</I>&gt;<i> J'ai test&#233; en corrigeant tous les &quot;datatype&quot; de la classe jDAOProperty
+</I>&gt;<i> par des &quot;type&quot; et l'erreur disparait.
+</I>
+mmm non, mauvais id&#233;e. C'est plutot la commande qu'il faut corriger :-) 
+Ce que j'ai fait.
+
+
+&gt;<i> 
+</I>&gt;<i> Voil&#224; pour le moment ;)
+</I>&gt;<i> 
+</I>
+Merci de ces retours !
+
+Au passage : la doc sur les templates est pratiquement faite :-)
+
+
+a+
+
+laurent
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000016.html">[Jelix-public] &#224; propos de la 1.0pre-alpha
+</A></li>
+	<LI>Next message: <A HREF="000018.html">[Jelix-public] Design pour jelix.org
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#17">[ date ]</a>
+              <a href="thread.html#17">[ thread ]</a>
+              <a href="subject.html#17">[ subject ]</a>
+              <a href="author.html#17">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/jelix-public">More information about the Jelix-public
+mailing list</a><br>
+</body></html>

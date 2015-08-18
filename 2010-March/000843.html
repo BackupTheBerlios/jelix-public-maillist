@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Jelix-public] Economiser des acces jDao : best practice ?
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/jelix-public/2010-March/index.html" >
+   <LINK REL="made" HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20Economiser%20des%20acces%20jDao%20%3A%20best%20practice%20%3F&In-Reply-To=%3C4B9D234C.8010607%40foxmask.info%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000842.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Jelix-public] Economiser des acces jDao : best practice ?</H1>
+    <B>olivier</B> 
+    <A HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20Economiser%20des%20acces%20jDao%20%3A%20best%20practice%20%3F&In-Reply-To=%3C4B9D234C.8010607%40foxmask.info%3E"
+       TITLE="[Jelix-public] Economiser des acces jDao : best practice ?">olivier at foxmask.info
+       </A><BR>
+    <I>Sun Mar 14 18:56:28 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000842.html">[Jelix-public] Economiser des acces jDao : best practice ?
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#843">[ date ]</a>
+              <a href="thread.html#843">[ thread ]</a>
+              <a href="subject.html#843">[ subject ]</a>
+              <a href="author.html#843">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>bon c'est zarb ; ca doit etre la facon d'enchainer les tests mais l&#224; ; 
+plus d'erreurs...
+
+
+Le 14/03/2010 18:42, olivier a &#233;crit :
+&gt;<i> Bonsoir,
+</I>&gt;<i>
+</I>&gt;<i> ici 
+</I>&gt;<i> <A HREF="https://bitbucket.org/foxmask/havefnubb/src/tip/havefnubb/modules/havefnubb/classes/hfnuposts.class.php">https://bitbucket.org/foxmask/havefnubb/src/tip/havefnubb/modules/havefnubb/classes/hfnuposts.class.php</A> 
+</I>&gt;<i>
+</I>&gt;<i> ligne 47 &#224; 51
+</I>&gt;<i>
+</I>&gt;<i> On peut voir une m&#233;thode pour ajouter un record $record (un jDaoRecord 
+</I>&gt;<i> en fait) &#224; un array $posts.
+</I>&gt;<i> ceci afin de ne lire que ce array pour la session courante plut&#244;t que 
+</I>&gt;<i> de faire des allers-retours avec la base de donn&#233;es.
+</I>&gt;<i>
+</I>&gt;<i> Cependant en me faisant un test unitaire sur cette m&#233;thode j'ai 
+</I>&gt;<i> l'erreur :
+</I>&gt;<i> Fatal error: Cannot use object of type 
+</I>&gt;<i> cDaoRecord_havefnubb_Jx_posts_Jx_mysql as array in hfnuposts.class.php 
+</I>&gt;<i> on line 48
+</I>&gt;<i>
+</I>&gt;<i> J'aurai aim&#233;:
+</I>&gt;<i> - soit  &quot;caster&quot; avec un truc du style :
+</I>&gt;<i> if ( (jDaoRecord) self::$posts[$id]) mais evidement &#231;a plait pas ...
+</I>&gt;<i>
+</I>&gt;<i> - soit un toArray() comme avec PEAR
+</I>&gt;<i> <A HREF="http://pear.php.net/manual/fr/package.database.db-dataobject.db-dataobject.toarray.php">http://pear.php.net/manual/fr/package.database.db-dataobject.db-dataobject.toarray.php</A> 
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Donc selon vous, comment dois-je m'y prendre ?
+</I>&gt;<i>
+</I>&gt;<i> faire des jdao::get('module~mondao')-&gt;get($id); &#224; tire-la-rigot et ne 
+</I>&gt;<i> pas g&#233;rer d'array pour stocker les records ?
+</I>&gt;<i>
+</I>&gt;<i> Merci de vos lumi&#232;res.
+</I>&gt;<i>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000842.html">[Jelix-public] Economiser des acces jDao : best practice ?
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#843">[ date ]</a>
+              <a href="thread.html#843">[ thread ]</a>
+              <a href="subject.html#843">[ subject ]</a>
+              <a href="author.html#843">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/jelix-public">More information about the Jelix-public
+mailing list</a><br>
+</body></html>

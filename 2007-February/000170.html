@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Jelix-public] Utilisation des zone - module jcms
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/jelix-public/2007-February/index.html" >
+   <LINK REL="made" HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20Utilisation%20des%20zone%20-%20module%20jcms&In-Reply-To=%3C45D6D27C.300%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000169.html">
+   <LINK REL="Next"  HREF="000171.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Jelix-public] Utilisation des zone - module jcms</H1>
+    <B>JEUDY Nicolas</B> 
+    <A HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20Utilisation%20des%20zone%20-%20module%20jcms&In-Reply-To=%3C45D6D27C.300%40gmail.com%3E"
+       TITLE="[Jelix-public] Utilisation des zone - module jcms">njeudy at gmail.com
+       </A><BR>
+    <I>Sat Feb 17 11:01:32 CET 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000169.html">[Jelix-public] Jcms et type de contenu
+</A></li>
+        <LI>Next message: <A HREF="000171.html">[Jelix-public] Utilisation des zone - module jcms
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#170">[ date ]</a>
+              <a href="thread.html#170">[ thread ]</a>
+              <a href="subject.html#170">[ subject ]</a>
+              <a href="author.html#170">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Bonjour,
+
+Voila, je poste sur le ML comme ca ca peut servir a d'autre gros doigts 
+comme moi :)
+
+Donc je suis en train de bosser sur jcms, et apr&#232;s un passage de laurent 
+sur mon code, tout d'un coup, tout s'illumine :)
+Il me manque juste une chose, dans mon action view, j'ai plus de 
+d&#233;fintion de template, ni rien.. juste la declaration d'une zone, et 
+quant l'essaye d'affiche qqchose, ben j'ai une page vide (avec juste les 
+entete html, body, et pis rien dedans ...
+
+Comment dans mon applis je definis une zone qui affichera le contenu des 
+differentes zones propos&#233;es par jcms ...
+
+merci de votre aide,
+
+Nicolas JEUDY
+
+(code de view):
+
+    public function view() {
+        $rep = $this-&gt;_common();
+        $wikiService = jClasses::create(&quot;wikiservice&quot;);
+        $wikiPath = $this-&gt;param('wikiPath');
+        $version = $this-&gt;param('version');
+        $wikiForm = null;
+
+        $params= array('wikiPath'=&gt;$wikiPath);
+
+        if (&quot;/&quot; != substr($wikiPath,-1)) {
+            $wikipage = $wikiService-&gt;loadWikiPage($wikiPath,$version);
+            if ($wikipage != false) {
+                $zoneSel = 'jcms~base';
+                $params['version']= $version;
+                $params['page'] = $wikipage;
+            } else {
+                $rep-&gt;setHttpStatus('404','Not Found');
+                $zoneSel = 'jcms~add_page';
+            }
+        } else {
+            $params['childrenList'] = 
+$wikiService-&gt;getChildrenList($wikiPath);
+            $zoneSel = 'jcms~list_children';
+        }
+        //$rep-&gt;bodyTpl = 'jcms~wiki';    &lt;- c'est ce que j'avais ajout&#233; 
+et qu'il ne faut pas faire apparement :)
+        $rep-&gt;body-&gt;assignZone('MAIN',$zoneSel, $params);
+        return $rep;
+    }
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000169.html">[Jelix-public] Jcms et type de contenu
+</A></li>
+	<LI>Next message: <A HREF="000171.html">[Jelix-public] Utilisation des zone - module jcms
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#170">[ date ]</a>
+              <a href="thread.html#170">[ thread ]</a>
+              <a href="subject.html#170">[ subject ]</a>
+              <a href="author.html#170">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/jelix-public">More information about the Jelix-public
+mailing list</a><br>
+</body></html>

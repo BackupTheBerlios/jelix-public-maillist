@@ -1,0 +1,73 @@
+From laurent at jelix.org  Sun Nov 20 10:40:46 2011
+From: laurent at jelix.org (Laurent)
+Date: Sun, 20 Nov 2011 10:40:46 +0100
+Subject: [Jelix-public] New mailing lists
+Message-ID: <4EC8CB1E.9060802@jelix.org>
+
+Hi,
+
+as you may know, Berlios.de will be closed at the end of the year. So 
+our project page https://developer.berlios.de/projects/jelix/ will not 
+be there anymore. We already migrate all services, except mailing lists.
+
+So I created new mailing list on google groups, and mailing list on 
+berlios.de won't be used any more.
+
+Please subscribe to one of these new mailing-list :
+
+* for english-spoken people: http://groups.google.com/group/jelix
+* for french spoken people: http://groups.google.com/group/jelix-fr
+
+These mailing-list are for general purpose: help for users, discussion 
+for contributors, announcements... We will split in several mailing-list 
+if needed in the futur.
+
+I know the activity of the current mailing-list was too low. We will try 
+at least to send every announcement, and to tell about what we're 
+working on.
+
+Laurent
+
+
+
+
+From laurent at jelix.org  Sun Nov 20 10:47:38 2011
+From: laurent at jelix.org (Laurent)
+Date: Sun, 20 Nov 2011 10:47:38 +0100
+Subject: [Jelix-public] Nouvelle mailing lists
+Message-ID: <4EC8CCBA.9020609@jelix.org>
+
+Bonjour,
+
+comme vous le savez certainement d?j?, Berlios.de fermera ses portes ? 
+la fin de l'ann?e. Aussi notre page de projet 
+https://developer.berlios.de/projects/jelix/ ne sera plus accessible. 
+Nous avons d?j? migr? tout les services, sauf les mailings lists.
+
+Et c'est chose d?sormais faite : j'ai cr?e des nouvelles mailings list 
+sur google groups. Celle de berlios ne seront d?sormais plus utilis?es.
+
+
+Inscrivez-vous sur l'une (ou les deux) de ces mailings lists :
+
+* pour ceux qui causent anglais : http://groups.google.com/group/jelix
+* pour ceux qui causent fran?ais : http://groups.google.com/group/jelix-fr
+
+Il semble que la majorit? des actuels inscrits causent fran?ais. Mais si 
+vous le d?sirez, inscrivez vous aussi sur la ML en anglais, de mani?re ? 
+ce qu'il y ait du monde qui puisse r?pondre aux utilisateurs anglophone.
+
+Ces deux nouvelles mailing list ont un usage g?n?ral : aide aux 
+utilisateurs, discussions entre contributeurs, annonces des nouvelles 
+sorties etc. Si cela devient n?cessaire, nous cr?erons des mailing-lists 
+plus sp?cifiques ? l'avenir.
+
+De plus, je suis conscient que nous n'avons pas utilis? beaucoup les 
+mailing list sur berlios. Aussi nous allons essay?  d'y apporter un peu 
+plus de traffic, en annon?ant au moins toutes les sorties, et vous tenir 
+informer des avancements.
+
+
+Laurent
+
+

@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Jelix-public] checkin SVN-247 (laurentj)
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/jelix-public/2006-September/index.html" >
+   <LINK REL="made" HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20checkin%20SVN-247%20%28laurentj%29&In-Reply-To=%3C44F94783.mail51Y11X5JE%40xulfr.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000036.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Jelix-public] checkin SVN-247 (laurentj)</H1>
+    <B>laurent at xulfr.org</B> 
+    <A HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20checkin%20SVN-247%20%28laurentj%29&In-Reply-To=%3C44F94783.mail51Y11X5JE%40xulfr.org%3E"
+       TITLE="[Jelix-public] checkin SVN-247 (laurentj)">laurent at xulfr.org
+       </A><BR>
+    <I>Sat Sep  2 10:57:39 CEST 2006</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000036.html">[Jelix-public] checkin SVN-248 (laurentj)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#35">[ date ]</a>
+              <a href="thread.html#35">[ thread ]</a>
+              <a href="subject.html#35">[ subject ]</a>
+              <a href="author.html#35">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>laurentj
+2006-09-02 10:57:36 +0200 (Sat, 02 Sep 2006)
+742
+- ATTENTION : changement d'api sur jUrl, jIUrlEngine, jIUrlSignificantHandler et jRequest. Consulter la page changelog pour les details
+- module jelix : ajout de controlleurs pour l'affichage de reponses 404 (html,xul,jsonrpc, xmlrpc, rdf)
+- mise a jour et consolidation des tests unitaires sur les urls
+- selecteur d'action : suppression du selecteur simple @ (qui fait doublon avec #~#)
+- nouvelle option shared_session, indique si l'application partage ou non la meme session avec les autres applications installees sur le meme domaine (utilise alors la valeur de basePath pour le chemin du cookie de session)
+- Suite au remaniement de l'api de jUrl et du nouveau jUrlAction, adaptation des moteurs d'url
+- travail sur le xbl templatepager
+
+U   trunk/build/manifests/jelix-lib.mn
+U   trunk/lib/jelix/core/defaultconfig.ini.php
+U   trunk/lib/jelix/core/jCoordinator.class.php
+U   trunk/lib/jelix/core/jRequest.class.php
+U   trunk/lib/jelix/core/request/jClassicRequest.class.php
+U   trunk/lib/jelix/core/request/jCmdLineRequest.class.php
+U   trunk/lib/jelix/core/request/jJsonRpcRequest.class.php
+U   trunk/lib/jelix/core/request/jRdfRequest.class.php
+U   trunk/lib/jelix/core/request/jXmlRpcRequest.class.php
+U   trunk/lib/jelix/core/request/jXulRequest.class.php
+U   trunk/lib/jelix/core/response/jResponseRedirect.class.php
+U   trunk/lib/jelix/core/response/jResponseXul.class.php
+U   trunk/lib/jelix/core/url/jUrl.class.php
+U   trunk/lib/jelix/core/url/jUrlEngine.significant.class.php
+U   trunk/lib/jelix/core/url/jUrlEngine.simple.class.php
+U   trunk/lib/jelix/tpl/plugins/html/function.formurl.php
+U   trunk/lib/jelix/tpl/plugins/html/function.formurlparam.php
+U   trunk/lib/jelix/tpl/plugins/html/function.jurl.php
+U   trunk/lib/jelix/tpl/plugins/html/function.urljsstring.php
+U   trunk/lib/jelix/tpl/plugins/text/function.jurl.php
+U   trunk/lib/jelix/tpl/plugins/xul/function.jurl.php
+U   trunk/lib/jelix/tpl/plugins/xul/function.urljsstring.php
+U   trunk/lib/jelix-modules/auth/controllers/login.classic.php
+A   trunk/lib/jelix-modules/jelix/controllers/error.classic.php
+A   trunk/lib/jelix-modules/jelix/controllers/error.jsonrpc.php
+A   trunk/lib/jelix-modules/jelix/controllers/error.rdf.php
+A   trunk/lib/jelix-modules/jelix/controllers/error.xmlrpc.php
+A   trunk/lib/jelix-modules/jelix/controllers/error.xul.php
+U   trunk/lib/jelix-modules/jelix/controllers/help.cmdline.php
+A   trunk/lib/jelix-modules/jelix/templates/404.html.tpl
+A   trunk/lib/jelix-modules/jelix/templates/404.xul.tpl
+U   trunk/lib/jelix-www/xul/jxbl.xml
+U   trunk/testapp/modules/testapp/templates/hello.tpl
+U   trunk/testapp/modules/unittest/classes/urlsig.urlhandler.php
+U   trunk/testapp/modules/unittest/classes/utcreateurls.class.php
+U   trunk/testapp/modules/unittest/classes/utparseurls.class.php
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000036.html">[Jelix-public] checkin SVN-248 (laurentj)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#35">[ date ]</a>
+              <a href="thread.html#35">[ thread ]</a>
+              <a href="subject.html#35">[ subject ]</a>
+              <a href="author.html#35">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/jelix-public">More information about the Jelix-public
+mailing list</a><br>
+</body></html>

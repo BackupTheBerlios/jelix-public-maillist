@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Jelix-public] checkin SVN-345 (laurentj)
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/jelix-public/2007-January/index.html" >
+   <LINK REL="made" HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20checkin%20SVN-345%20%28laurentj%29&In-Reply-To=%3C45A4202C.mail6ED11AWGZ%40xulfr.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000132.html">
+   <LINK REL="Next"  HREF="000134.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Jelix-public] checkin SVN-345 (laurentj)</H1>
+    <B>laurent at xulfr.org</B> 
+    <A HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20checkin%20SVN-345%20%28laurentj%29&In-Reply-To=%3C45A4202C.mail6ED11AWGZ%40xulfr.org%3E"
+       TITLE="[Jelix-public] checkin SVN-345 (laurentj)">laurent at xulfr.org
+       </A><BR>
+    <I>Wed Jan 10 00:07:24 CET 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000132.html">[Jelix-public] checkin SVN-344 (bballizlife)
+</A></li>
+        <LI>Next message: <A HREF="000134.html">[Jelix-public] checkin SVN-346 (laurentj)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#133">[ date ]</a>
+              <a href="thread.html#133">[ thread ]</a>
+              <a href="subject.html#133">[ subject ]</a>
+              <a href="author.html#133">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>laurentj
+2007-01-10 00:07:23 +0100 (Wed, 10 Jan 2007)
+416
+-amelioration des scripts de builds : nouvelle declaration avanc?\195?\169e des options, ajout des switch -h et -ini
+-amelioration du preprocesseur : ajout de #ifnot et #elseif
+-prise en compte des caches de bytecode type apc pour generer le cache de config en php ou ini    
+-fix bug regression : le fichier de cache de la config n'?\195?\169tait pas pris en compte
+-remplacement des #ifdef par #if quand necessaire
+
+U   trunk/build/buildapp.php
+U   trunk/build/buildjbt.php
+U   trunk/build/buildjelix.php
+U   trunk/build/buildjtpl.php
+U   trunk/build/buildmodules.php
+U   trunk/build/lib/jBuild.inc.php
+U   trunk/build/lib/preprocessor.lib.php
+U   trunk/build/manifests/jelix-lib.mn
+U   trunk/build/manifests/jelix-no-opt.mn
+U   trunk/lib/jelix/core/jConfig.class.php
+U   trunk/lib/jelix/core/jConfigCompiler.class.php
+U   trunk/lib/jelix/core/jController.class.php
+U   trunk/lib/jelix/core/jSelector.class.php
+U   trunk/lib/jelix/core/response/jResponseJson.class.php
+U   trunk/lib/jelix/core/url/jUrlEngine.significant.class.php
+U   trunk/lib/jelix/dao/jDaoCompiler.class.php
+U   trunk/lib/jelix/db/jDb.class.php
+U   trunk/lib/jelix/events/jEvent.class.php
+U   trunk/lib/jelix/events/jEventListenerFactory.class.php
+U   trunk/lib/jelix/init.php
+U   trunk/lib/jelix/tpl/jTpl.class.php
+U   trunk/lib/jelix/tpl/jTplCompiler.class.php
+U   trunk/lib/jelix/utils/jDateTime.class.php
+U   trunk/lib/jelix/utils/jFilter.class.php
+U   trunk/lib/jelix/utils/jJsonRpc.class.php
+U   trunk/lib/jelix/utils/jZone.class.php
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000132.html">[Jelix-public] checkin SVN-344 (bballizlife)
+</A></li>
+	<LI>Next message: <A HREF="000134.html">[Jelix-public] checkin SVN-346 (laurentj)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#133">[ date ]</a>
+              <a href="thread.html#133">[ thread ]</a>
+              <a href="subject.html#133">[ subject ]</a>
+              <a href="author.html#133">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/jelix-public">More information about the Jelix-public
+mailing list</a><br>
+</body></html>

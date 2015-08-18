@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Jelix-public] checkins du 17/01 au 29/01
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/jelix-public/2006-January/index.html" >
+   <LINK REL="made" HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20checkins%20du%2017/01%20au%2029/01&In-Reply-To=%3C43DD461A.7000504%40xulfr.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000019.html">
+   <LINK REL="Next"  HREF="000022.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Jelix-public] checkins du 17/01 au 29/01</H1>
+    <B>Laurent Jouanneau</B> 
+    <A HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20checkins%20du%2017/01%20au%2029/01&In-Reply-To=%3C43DD461A.7000504%40xulfr.org%3E"
+       TITLE="[Jelix-public] checkins du 17/01 au 29/01">laurent at xulfr.org
+       </A><BR>
+    <I>Sun Jan 29 23:47:54 CET 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000019.html">[Jelix-public] Design pour jelix.org
+</A></li>
+        <LI>Next message: <A HREF="000022.html">[Jelix-public] checkins du 17/01 au 29/01
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#20">[ date ]</a>
+              <a href="thread.html#20">[ thread ]</a>
+              <a href="subject.html#20">[ subject ]</a>
+              <a href="author.html#20">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Bonjour,
+
+
+Quelques nouvelles des d&#233;veloppements depuis la sortie de la version 
+1.0pre-alpha :
+
+Nouveaut&#233;s :
+
+- mise en place dans l'application testapp, d'un module de test 
+unitaires. Il va contenir des tests unitaires pour tester les 
+diff&#233;rentes API de Jelix. Ces tests reposent sur SimpleTest que j'ai du 
+hack&#233; pour que &#231;a fonctionne avec PHP5 sans g&#233;n&#233;rer de notices/strict en 
+tout genre.
+- Il n'y a pour le moment que des test unitaires sur jEvent, le syst&#232;me 
+&#233;v&#232;nementiel de Jelix. Ils m'ont d'ailleurs permis de corriger des bugs.
+- d&#233;veloppement de la prise en charge des urls significatives. Il reste 
+des tests &#224; effectuer (et donc je suis en train de metter en place des 
+tests unitaires sur jUrl).
+- La surcharge des templates se fait maintenant uniquement dans 
+var/themes (et non plus dans var/themes/ et var/overloads/). De plus 
+l'option de conf use_theme est obsol&#232;te
+- Implementation de la Feature Request #1643 : on peut indiquer une 
+variable dans une cl&#233; de locale dans un template (pour avoir des noms de 
+cl&#233; &quot;dynamiques&quot; : @une.cle.$foo@
+- Ajout d'un plugin de template jlocale pour pouvoir indiquer des 
+param&#232;tres en plus d'une cl&#233;.
+- Implementation de la Feature Request #1638 : nouveau type de m&#233;thode 
+&quot;count&quot; dans les daos, et ajout d'une m&#233;thode countAll g&#233;n&#233;rique
+- ajout de jtpl::append(&quot;nom_var&quot;, $valeur)
+- remplacement de jResponseHtml/Xul::add*ofBody par addContent()
+- ajout d'une option de conf use_error_handler (mais c'est d&#233;stin&#233; &#224; un 
+usage interne pour le d&#233;veloppement de jelix
+
+
+Corrections de bug :
+
+- Correction du bug 6214 : les fichiers temp/*.list.php n'&#233;taient pas 
+d&#233;di&#233;s &#224; une conf
+- Correction du bug 6134 : Si les propri&#233;t&#233;s de type autoincrement dans 
+un record DAO ne sont pas nulles ou superieur &#224; 1, alors elles sont 
+dor&#233;navants incluses dans la requ&#234;te d'insertion lors de l'appel de la 
+m&#233;thode insert($record)
+- Correction du bug 5996 : Les fichiers compil&#233;s d'actions sont 
+maintenant synchronis&#233;s (quand une action &#233;tait supprim&#233;s, le fichier 
+&quot;compil&#233;&quot; correspondant ne l'&#233;tait pas).
+- ajout d'un exemple de profil pdo dans dbprofil.ini.php.dist, et 
+corrections de bug sur le support pdo
+- corrections de bugs divers et vari&#233;s (merci &#224; Loic)
+
+
+
+Laurent
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000019.html">[Jelix-public] Design pour jelix.org
+</A></li>
+	<LI>Next message: <A HREF="000022.html">[Jelix-public] checkins du 17/01 au 29/01
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#20">[ date ]</a>
+              <a href="thread.html#20">[ thread ]</a>
+              <a href="subject.html#20">[ subject ]</a>
+              <a href="author.html#20">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/jelix-public">More information about the Jelix-public
+mailing list</a><br>
+</body></html>

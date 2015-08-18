@@ -1,0 +1,49 @@
+From laurent at xulfr.org  Mon May  8 14:05:46 2006
+From: laurent at xulfr.org (Laurent)
+Date: Mon, 08 May 2006 14:05:46 +0200
+Subject: [Jelix-public] jelix 1.0 alpha3 et jBuildTools
+Message-ID: <445F341A.1060900@xulfr.org>
+
+Bonjour,
+
+la version 1.0 alpha3 est sortie, apportant nombre d'?volutions et de 
+corrections de bug. Voir http://jelix.org/articles/changelog
+
+Je ne suis plus tout seul ? faire ?voluer le framework. Loic Mathaud a 
+pas mal contribu? :
+
+- version standalone de jTpl
+- driver SQLite pour jDb
+- adaptation du framework pour un fonctionnement en ligne de commande
+- des corrections de bugs
+- etc..
+
+N'h?sitez pas non plus ? nous aider, m?me si vous ne fa?tes que des 
+tests ;-)
+
+Cette version est la derni?re ?tape avant une beta. D'ici cette 
+prochaine version, Jelix va ?tre utilis? dans une application grandeur 
+nature que je commence ? d?velopper en XUL. Jelix commence donc ? ?tre 
+relativement stable, et l'heure est plut?t ? l'ajout de nouvelles 
+classes utilitaires, de nouveau objets jResponse*, de nouveau modules 
+etc.. Jelix est aussi actuellement utilis? dans une application interne 
+qu'a d?velopp? Loic pour ses besoins professionnels.
+
+? noter aussi une premi?re alpha de jBuildTools, un packet contenant 
+mkdist et preprocessor, des scripts php qui nous permettent de g?n?rer 
+les sources de jelix. Ils peuvent vous servir pour vos propres projets.
+
+Quelques liens :
+http://jelix.org/articles/changelog
+http://jelix.org/articles/hackersmanual/preprocesseur
+http://jelix.org/articles/hackersmanual/mkdist
+
+Nous attendons vos retours ;-)
+
+A+
+
+Laurent.
+
+
+
+

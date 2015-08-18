@@ -1,0 +1,836 @@
+From laurent at xulfr.org  Wed May  2 17:54:38 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Wed, 02 May 2007 17:54:38 +0200
+Subject: [Jelix-public] checkin SVN-431 (laurentj)
+Message-ID: <4638B43E.mail1ER11CXRM@xulfr.org>
+
+laurentj
+2007-05-02 17:54:37 +0200 (Wed, 02 May 2007)
+102
+templates can be language specific: it should be stored in xx_YY subdirectories in templates directory
+
+U   trunk/lib/jelix/core/jSelector.class.php
+U   trunk/lib/jelix-plugins/auth/auth.plugin.ini.php.dist
+
+
+From laurent at xulfr.org  Wed May  2 18:07:16 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Wed, 02 May 2007 18:07:16 +0200
+Subject: [Jelix-public] checkin SVN-432 (laurentj)
+Message-ID: <4638B734.mail2DD11WINV@xulfr.org>
+
+laurentj
+2007-05-02 18:07:15 +0200 (Wed, 02 May 2007)
+134
+worked on jforms : move errors data from jformsBase object to jFormsDataContainer, so errors message are accessible from data session;
+
+U   branches/experimental/jforms/lib/jelix/forms/jForms.class.php
+U   branches/experimental/jforms/lib/jelix/forms/jFormsBase.class.php
+U   branches/experimental/jforms/lib/jelix/forms/jFormsCompiler.class.php
+U   branches/experimental/jforms/lib/jelix/forms/jFormsControl.class.php
+U   branches/experimental/jforms/lib/jelix/forms/jFormsDataContainer.class.php
+U   branches/experimental/jforms/lib/jelix-www/js/jforms.js
+
+
+From laurent at xulfr.org  Sun May  6 10:35:02 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Sun, 06 May 2007 10:35:02 +0200
+Subject: [Jelix-public] checkin SVN-433 (laurentj)
+Message-ID: <463D9336.mailFTJ1TTEGD@xulfr.org>
+
+laurentj
+2007-05-06 10:35:01 +0200 (Sun, 06 May 2007)
+72
+added support of alternate stylesheet; fixed few things in jResponseHtml
+
+U   trunk/lib/jelix/core/response/jResponseHtml.class.php
+
+
+From laurent at xulfr.org  Sun May  6 19:42:38 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Sun, 06 May 2007 19:42:38 +0200
+Subject: [Jelix-public] checkin SVN-434 (laurentj)
+Message-ID: <463E138E.mailJEA1WZVPT@xulfr.org>
+
+laurentj
+2007-05-06 19:42:38 +0200 (Sun, 06 May 2007)
+49
+improved automatic detection in autolocale plugin
+
+U   trunk/lib/jelix-plugins/autolocale/autolocale.plugin.php
+
+
+From laurent at xulfr.org  Wed May  9 13:55:01 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Wed, 09 May 2007 13:55:01 +0200
+Subject: [Jelix-public] checkin SVN-435 (laurentj)
+Message-ID: <4641B695.mail8TQ11J8VX@xulfr.org>
+
+laurentj
+2007-05-09 13:55:00 +0200 (Wed, 09 May 2007)
+95
+fix regression bug in jtpl : use of true, false and null were not allowed anymore in expression
+
+U   trunk/lib/jelix/tpl/jTplCompiler.class.php
+U   trunk/testapp/modules/unittest/classes/utjtplexpr.class.php
+
+
+From laurent at xulfr.org  Wed May  9 14:54:43 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Wed, 09 May 2007 14:54:43 +0200
+Subject: [Jelix-public] checkin SVN-436 (laurentj)
+Message-ID: <4641C493.mailDOJ11FB2C@xulfr.org>
+
+laurentj
+2007-05-09 14:54:33 +0200 (Wed, 09 May 2007)
+45
+apply trunk improvements to the jforms branch
+
+U   branches/experimental/jforms/Makefile
+A   branches/experimental/jforms/build/LISEZMOI.txt
+D   branches/experimental/jforms/build/README.TXT
+A   branches/experimental/jforms/build/README.txt
+U   branches/experimental/jforms/build/buildapp.php
+U   branches/experimental/jforms/build/buildjbt.php
+U   branches/experimental/jforms/build/buildjelix.php
+U   branches/experimental/jforms/build/buildjtpl.php
+U   branches/experimental/jforms/build/buildmodules.php
+U   branches/experimental/jforms/build/config/jelix-dist-dev.ini
+A   branches/experimental/jforms/build/config/jelix-dist-gold.ini
+U   branches/experimental/jforms/build/config/jelix-dist-opt.ini
+U   branches/experimental/jforms/build/config/jelix-test.ini
+U   branches/experimental/jforms/build/lib/jBuild.inc.php
+U   branches/experimental/jforms/build/lib/preprocessor.lib.php
+U   branches/experimental/jforms/build/manifests/jbuildtools.mn
+U   branches/experimental/jforms/build/manifests/jelix-dev.mn
+A   branches/experimental/jforms/build/manifests/jelix-ext-php.mn
+U   branches/experimental/jforms/build/manifests/jelix-lib.mn
+U   branches/experimental/jforms/build/manifests/testapp.mn
+U   branches/experimental/jforms/build/mkmanifest.php
+U   branches/experimental/jforms/build/phpdoc/Converters/HTML/frames/templates/DOM/jelix/templates/header.tpl
+U   branches/experimental/jforms/build/phpdoc/Converters/HTML/frames/templates/DOM/jelix/templates/index.tpl
+U   branches/experimental/jforms/build/phpdoc/Converters/HTML/frames/templates/DOM/jelix/templates/top_frame.tpl
+U   branches/experimental/jforms/build/tests/testpreprocess.php
+U   branches/experimental/jforms/demoxul/var/config/dbprofils.ini.php.dist
+U   branches/experimental/jforms/demoxul/var/config/defaultconfig.ini.php.dist
+U   branches/experimental/jforms/demoxul/var/config/index/auth.plugin.ini.php
+U   branches/experimental/jforms/demoxul/var/config/jsonrpc/auth.plugin.ini.php
+U   branches/experimental/jforms/demoxul/var/config/rdf/auth.plugin.ini.php
+U   branches/experimental/jforms/demoxul/var/config/xmlrpc/auth.plugin.ini.php
+U   branches/experimental/jforms/demoxul/www/xulapp/main.js
+A   branches/experimental/jforms/ext/
+U   branches/experimental/jforms/lib/jelix/CREDITS
+U   branches/experimental/jforms/lib/jelix/INSTALL
+U   branches/experimental/jforms/lib/jelix/acl/jAcl.class.php
+U   branches/experimental/jforms/lib/jelix/acl/jAclManager.class.php
+U   branches/experimental/jforms/lib/jelix/acl/jAclUserGroup.class.php
+U   branches/experimental/jforms/lib/jelix/auth/jAuth.class.php
+U   branches/experimental/jforms/lib/jelix/auth/jAuthDriverClass.class.php
+U   branches/experimental/jforms/lib/jelix/auth/jAuthDriverDb.class.php
+A   branches/experimental/jforms/lib/jelix/checker.php
+U   branches/experimental/jforms/lib/jelix/core/defaultconfig.ini.php
+U   branches/experimental/jforms/lib/jelix/core/jConfig.class.php
+U   branches/experimental/jforms/lib/jelix/core/jConfigCompiler.class.php
+U   branches/experimental/jforms/lib/jelix/core/jContext.class.php
+U   branches/experimental/jforms/lib/jelix/core/jCoordinator.class.php
+U   branches/experimental/jforms/lib/jelix/core/jErrorHandler.lib.php
+A   branches/experimental/jforms/lib/jelix/core/jInstallChecker.class.php
+U   branches/experimental/jforms/lib/jelix/core/jLocale.class.php
+U   branches/experimental/jforms/lib/jelix/core/jRequest.class.php
+U   branches/experimental/jforms/lib/jelix/core/jSelector.class.php
+U   branches/experimental/jforms/lib/jelix/core/request/jCmdLineRequest.class.php
+U   branches/experimental/jforms/lib/jelix/core/request/jJsonRpcRequest.class.php
+U   branches/experimental/jforms/lib/jelix/core/request/jXmlRpcRequest.class.php
+U   branches/experimental/jforms/lib/jelix/core/response/jResponseAtom10.class.php
+U   branches/experimental/jforms/lib/jelix/core/response/jResponseHtml.class.php
+A   branches/experimental/jforms/lib/jelix/core/response/jResponseLatexToPdf.class.php
+U   branches/experimental/jforms/lib/jelix/core/response/jResponseRedirect.class.php
+U   branches/experimental/jforms/lib/jelix/core/response/jResponseRedirectUrl.class.php
+U   branches/experimental/jforms/lib/jelix/core/response/jResponseRss20.class.php
+U   branches/experimental/jforms/lib/jelix/core/response/jResponseText.class.php
+U   branches/experimental/jforms/lib/jelix/core/response/jResponseXml.class.php
+U   branches/experimental/jforms/lib/jelix/core/response/jResponseXmlFeed.class.php
+U   branches/experimental/jforms/lib/jelix/core/url/jUrl.class.php
+U   branches/experimental/jforms/lib/jelix/core/url/jUrlCompiler.significant.class.php
+U   branches/experimental/jforms/lib/jelix/core/url/jUrlEngine.significant.class.php
+U   branches/experimental/jforms/lib/jelix/core/url/jUrlEngine.simple.class.php
+U   branches/experimental/jforms/lib/jelix/dao/jDaoBase.class.php
+U   branches/experimental/jforms/lib/jelix/dao/jDaoCompiler.class.php
+U   branches/experimental/jforms/lib/jelix/dao/jDaoConditions.class.php
+U   branches/experimental/jforms/lib/jelix/dao/jDaoGenerator.class.php
+U   branches/experimental/jforms/lib/jelix/dao/jDaoParser.class.php
+A   branches/experimental/jforms/lib/jelix/db/drivers/intuition/
+U   branches/experimental/jforms/lib/jelix/db/drivers/mysql/jDbConnection.mysql.class.php
+U   branches/experimental/jforms/lib/jelix/db/drivers/mysql/jDbResultSet.mysql.class.php
+U   branches/experimental/jforms/lib/jelix/db/drivers/mysql/jDbTools.mysql.class.php
+U   branches/experimental/jforms/lib/jelix/db/drivers/postgresql/jDbConnection.postgresql.class.php
+U   branches/experimental/jforms/lib/jelix/db/drivers/postgresql/jDbResultSet.postgresql.class.php
+U   branches/experimental/jforms/lib/jelix/db/drivers/postgresql/jDbTools.postgresql.class.php
+U   branches/experimental/jforms/lib/jelix/db/drivers/sqlite/jDbConnection.sqlite.class.php
+U   branches/experimental/jforms/lib/jelix/db/drivers/sqlite/jDbTools.sqlite.class.php
+U   branches/experimental/jforms/lib/jelix/db/jDb.class.php
+U   branches/experimental/jforms/lib/jelix/db/jDbConnection.class.php
+U   branches/experimental/jforms/lib/jelix/db/jDbPDOConnection.class.php
+U   branches/experimental/jforms/lib/jelix/db/jDbTools.class.php
+U   branches/experimental/jforms/lib/jelix/db/jDbWidget.class.php
+U   branches/experimental/jforms/lib/jelix/docs/ns/dao.rng
+U   branches/experimental/jforms/lib/jelix/docs/ns/events.rng
+U   branches/experimental/jforms/lib/jelix/docs/ns/jforms-controls.rng
+U   branches/experimental/jforms/lib/jelix/docs/ns/jforms.rng
+U   branches/experimental/jforms/lib/jelix/docs/ns/module.rng
+U   branches/experimental/jforms/lib/jelix/docs/ns/plugin.rng
+U   branches/experimental/jforms/lib/jelix/docs/ns/project.rng
+U   branches/experimental/jforms/lib/jelix/docs/ns/urls.rng
+U   branches/experimental/jforms/lib/jelix/events/jEvent.class.php
+U   branches/experimental/jforms/lib/jelix/events/jEventCompiler.class.php
+U   branches/experimental/jforms/lib/jelix/events/jEventListener.class.php
+U   branches/experimental/jforms/lib/jelix/events/jEventListenerFactory.class.php
+U   branches/experimental/jforms/lib/jelix/forms/jForms.class.php
+U   branches/experimental/jforms/lib/jelix/forms/jFormsCompiler.class.php
+U   branches/experimental/jforms/lib/jelix/forms/jforms_jstemplate.php
+U   branches/experimental/jforms/lib/jelix/init.php
+U   branches/experimental/jforms/lib/jelix/tpl/CREDITS
+U   branches/experimental/jforms/lib/jelix/tpl/jTpl.class.php
+U   branches/experimental/jforms/lib/jelix/tpl/jTplCompiler.class.php
+U   branches/experimental/jforms/lib/jelix/tpl/jtpl_standalone_prepend.php
+U   branches/experimental/jforms/lib/jelix/tpl/locales/fr.php
+U   branches/experimental/jforms/lib/jelix/tpl/plugins/common/modifier.count_characters.php
+U   branches/experimental/jforms/lib/jelix/tpl/plugins/common/modifier.date_format.php
+U   branches/experimental/jforms/lib/jelix/tpl/plugins/common/modifier.regex_replace.php
+U   branches/experimental/jforms/lib/jelix/tpl/plugins/common/modifier.truncate.php
+U   branches/experimental/jforms/lib/jelix/tpl/plugins/html/function.diff.php
+U   branches/experimental/jforms/lib/jelix/tpl/plugins/html/function.jlocale.php
+U   branches/experimental/jforms/lib/jelix/tpl/plugins/html/meta.html.php
+A   branches/experimental/jforms/lib/jelix/tpl/plugins/ltx2pdf/
+U   branches/experimental/jforms/lib/jelix/tpl/plugins/text/function.jlocale.php
+U   branches/experimental/jforms/lib/jelix/tpl/plugins/xul/function.jlocale.php
+U   branches/experimental/jforms/lib/jelix/utils/jClasses.class.php
+U   branches/experimental/jforms/lib/jelix/utils/jDatatype.class.php
+U   branches/experimental/jforms/lib/jelix/utils/jDateTime.class.php
+U   branches/experimental/jforms/lib/jelix/utils/jFile.class.php
+U   branches/experimental/jforms/lib/jelix/utils/jFilter.class.php
+U   branches/experimental/jforms/lib/jelix/utils/jIniFile.class.php
+U   branches/experimental/jforms/lib/jelix/utils/jMailer.class.php
+U   branches/experimental/jforms/lib/jelix/utils/jWiki.class.php
+U   branches/experimental/jforms/lib/jelix/utils/jXmlRpc.class.php
+U   branches/experimental/jforms/lib/jelix/utils/jZone.class.php
+U   branches/experimental/jforms/lib/jelix-modules/CREDITS
+U   branches/experimental/jforms/lib/jelix-modules/jauth/controllers/login.classic.php
+U   branches/experimental/jforms/lib/jelix-modules/jauth/daos/jelixuser.dao.xml
+U   branches/experimental/jforms/lib/jelix-modules/jauth/events.xml
+U   branches/experimental/jforms/lib/jelix-modules/jauth/install/var/config/auth.plugin.ini.php
+U   branches/experimental/jforms/lib/jelix-modules/jauth/install/var/config/authsw.plugin.ini.php
+U   branches/experimental/jforms/lib/jelix-modules/jauth/module.xml
+U   branches/experimental/jforms/lib/jelix-modules/jelix/controllers/help.cmdline.php
+U   branches/experimental/jforms/lib/jelix-modules/jelix/daos/jaclgroup.dao.xml
+U   branches/experimental/jforms/lib/jelix-modules/jelix/daos/jaclgroupsofuser.dao.xml
+U   branches/experimental/jforms/lib/jelix-modules/jelix/daos/jaclrights.dao.xml
+U   branches/experimental/jforms/lib/jelix-modules/jelix/daos/jaclrightvalues.dao.xml
+U   branches/experimental/jforms/lib/jelix-modules/jelix/daos/jaclrightvaluesandgroup.dao.xml
+U   branches/experimental/jforms/lib/jelix-modules/jelix/daos/jaclrightvaluesgroup.dao.xml
+U   branches/experimental/jforms/lib/jelix-modules/jelix/daos/jaclsubject.dao.xml
+U   branches/experimental/jforms/lib/jelix-modules/jelix/daos/jaclusergroup.dao.xml
+D   branches/experimental/jforms/lib/jelix-modules/jelix/install/sql/install.datas.mysql.sql
+D   branches/experimental/jforms/lib/jelix-modules/jelix/install/sql/install.schema.mysql.sql
+A   branches/experimental/jforms/lib/jelix-modules/jelix/install/sql/install_jacl.datas.mysql.sql
+A   branches/experimental/jforms/lib/jelix-modules/jelix/install/sql/install_jacl.schema.mysql.sql
+U   branches/experimental/jforms/lib/jelix-modules/jelix/locales/en_EN/dao.ISO-8859-1.properties
+U   branches/experimental/jforms/lib/jelix-modules/jelix/locales/en_EN/dao.UTF-8.properties
+U   branches/experimental/jforms/lib/jelix-modules/jelix/locales/en_EN/daoxml.ISO-8859-1.properties
+U   branches/experimental/jforms/lib/jelix-modules/jelix/locales/en_EN/daoxml.UTF-8.properties
+U   branches/experimental/jforms/lib/jelix-modules/jelix/locales/en_EN/db.ISO-8859-1.properties
+U   branches/experimental/jforms/lib/jelix-modules/jelix/locales/en_EN/db.UTF-8.properties
+U   branches/experimental/jforms/lib/jelix-modules/jelix/locales/en_EN/errors.ISO-8859-1.properties
+U   branches/experimental/jforms/lib/jelix-modules/jelix/locales/en_EN/errors.UTF-8.properties
+U   branches/experimental/jforms/lib/jelix-modules/jelix/locales/en_EN/format.ISO-8859-1.properties
+U   branches/experimental/jforms/lib/jelix-modules/jelix/locales/en_EN/format.UTF-8.properties
+U   branches/experimental/jforms/lib/jelix-modules/jelix/locales/en_US/dao.ISO-8859-1.properties
+U   branches/experimental/jforms/lib/jelix-modules/jelix/locales/en_US/dao.UTF-8.properties
+U   branches/experimental/jforms/lib/jelix-modules/jelix/locales/en_US/daoxml.ISO-8859-1.properties
+U   branches/experimental/jforms/lib/jelix-modules/jelix/locales/en_US/daoxml.UTF-8.properties
+U   branches/experimental/jforms/lib/jelix-modules/jelix/locales/en_US/db.ISO-8859-1.properties
+U   branches/experimental/jforms/lib/jelix-modules/jelix/locales/en_US/db.UTF-8.properties
+U   branches/experimental/jforms/lib/jelix-modules/jelix/locales/en_US/errors.ISO-8859-1.properties
+U   branches/experimental/jforms/lib/jelix-modules/jelix/locales/en_US/errors.UTF-8.properties
+U   branches/experimental/jforms/lib/jelix-modules/jelix/locales/en_US/format.ISO-8859-1.properties
+U   branches/experimental/jforms/lib/jelix-modules/jelix/locales/en_US/format.UTF-8.properties
+U   branches/experimental/jforms/lib/jelix-modules/jelix/locales/fr_FR/dao.ISO-8859-1.properties
+U   branches/experimental/jforms/lib/jelix-modules/jelix/locales/fr_FR/dao.UTF-8.properties
+U   branches/experimental/jforms/lib/jelix-modules/jelix/locales/fr_FR/daoxml.ISO-8859-1.properties
+U   branches/experimental/jforms/lib/jelix-modules/jelix/locales/fr_FR/daoxml.UTF-8.properties
+U   branches/experimental/jforms/lib/jelix-modules/jelix/locales/fr_FR/db.ISO-8859-1.properties
+U   branches/experimental/jforms/lib/jelix-modules/jelix/locales/fr_FR/db.UTF-8.properties
+U   branches/experimental/jforms/lib/jelix-modules/jelix/locales/fr_FR/errors.ISO-8859-1.properties
+U   branches/experimental/jforms/lib/jelix-modules/jelix/locales/fr_FR/errors.UTF-8.properties
+U   branches/experimental/jforms/lib/jelix-modules/jelix/locales/fr_FR/format.ISO-8859-1.properties
+U   branches/experimental/jforms/lib/jelix-modules/jelix/locales/fr_FR/format.UTF-8.properties
+U   branches/experimental/jforms/lib/jelix-modules/jelix/module.xml
+U   branches/experimental/jforms/lib/jelix-modules/jelix/templates/atom10.tpl
+U   branches/experimental/jforms/lib/jelix-modules/jxacl/classes/acl.listener.php
+U   branches/experimental/jforms/lib/jelix-modules/jxacl/events.xml
+U   branches/experimental/jforms/lib/jelix-modules/jxacl/module.xml
+U   branches/experimental/jforms/lib/jelix-modules/jxacl/templates/xuladmin.tpl
+U   branches/experimental/jforms/lib/jelix-modules/jxauth/daos/jelixuser.dao.xml
+U   branches/experimental/jforms/lib/jelix-modules/jxauth/events.xml
+U   branches/experimental/jforms/lib/jelix-modules/jxauth/install/var/config/auth.plugin.ini.php
+U   branches/experimental/jforms/lib/jelix-modules/jxauth/module.xml
+U   branches/experimental/jforms/lib/jelix-modules/jxauth/templates/xuladmin.tpl
+U   branches/experimental/jforms/lib/jelix-modules/jxxulapp/install/var/config/auth.plugin.ini.php
+U   branches/experimental/jforms/lib/jelix-modules/jxxulapp/install/var/config/auth.plugin.jsonrpc.ini.php
+U   branches/experimental/jforms/lib/jelix-modules/jxxulapp/install/var/config/auth.plugin.rdf.ini.php
+U   branches/experimental/jforms/lib/jelix-modules/jxxulapp/install/var/config/auth.plugin.xul.ini.php
+U   branches/experimental/jforms/lib/jelix-modules/jxxulapp/install/var/config/config.classic.ini.php
+U   branches/experimental/jforms/lib/jelix-modules/jxxulapp/install/var/config/config.jsonrpc.ini.php
+U   branches/experimental/jforms/lib/jelix-modules/jxxulapp/install/var/config/config.rdf.ini.php
+U   branches/experimental/jforms/lib/jelix-modules/jxxulapp/install/var/config/configxul.classic.ini.php
+U   branches/experimental/jforms/lib/jelix-modules/jxxulapp/install/www/xulapp/main.js
+U   branches/experimental/jforms/lib/jelix-modules/jxxulapp/module.xml
+U   branches/experimental/jforms/lib/jelix-modules/jxxulapp/templates/login.tpl
+U   branches/experimental/jforms/lib/jelix-plugins/CREDITS
+U   branches/experimental/jforms/lib/jelix-plugins/auth/auth.plugin.ini.php.dist
+U   branches/experimental/jforms/lib/jelix-plugins/auth/auth.plugin.php
+U   branches/experimental/jforms/lib/jelix-plugins/auth/plugin.xml
+U   branches/experimental/jforms/lib/jelix-plugins/autolocale/autolocale.plugin.ini.php.dist
+U   branches/experimental/jforms/lib/jelix-plugins/autolocale/autolocale.plugin.php
+U   branches/experimental/jforms/lib/jelix-plugins/autolocale/plugin.xml
+U   branches/experimental/jforms/lib/jelix-plugins/magicquotes/magicquotes.plugin.php
+U   branches/experimental/jforms/lib/jelix-plugins/magicquotes/plugin.xml
+U   branches/experimental/jforms/lib/jelix-scripts/CREDITS
+A   branches/experimental/jforms/lib/jelix-scripts/commands/aclgroup.cmd.php
+A   branches/experimental/jforms/lib/jelix-scripts/commands/aclright.cmd.php
+A   branches/experimental/jforms/lib/jelix-scripts/commands/aclvalue.cmd.php
+U   branches/experimental/jforms/lib/jelix-scripts/commands/cleartemp.cmd.php
+U   branches/experimental/jforms/lib/jelix-scripts/commands/createaction.cmd.php
+U   branches/experimental/jforms/lib/jelix-scripts/commands/createapp.cmd.php
+U   branches/experimental/jforms/lib/jelix-scripts/commands/createctrl.cmd.php
+U   branches/experimental/jforms/lib/jelix-scripts/commands/createdao.cmd.php
+U   branches/experimental/jforms/lib/jelix-scripts/commands/createmodule.cmd.php
+U   branches/experimental/jforms/lib/jelix-scripts/commands/createzone.cmd.php
+U   branches/experimental/jforms/lib/jelix-scripts/commands/help.cmd.php
+U   branches/experimental/jforms/lib/jelix-scripts/includes/utils.lib.php
+U   branches/experimental/jforms/lib/jelix-scripts/jelix.php
+U   branches/experimental/jforms/lib/jelix-scripts/scripts.conf.php
+U   branches/experimental/jforms/lib/jelix-scripts/templates/application.init.php.tpl
+U   branches/experimental/jforms/lib/jelix-scripts/templates/controller.cmdline.tpl
+U   branches/experimental/jforms/lib/jelix-scripts/templates/controller.tpl
+U   branches/experimental/jforms/lib/jelix-scripts/templates/dao.xml.tpl
+U   branches/experimental/jforms/lib/jelix-scripts/templates/dao_empty.xml.tpl
+U   branches/experimental/jforms/lib/jelix-scripts/templates/module.xml.tpl
+U   branches/experimental/jforms/lib/jelix-scripts/templates/project.xml.tpl
+U   branches/experimental/jforms/lib/jelix-scripts/templates/scripts/cmdline.php.tpl
+U   branches/experimental/jforms/lib/jelix-scripts/templates/var/config/dbprofils.ini.php.tpl
+U   branches/experimental/jforms/lib/jelix-scripts/templates/var/config/defaultconfig.ini.php.tpl
+U   branches/experimental/jforms/lib/jelix-scripts/templates/www/index.php.tpl
+U   branches/experimental/jforms/lib/jelix-scripts/templates/www/jsonrpc.php.tpl
+U   branches/experimental/jforms/lib/jelix-scripts/templates/www/rdf.php.tpl
+U   branches/experimental/jforms/lib/jelix-scripts/templates/www/xmlrpc.php.tpl
+U   branches/experimental/jforms/lib/jelix-scripts/templates/zone.tpl
+U   branches/experimental/jforms/lib/jelix-www/xul/jxbl.xml
+U   branches/experimental/jforms/lib/jelix-www/xul/jxulform.xml
+U   branches/experimental/jforms/lib/wikirenderer/CHANGELOG
+U   branches/experimental/jforms/lib/wikirenderer/WikiRenderer.lib.php
+U   branches/experimental/jforms/lib/wikirenderer/rules/classicwr_to_text.php
+U   branches/experimental/jforms/lib/wikirenderer/rules/classicwr_to_wr3.php
+U   branches/experimental/jforms/lib/wikirenderer/rules/classicwr_to_xhtml.php
+U   branches/experimental/jforms/lib/wikirenderer/rules/wr3_to_text.php
+U   branches/experimental/jforms/lib/wikirenderer/rules/wr3_to_xhtml.php
+U   branches/experimental/jforms/myapp/modules/myapp/templates/hello.tpl
+U   branches/experimental/jforms/myapp/var/config/dbprofils.ini.php.dist
+U   branches/experimental/jforms/myapp/var/config/defaultconfig.ini.php.dist
+A   branches/experimental/jforms/testapp/install/
+U   branches/experimental/jforms/testapp/modules/testapp/controllers/forms.classic.php
+U   branches/experimental/jforms/testapp/modules/testapp/controllers/sampleform.classic.php
+U   branches/experimental/jforms/testapp/modules/testapp/forms/sample.form.xml
+U   branches/experimental/jforms/testapp/modules/testapp/templates/forms_edit.tpl
+U   branches/experimental/jforms/testapp/modules/testapp/templates/forms_liste.tpl
+U   branches/experimental/jforms/testapp/modules/testapp/templates/forms_view.tpl
+U   branches/experimental/jforms/testapp/modules/testapp/templates/hello.tpl
+U   branches/experimental/jforms/testapp/modules/testapp/templates/hello2.tpl
+U   branches/experimental/jforms/testapp/modules/testapp/templates/main.tpl
+U   branches/experimental/jforms/testapp/modules/testapp/templates/sampleform.tpl
+U   branches/experimental/jforms/testapp/modules/testapp/templates/sommaire.tpl
+U   branches/experimental/jforms/testapp/modules/testapp/templates/testzone.tpl
+U   branches/experimental/jforms/testapp/modules/unittest/classes/jhtmlrespreporter.class.php
+U   branches/experimental/jforms/testapp/modules/unittest/classes/junittestcase.class.php
+A   branches/experimental/jforms/testapp/modules/unittest/classes/junittestcasedb.class.php
+A   branches/experimental/jforms/testapp/modules/unittest/classes/test.iface.php
+U   branches/experimental/jforms/testapp/modules/unittest/classes/testevents.listener.php
+A   branches/experimental/jforms/testapp/modules/unittest/classes/tests/
+U   branches/experimental/jforms/testapp/modules/unittest/classes/unittestservice.class.php
+U   branches/experimental/jforms/testapp/modules/unittest/classes/urlsig.urlhandler.php
+U   branches/experimental/jforms/testapp/modules/unittest/classes/utcreateurls.class.php
+U   branches/experimental/jforms/testapp/modules/unittest/classes/utdao.class.php
+U   branches/experimental/jforms/testapp/modules/unittest/classes/utdao2.class.php
+U   branches/experimental/jforms/testapp/modules/unittest/classes/utdao_conditions.class.php
+U   branches/experimental/jforms/testapp/modules/unittest/classes/utevents.class.php
+U   branches/experimental/jforms/testapp/modules/unittest/classes/utfilter.class.php
+A   branches/experimental/jforms/testapp/modules/unittest/classes/utjacl.class.php
+A   branches/experimental/jforms/testapp/modules/unittest/classes/utjaclmanager.class.php
+A   branches/experimental/jforms/testapp/modules/unittest/classes/utjaclusergroup.class.php
+U   branches/experimental/jforms/testapp/modules/unittest/classes/utjlocale.class.php
+A   branches/experimental/jforms/testapp/modules/unittest/classes/utjtplexpr.class.php
+U   branches/experimental/jforms/testapp/modules/unittest/classes/utparseurls.class.php
+U   branches/experimental/jforms/testapp/modules/unittest/classes/utselectoract.class.php
+A   branches/experimental/jforms/testapp/modules/unittest/classes/utselectormod.class.php
+U   branches/experimental/jforms/testapp/modules/unittest/classes/utsimpletest.class.php
+A   branches/experimental/jforms/testapp/modules/unittest/controllers/acl.classic.php
+U   branches/experimental/jforms/testapp/modules/unittest/controllers/default.classic.php
+A   branches/experimental/jforms/testapp/modules/unittest/controllers/tpl.classic.php
+U   branches/experimental/jforms/testapp/modules/unittest/locales/test_B.properties
+U   branches/experimental/jforms/testapp/modules/unittest/templates/menu.tpl
+U   branches/experimental/jforms/testapp/var/config/dbprofils.ini.php.dist
+U   branches/experimental/jforms/testapp/var/config/defaultconfig.ini.php.dist
+U   branches/experimental/jforms/testapp/var/themes/default/testapp/hello2.tpl
+A   branches/experimental/jforms/testapp/www/check.php
+U   branches/experimental/jforms/testapp/www/design/screen.css
+
+
+From laurent at xulfr.org  Wed May  9 18:21:14 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Wed, 09 May 2007 18:21:14 +0200
+Subject: [Jelix-public] checkin SVN-437 (laurentj)
+Message-ID: <4641F4FA.mail7X6111X7D@xulfr.org>
+
+laurentj
+2007-05-09 18:21:13 +0200 (Wed, 09 May 2007)
+67
+worked on a html builder for jforms, and added unit tests on jforms
+
+U   branches/experimental/jforms/build/manifests/jelix-lib.mn
+U   branches/experimental/jforms/build/manifests/testapp.mn
+U   branches/experimental/jforms/lib/jelix/core/jSelector.class.php
+U   branches/experimental/jforms/lib/jelix/docs/ns/jforms-controls.rng
+U   branches/experimental/jforms/lib/jelix/docs/ns/jforms.rng
+U   branches/experimental/jforms/lib/jelix/forms/jFormsBase.class.php
+U   branches/experimental/jforms/lib/jelix/forms/jFormsBuilderBase.class.php
+U   branches/experimental/jforms/lib/jelix/forms/jFormsCompiler.class.php
+U   branches/experimental/jforms/lib/jelix/tpl/plugins/html/block.form.php
+U   branches/experimental/jforms/lib/jelix-www/js/jforms.js
+U   branches/experimental/jforms/testapp/modules/unittest/classes/unittestservice.class.php
+A   branches/experimental/jforms/testapp/modules/unittest/classes/utjforms.class.php
+A   branches/experimental/jforms/testapp/modules/unittest/controllers/jforms.classic.php
+U   branches/experimental/jforms/testapp/modules/unittest/templates/menu.tpl
+
+
+From laurent at xulfr.org  Fri May 11 15:42:09 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Fri, 11 May 2007 15:42:09 +0200
+Subject: [Jelix-public] checkin SVN-438 (laurentj)
+Message-ID: <464472B1.mailC7415VA86@xulfr.org>
+
+laurentj
+2007-05-11 15:42:07 +0200 (Fri, 11 May 2007)
+29
+worked on the install checker
+
+U   trunk/lib/jelix/checker.php
+U   trunk/lib/jelix/core/jInstallChecker.class.php
+
+
+From laurent at xulfr.org  Tue May 15 22:56:50 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Tue, 15 May 2007 22:56:50 +0200
+Subject: [Jelix-public] checkin SVN-439 (laurentj)
+Message-ID: <464A1E92.mailLZZ1A76YN@xulfr.org>
+
+laurentj
+2007-05-15 22:56:49 +0200 (Tue, 15 May 2007)
+50
+worked on jforms : more unit tests on the compiler
+
+U   branches/experimental/jforms/build/manifests/jelix-lib.mn
+U   branches/experimental/jforms/lib/jelix/forms/jFormsBase.class.php
+U   branches/experimental/jforms/lib/jelix/forms/jFormsCompiler.class.php
+A   branches/experimental/jforms/lib/jelix-modules/jelix/locales/en_EN/formserr.ISO-8859-1.properties
+A   branches/experimental/jforms/lib/jelix-modules/jelix/locales/en_EN/formserr.UTF-8.properties
+U   branches/experimental/jforms/lib/jelix-modules/jelix/locales/en_US/formserr.ISO-8859-1.properties
+A   branches/experimental/jforms/lib/jelix-modules/jelix/locales/en_US/formserr.UTF-8.properties
+U   branches/experimental/jforms/lib/jelix-modules/jelix/locales/fr_FR/formserr.ISO-8859-1.properties
+U   branches/experimental/jforms/lib/jelix-modules/jelix/locales/fr_FR/formserr.UTF-8.properties
+U   branches/experimental/jforms/testapp/modules/unittest/classes/utjforms.class.php
+U   branches/experimental/jforms/testapp/modules/unittest/templates/menu.tpl
+
+
+From laurent at xulfr.org  Fri May 18 10:20:59 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Fri, 18 May 2007 10:20:59 +0200
+Subject: [Jelix-public] checkin SVN-440 (bballizlife)
+Message-ID: <464D61EB.mail2IR17PW4P@xulfr.org>
+
+bballizlife
+2007-05-18 10:20:59 +0200 (Fri, 18 May 2007)
+49
+changes in jDateTime according ticket+patch #176
+
+U   trunk/lib/jelix/utils/jDateTime.class.php
+
+
+From laurent at xulfr.org  Mon May 21 23:23:22 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Mon, 21 May 2007 23:23:22 +0200
+Subject: [Jelix-public] checkin SVN-441 (laurentj)
+Message-ID: <46520DCA.mail3DX11XZWN@xulfr.org>
+
+laurentj
+2007-05-21 23:23:21 +0200 (Mon, 21 May 2007)
+85
+work on jforms : 'form' tpl plugin can now generate header and footer for a html form
+
+U   branches/experimental/jforms/build/manifests/jelix-lib.mn
+U   branches/experimental/jforms/lib/jelix/core/jSelector.class.php
+U   branches/experimental/jforms/lib/jelix/forms/jFormsBase.class.php
+U   branches/experimental/jforms/lib/jelix/forms/jFormsBuilderBase.class.php
+U   branches/experimental/jforms/lib/jelix/forms/jFormsCompiler.class.php
+D   branches/experimental/jforms/lib/jelix/forms/jforms_jstemplate.php
+U   branches/experimental/jforms/lib/jelix/tpl/plugins/common/block.ifacl.php
+U   branches/experimental/jforms/lib/jelix/tpl/plugins/common/block.ifnotacl.php
+U   branches/experimental/jforms/lib/jelix/tpl/plugins/html/block.form.php
+U   branches/experimental/jforms/lib/jelix-modules/jelix/locales/en_EN/formserr.ISO-8859-1.properties
+U   branches/experimental/jforms/lib/jelix-modules/jelix/locales/en_EN/formserr.UTF-8.properties
+U   branches/experimental/jforms/lib/jelix-modules/jelix/locales/en_US/formserr.ISO-8859-1.properties
+U   branches/experimental/jforms/lib/jelix-modules/jelix/locales/en_US/formserr.UTF-8.properties
+U   branches/experimental/jforms/lib/jelix-modules/jelix/locales/fr_FR/formserr.ISO-8859-1.properties
+U   branches/experimental/jforms/lib/jelix-modules/jelix/locales/fr_FR/formserr.UTF-8.properties
+U   branches/experimental/jforms/testapp/modules/testapp/controllers/sampleform.classic.php
+U   branches/experimental/jforms/testapp/modules/testapp/templates/sampleform.tpl
+
+
+From laurent at xulfr.org  Tue May 22 23:18:07 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Tue, 22 May 2007 23:18:07 +0200
+Subject: [Jelix-public] checkin SVN-442 (laurentj)
+Message-ID: <46535E0F.mail7OW11KTYZ@xulfr.org>
+
+laurentj
+2007-05-22 23:18:05 +0200 (Tue, 22 May 2007)
+67
+work on jforms: new jtpl plugins to display label and html controls
+
+U   branches/experimental/jforms/build/manifests/jelix-lib.mn
+U   branches/experimental/jforms/lib/jelix/docs/ns/jforms-controls.rng
+U   branches/experimental/jforms/lib/jelix/forms/jFormsBuilderBase.class.php
+U   branches/experimental/jforms/lib/jelix/forms/jFormsCompiler.class.php
+U   branches/experimental/jforms/lib/jelix/forms/jFormsControl.class.php
+U   branches/experimental/jforms/lib/jelix/tpl/jTpl.class.php
+U   branches/experimental/jforms/lib/jelix/tpl/plugins/html/block.form.php
+A   branches/experimental/jforms/lib/jelix/tpl/plugins/html/block.formcontrols.php
+A   branches/experimental/jforms/lib/jelix/tpl/plugins/html/function.ctrl_control.php
+A   branches/experimental/jforms/lib/jelix/tpl/plugins/html/function.ctrl_label.php
+A   branches/experimental/jforms/lib/jelix/tpl/plugins/html/function.ctrl_value.php
+U   branches/experimental/jforms/testapp/modules/testapp/controllers/sampleform.classic.php
+U   branches/experimental/jforms/testapp/modules/testapp/forms/sample.form.xml
+U   branches/experimental/jforms/testapp/modules/testapp/templates/sampleform.tpl
+U   branches/experimental/jforms/testapp/modules/testapp/templates/sampleformresult.tpl
+U   branches/experimental/jforms/testapp/modules/unittest/classes/utjforms.class.php
+
+
+From david.tourel at laposte.net  Fri May 25 16:51:58 2007
+From: david.tourel at laposte.net (David Tourel)
+Date: Fri, 25 May 2007 16:51:58 +0200
+Subject: [Jelix-public] Envoyer HTTP 500
+Message-ID: <4656F80E.8070309@laposte.net>
+
+Bonjour,
+
+Je suis dans l'initiation ? Jelix et plus particuli?rement en ce moment 
+je cherche ? g?n?rer un code http autre que 200 afin de l'utiliser avec 
+prototype.js pour faire de l'ajax.
+
+dans mon contr?leur pour envoyer ce code j'utilise setHttpStatus de la 
+fa?on suivante:
+
+$oJson->setHttpStatus(500, 'Internal Error');
+$oJson->datas = array('msg' => 'mon message d\'erreur');
+return $oJson;
+
+
+malgr? cel? je n'arrive pas ? obtenir autre chose que 200 Ok, je lis les 
+ent?tes de la r?ponse avec LiveHTTPHeaders extension pour Firefox.
+
+
+Pourriez vous me donner une piste pour faire ?a avec Jelix ?
+
+Je vous remercie par avance,
+
+David, aka Marko
+
+
+
+From laurent at xulfr.org  Fri May 25 17:01:32 2007
+From: laurent at xulfr.org (laurent)
+Date: Fri, 25 May 2007 17:01:32 +0200
+Subject: [Jelix-public] Envoyer HTTP 500
+In-Reply-To: <4656F80E.8070309@laposte.net>
+References: <4656F80E.8070309@laposte.net>
+Message-ID: <4656FA4C.5020207@xulfr.org>
+
+Bonjour,
+
+David Tourel wrote:
+> Bonjour,
+> 
+> Je suis dans l'initiation ? Jelix et plus particuli?rement en ce moment 
+> je cherche ? g?n?rer un code http autre que 200 afin de l'utiliser avec 
+> prototype.js pour faire de l'ajax.
+> 
+> dans mon contr?leur pour envoyer ce code j'utilise setHttpStatus de la 
+> fa?on suivante:
+> 
+> $oJson->setHttpStatus(500, 'Internal Error');
+> $oJson->datas = array('msg' => 'mon message d\'erreur');
+> return $oJson;
+> 
+> 
+> malgr? cel? je n'arrive pas ? obtenir autre chose que 200 Ok, je lis les 
+> ent?tes de la r?ponse avec LiveHTTPHeaders extension pour Firefox.
+
+Oui, c'est un probl?me connu : http://dev.jelix.org/ticket/157
+
+> 
+> 
+> Pourriez vous me donner une piste pour faire ?a avec Jelix ?
+
+en attendant la correction du bug, utilise la fonction php header ? la 
+fin de ton action, juste avant de renvoyer la r?ponse. ?a devrait 
+fonctionner.
+
+Laurent
+
+
+From loic at mathaud.net  Fri May 25 17:04:45 2007
+From: loic at mathaud.net (Loic Mathaud)
+Date: Fri, 25 May 2007 17:04:45 +0200
+Subject: [Jelix-public] Envoyer HTTP 500
+In-Reply-To: <4656F80E.8070309@laposte.net>
+References: <4656F80E.8070309@laposte.net>
+Message-ID: <4656FB0D.2010100@mathaud.net>
+
+David Tourel a ?crit :
+> Bonjour,
+> 
+> Je suis dans l'initiation ? Jelix et plus particuli?rement en ce moment 
+> je cherche ? g?n?rer un code http autre que 200 afin de l'utiliser avec 
+> prototype.js pour faire de l'ajax.
+> 
+> dans mon contr?leur pour envoyer ce code j'utilise setHttpStatus de la 
+> fa?on suivante:
+> 
+> $oJson->setHttpStatus(500, 'Internal Error');
+> $oJson->datas = array('msg' => 'mon message d\'erreur');
+> return $oJson;
+> 
+> 
+> malgr? cel? je n'arrive pas ? obtenir autre chose que 200 Ok, je lis les 
+> ent?tes de la r?ponse avec LiveHTTPHeaders extension pour Firefox.
+> 
+> 
+> Pourriez vous me donner une piste pour faire ?a avec Jelix ?
+
+Bonjour,
+
+peux-tu pr?ciser quel est le type de r?ponse (html, text, ...) que tu
+utilise ?
+
+@+
+Loic
+
+
+From david.tourel at laposte.net  Fri May 25 17:50:50 2007
+From: david.tourel at laposte.net (David Tourel)
+Date: Fri, 25 May 2007 17:50:50 +0200
+Subject: [Jelix-public] Envoyer HTTP 500
+In-Reply-To: <4656FB0D.2010100@mathaud.net>
+References: <4656F80E.8070309@laposte.net> <4656FB0D.2010100@mathaud.net>
+Message-ID: <465705DA.6030509@laposte.net>
+
+Merci Laurent pour ta r?ponse, j'ai pas eu le reflexe de regarder sur trac
+
+@loic
+Dans ce cas j'utilise JSON comme format de r?ponse, j'ai donc avant le 
+bout de code pr?c?dent:
+
+$oJson = $this->getResponse('json');
+
+J'ai test? la solution de Laurent, et effectivement j'ai le code 500 en 
+r?ponse en utilisant
+
+header('Internal Error', true , 500);
+$oJson->datas = array('msg' => 'erreur');
+
+mais le souci c'est que j'ai une r?ponse HTML par d?faut qui remplace le JSON
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN"><html><head><title>500 Internal Server Error</title></head><body><h1>Internal Server Error</h1><p>The server encountered an internal error ormisconfiguration and was unable to completeyour request.</p><p>Please contact the server administrator, postmaster at ks38564.kimsufi.com and inform them of the time the error occurred,and anything you might have done that may havecaused the error.</p><p>More information about this error may be availablein the server error log.</p><p>Additionally, a 500 Internal Server Errorerror was encountered while trying to use an ErrorDocument to handle the request.</p><hr><address>Apache/2.0.58 (Unix) mod_ssl/2.0.58 OpenSSL/0.9.7i Server at jelix.dynamicnet.fr Port 80</address></body></html>
+
+donc du coup j'ai pas non plus de message d'erreur, c'est certainement  
+apache qui renvoie ce contenu par d?faut,
+
+merci pour vos r?ponses
+
+
+Loic Mathaud a ?crit :
+> David Tourel a ?crit :
+>   
+>> Bonjour,
+>>
+>> Je suis dans l'initiation ? Jelix et plus particuli?rement en ce moment 
+>> je cherche ? g?n?rer un code http autre que 200 afin de l'utiliser avec 
+>> prototype.js pour faire de l'ajax.
+>>
+>> dans mon contr?leur pour envoyer ce code j'utilise setHttpStatus de la 
+>> fa?on suivante:
+>>
+>> $oJson->setHttpStatus(500, 'Internal Error');
+>> $oJson->datas = array('msg' => 'mon message d\'erreur');
+>> return $oJson;
+>>
+>>
+>> malgr? cel? je n'arrive pas ? obtenir autre chose que 200 Ok, je lis les 
+>> ent?tes de la r?ponse avec LiveHTTPHeaders extension pour Firefox.
+>>
+>>
+>> Pourriez vous me donner une piste pour faire ?a avec Jelix ?
+>>     
+>
+> Bonjour,
+>
+> peux-tu pr?ciser quel est le type de r?ponse (html, text, ...) que tu
+> utilise ?
+>
+> @+
+> Loic
+> _______________________________________________
+> Jelix-public mailing list
+> Jelix-public at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/jelix-public
+>
+>   
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/jelix-public/attachments/20070525/11a2f48a/attachment.html>
+
+From loic at mathaud.net  Fri May 25 17:51:03 2007
+From: loic at mathaud.net (Loic Mathaud)
+Date: Fri, 25 May 2007 17:51:03 +0200
+Subject: [Jelix-public] Envoyer HTTP 500
+In-Reply-To: <4656F80E.8070309@laposte.net>
+References: <4656F80E.8070309@laposte.net>
+Message-ID: <465705E7.3020906@mathaud.net>
+
+David Tourel a ?crit :
+> Bonjour,
+> 
+> Je suis dans l'initiation ? Jelix et plus particuli?rement en ce moment 
+> je cherche ? g?n?rer un code http autre que 200 afin de l'utiliser avec 
+> prototype.js pour faire de l'ajax.
+> 
+> dans mon contr?leur pour envoyer ce code j'utilise setHttpStatus de la 
+> fa?on suivante:
+> 
+> $oJson->setHttpStatus(500, 'Internal Error');
+> $oJson->datas = array('msg' => 'mon message d\'erreur');
+> return $oJson;
+> 
+> 
+> malgr? cel? je n'arrive pas ? obtenir autre chose que 200 Ok, je lis les 
+> ent?tes de la r?ponse avec LiveHTTPHeaders extension pour Firefox.
+> 
+> 
+> Pourriez vous me donner une piste pour faire ?a avec Jelix ?
+> 
+> Je vous remercie par avance,
+> 
+> David, aka Marko
+
+Je n'avais pas vu le r?ponse de laurent avant de r?pondre.
+J'ai soumis un patch, qui s'il est accept? corrigera le bug que laurent
+a montr?. En attendant la solution d'envoyer "manuellement" le code http
+via la fonction header() est la meilleure solution.
+
+Loic
+
+
+From laurent at xulfr.org  Sun May 27 10:09:54 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Sun, 27 May 2007 10:09:54 +0200
+Subject: [Jelix-public] checkin SVN-443 (laurentj)
+Message-ID: <46593CD2.mail7YE116TUS@xulfr.org>
+
+laurentj
+2007-05-27 10:09:53 +0200 (Sun, 27 May 2007)
+79
+fix bug #188: mimeType member was missing on jResponseBinary p=Nicolas Lassalle
+
+U   trunk/lib/jelix/core/response/jResponseBinary.class.php
+
+
+From laurent at xulfr.org  Mon May 28 14:33:10 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Mon, 28 May 2007 14:33:10 +0200
+Subject: [Jelix-public] checkin SVN-444 (laurentj)
+Message-ID: <465ACC06.mail31011BR3Y@xulfr.org>
+
+laurentj
+2007-05-28 14:33:08 +0200 (Mon, 28 May 2007)
+245
+fix bug #180 : because of a bug in PDO, jDbPdoResulset::fetch was not called when we used this resultset as an iterator, so results were not stored in an object, but in an array. This causes bugs in jDAO too. Added new unit tests on jDb and jDao
+
+U   trunk/build/manifests/testapp.mn
+U   trunk/lib/jelix/core/jConfigCompiler.class.php
+U   trunk/lib/jelix/core/jSelector.class.php
+U   trunk/lib/jelix/dao/jDaoCompiler.class.php
+U   trunk/lib/jelix/dao/jDaoGenerator.class.php
+U   trunk/lib/jelix/dao/jDaoParser.class.php
+U   trunk/lib/jelix/db/jDbPDOConnection.class.php
+U   trunk/lib/jelix-plugins/autolocale/autolocale.plugin.php
+U   trunk/lib/simpletest/compatibility.php
+U   trunk/testapp/modules/testapp/install/base.mysql.sql
+U   trunk/testapp/modules/unittest/classes/junittestcase.class.php
+U   trunk/testapp/modules/unittest/classes/junittestcasedb.class.php
+U   trunk/testapp/modules/unittest/classes/unittestservice.class.php
+U   trunk/testapp/modules/unittest/classes/utdao.class.php
+D   trunk/testapp/modules/unittest/classes/utdao2.class.php
+A   trunk/testapp/modules/unittest/classes/utdao_parser.class.php
+A   trunk/testapp/modules/unittest/classes/utdao_parser2.class.php
+A   trunk/testapp/modules/unittest/classes/utdaopdo.class.php
+U   trunk/testapp/modules/unittest/classes/utjaclusergroup.class.php
+A   trunk/testapp/modules/unittest/classes/utjdb.class.php
+A   trunk/testapp/modules/unittest/classes/utjdb_pdo.class.php
+A   trunk/testapp/modules/unittest/classes/utjdb_profile.class.php
+U   trunk/testapp/modules/unittest/controllers/dao.classic.php
+A   trunk/testapp/modules/unittest/controllers/db.classic.php
+A   trunk/testapp/modules/unittest/daos/
+A   trunk/testapp/modules/unittest/daos/products.dao.xml
+U   trunk/testapp/modules/unittest/templates/menu.tpl
+U   trunk/testapp/var/config/dbprofils.ini.php.dist
+
+
+From laurent at xulfr.org  Mon May 28 14:52:42 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Mon, 28 May 2007 14:52:42 +0200
+Subject: [Jelix-public] checkin SVN-445 (laurentj)
+Message-ID: <465AD09A.mail6HH1ENJFG@xulfr.org>
+
+laurentj
+2007-05-28 14:52:42 +0200 (Mon, 28 May 2007)
+22
+added new tests on jDb
+
+U   trunk/testapp/modules/unittest/classes/utjdb.class.php
+
+
+From laurent at xulfr.org  Tue May 29 11:31:15 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Tue, 29 May 2007 11:31:15 +0200
+Subject: [Jelix-public] checkin SVN-446 (bballizlife)
+Message-ID: <465BF2E3.mail11X11ORDU@xulfr.org>
+
+bballizlife
+2007-05-29 11:31:15 +0200 (Tue, 29 May 2007)
+75
+fix ticket #157 and refactored the way headers were sent in jResponseJson*
+
+U   trunk/lib/jelix/core/response/jResponseJson.class.php
+U   trunk/lib/jelix/core/response/jResponseJsonrpc.class.php
+
+

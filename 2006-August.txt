@@ -1,0 +1,72 @@
+From laurent at xulfr.org  Wed Aug 30 22:01:56 2006
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Wed, 30 Aug 2006 22:01:56 +0200
+Subject: [Jelix-public] checkin SVN-244 (bballizlife)
+Message-ID: <44F5EEB4.mailNJC11U6Q2@xulfr.org>
+
+bballizlife
+2006-08-25 11:25:44 +0200 (Fri, 25 Aug 2006)
+79
+int?gration des patchs 1354 et 1355 concernant les scripts en ligne de commande
+
+U   trunk/lib/jelix/core/request/jCmdLineRequest.class.php
+U   trunk/lib/jelix-modules/jelix/controllers/help.cmdline.php
+
+
+From laurent at xulfr.org  Wed Aug 30 22:31:12 2006
+From: laurent at xulfr.org (Laurent)
+Date: Wed, 30 Aug 2006 22:31:12 +0200
+Subject: [Jelix-public] Quelques nouvelles et plus d'info
+Message-ID: <44F5F590.6090500@xulfr.org>
+
+Bonjour,
+
+Afin de mieux suivre les d?veloppements du framework, chaque 
+modification dans le d?pot subversion sera publi? dans la mailing list. 
+(message du m?me style que le pr?cedent : "checkin SVN-XXX (auteur)" )
+
+Rassurez vous, le nombre de message par jour ne va pas exploser ( 0 ? 5 
+messages, selon les jours..).
+
+Cela va permettre de mieux informer quand le trunk est instable, et de 
+signaler les modifications importantes qui peuvent casser la 
+compatibilit? (en version alpha, tout est permis :-) ) etc, le tout en 
+temps r??l, la page http://jelix.org/articles/changelog n'?tant pas 
+toujours ? jour.
+
+? ce propos, je vous invite ? la lire, pour voir les modifications que 
+l'on a apport? depuis la version 1.0alpha4.
+
+Prochaine release d'une version "officielle" : ce n'est pas encore 
+vraiment d?cid?. En tout cas, il y aura probablement une surprise 
+courant/fin septembre :-)
+
+
+Laurent
+
+
+
+From laurent at xulfr.org  Thu Aug 31 12:50:45 2006
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Thu, 31 Aug 2006 12:50:45 +0200
+Subject: [Jelix-public] checkin SVN-246 (laurentj)
+Message-ID: <44F6BF05.mail6FB11NJSS@xulfr.org>
+
+laurentj
+2006-08-31 12:50:41 +0200 (Thu, 31 Aug 2006)
+377
+-IMPORTANT : changement d'api dans jFile; ses m?\195?\169thodes deviennent statique (jFile::read('foo'), et non plus =new jFile() etc..)
+- correction d'un bug sur la g?\195?\169n?\195?\169ration du cache de zone
+- ajout d'un m?\195?\169canisme de timeout facultatif sur le cache de zone
+- trunk toujours instable ?\195?\160 cause d'un bug sur jUrl toujours non corrig?\195?\169
+
+U   trunk/lib/jelix/core/jLocale.class.php
+U   trunk/lib/jelix/core/url/jUrlCompiler.significant.class.php
+U   trunk/lib/jelix/dao/jDaoCompiler.class.php
+U   trunk/lib/jelix/events/jEventCompiler.class.php
+U   trunk/lib/jelix/forms/jFormsCompiler.class.php
+U   trunk/lib/jelix/tpl/jTplCompiler.class.php
+U   trunk/lib/jelix/utils/jFile.class.php
+U   trunk/lib/jelix/utils/jZone.class.php
+
+

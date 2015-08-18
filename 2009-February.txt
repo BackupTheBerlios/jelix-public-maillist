@@ -1,0 +1,888 @@
+From foxmask at gmail.com  Mon Feb 16 17:16:23 2009
+From: foxmask at gmail.com (foxmask)
+Date: Mon, 16 Feb 2009 17:16:23 +0100
+Subject: [Jelix-public] Search Engine
+Message-ID: <576746c0902160816r25b15584i1bf8a0d9c0bdb096@mail.gmail.com>
+
+Bonjour,
+
+Cela fait quelques jours que je cherche un peu tout ce qui se fait sur le
+sujet, sur la toile. (avec pour point de
+d?part<http://www.roscripts.com/PHP_search_engine-119.html>
+)
+
+J'aimerai utiliser un moteur de recherche pour un forum.
+
+mais la plupart des solutions que je trouve sont :
+
+1) des moteurs qui sont des outils tiers (htdig,sphinx,BOSS, GoogleSearch,
+etc...) n?c?ssitant donc un h?bergement particuliers (cas de htdig,sphinx)
+ou que le site soit r?f?renc? (cas de googlesearch/BOSS) etc...
+
+2) des moteurs d?p?dants du SGBD ; exemple phorum est li? ? MySQL et utilise
+du fulltext avec MyISAM ; le reste de la base etant utilisable avec Innodb
+si on veut.
+
+j'avais song? aussi ? cela mais alors quid des autres SGBD support?es par
+Jelix ...
+
+Donc ce que j'aimerai ; c'est bel et bien utiliser un moteur "maison" en
+?tant le moins restrictif (pas li? ? un SGBD si possible).
+
+Les implem' que j'ai regard? sont :
+
+Phorum : Creations de tables "HEAP" temporaire ? chaque recherche ; ?
+partir de la table des messages. (? lire MySQL.com ; c'est plus rapide
+pour le fulltext plutot que d'ajoute un record dans une table
+contenant une colonne fulltext)
+
+FluxBB : ajoute des mots dans une table d?di?e au fur et a mesure que
+les messages sont cr??s.
+
+SimpleMachines : m?me technique que Phorum, creation de table type
+HEAP et insertion de record dans cette table ? partir de la table des
+messages
+
+phpBB : m?me technique, ? vu de nez, que fluxbb.
+
+Avez vous d?j? implement? quelquechose de similaire ?
+
+merci de vos reponses ;)
+
+cdt.
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/jelix-public/attachments/20090216/8829c186/attachment.html>
+
+From mailing-list at lelio.fr  Mon Feb 16 17:25:09 2009
+From: mailing-list at lelio.fr (LELIO-Mailing-List)
+Date: Mon, 16 Feb 2009 17:25:09 +0100
+Subject: [Jelix-public] Search Engine
+In-Reply-To: <576746c0902160816r25b15584i1bf8a0d9c0bdb096@mail.gmail.com>
+References: <576746c0902160816r25b15584i1bf8a0d9c0bdb096@mail.gmail.com>
+Message-ID: <9037FED589784BDCB92B7AF8EFE01453@TECH6PC>
+
+Il y a lucene PHP avec le ZendFramework.
+C'est hors base de donn?es. Personnellement je suis en train de l'essayer.
+Je ne peux donc pas te donner de retour sur les perfs mais ce que j'ai pu en
+lire m'ont convaincu...
+
+
+> -----Message d'origine-----
+> De : jelix-public-bounces at lists.berlios.de 
+> [mailto:jelix-public-bounces at lists.berlios.de] De la part de foxmask
+> Envoy? : lundi 16 f?vrier 2009 17:16
+> ? : jelix-public at lists.berlios.de
+> Objet : [Jelix-public] Search Engine
+> 
+> Bonjour,
+> 
+> Cela fait quelques jours que je cherche un peu tout ce qui se 
+> fait sur le sujet, sur la toile. (avec pour point de d?part 
+> <http://www.roscripts.com/PHP_search_engine-119.html> )
+> 
+> J'aimerai utiliser un moteur de recherche pour un forum.
+> 
+> mais la plupart des solutions que je trouve sont :
+> 
+> 1) des moteurs qui sont des outils tiers (htdig,sphinx,BOSS, 
+> GoogleSearch, etc...) n?c?ssitant donc un h?bergement 
+> particuliers (cas de htdig,sphinx) ou que le site soit 
+> r?f?renc? (cas de googlesearch/BOSS) etc...
+> 
+> 2) des moteurs d?p?dants du SGBD ; exemple phorum est li? ? 
+> MySQL et utilise du fulltext avec MyISAM ; le reste de la 
+> base etant utilisable avec Innodb si on veut. 
+> 
+> j'avais song? aussi ? cela mais alors quid des autres SGBD 
+> support?es par Jelix ...
+> 
+> Donc ce que j'aimerai ; c'est bel et bien utiliser un moteur 
+> "maison" en ?tant le moins restrictif (pas li? ? un SGBD si possible).
+> 
+> Les implem' que j'ai regard? sont : 
+> 
+> Phorum : Creations de tables "HEAP" temporaire ? chaque 
+> recherche ; ? partir de la table des messages. (? lire 
+> MySQL.com ; c'est plus rapide pour le fulltext plutot que 
+> d'ajoute un record dans une table contenant une colonne 
+> fulltext) FluxBB : ajoute des mots dans une table d?di?e au 
+> fur et a mesure que les messages sont cr??s.
+> SimpleMachines : m?me technique que Phorum, creation de table 
+> type HEAP et insertion de record dans cette table ? partir de 
+> la table des messages phpBB : m?me technique, ? vu de nez, que fluxbb.
+> 
+> Avez vous d?j? implement? quelquechose de similaire ?
+> 
+> merci de vos reponses ;)
+> 
+> cdt.
+> 
+> 
+> 
+
+
+
+From foxmask at gmail.com  Mon Feb 16 17:34:07 2009
+From: foxmask at gmail.com (foxmask)
+Date: Mon, 16 Feb 2009 17:34:07 +0100
+Subject: [Jelix-public] Search Engine
+In-Reply-To: <9037FED589784BDCB92B7AF8EFE01453@TECH6PC>
+References: <576746c0902160816r25b15584i1bf8a0d9c0bdb096@mail.gmail.com>
+	<9037FED589784BDCB92B7AF8EFE01453@TECH6PC>
+Message-ID: <576746c0902160834q3867daalb81ce32b566c3ba0@mail.gmail.com>
+
+Bonjour,
+merci,
+je viens de tomber dessus egalement.
+je vais tester :D
+Cdt.
+
+Le 16 f?vrier 2009 17:25, LELIO-Mailing-List <mailing-list at lelio.fr> a ?crit
+:
+
+> Il y a lucene PHP avec le ZendFramework.
+> C'est hors base de donn?es. Personnellement je suis en train de l'essayer.
+> Je ne peux donc pas te donner de retour sur les perfs mais ce que j'ai pu
+> en
+> lire m'ont convaincu...
+>
+>
+> > -----Message d'origine-----
+> > De : jelix-public-bounces at lists.berlios.de
+> > [mailto:jelix-public-bounces at lists.berlios.de] De la part de foxmask
+> > Envoy? : lundi 16 f?vrier 2009 17:16
+> > ? : jelix-public at lists.berlios.de
+> > Objet : [Jelix-public] Search Engine
+> >
+> > Bonjour,
+> >
+> > Cela fait quelques jours que je cherche un peu tout ce qui se
+> > fait sur le sujet, sur la toile. (avec pour point de d?part
+> > <http://www.roscripts.com/PHP_search_engine-119.html> )
+> >
+> > J'aimerai utiliser un moteur de recherche pour un forum.
+> >
+> > mais la plupart des solutions que je trouve sont :
+> >
+> > 1) des moteurs qui sont des outils tiers (htdig,sphinx,BOSS,
+> > GoogleSearch, etc...) n?c?ssitant donc un h?bergement
+> > particuliers (cas de htdig,sphinx) ou que le site soit
+> > r?f?renc? (cas de googlesearch/BOSS) etc...
+> >
+> > 2) des moteurs d?p?dants du SGBD ; exemple phorum est li? ?
+> > MySQL et utilise du fulltext avec MyISAM ; le reste de la
+> > base etant utilisable avec Innodb si on veut.
+> >
+> > j'avais song? aussi ? cela mais alors quid des autres SGBD
+> > support?es par Jelix ...
+> >
+> > Donc ce que j'aimerai ; c'est bel et bien utiliser un moteur
+> > "maison" en ?tant le moins restrictif (pas li? ? un SGBD si possible).
+> >
+> > Les implem' que j'ai regard? sont :
+> >
+> > Phorum : Creations de tables "HEAP" temporaire ? chaque
+> > recherche ; ? partir de la table des messages. (? lire
+> > MySQL.com ; c'est plus rapide pour le fulltext plutot que
+> > d'ajoute un record dans une table contenant une colonne
+> > fulltext) FluxBB : ajoute des mots dans une table d?di?e au
+> > fur et a mesure que les messages sont cr??s.
+> > SimpleMachines : m?me technique que Phorum, creation de table
+> > type HEAP et insertion de record dans cette table ? partir de
+> > la table des messages phpBB : m?me technique, ? vu de nez, que fluxbb.
+> >
+> > Avez vous d?j? implement? quelquechose de similaire ?
+> >
+> > merci de vos reponses ;)
+> >
+> > cdt.
+> >
+> >
+> >
+>
+> _______________________________________________
+> Jelix-public mailing list
+> Jelix-public at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/jelix-public
+>
+
+
+
+-- 
+http://www.foxmask.info
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/jelix-public/attachments/20090216/79e80e59/attachment.html>
+
+From lionel at over-blog.com  Mon Feb 16 18:41:56 2009
+From: lionel at over-blog.com (Lionel [Over-Blog])
+Date: Mon, 16 Feb 2009 18:41:56 +0100
+Subject: [Jelix-public] Search Engine
+In-Reply-To: <576746c0902160834q3867daalb81ce32b566c3ba0@mail.gmail.com>
+References: <576746c0902160816r25b15584i1bf8a0d9c0bdb096@mail.gmail.com>
+	<9037FED589784BDCB92B7AF8EFE01453@TECH6PC>
+	<576746c0902160834q3867daalb81ce32b566c3ba0@mail.gmail.com>
+Message-ID: <b4c5a4f30902160941p3716bd06vcaee50d8ff5ae905@mail.gmail.com>
+
+Il y a xapian :
+http://xapian.org/
+
+Semble tr?s performant. J'ai index? les 1 millions d'articles du wikipedia
+fr avec pour tester.
+Les recherches sont toutes sous la seconde avec une pertinence tr?s bonne.
+
+Lucene, c'?tait Java, et quand je peux me passer de Java....
+
+L.
+
+Le 16 f?vrier 2009 17:34, foxmask <foxmask at gmail.com> a ?crit :
+
+> Bonjour,
+> merci,
+> je viens de tomber dessus egalement.
+> je vais tester :D
+> Cdt.
+>
+> Le 16 f?vrier 2009 17:25, LELIO-Mailing-List <mailing-list at lelio.fr> a
+> ?crit :
+>
+> Il y a lucene PHP avec le ZendFramework.
+>> C'est hors base de donn?es. Personnellement je suis en train de l'essayer.
+>> Je ne peux donc pas te donner de retour sur les perfs mais ce que j'ai pu
+>> en
+>> lire m'ont convaincu...
+>>
+>>
+>> > -----Message d'origine-----
+>> > De : jelix-public-bounces at lists.berlios.de
+>> > [mailto:jelix-public-bounces at lists.berlios.de] De la part de foxmask
+>> > Envoy? : lundi 16 f?vrier 2009 17:16
+>> > ? : jelix-public at lists.berlios.de
+>> > Objet : [Jelix-public] Search Engine
+>> >
+>> > Bonjour,
+>> >
+>> > Cela fait quelques jours que je cherche un peu tout ce qui se
+>> > fait sur le sujet, sur la toile. (avec pour point de d?part
+>> > <http://www.roscripts.com/PHP_search_engine-119.html> )
+>> >
+>> > J'aimerai utiliser un moteur de recherche pour un forum.
+>> >
+>> > mais la plupart des solutions que je trouve sont :
+>> >
+>> > 1) des moteurs qui sont des outils tiers (htdig,sphinx,BOSS,
+>> > GoogleSearch, etc...) n?c?ssitant donc un h?bergement
+>> > particuliers (cas de htdig,sphinx) ou que le site soit
+>> > r?f?renc? (cas de googlesearch/BOSS) etc...
+>> >
+>> > 2) des moteurs d?p?dants du SGBD ; exemple phorum est li? ?
+>> > MySQL et utilise du fulltext avec MyISAM ; le reste de la
+>> > base etant utilisable avec Innodb si on veut.
+>> >
+>> > j'avais song? aussi ? cela mais alors quid des autres SGBD
+>> > support?es par Jelix ...
+>> >
+>> > Donc ce que j'aimerai ; c'est bel et bien utiliser un moteur
+>> > "maison" en ?tant le moins restrictif (pas li? ? un SGBD si possible).
+>> >
+>> > Les implem' que j'ai regard? sont :
+>> >
+>> > Phorum : Creations de tables "HEAP" temporaire ? chaque
+>> > recherche ; ? partir de la table des messages. (? lire
+>> > MySQL.com ; c'est plus rapide pour le fulltext plutot que
+>> > d'ajoute un record dans une table contenant une colonne
+>> > fulltext) FluxBB : ajoute des mots dans une table d?di?e au
+>> > fur et a mesure que les messages sont cr??s.
+>> > SimpleMachines : m?me technique que Phorum, creation de table
+>> > type HEAP et insertion de record dans cette table ? partir de
+>> > la table des messages phpBB : m?me technique, ? vu de nez, que fluxbb.
+>> >
+>> > Avez vous d?j? implement? quelquechose de similaire ?
+>> >
+>> > merci de vos reponses ;)
+>> >
+>> > cdt.
+>> >
+>> >
+>> >
+>>
+>> _______________________________________________
+>> Jelix-public mailing list
+>> Jelix-public at lists.berlios.de
+>> https://lists.berlios.de/mailman/listinfo/jelix-public
+>>
+>
+>
+>
+> --
+> http://www.foxmask.info
+>
+> _______________________________________________
+> Jelix-public mailing list
+> Jelix-public at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/jelix-public
+>
+>
+
+
+-- 
+Lionel TRESSENS
+JFG Networks
++33562483390 / +33661340142
+overblog.com 1?re plateforme de blogs en France
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/jelix-public/attachments/20090216/71e6fbf7/attachment.html>
+
+From kevin at lepeltier.info  Mon Feb 16 19:10:34 2009
+From: kevin at lepeltier.info (=?UTF-8?B?TGVwZWx0aWVyIGvDqXZpbg==?=)
+Date: Mon, 16 Feb 2009 19:10:34 +0100
+Subject: [Jelix-public] Search Engine
+In-Reply-To: <b4c5a4f30902160941p3716bd06vcaee50d8ff5ae905@mail.gmail.com>
+References: <576746c0902160816r25b15584i1bf8a0d9c0bdb096@mail.gmail.com>	<9037FED589784BDCB92B7AF8EFE01453@TECH6PC>	<576746c0902160834q3867daalb81ce32b566c3ba0@mail.gmail.com>
+	<b4c5a4f30902160941p3716bd06vcaee50d8ff5ae905@mail.gmail.com>
+Message-ID: <4999AC1A.30405@lepeltier.info>
+
+ > Donc ce que j'aimerai ; c'est bel et bien utiliser un moteur "maison" 
+en ?tant le moins restrictif (pas li? ? un SGBD si possible).
+
+?a fait un bail que je pense cr?er un moteur de recherche, depuis que 
+j'ai lu cette article.
+http://www-lium.univ-lemans.fr/~carlier/recherche/soundex.html
+
+Je trouve ce proc?der tr?s intelligent, et je n'ai pas l'impression que 
+les moteur de recherche l'utilise.
+Quand pensez-vous ?
+
+
+From kevin at lepeltier.info  Mon Feb 16 19:14:02 2009
+From: kevin at lepeltier.info (=?UTF-8?B?TGVwZWx0aWVyIGvDqXZpbg==?=)
+Date: Mon, 16 Feb 2009 19:14:02 +0100
+Subject: [Jelix-public] Search Engine
+In-Reply-To: <b4c5a4f30902160941p3716bd06vcaee50d8ff5ae905@mail.gmail.com>
+References: <576746c0902160816r25b15584i1bf8a0d9c0bdb096@mail.gmail.com>	<9037FED589784BDCB92B7AF8EFE01453@TECH6PC>	<576746c0902160834q3867daalb81ce32b566c3ba0@mail.gmail.com>
+	<b4c5a4f30902160941p3716bd06vcaee50d8ff5ae905@mail.gmail.com>
+Message-ID: <4999ACEA.9060002@lepeltier.info>
+
+Pour appuyer mon pr?c?dent message, j'aimerais vous faire lire ce texte.
+
+Si vuos pvueoz lrie ccei, vuos  aevz asusi nu d?rle de cvreeau. 
+Puveoz-vuos lrie ceci? Seleuemnt 55  porsnenes sur cnet en snot 
+cpalabes.Je n?en cyoaris pas mes yuex que je  sios cabaple de 
+cdrpormendre ce que je liasis. Le povuoir pho?man?nl du  crveeau huamin. 
+Soeln une rcheerche fiat ? l?Unievrist? de Cmabridge, il  n?y a pas 
+d?iromtpance sur l?odrre dnas luqeel les lerttes snot, la suele  cohse 
+imotprante est que la prirem?re et la der?nire letrte du mot siot ?  la 
+bnone palce. La raoisn est que le ceverau hmauin ne lit pas les mtos 
+par letrte mias ptu?lt cmome un tuot. ?tonannt n?est-ce pas?
+
+?a prouve que bas? un moteur de recherche sur l'orthographe des mots 
+n'est pas approprier.
+
+
+From kevin at lepeltier.info  Mon Feb 16 19:21:20 2009
+From: kevin at lepeltier.info (=?UTF-8?B?TGVwZWx0aWVyIGvDqXZpbg==?=)
+Date: Mon, 16 Feb 2009 19:21:20 +0100
+Subject: [Jelix-public] Search Engine
+In-Reply-To: <4999AC1A.30405@lepeltier.info>
+References: <576746c0902160816r25b15584i1bf8a0d9c0bdb096@mail.gmail.com>	<9037FED589784BDCB92B7AF8EFE01453@TECH6PC>	<576746c0902160834q3867daalb81ce32b566c3ba0@mail.gmail.com>	<b4c5a4f30902160941p3716bd06vcaee50d8ff5ae905@mail.gmail.com>
+	<4999AC1A.30405@lepeltier.info>
+Message-ID: <4999AEA0.5030705@lepeltier.info>
+
+test
+
+
+From sebastien.debollivier at webarome.net  Mon Feb 16 20:01:03 2009
+From: sebastien.debollivier at webarome.net (=?ISO-8859-1?Q?S=E9bastien_De_Bollivier?=)
+Date: Mon, 16 Feb 2009 20:01:03 +0100
+Subject: [Jelix-public] Search Engine
+In-Reply-To: <4999AEA0.5030705@lepeltier.info>
+References: <576746c0902160816r25b15584i1bf8a0d9c0bdb096@mail.gmail.com>
+	<9037FED589784BDCB92B7AF8EFE01453@TECH6PC>
+	<576746c0902160834q3867daalb81ce32b566c3ba0@mail.gmail.com>
+	<b4c5a4f30902160941p3716bd06vcaee50d8ff5ae905@mail.gmail.com>
+	<4999AC1A.30405@lepeltier.info> <4999AEA0.5030705@lepeltier.info>
+Message-ID: <38192f840902161101p1d365ea5p88b414f67492deee@mail.gmail.com>
+
+Bonjour,
+J'ai exp?riment? les solutions suivantes pendant que je bossais sur un
+moteur de recherche sur le vin : - lucene avec le Zend Framework, des soucis
+de performance ou incompr?hensible parfois sur une grosse base d'indexation
+en php et recherche en php...Souvent des erreurs de fichiers, j'ai mis de
+c?t?.
+- Apache Solr : serveur ind?pendant en Java (tomcat et compagnie) c'est
+plut?t bien foutu et surtout ?a tient bien la charge, simple ? utiliser avec
+php mais ne rentre pas dans ton cas de figure.
+- MySQL : avec match against on obtient des r?sultats pas mal m?me s'il faut
+bien tout prendre en compte (cf la doc)
+
+Voil? le petit retour que j'ai...J'ai pas vraiment aim? l'impl?mentation
+lucene de Zend, et le manque de retour sur ces erreurs m'ont fait abandonner
+cette orientation.
+
+2009/2/16 Lepeltier k?vin <kevin at lepeltier.info>
+
+> test
+> _______________________________________________
+> Jelix-public mailing list
+> Jelix-public at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/jelix-public
+>
+
+
+
+-- 
+S?bastien De Bollivier
+Skype : deboll_s
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/jelix-public/attachments/20090216/4c8a24cd/attachment.html>
+
+From loic at mathaud.net  Mon Feb 16 19:30:14 2009
+From: loic at mathaud.net (Loic Mathaud)
+Date: Mon, 16 Feb 2009 19:30:14 +0100
+Subject: [Jelix-public] Search Engine
+In-Reply-To: <4999ACEA.9060002@lepeltier.info>
+References: <576746c0902160816r25b15584i1bf8a0d9c0bdb096@mail.gmail.com>	<9037FED589784BDCB92B7AF8EFE01453@TECH6PC>	<576746c0902160834q3867daalb81ce32b566c3ba0@mail.gmail.com>	<b4c5a4f30902160941p3716bd06vcaee50d8ff5ae905@mail.gmail.com>
+	<4999ACEA.9060002@lepeltier.info>
+Message-ID: <4999B0B6.20007@mathaud.net>
+
+Lepeltier k?vin a ?crit :
+> Pour appuyer mon pr?c?dent message, j'aimerais vous faire lire ce texte.
+> 
+> Si vuos pvueoz lrie ccei, vuos  aevz asusi nu d?rle de cvreeau. 
+> Puveoz-vuos lrie ceci? Seleuemnt 55  porsnenes sur cnet en snot 
+> cpalabes.Je n?en cyoaris pas mes yuex que je  sios cabaple de 
+> cdrpormendre ce que je liasis. Le povuoir pho?man?nl du  crveeau huamin. 
+> Soeln une rcheerche fiat ? l?Unievrist? de Cmabridge, il  n?y a pas 
+> d?iromtpance sur l?odrre dnas luqeel les lerttes snot, la suele  cohse 
+> imotprante est que la prirem?re et la der?nire letrte du mot siot ?  la 
+> bnone palce. La raoisn est que le ceverau hmauin ne lit pas les mtos 
+> par letrte mias ptu?lt cmome un tuot. ?tonannt n?est-ce pas?
+> 
+> ?a prouve que bas? un moteur de recherche sur l'orthographe des mots 
+> n'est pas approprier.
+
+Je dirais surtout que ce n'est pas forc?ment un probl?me de lecture,
+mais plus d'?criture. Les textes dont nous disposons dans une base de
+donn?es n'?tant pas exemptes de fautes d'orthographes, sauf ? de tr?s
+exceptionnelles occasions ;)
+
+
+
+
+From sebastien.debollivier at webarome.net  Mon Feb 16 20:20:52 2009
+From: sebastien.debollivier at webarome.net (=?ISO-8859-1?Q?S=E9bastien_De_Bollivier?=)
+Date: Mon, 16 Feb 2009 20:20:52 +0100
+Subject: [Jelix-public] Search Engine
+In-Reply-To: <4999B0B6.20007@mathaud.net>
+References: <576746c0902160816r25b15584i1bf8a0d9c0bdb096@mail.gmail.com>
+	<9037FED589784BDCB92B7AF8EFE01453@TECH6PC>
+	<576746c0902160834q3867daalb81ce32b566c3ba0@mail.gmail.com>
+	<b4c5a4f30902160941p3716bd06vcaee50d8ff5ae905@mail.gmail.com>
+	<4999ACEA.9060002@lepeltier.info> <4999B0B6.20007@mathaud.net>
+Message-ID: <38192f840902161120m6949e82cxa3974e70459e21a3@mail.gmail.com>
+
+Pour tout ce qui concerne l'orthographe, tu peux voir les algos de soudnex
+qui permettent de pallier l?g?rement ? ce probl?me.
+Maintenant ce n'est pas la solution ultime.
+Le 16 f?vrier 2009 19:30, Loic Mathaud <loic at mathaud.net> a ?crit :
+
+> Lepeltier k?vin a ?crit :
+> > Pour appuyer mon pr?c?dent message, j'aimerais vous faire lire ce texte.
+> >
+> > Si vuos pvueoz lrie ccei, vuos  aevz asusi nu d?rle de cvreeau.
+> > Puveoz-vuos lrie ceci? Seleuemnt 55  porsnenes sur cnet en snot
+> > cpalabes.Je n'en cyoaris pas mes yuex que je  sios cabaple de
+> > cdrpormendre ce que je liasis. Le povuoir pho?man?nl du  crveeau huamin.
+> > Soeln une rcheerche fiat ? l'Unievrist? de Cmabridge, il  n'y a pas
+> > d'iromtpance sur l'odrre dnas luqeel les lerttes snot, la suele  cohse
+> > imotprante est que la prirem?re et la der?nire letrte du mot siot ?  la
+> > bnone palce. La raoisn est que le ceverau hmauin ne lit pas les mtos
+> > par letrte mias ptu?lt cmome un tuot. ?tonannt n'est-ce pas?
+> >
+> > ?a prouve que bas? un moteur de recherche sur l'orthographe des mots
+> > n'est pas approprier.
+>
+> Je dirais surtout que ce n'est pas forc?ment un probl?me de lecture,
+> mais plus d'?criture. Les textes dont nous disposons dans une base de
+> donn?es n'?tant pas exemptes de fautes d'orthographes, sauf ? de tr?s
+> exceptionnelles occasions ;)
+>
+>
+> _______________________________________________
+> Jelix-public mailing list
+> Jelix-public at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/jelix-public
+>
+
+
+
+-- 
+S?bastien De Bollivier
+Chef de projet technique
+
+Gsm : 06 82 65 49 30
+Skype : deboll_s
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/jelix-public/attachments/20090216/d77a22e8/attachment.html>
+
+From foxmask at gmail.com  Mon Feb 16 20:48:54 2009
+From: foxmask at gmail.com (Foxmask)
+Date: Mon, 16 Feb 2009 20:48:54 +0100
+Subject: [Jelix-public] Search Engine
+In-Reply-To: <38192f840902161120m6949e82cxa3974e70459e21a3@mail.gmail.com>
+References: <576746c0902160816r25b15584i1bf8a0d9c0bdb096@mail.gmail.com>
+	<9037FED589784BDCB92B7AF8EFE01453@TECH6PC>
+	<576746c0902160834q3867daalb81ce32b566c3ba0@mail.gmail.com>
+	<b4c5a4f30902160941p3716bd06vcaee50d8ff5ae905@mail.gmail.com>
+	<4999ACEA.9060002@lepeltier.info> <4999B0B6.20007@mathaud.net>
+	<38192f840902161120m6949e82cxa3974e70459e21a3@mail.gmail.com>
+Message-ID: <87EC2385-A41E-4268-9F0A-FEAF88C21F62@gmail.com>
+
+Bonsoir
+J'ai lu toutes vos r?ponses et je reste du coup sur ma faim ;)
+le prerequis ?tant d'?tre non d?pendant de son h?bergement ni  
+compiler quoi que se soit.
+Je retourne ? mes tests
+
+Le 16 f?vr. 09 ? 20:20, S?bastien De Bollivier <sebastien.debollivier at webarome. 
+net> a ?crit :
+
+> Pour tout ce qui concerne l'orthographe, tu peux voir les algos de  
+> soudnex qui permettent de pallier l?g?rement ? ce probl?me.
+> Maintenant ce n'est pas la solution ultime.
+> Le 16 f?vrier 2009 19:30, Loic Mathaud <loic at mathaud.net> a ?crit :
+> Lepeltier k?vin a ?crit :
+> > Pour appuyer mon pr?c?dent message, j'aimerais vous faire lire ce  
+> texte.
+> >
+> > Si vuos pvueoz lrie ccei, vuos  aevz asusi nu d?rle de cvreeau.
+> > Puveoz-vuos lrie ceci? Seleuemnt 55  porsnenes sur cnet en snot
+> > cpalabes.Je n'en cyoaris pas mes yuex que je  sios cabaple de
+> > cdrpormendre ce que je liasis. Le povuoir pho?man?nl du  crveeau h 
+> uamin.
+> > Soeln une rcheerche fiat ? l'Unievrist? de Cmabridge, il  n'y a p 
+> as
+> > d'iromtpance sur l'odrre dnas luqeel les lerttes snot, la suele   
+> cohse
+> > imotprante est que la prirem?re et la der?nire letrte du mot siot  
+> ?  la
+> > bnone palce. La raoisn est que le ceverau hmauin ne lit pas les mtos
+> > par letrte mias ptu?lt cmome un tuot. ?tonannt n'est-ce pas?
+> >
+> > ?a prouve que bas? un moteur de recherche sur l'orthographe des mo 
+> ts
+> > n'est pas approprier.
+>
+> Je dirais surtout que ce n'est pas forc?ment un probl?me de lecture,
+> mais plus d'?criture. Les textes dont nous disposons dans une base de
+> donn?es n'?tant pas exemptes de fautes d'orthographes, sauf ? de tr 
+> ?s
+> exceptionnelles occasions ;)
+>
+>
+> _______________________________________________
+> Jelix-public mailing list
+> Jelix-public at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/jelix-public
+>
+>
+>
+> -- 
+> S?bastien De Bollivier
+> Chef de projet technique
+>
+> Gsm : 06 82 65 49 30
+> Skype : deboll_s
+>
+> _______________________________________________
+> Jelix-public mailing list
+> Jelix-public at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/jelix-public
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/jelix-public/attachments/20090216/0d9103e1/attachment.html>
+
+From laurent at xulfr.org  Mon Feb 16 23:13:14 2009
+From: laurent at xulfr.org (Laurent)
+Date: Mon, 16 Feb 2009 23:13:14 +0100
+Subject: [Jelix-public] Search Engine
+In-Reply-To: <576746c0902160816r25b15584i1bf8a0d9c0bdb096@mail.gmail.com>
+References: <576746c0902160816r25b15584i1bf8a0d9c0bdb096@mail.gmail.com>
+Message-ID: <4999E4FA.2030309@xulfr.org>
+
+Quelques id?es pour impl?menter un moteur de recherche : 
+http://www.symfony-project.org/askeet/1_0/en/21
+
+
+foxmask wrote:
+> Bonjour,
+> 
+> Cela fait quelques jours que je cherche un peu tout ce qui se fait sur 
+> le sujet, sur la toile. (avec pour point de d?part 
+> <http://www.roscripts.com/PHP_search_engine-119.html>)
+> 
+> J'aimerai utiliser un moteur de recherche pour un forum.
+> 
+> mais la plupart des solutions que je trouve sont :
+> 
+> 1) des moteurs qui sont des outils tiers (htdig,sphinx,BOSS, 
+> GoogleSearch, etc...) n?c?ssitant donc un h?bergement particuliers (cas 
+> de htdig,sphinx) ou que le site soit r?f?renc? (cas de 
+> googlesearch/BOSS) etc...
+> 
+> 2) des moteurs d?p?dants du SGBD ; exemple phorum est li? ? MySQL et 
+> utilise du fulltext avec MyISAM ; le reste de la base etant utilisable 
+> avec Innodb si on veut.
+> 
+> j'avais song? aussi ? cela mais alors quid des autres SGBD support?es 
+> par Jelix ...
+> 
+> Donc ce que j'aimerai ; c'est bel et bien utiliser un moteur "maison" en 
+> ?tant le moins restrictif (pas li? ? un SGBD si possible).
+> 
+> Les implem' que j'ai regard? sont :
+> 
+> Phorum : Creations de tables "HEAP" temporaire ? chaque recherche ; ? partir de la table des messages. (? lire MySQL.com ; c'est plus rapide pour le fulltext plutot que d'ajoute un record dans une table contenant une colonne fulltext)
+> 
+> FluxBB : ajoute des mots dans une table d?di?e au fur et a mesure que les messages sont cr??s.
+> 
+> SimpleMachines : m?me technique que Phorum, creation de table type HEAP et insertion de record dans cette table ? partir de la table des messages
+> 
+> phpBB : m?me technique, ? vu de nez, que fluxbb.
+> 
+> Avez vous d?j? implement? quelquechose de similaire ?
+> 
+> merci de vos reponses ;)
+> 
+> cdt.
+> 
+> 
+> ------------------------------------------------------------------------
+> 
+> _______________________________________________
+> Jelix-public mailing list
+> Jelix-public at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/jelix-public
+
+
+
+From kevin at lepeltier.info  Mon Feb 16 23:26:41 2009
+From: kevin at lepeltier.info (=?UTF-8?B?TGVwZWx0aWVyIGvDqXZpbg==?=)
+Date: Mon, 16 Feb 2009 23:26:41 +0100
+Subject: [Jelix-public] Search Engine
+In-Reply-To: <87EC2385-A41E-4268-9F0A-FEAF88C21F62@gmail.com>
+References: <576746c0902160816r25b15584i1bf8a0d9c0bdb096@mail.gmail.com>	<9037FED589784BDCB92B7AF8EFE01453@TECH6PC>	<576746c0902160834q3867daalb81ce32b566c3ba0@mail.gmail.com>	<b4c5a4f30902160941p3716bd06vcaee50d8ff5ae905@mail.gmail.com>	<4999ACEA.9060002@lepeltier.info>
+	<4999B0B6.20007@mathaud.net>	<38192f840902161120m6949e82cxa3974e70459e21a3@mail.gmail.com>
+	<87EC2385-A41E-4268-9F0A-FEAF88C21F62@gmail.com>
+Message-ID: <4999E821.20603@lepeltier.info>
+
+  Voil? comment je vois les choses :
+
+une recherche s'effectue sur une ou plusieur tables.
+une t?che cron (ou pseudo cron) index les tables.
+lors de l'indexation, on ?clat en mot
+suppression des mots de liaison.
+chaque mot et converti en soundex ou phonex. (choisit en fonction de la 
+langue de l'enregistrement.)
+puis enregistrer :
+
+| id | soundex | nom de la table de r?f | id de l'enregistrement | champ 
+de l'enregistrement | langue |
+
+Une table peut ?tre cr??e pour marquer les couples [nom de 
+table|id|champ] qui on ?tait modifi?, pour all?ger la t?che de l'indexation.
+
+| nom de la table de r?f | id de l'enregistrement | champ de 
+l'enregistrement | est modifi? oui/non |
+
+pour chaque [nom de table|id|champ] modifier, on supprime toutes les 
+lignes dans la table, avant de recommencer l'indexation.
+
+Au moment de la recherche,
+?clat en mots la recherche, en prenant en compte, le signe d'exclusion (-)
+chaque mot et converti en soundex.
+si'il y a plusieurs fois le m?me soundex, on en garde qu'un.
+recherche d'?galit? : SELECT table_item, id_item, champ_item FROM search 
+WHERE soundex = 'mot1' || soundex = 'mot2';
+Cette requ?te est multi-SGBD je pense.
+chaque ligne du r?sultat doit-?tre afficher en fonction de son contenu.
+
+Dans la config :
+dur?e entre deux indexations.
+Si le moteur utilise les soundex
+la langue par d?faut
+Listes des tables a index? (le moteur se limite naturellement au champ 
+varchar, texte)
+la langue pour chaque champ (si diff?rent de d?faut)
+
+
+C'est un peu grossier :)
+
+Mais je vois pas de souci majeur, c'est une base de moteur de recherche.
+
+
+
+From lionel at over-blog.com  Tue Feb 17 08:10:18 2009
+From: lionel at over-blog.com (Lionel [Over-Blog])
+Date: Tue, 17 Feb 2009 08:10:18 +0100
+Subject: [Jelix-public] Search Engine
+In-Reply-To: <4999E821.20603@lepeltier.info>
+References: <576746c0902160816r25b15584i1bf8a0d9c0bdb096@mail.gmail.com>
+	<9037FED589784BDCB92B7AF8EFE01453@TECH6PC>
+	<576746c0902160834q3867daalb81ce32b566c3ba0@mail.gmail.com>
+	<b4c5a4f30902160941p3716bd06vcaee50d8ff5ae905@mail.gmail.com>
+	<4999ACEA.9060002@lepeltier.info> <4999B0B6.20007@mathaud.net>
+	<38192f840902161120m6949e82cxa3974e70459e21a3@mail.gmail.com>
+	<87EC2385-A41E-4268-9F0A-FEAF88C21F62@gmail.com>
+	<4999E821.20603@lepeltier.info>
+Message-ID: <b4c5a4f30902162310h167dd1c8ofb9881e6c06c5212@mail.gmail.com>
+
+C'est un syst?me que j'ai d?j? test?. Inconv?nient : r?sultats m?diocres.
+En effet, cela ne prend pas en compte le poids des mots (un mot dont
+l'occurence est faible dans un document doit avoir un poids fort dans le
+ranking de recherche).
+Il ne prend pas en compte la distance des mots (si je cherche "grosse
+brute", j'esp?re un meilleur ranking pour les documents ayant ces mots
+adjacents).
+Il ne prend pas en compte la lexemisation (si je cherche restaurant,
+j'aimerai que restaurateur soit match? aussi).
+Il ne prend pas en compte les fautes de frappe (si je cherche villahe -au
+lieu de village- le soundex ne sera pas le m?me, mais un moteur meilleur
+m'aurait propos? l'orthographe approch?e "village").
+
+Voila quelques exemples des d?fauts d'un tel moteur, mais il y en a
+d'autres, et mis bout a bout, ca donne un r?sultat tr?s moyen...
+
+Lionel
+
+Le 16 f?vrier 2009 23:26, Lepeltier k?vin <kevin at lepeltier.info> a ?crit :
+
+>  Voil? comment je vois les choses :
+>
+> une recherche s'effectue sur une ou plusieur tables.
+> une t?che cron (ou pseudo cron) index les tables.
+> lors de l'indexation, on ?clat en mot
+> suppression des mots de liaison.
+> chaque mot et converti en soundex ou phonex. (choisit en fonction de la
+> langue de l'enregistrement.)
+> puis enregistrer :
+>
+> | id | soundex | nom de la table de r?f | id de l'enregistrement | champ
+> de l'enregistrement | langue |
+>
+> Une table peut ?tre cr??e pour marquer les couples [nom de
+> table|id|champ] qui on ?tait modifi?, pour all?ger la t?che de
+> l'indexation.
+>
+> | nom de la table de r?f | id de l'enregistrement | champ de
+> l'enregistrement | est modifi? oui/non |
+>
+> pour chaque [nom de table|id|champ] modifier, on supprime toutes les
+> lignes dans la table, avant de recommencer l'indexation.
+>
+> Au moment de la recherche,
+> ?clat en mots la recherche, en prenant en compte, le signe d'exclusion (-)
+> chaque mot et converti en soundex.
+> si'il y a plusieurs fois le m?me soundex, on en garde qu'un.
+> recherche d'?galit? : SELECT table_item, id_item, champ_item FROM search
+> WHERE soundex = 'mot1' || soundex = 'mot2';
+> Cette requ?te est multi-SGBD je pense.
+> chaque ligne du r?sultat doit-?tre afficher en fonction de son contenu.
+>
+> Dans la config :
+> dur?e entre deux indexations.
+> Si le moteur utilise les soundex
+> la langue par d?faut
+> Listes des tables a index? (le moteur se limite naturellement au champ
+> varchar, texte)
+> la langue pour chaque champ (si diff?rent de d?faut)
+>
+>
+> C'est un peu grossier :)
+>
+> Mais je vois pas de souci majeur, c'est une base de moteur de recherche.
+>
+> _______________________________________________
+> Jelix-public mailing list
+> Jelix-public at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/jelix-public
+>
+
+
+
+-- 
+Lionel TRESSENS
+JFG Networks
++33562483390 / +33661340142
+overblog.com 1?re plateforme de blogs en France
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/jelix-public/attachments/20090217/2561e86d/attachment.html>
+
+From kevin at lepeltier.info  Tue Feb 17 11:22:49 2009
+From: kevin at lepeltier.info (=?UTF-8?B?TGVwZWx0aWVyIGvDqXZpbg==?=)
+Date: Tue, 17 Feb 2009 11:22:49 +0100
+Subject: [Jelix-public] Search Engine
+In-Reply-To: <b4c5a4f30902162310h167dd1c8ofb9881e6c06c5212@mail.gmail.com>
+References: <576746c0902160816r25b15584i1bf8a0d9c0bdb096@mail.gmail.com>	<9037FED589784BDCB92B7AF8EFE01453@TECH6PC>	<576746c0902160834q3867daalb81ce32b566c3ba0@mail.gmail.com>	<b4c5a4f30902160941p3716bd06vcaee50d8ff5ae905@mail.gmail.com>	<4999ACEA.9060002@lepeltier.info>
+	<4999B0B6.20007@mathaud.net>	<38192f840902161120m6949e82cxa3974e70459e21a3@mail.gmail.com>	<87EC2385-A41E-4268-9F0A-FEAF88C21F62@gmail.com>	<4999E821.20603@lepeltier.info>
+	<b4c5a4f30902162310h167dd1c8ofb9881e6c06c5212@mail.gmail.com>
+Message-ID: <499A8FF9.3040208@lepeltier.info>
+
+Lionel [Over-Blog] a ?crit :
+> C'est un syst?me que j'ai d?j? test?. Inconv?nient : r?sultats m?diocres.
+>
+> En effet, cela ne prend pas en compte le poids des mots (un mot dont 
+> l'occurence est faible dans un document doit avoir un poids fort dans 
+> le ranking de recherche).
+> Il ne prend pas en compte la distance des mots (si je cherche "grosse 
+> brute", j'esp?re un meilleur ranking pour les documents ayant ces mots 
+> adjacents).
+> Il ne prend pas en compte la lexemisation (si je cherche restaurant, 
+> j'aimerai que restaurateur soit match? aussi).
+> Il ne prend pas en compte les fautes de frappe (si je cherche villahe 
+> -au lieu de village- le soundex ne sera pas le m?me, mais un moteur 
+> meilleur m'aurait propos? l'orthographe approch?e "village").
+>
+> Voila quelques exemples des d?fauts d'un tel moteur, mais il y en a 
+> d'autres, et mis bout a bout, ca donne un r?sultat tr?s moyen...
+>
+> Lionel
+>
+Pour le poids des mots, c'est pas dur, il suffit d'ajouter, un champ de 
+plus dans la table d'indexation.
+
+en phonex, le plus sensible.
+restaurant -> 0.648737364
+restaurateur -> 0.648737369
+villahe -> 0.292411837
+village -> 0.292356018
+
+en soundex_fr, plus simple
+restaurant ->  R836
+restaurateur ->   R836
+villahe ->   V400
+village ->   V470
+
+en soundex 2
+restaurant -> RSTR
+restaurateur ->  RSTR
+villahe ->  VL__
+village ->  VLG__
+
+En arrondissant plus ou moins ?a passe.
+
+
+Pour ce qui est de la distance des mots, la je vois vraiment pas comment 
+faire s'en obtenir une base de donn?e monstrueuse.
+
+k?vin [lipki]
+
+
+
+
+

@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Jelix-public] svn 192 : iterateurs dans jDb, et nouvelles configs
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/jelix-public/2006-June/index.html" >
+   <LINK REL="made" HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20svn%20192%20%3A%20iterateurs%20dans%20jDb%2C%20et%20nouvelles%20configs&In-Reply-To=%3C44875CD4.3010100%40xulfr.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Jelix-public] svn 192 : iterateurs dans jDb, et nouvelles configs</H1>
+    <B>Laurent</B> 
+    <A HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20svn%20192%20%3A%20iterateurs%20dans%20jDb%2C%20et%20nouvelles%20configs&In-Reply-To=%3C44875CD4.3010100%40xulfr.org%3E"
+       TITLE="[Jelix-public] svn 192 : iterateurs dans jDb, et nouvelles configs">laurent at xulfr.org
+       </A><BR>
+    <I>Thu Jun  8 01:10:12 CEST 2006</I>
+    <P><UL>
+        
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#30">[ date ]</a>
+              <a href="thread.html#30">[ thread ]</a>
+              <a href="subject.html#30">[ subject ]</a>
+              <a href="author.html#30">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Bonjour,
+
+Depuis la version 1.0 alpha3, pas mal de changements (voir 
+<A HREF="http://jelix.org/articles/changelog">http://jelix.org/articles/changelog</A> ).
+
+Ce soir, je viens d'impl&#233;menter l'interface Iterator sur jDbRecordSet. 
+cela va permettre d'&#233;conomiser de la m&#233;moire, surtout pour ceux qui 
+r&#233;cup&#232;rent des gros ensemble de donn&#233;es (via les dao notament) ;-)
+
+Concretement, les m&#233;thodes de type select dans les daos ne renvoient 
+plus un tableau mais un recordset. Comme un recordset, c'est maintenant 
+un iterateur, au niveau utilisation, cela ne change rien par rapport &#224; 
+un tableau.  Si par exemple vous faisiez que des foreachs sur les 
+r&#233;sultats : votre code ne change pas.
+
+Dans les daos, j'ai fais quelques modifs : cela n'utilise plus jDbWidget 
+(cela ne valait finalement pas le coup, surtout avec la modif sur les 
+recordset). Cela va contribuer &#224; am&#233;liorer les perfs.
+
+Pour ceux qui r&#233;cup&#232;re &#224; partir du svn : il va falloir vider le temp 
+pour que les daos soient reg&#233;n&#233;r&#233;es correctement.
+
+&#192; noter que je n'ai test&#233; qu'avec le driver mysql. Donc ceux qui sont 
+postgresql ou sqlite, ou qui passent par pdo, peuvent me signaler les 
+&#233;ventuels bugs ;-)
+
+
+Con&#231;ernant la config : il y a maintenant un fichier de config commun &#224; 
+tous les points d'entr&#233;es. Il doit avoir pour nom 
+var/config/defaultconfig.ini.php . Il sera automatiquement pris en 
+compte. Et dans les fichiers de conf sp&#233;cifiques &#224; vos points d'entr&#233;es, 
+vous n'y mettez que les options ayant des valeurs sp&#233;cifiques.
+
+De plus, les modifs effectu&#233;es sur la gestion de la conf ne g&#233;n&#232;re plus 
+qu'un fichier temporaire pour chaque point d'entr&#233;e : vous pouvez donc 
+vider votre temp pour virer les fichiers temporaires obsol&#232;tes.
+
+
+a+
+
+Laurent
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#30">[ date ]</a>
+              <a href="thread.html#30">[ thread ]</a>
+              <a href="subject.html#30">[ subject ]</a>
+              <a href="author.html#30">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/jelix-public">More information about the Jelix-public
+mailing list</a><br>
+</body></html>

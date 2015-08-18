@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Jelix-public] Search Engine
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/jelix-public/2009-February/index.html" >
+   <LINK REL="made" HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20Search%20Engine&In-Reply-To=%3Cb4c5a4f30902162310h167dd1c8ofb9881e6c06c5212%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000823.html">
+   <LINK REL="Next"  HREF="000825.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Jelix-public] Search Engine</H1>
+    <B>Lionel [Over-Blog]</B> 
+    <A HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20Search%20Engine&In-Reply-To=%3Cb4c5a4f30902162310h167dd1c8ofb9881e6c06c5212%40mail.gmail.com%3E"
+       TITLE="[Jelix-public] Search Engine">lionel at over-blog.com
+       </A><BR>
+    <I>Tue Feb 17 08:10:18 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000823.html">[Jelix-public] Search Engine
+</A></li>
+        <LI>Next message: <A HREF="000825.html">[Jelix-public] Search Engine
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#824">[ date ]</a>
+              <a href="thread.html#824">[ thread ]</a>
+              <a href="subject.html#824">[ subject ]</a>
+              <a href="author.html#824">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>C'est un syst&#232;me que j'ai d&#233;j&#224; test&#233;. Inconv&#233;nient : r&#233;sultats m&#233;diocres.
+En effet, cela ne prend pas en compte le poids des mots (un mot dont
+l'occurence est faible dans un document doit avoir un poids fort dans le
+ranking de recherche).
+Il ne prend pas en compte la distance des mots (si je cherche &quot;grosse
+brute&quot;, j'esp&#232;re un meilleur ranking pour les documents ayant ces mots
+adjacents).
+Il ne prend pas en compte la lexemisation (si je cherche restaurant,
+j'aimerai que restaurateur soit match&#233; aussi).
+Il ne prend pas en compte les fautes de frappe (si je cherche villahe -au
+lieu de village- le soundex ne sera pas le m&#234;me, mais un moteur meilleur
+m'aurait propos&#233; l'orthographe approch&#233;e &quot;village&quot;).
+
+Voila quelques exemples des d&#233;fauts d'un tel moteur, mais il y en a
+d'autres, et mis bout a bout, ca donne un r&#233;sultat tr&#232;s moyen...
+
+Lionel
+
+Le 16 f&#233;vrier 2009 23:26, Lepeltier k&#233;vin &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/jelix-public">kevin at lepeltier.info</A>&gt; a &#233;crit :
+
+&gt;<i>  Voil&#224; comment je vois les choses :
+</I>&gt;<i>
+</I>&gt;<i> une recherche s'effectue sur une ou plusieur tables.
+</I>&gt;<i> une t&#226;che cron (ou pseudo cron) index les tables.
+</I>&gt;<i> lors de l'indexation, on &#233;clat en mot
+</I>&gt;<i> suppression des mots de liaison.
+</I>&gt;<i> chaque mot et converti en soundex ou phonex. (choisit en fonction de la
+</I>&gt;<i> langue de l'enregistrement.)
+</I>&gt;<i> puis enregistrer :
+</I>&gt;<i>
+</I>&gt;<i> | id | soundex | nom de la table de r&#233;f | id de l'enregistrement | champ
+</I>&gt;<i> de l'enregistrement | langue |
+</I>&gt;<i>
+</I>&gt;<i> Une table peut &#234;tre cr&#233;&#233;e pour marquer les couples [nom de
+</I>&gt;<i> table|id|champ] qui on &#233;tait modifi&#233;, pour all&#233;ger la t&#226;che de
+</I>&gt;<i> l'indexation.
+</I>&gt;<i>
+</I>&gt;<i> | nom de la table de r&#233;f | id de l'enregistrement | champ de
+</I>&gt;<i> l'enregistrement | est modifi&#233; oui/non |
+</I>&gt;<i>
+</I>&gt;<i> pour chaque [nom de table|id|champ] modifier, on supprime toutes les
+</I>&gt;<i> lignes dans la table, avant de recommencer l'indexation.
+</I>&gt;<i>
+</I>&gt;<i> Au moment de la recherche,
+</I>&gt;<i> &#233;clat en mots la recherche, en prenant en compte, le signe d'exclusion (-)
+</I>&gt;<i> chaque mot et converti en soundex.
+</I>&gt;<i> si'il y a plusieurs fois le m&#234;me soundex, on en garde qu'un.
+</I>&gt;<i> recherche d'&#233;galit&#233; : SELECT table_item, id_item, champ_item FROM search
+</I>&gt;<i> WHERE soundex = 'mot1' || soundex = 'mot2';
+</I>&gt;<i> Cette requ&#234;te est multi-SGBD je pense.
+</I>&gt;<i> chaque ligne du r&#233;sultat doit-&#234;tre afficher en fonction de son contenu.
+</I>&gt;<i>
+</I>&gt;<i> Dans la config :
+</I>&gt;<i> dur&#233;e entre deux indexations.
+</I>&gt;<i> Si le moteur utilise les soundex
+</I>&gt;<i> la langue par d&#233;faut
+</I>&gt;<i> Listes des tables a index&#233; (le moteur se limite naturellement au champ
+</I>&gt;<i> varchar, texte)
+</I>&gt;<i> la langue pour chaque champ (si diff&#233;rent de d&#233;faut)
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> C'est un peu grossier :)
+</I>&gt;<i>
+</I>&gt;<i> Mais je vois pas de souci majeur, c'est une base de moteur de recherche.
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Jelix-public mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/jelix-public">Jelix-public at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/jelix-public">https://lists.berlios.de/mailman/listinfo/jelix-public</A>
+</I>&gt;<i>
+</I>
+
+
+-- 
+Lionel TRESSENS
+JFG Networks
++33562483390 / +33661340142
+overblog.com 1&#232;re plateforme de blogs en France
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/jelix-public/attachments/20090217/2561e86d/attachment.html">https://lists.berlios.de/pipermail/jelix-public/attachments/20090217/2561e86d/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000823.html">[Jelix-public] Search Engine
+</A></li>
+	<LI>Next message: <A HREF="000825.html">[Jelix-public] Search Engine
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#824">[ date ]</a>
+              <a href="thread.html#824">[ thread ]</a>
+              <a href="subject.html#824">[ subject ]</a>
+              <a href="author.html#824">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/jelix-public">More information about the Jelix-public
+mailing list</a><br>
+</body></html>

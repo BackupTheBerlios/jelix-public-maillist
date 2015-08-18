@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Jelix-public] checkin SVN-444 (laurentj)
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/jelix-public/2007-May/index.html" >
+   <LINK REL="made" HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20checkin%20SVN-444%20%28laurentj%29&In-Reply-To=%3C465ACC06.mail31011BR3Y%40xulfr.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000259.html">
+   <LINK REL="Next"  HREF="000261.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Jelix-public] checkin SVN-444 (laurentj)</H1>
+    <B>laurent at xulfr.org</B> 
+    <A HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20checkin%20SVN-444%20%28laurentj%29&In-Reply-To=%3C465ACC06.mail31011BR3Y%40xulfr.org%3E"
+       TITLE="[Jelix-public] checkin SVN-444 (laurentj)">laurent at xulfr.org
+       </A><BR>
+    <I>Mon May 28 14:33:10 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000259.html">[Jelix-public] checkin SVN-443 (laurentj)
+</A></li>
+        <LI>Next message: <A HREF="000261.html">[Jelix-public] checkin SVN-445 (laurentj)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#260">[ date ]</a>
+              <a href="thread.html#260">[ thread ]</a>
+              <a href="subject.html#260">[ subject ]</a>
+              <a href="author.html#260">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>laurentj
+2007-05-28 14:33:08 +0200 (Mon, 28 May 2007)
+245
+fix bug #180 : because of a bug in PDO, jDbPdoResulset::fetch was not called when we used this resultset as an iterator, so results were not stored in an object, but in an array. This causes bugs in jDAO too. Added new unit tests on jDb and jDao
+
+U   trunk/build/manifests/testapp.mn
+U   trunk/lib/jelix/core/jConfigCompiler.class.php
+U   trunk/lib/jelix/core/jSelector.class.php
+U   trunk/lib/jelix/dao/jDaoCompiler.class.php
+U   trunk/lib/jelix/dao/jDaoGenerator.class.php
+U   trunk/lib/jelix/dao/jDaoParser.class.php
+U   trunk/lib/jelix/db/jDbPDOConnection.class.php
+U   trunk/lib/jelix-plugins/autolocale/autolocale.plugin.php
+U   trunk/lib/simpletest/compatibility.php
+U   trunk/testapp/modules/testapp/install/base.mysql.sql
+U   trunk/testapp/modules/unittest/classes/junittestcase.class.php
+U   trunk/testapp/modules/unittest/classes/junittestcasedb.class.php
+U   trunk/testapp/modules/unittest/classes/unittestservice.class.php
+U   trunk/testapp/modules/unittest/classes/utdao.class.php
+D   trunk/testapp/modules/unittest/classes/utdao2.class.php
+A   trunk/testapp/modules/unittest/classes/utdao_parser.class.php
+A   trunk/testapp/modules/unittest/classes/utdao_parser2.class.php
+A   trunk/testapp/modules/unittest/classes/utdaopdo.class.php
+U   trunk/testapp/modules/unittest/classes/utjaclusergroup.class.php
+A   trunk/testapp/modules/unittest/classes/utjdb.class.php
+A   trunk/testapp/modules/unittest/classes/utjdb_pdo.class.php
+A   trunk/testapp/modules/unittest/classes/utjdb_profile.class.php
+U   trunk/testapp/modules/unittest/controllers/dao.classic.php
+A   trunk/testapp/modules/unittest/controllers/db.classic.php
+A   trunk/testapp/modules/unittest/daos/
+A   trunk/testapp/modules/unittest/daos/products.dao.xml
+U   trunk/testapp/modules/unittest/templates/menu.tpl
+U   trunk/testapp/var/config/dbprofils.ini.php.dist
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000259.html">[Jelix-public] checkin SVN-443 (laurentj)
+</A></li>
+	<LI>Next message: <A HREF="000261.html">[Jelix-public] checkin SVN-445 (laurentj)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#260">[ date ]</a>
+              <a href="thread.html#260">[ thread ]</a>
+              <a href="subject.html#260">[ subject ]</a>
+              <a href="author.html#260">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/jelix-public">More information about the Jelix-public
+mailing list</a><br>
+</body></html>

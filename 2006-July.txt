@@ -1,0 +1,43 @@
+From laurent at xulfr.org  Wed Jul  5 00:28:01 2006
+From: laurent at xulfr.org (Laurent)
+Date: Wed, 05 Jul 2006 00:28:01 +0200
+Subject: [Jelix-public] jelix 1.0 alpha4
+Message-ID: <44AAEB71.2050602@xulfr.org>
+
+Bonjour,
+
+Jelix est actuellement utilis? sur trois projets "grandeur nature" (dont 
+deux professionnels). Cela a permis de d?busquer plusieurs bugs et 
+d'apporter des am?liorations. Du fait que tout n'a pas encore ?t? test? 
+? fond, nous avons donc d?cid? de sortir une nouvelle version alpha, 
+histoire d'avoir une version officielle r?cente ? vous mettre sous la 
+dent pendant les vacances.
+
+Voici les principaux changements apport?s :
+
+* fichier de config commun ? tous les points d?entr?e en plus de ceux 
+propres aux points d?entr?e
+* nouveaux request et response : jRdfRequest, jResponseRdf, 
+jReponseXulPage, jReponseXulOverlay, jReponseXulDialog
+* jtpl : commentaires, balises meta et plugins zone, urljsstring, 
+dateformat, escxml
+* jDbRecordSet impl?mente Iterator, et les daos renvoient donc 
+maintenant des it?rateurs.
+* renommage des classe jDAO* en jDao*
+* ?bauche d?interface utilisateur en XUL pour les modules auth et acl
+* Ajout du support de la gestion de l?aide contextuelle pour les scripts 
+en ligne de commande utilisant jelix
+* et toujours son lot de bugs corrig?s
+
+Pour les d?tails : http://jelix.org/articles/changelog/1.0alpha4
+
+Si fin aout, jelix aura ?t? suffisement tortur?, une beta sortira, sinon 
+vous aurez droit ? une cinqui?me alpha :-)
+
+Bon dev !
+
+a+
+
+Laurent
+
+

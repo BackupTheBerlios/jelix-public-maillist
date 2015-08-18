@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Jelix-public] checkin SVN-271 (laurentj)
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/jelix-public/2006-October/index.html" >
+   <LINK REL="made" HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20checkin%20SVN-271%20%28laurentj%29&In-Reply-To=%3C4522E004.mail20L115A3Z%40xulfr.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000059.html">
+   <LINK REL="Next"  HREF="000061.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Jelix-public] checkin SVN-271 (laurentj)</H1>
+    <B>laurent at xulfr.org</B> 
+    <A HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20checkin%20SVN-271%20%28laurentj%29&In-Reply-To=%3C4522E004.mail20L115A3Z%40xulfr.org%3E"
+       TITLE="[Jelix-public] checkin SVN-271 (laurentj)">laurent at xulfr.org
+       </A><BR>
+    <I>Wed Oct  4 00:11:16 CEST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000059.html">[Jelix-public] checkin SVN-270 (laurentj)
+</A></li>
+        <LI>Next message: <A HREF="000061.html">[Jelix-public] checkin SVN-272 (bballizlife)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#60">[ date ]</a>
+              <a href="thread.html#60">[ thread ]</a>
+              <a href="subject.html#60">[ subject ]</a>
+              <a href="author.html#60">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>laurentj
+2006-10-04 00:11:15 +0200 (Wed, 04 Oct 2006)
+519
+-patch 1525 : Ajout d'une commande d'effacement de cache
+-fix Bug 8939 : sur l'affichage des erreurs, xhtml invalide
+-fix Bug 8903 : mauvaise sortie d'erreur quand le log est impossible
+-ajout d'une commande dans le make pour g?\195?\169n?\195?\169rer un paquet demoxul
+-fix Bug 8785 : l'encryptage du mot de passe devrait d?\195?\169pendre du driver
+ 
+  ATTENTION : dans la config du plugin auth, le param?\195?\168tre password_crypt_function
+  doit maintenant ?\195?\170tre plac?\195?\169 dans la section Db ou Class 
+
+U   trunk/Makefile
+A   trunk/build/manifests/demoxul.mn
+U   trunk/build/manifests/jelix-dev.mn
+U   trunk/build/mkmanifest.php
+U   trunk/demoxul/var/config/index/auth.plugin.ini.php
+U   trunk/demoxul/var/config/jsonrpc/auth.plugin.ini.php
+U   trunk/demoxul/var/config/rdf/auth.plugin.ini.php
+U   trunk/demoxul/var/config/xmlrpc/auth.plugin.ini.php
+U   trunk/lib/jelix/auth/jAuth.class.php
+U   trunk/lib/jelix/auth/jAuthDriverClass.class.php
+U   trunk/lib/jelix/auth/jAuthDriverDb.class.php
+U   trunk/lib/jelix/core/jErrorHandler.lib.php
+U   trunk/lib/jelix/core/response/jResponseHtml.class.php
+U   trunk/lib/jelix-modules/jxauth/plugins/auth/auth.plugin.ini.php.dist
+A   trunk/lib/jelix-scripts/commands/clearcache.cmd.php
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000059.html">[Jelix-public] checkin SVN-270 (laurentj)
+</A></li>
+	<LI>Next message: <A HREF="000061.html">[Jelix-public] checkin SVN-272 (bballizlife)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#60">[ date ]</a>
+              <a href="thread.html#60">[ thread ]</a>
+              <a href="subject.html#60">[ subject ]</a>
+              <a href="author.html#60">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/jelix-public">More information about the Jelix-public
+mailing list</a><br>
+</body></html>

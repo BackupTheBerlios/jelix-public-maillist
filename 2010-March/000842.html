@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Jelix-public] Economiser des acces jDao : best practice ?
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/jelix-public/2010-March/index.html" >
+   <LINK REL="made" HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20Economiser%20des%20acces%20jDao%20%3A%20best%20practice%20%3F&In-Reply-To=%3C4B9D1FF4.7080202%40foxmask.info%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000843.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Jelix-public] Economiser des acces jDao : best practice ?</H1>
+    <B>olivier</B> 
+    <A HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20Economiser%20des%20acces%20jDao%20%3A%20best%20practice%20%3F&In-Reply-To=%3C4B9D1FF4.7080202%40foxmask.info%3E"
+       TITLE="[Jelix-public] Economiser des acces jDao : best practice ?">olivier at foxmask.info
+       </A><BR>
+    <I>Sun Mar 14 18:42:12 CET 2010</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000843.html">[Jelix-public] Economiser des acces jDao : best practice ?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#842">[ date ]</a>
+              <a href="thread.html#842">[ thread ]</a>
+              <a href="subject.html#842">[ subject ]</a>
+              <a href="author.html#842">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Bonsoir,
+
+ici 
+<A HREF="https://bitbucket.org/foxmask/havefnubb/src/tip/havefnubb/modules/havefnubb/classes/hfnuposts.class.php">https://bitbucket.org/foxmask/havefnubb/src/tip/havefnubb/modules/havefnubb/classes/hfnuposts.class.php</A>
+ligne 47 &#224; 51
+
+On peut voir une m&#233;thode pour ajouter un record $record (un jDaoRecord 
+en fait) &#224; un array $posts.
+ceci afin de ne lire que ce array pour la session courante plut&#244;t que de 
+faire des allers-retours avec la base de donn&#233;es.
+
+Cependant en me faisant un test unitaire sur cette m&#233;thode j'ai l'erreur :
+Fatal error: Cannot use object of type 
+cDaoRecord_havefnubb_Jx_posts_Jx_mysql as array in hfnuposts.class.php 
+on line 48
+
+J'aurai aim&#233;:
+- soit  &quot;caster&quot; avec un truc du style :
+if ( (jDaoRecord) self::$posts[$id]) mais evidement &#231;a plait pas ...
+
+- soit un toArray() comme avec PEAR
+<A HREF="http://pear.php.net/manual/fr/package.database.db-dataobject.db-dataobject.toarray.php">http://pear.php.net/manual/fr/package.database.db-dataobject.db-dataobject.toarray.php</A>
+
+Donc selon vous, comment dois-je m'y prendre ?
+
+faire des jdao::get('module~mondao')-&gt;get($id); &#224; tire-la-rigot et ne 
+pas g&#233;rer d'array pour stocker les records ?
+
+Merci de vos lumi&#232;res.
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000843.html">[Jelix-public] Economiser des acces jDao : best practice ?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#842">[ date ]</a>
+              <a href="thread.html#842">[ thread ]</a>
+              <a href="subject.html#842">[ subject ]</a>
+              <a href="author.html#842">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/jelix-public">More information about the Jelix-public
+mailing list</a><br>
+</body></html>

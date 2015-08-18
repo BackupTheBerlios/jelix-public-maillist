@@ -1,0 +1,832 @@
+From laurent at xulfr.org  Sun Sep  2 15:04:11 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Sun, 02 Sep 2007 15:04:11 +0200
+Subject: [Jelix-public] checkin SVN-565 (laurentj)
+Message-ID: <46DAB4CB.mailD9511R3CM@xulfr.org>
+
+laurentj
+2007-09-02 15:04:10 +0200 (Sun, 02 Sep 2007)
+69
+fixed bug #260: content type missed in the mail sent for jelix errors
+
+U   trunk/lib/jelix/core/defaultconfig.ini.php
+U   trunk/lib/jelix/core/jErrorHandler.lib.php
+U   trunk/lib/jelix/core/jException.lib.php
+U   trunk/lib/jelix-scripts/templates/var/config/defaultconfig.ini.php.tpl
+U   trunk/myapp/var/config/defaultconfig.ini.php.dist
+U   trunk/testapp/var/config/defaultconfig.ini.php.dist
+
+
+From laurent at xulfr.org  Mon Sep  3 17:46:12 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Mon, 03 Sep 2007 17:46:12 +0200
+Subject: [Jelix-public] checkin SVN-566 (laurentj)
+Message-ID: <46DC2C44.mail23U1XSSR7@xulfr.org>
+
+laurentj
+2007-09-03 17:46:12 +0200 (Mon, 03 Sep 2007)
+131
+added jDaoFactoryBase::getProperties() and jDaoFactoryBase::getPrimaryKeyNames(). jDaoFactoryBase::_pkFields doesn't exists anymore
+
+U   trunk/lib/jelix/dao/jDaoBase.class.php
+U   trunk/lib/jelix/dao/jDaoGenerator.class.php
+U   trunk/lib/jelix/forms/jFormsBase.class.php
+
+
+From laurent at xulfr.org  Mon Sep  3 18:20:38 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Mon, 03 Sep 2007 18:20:38 +0200
+Subject: [Jelix-public] checkin SVN-567 (laurentj)
+Message-ID: <46DC3456.mail4SE1WVP3K@xulfr.org>
+
+laurentj
+2007-09-03 18:20:38 +0200 (Mon, 03 Sep 2007)
+37
+fixed bugs when using jExceptionForms
+
+U   trunk/lib/jelix/forms/jFormsBase.class.php
+
+
+From laurent at xulfr.org  Mon Sep  3 18:21:58 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Mon, 03 Sep 2007 18:21:58 +0200
+Subject: [Jelix-public] checkin SVN-568 (laurentj)
+Message-ID: <46DC34A6.mail4UF112STH@xulfr.org>
+
+laurentj
+2007-09-03 18:21:57 +0200 (Mon, 03 Sep 2007)
+46
+worked on ticket #24: base controller for CRUD
+
+U   trunk/build/manifests/jelix-lib.mn
+U   trunk/build/manifests/testapp.mn
+U   trunk/lib/jelix/controllers/jControllerDaoCrud.class.php
+A   trunk/lib/jelix/core-modules/jelix/templates/crud_edit.tpl
+A   trunk/lib/jelix/core-modules/jelix/templates/crud_list.tpl
+A   trunk/lib/jelix/core-modules/jelix/templates/crud_view.tpl
+U   trunk/lib/jelix/plugins/tpl/html/function.formdatasfull.php
+U   trunk/testapp/modules/testapp/controllers/samplecrud.classic.php
+A   trunk/testapp/modules/testapp/forms/products.form.xml
+U   trunk/testapp/modules/testapp/templates/sommaire.tpl
+
+
+From laurent at xulfr.org  Mon Sep  3 20:51:51 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Mon, 03 Sep 2007 20:51:51 +0200
+Subject: [Jelix-public] checkin SVN-569 (laurentj)
+Message-ID: <46DC57C7.mailPA51NVZI2@xulfr.org>
+
+laurentj
+2007-09-03 20:51:50 +0200 (Mon, 03 Sep 2007)
+41
+renamed *.dist files in testapp and myapp
+
+U   trunk/build/manifests/myapp.mn
+U   trunk/build/manifests/testapp.mn
+A   trunk/myapp/var/config/defaultconfig.ini.php
+D   trunk/myapp/var/config/defaultconfig.ini.php.dist
+A   trunk/myapp/var/config/index/config.ini.php
+D   trunk/myapp/var/config/index/config.ini.php.dist
+A   trunk/testapp/var/config/defaultconfig.ini.php
+D   trunk/testapp/var/config/defaultconfig.ini.php.dist
+A   trunk/testapp/var/config/index/config.ini.php
+D   trunk/testapp/var/config/index/config.ini.php.dist
+A   trunk/testapp/var/config/jsonrpc/config.ini.php
+D   trunk/testapp/var/config/jsonrpc/config.ini.php.dist
+A   trunk/testapp/var/config/xmlrpc/config.ini.php
+D   trunk/testapp/var/config/xmlrpc/config.ini.php.dist
+
+
+From laurent at xulfr.org  Mon Sep  3 22:33:24 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Mon, 03 Sep 2007 22:33:24 +0200
+Subject: [Jelix-public] checkin SVN-570 (laurentj)
+Message-ID: <46DC6F94.mail58H119VJA@xulfr.org>
+
+laurentj
+2007-09-03 22:33:24 +0200 (Mon, 03 Sep 2007)
+68
+worked on the crud controler + added a new template plugin pagelinks
+
+U   trunk/build/manifests/jelix-lib.mn
+U   trunk/lib/jelix/controllers/jControllerDaoCrud.class.php
+U   trunk/lib/jelix/core-modules/jelix/templates/crud_list.tpl
+A   trunk/lib/jelix/plugins/tpl/html/function.pagelinks.php
+U   trunk/testapp/modules/testapp/controllers/samplecrud.classic.php
+
+
+From laurent at xulfr.org  Tue Sep  4 11:10:30 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Tue, 04 Sep 2007 11:10:30 +0200
+Subject: [Jelix-public] checkin SVN-571 (laurentj)
+Message-ID: <46DD2106.mailDSL116FOR@xulfr.org>
+
+laurentj
+2007-09-04 11:10:30 +0200 (Tue, 04 Sep 2007)
+96
+ticket #24: implemented base controller for crud
+fixed little bug in jtplcompiler and jformsbase
+
+U   trunk/build/manifests/jelix-lib.mn
+U   trunk/build/manifests/testapp.mn
+U   trunk/lib/jelix/controllers/jControllerDaoCrud.class.php
+A   trunk/lib/jelix/core-modules/jelix/locales/en_EN/crud.ISO-8859-1.properties
+A   trunk/lib/jelix/core-modules/jelix/locales/en_EN/crud.UTF-8.properties
+A   trunk/lib/jelix/core-modules/jelix/locales/en_US/crud.ISO-8859-1.properties
+A   trunk/lib/jelix/core-modules/jelix/locales/en_US/crud.UTF-8.properties
+A   trunk/lib/jelix/core-modules/jelix/locales/fr_FR/crud.ISO-8859-1.properties
+A   trunk/lib/jelix/core-modules/jelix/locales/fr_FR/crud.UTF-8.properties
+U   trunk/lib/jelix/core-modules/jelix/templates/crud_edit.tpl
+U   trunk/lib/jelix/core-modules/jelix/templates/crud_list.tpl
+U   trunk/lib/jelix/core-modules/jelix/templates/crud_view.tpl
+U   trunk/lib/jelix/forms/jFormsBase.class.php
+U   trunk/lib/jelix/tpl/jTplCompiler.class.php
+U   trunk/testapp/install/install.mysql.sql
+U   trunk/testapp/modules/jelix_tests/tests/jtpl.expressions_parsing.html_cli.php
+U   trunk/testapp/modules/testapp/controllers/samplecrud.classic.php
+A   trunk/testapp/modules/testapp/daos/products.dao.xml
+
+
+From laurent at xulfr.org  Tue Sep  4 11:58:47 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Tue, 04 Sep 2007 11:58:47 +0200
+Subject: [Jelix-public] checkin SVN-572 (laurentj)
+Message-ID: <46DD2C57.mailFXB1YF7RO@xulfr.org>
+
+laurentj
+2007-09-04 11:58:47 +0200 (Tue, 04 Sep 2007)
+34
+imported locales for jacl:db datas
+
+U   trunk/build/manifests/jelix-lib.mn
+U   trunk/lib/jelix/core-modules/jelix/install/sql/install_jacl.datas.mysql.sql
+A   trunk/lib/jelix/core-modules/jelix/locales/en_EN/acldb.ISO-8859-1.properties
+A   trunk/lib/jelix/core-modules/jelix/locales/en_EN/acldb.UTF-8.properties
+A   trunk/lib/jelix/core-modules/jelix/locales/en_US/acldb.ISO-8859-1.properties
+A   trunk/lib/jelix/core-modules/jelix/locales/en_US/acldb.UTF-8.properties
+A   trunk/lib/jelix/core-modules/jelix/locales/fr_FR/acldb.ISO-8859-1.properties
+A   trunk/lib/jelix/core-modules/jelix/locales/fr_FR/acldb.UTF-8.properties
+U   trunk/testapp/modules/testapp/controllers/samplecrud.classic.php
+
+
+From laurent at xulfr.org  Thu Sep  6 14:58:15 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Thu, 06 Sep 2007 14:58:15 +0200
+Subject: [Jelix-public] checkin SVN-573 (laurentj)
+Message-ID: <46DFF967.mailCVT1HQXLM@xulfr.org>
+
+laurentj
+2007-09-06 14:58:15 +0200 (Thu, 06 Sep 2007)
+117
+fixed a bug in jControllerCmdLine : signature of param method was not the same of the original inherited param method
+
+U   trunk/lib/jelix/controllers/jControllerCmdLine.class.php
+U   trunk/lib/jelix/core/jController.class.php
+U   trunk/lib/jelix/core/jRequest.class.php
+
+
+From laurent at xulfr.org  Fri Sep  7 11:41:06 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Fri, 07 Sep 2007 11:41:06 +0200
+Subject: [Jelix-public] checkin SVN-574 (laurentj)
+Message-ID: <46E11CB2.mailMSY11GYZW@xulfr.org>
+
+laurentj
+2007-09-07 11:41:05 +0200 (Fri, 07 Sep 2007)
+66
+worked on ticket #264, but after tests, it is closed as WORKSFORME
+
+U   trunk/build/manifests/testapp.mn
+U   trunk/testapp/modules/jelix_tests/tests/jdao.generator.html.php
+A   trunk/testapp/modules/jelix_tests/tests/jdao.generator_select.html.php
+
+
+From laurent at xulfr.org  Fri Sep  7 15:29:39 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Fri, 07 Sep 2007 15:29:39 +0200
+Subject: [Jelix-public] checkin SVN-575 (laurentj)
+Message-ID: <46E15243.mailNXY11NDXX@xulfr.org>
+
+laurentj
+2007-09-07 15:29:38 +0200 (Fri, 07 Sep 2007)
+155
+ticket #25: created a command to generate a crud controller and a command to generate a jforms file from a dao file
+added also a new datatype in dao : text
+
+U   trunk/build/manifests/jelix-dev.mn
+U   trunk/lib/jelix/dao/jDaoParser.class.php
+U   trunk/lib/jelix-scripts/commands/createdao.cmd.php
+A   trunk/lib/jelix-scripts/commands/createdaocrud.cmd.php
+A   trunk/lib/jelix-scripts/commands/createform.cmd.php
+U   trunk/lib/jelix-scripts/commands/createzone.cmd.php
+U   trunk/lib/jelix-scripts/includes/command.class.php
+U   trunk/lib/jelix-scripts/includes/utils.lib.php
+A   trunk/lib/jelix-scripts/templates/controller.daocrud.tpl
+A   trunk/lib/jelix-scripts/templates/form.xml.tpl
+
+
+From laurent at xulfr.org  Fri Sep  7 17:26:34 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Fri, 07 Sep 2007 17:26:34 +0200
+Subject: [Jelix-public] checkin SVN-576 (laurentj)
+Message-ID: <46E16DAA.mail4V411J6D3@xulfr.org>
+
+laurentj
+2007-09-07 17:26:33 +0200 (Fri, 07 Sep 2007)
+63
+fixed possible bugs in jdao when using autoincremented property
+
+U   trunk/lib/jelix/dao/jDaoBase.class.php
+U   trunk/lib/jelix/dao/jDaoGenerator.class.php
+U   trunk/lib/jelix/dao/jDaoParser.class.php
+U   trunk/lib/jelix-scripts/commands/createdao.cmd.php
+U   trunk/testapp/modules/jelix_tests/daos/description.dao.xml
+U   trunk/testapp/modules/jelix_tests/daos/product_tags.dao.xml
+U   trunk/testapp/modules/jelix_tests/daos/products.dao.xml
+U   trunk/testapp/modules/jelix_tests/tests/jdao.generator.html.php
+U   trunk/testapp/modules/jelix_tests/tests/jdao.generator_select.html.php
+U   trunk/testapp/modules/jelix_tests/tests/jdao.parser.html.php
+U   trunk/testapp/modules/testapp/daos/config.dao.xml
+U   trunk/testapp/modules/testapp/daos/products.dao.xml
+U   trunk/testapp/modules/testapp/daos/testnews.dao.xml
+
+
+From laurent at xulfr.org  Tue Sep 11 10:54:38 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Tue, 11 Sep 2007 10:54:38 +0200
+Subject: [Jelix-public] checkin SVN-577 (laurentj)
+Message-ID: <46E657CE.mailEYK11N9LK@xulfr.org>
+
+laurentj
+2007-09-11 10:54:38 +0200 (Tue, 11 Sep 2007)
+83
+ticket #267 : fixed html bugs in the template login.form.tpl + spelling in a locale
+
+U   trunk/lib/jelix/core-modules/jelix/locales/fr_FR/crud.ISO-8859-1.properties
+U   trunk/lib/jelix/core-modules/jelix/locales/fr_FR/crud.UTF-8.properties
+U   trunk/lib/jelix-modules/jauth/templates/login.form.tpl
+
+
+From laurent at xulfr.org  Tue Sep 11 23:53:02 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Tue, 11 Sep 2007 23:53:02 +0200
+Subject: [Jelix-public] checkin SVN-578 (laurentj)
+Message-ID: <46E70E3E.mailHO611VYX8@xulfr.org>
+
+laurentj
+2007-09-11 23:53:02 +0200 (Tue, 11 Sep 2007)
+128
+jforms, item element : renamed labellocale attribute to locale, and content of label attribute has been moved to element content
+
+U   trunk/lib/jelix/docs/ns/jforms.rng
+U   trunk/lib/jelix/forms/jFormsCompiler.class.php
+U   trunk/testapp/modules/jelix_tests/tests/jforms.compiler.html.php
+U   trunk/testapp/modules/testapp/forms/sample.form.xml
+
+
+From laurent at xulfr.org  Thu Sep 13 14:02:03 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Thu, 13 Sep 2007 14:02:03 +0200
+Subject: [Jelix-public] checkin SVN-579 (bballizlife)
+Message-ID: <46E926BB.mail4XI113B1F@xulfr.org>
+
+bballizlife
+2007-09-13 14:02:03 +0200 (Thu, 13 Sep 2007)
+82
+close ticket #269 : bug in 2 methods of jFormsBase : saveFile() and saveAllFiles()
+
+U   trunk/lib/jelix/forms/jFormsBase.class.php
+
+
+From laurent at xulfr.org  Thu Sep 13 20:23:32 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Thu, 13 Sep 2007 20:23:32 +0200
+Subject: [Jelix-public] checkin SVN-580 (laurentj)
+Message-ID: <46E98024.mailD6G1NSU8Z@xulfr.org>
+
+laurentj
+2007-09-13 20:23:31 +0200 (Thu, 13 Sep 2007)
+183
+jForms : grammar of confirm element has changed. labellocale attribute has been renamed to locale, and the content of the label attribute should be store as the content of the element
+
+U   trunk/lib/jelix/core-modules/jelix/locales/en_EN/formserr.ISO-8859-1.properties
+U   trunk/lib/jelix/core-modules/jelix/locales/en_EN/formserr.UTF-8.properties
+U   trunk/lib/jelix/core-modules/jelix/locales/en_US/formserr.ISO-8859-1.properties
+U   trunk/lib/jelix/core-modules/jelix/locales/en_US/formserr.UTF-8.properties
+U   trunk/lib/jelix/core-modules/jelix/locales/fr_FR/formserr.ISO-8859-1.properties
+U   trunk/lib/jelix/core-modules/jelix/locales/fr_FR/formserr.UTF-8.properties
+U   trunk/lib/jelix/docs/ns/jforms.rng
+U   trunk/lib/jelix/forms/jFormsCompiler.class.php
+U   trunk/testapp/modules/jelix_tests/tests/jforms.compiler.html.php
+
+
+From laurent at xulfr.org  Fri Sep 14 00:17:12 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Fri, 14 Sep 2007 00:17:12 +0200
+Subject: [Jelix-public] checkin SVN-581 (laurentj)
+Message-ID: <46E9B6E8.mailOIJ11APIM@xulfr.org>
+
+laurentj
+2007-09-14 00:17:12 +0200 (Fri, 14 Sep 2007)
+32
+typo in relaxng schema of jforms
+
+U   trunk/lib/jelix/docs/ns/jforms.rng
+U   trunk/testapp/modules/testapp/forms/sample.form.xml
+
+
+From laurent at xulfr.org  Fri Sep 14 13:57:39 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Fri, 14 Sep 2007 13:57:39 +0200
+Subject: [Jelix-public] checkin SVN-582 (laurentj)
+Message-ID: <46EA7733.mailFHH15ID29@xulfr.org>
+
+laurentj
+2007-09-14 13:57:34 +0200 (Fri, 14 Sep 2007)
+26
+updated copyright comments
+
+U   trunk/lib/jelix/auth/jAuth.class.php
+U   trunk/lib/jelix/core/jContext.class.php
+U   trunk/lib/jelix/core/jErrorHandler.lib.php
+U   trunk/lib/jelix/core/jIncluder.class.php
+U   trunk/lib/jelix/core/jLocale.class.php
+U   trunk/lib/jelix/core/jUrl.class.php
+U   trunk/lib/jelix/dao/jDaoCompiler.class.php
+U   trunk/lib/jelix/dao/jDaoConditions.class.php
+U   trunk/lib/jelix/dao/jDaoGenerator.class.php
+U   trunk/lib/jelix/dao/jDaoParser.class.php
+U   trunk/lib/jelix/db/jDb.class.php
+U   trunk/lib/jelix/db/jDbConnection.class.php
+U   trunk/lib/jelix/db/jDbTools.class.php
+U   trunk/lib/jelix/db/jDbWidget.class.php
+U   trunk/lib/jelix/events/jEvent.class.php
+U   trunk/lib/jelix/events/jEventListener.class.php
+U   trunk/lib/jelix/events/jEventListenerFactory.class.php
+U   trunk/lib/jelix/init.php
+U   trunk/lib/jelix/plugins/auth/db/db.auth.php
+U   trunk/lib/jelix/plugins/coord/auth/auth.coord.php
+U   trunk/lib/jelix/plugins/db/mysql/mysql.dbconnection.php
+U   trunk/lib/jelix/plugins/db/mysql/mysql.dbresultset.php
+U   trunk/lib/jelix/plugins/db/mysql/mysql.dbtools.php
+U   trunk/lib/jelix/plugins/db/postgresql/postgresql.dbconnection.php
+U   trunk/lib/jelix/plugins/db/postgresql/postgresql.dbresultset.php
+U   trunk/lib/jelix/plugins/db/postgresql/postgresql.dbtools.php
+U   trunk/lib/jelix/utils/jDateTime.class.php
+U   trunk/lib/jelix/utils/jXmlRpc.class.php
+U   trunk/lib/jelix/utils/jZone.class.php
+U   trunk/lib/jelix-modules/jauth/controllers/login.classic.php
+
+
+From laurent at xulfr.org  Fri Sep 14 14:06:28 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Fri, 14 Sep 2007 14:06:28 +0200
+Subject: [Jelix-public] checkin SVN-583 (laurentj)
+Message-ID: <46EA7944.mailFWB1WS3SK@xulfr.org>
+
+laurentj
+2007-09-14 14:06:27 +0200 (Fri, 14 Sep 2007)
+38
+Release of Jelix 1.0 beta3. Enjoy :-) 
+
+A   tags/release_1.0beta3/
+U   tags/release_1.0beta3/build/config/jelix-dist-dev.ini
+U   tags/release_1.0beta3/build/config/jelix-dist-opt.ini
+U   tags/release_1.0beta3/lib/jelix/INSTALL
+U   tags/release_1.0beta3/lib/jelix/VERSION
+D   tags/release_1.0beta3/lib/jelix/auth/jAuth.class.php
+A   tags/release_1.0beta3/lib/jelix/auth/jAuth.class.php
+D   tags/release_1.0beta3/lib/jelix/core/jContext.class.php
+A   tags/release_1.0beta3/lib/jelix/core/jContext.class.php
+D   tags/release_1.0beta3/lib/jelix/core/jErrorHandler.lib.php
+A   tags/release_1.0beta3/lib/jelix/core/jErrorHandler.lib.php
+D   tags/release_1.0beta3/lib/jelix/core/jIncluder.class.php
+A   tags/release_1.0beta3/lib/jelix/core/jIncluder.class.php
+D   tags/release_1.0beta3/lib/jelix/core/jLocale.class.php
+A   tags/release_1.0beta3/lib/jelix/core/jLocale.class.php
+D   tags/release_1.0beta3/lib/jelix/core/jUrl.class.php
+A   tags/release_1.0beta3/lib/jelix/core/jUrl.class.php
+D   tags/release_1.0beta3/lib/jelix/dao/jDaoCompiler.class.php
+A   tags/release_1.0beta3/lib/jelix/dao/jDaoCompiler.class.php
+D   tags/release_1.0beta3/lib/jelix/dao/jDaoConditions.class.php
+A   tags/release_1.0beta3/lib/jelix/dao/jDaoConditions.class.php
+D   tags/release_1.0beta3/lib/jelix/dao/jDaoGenerator.class.php
+A   tags/release_1.0beta3/lib/jelix/dao/jDaoGenerator.class.php
+D   tags/release_1.0beta3/lib/jelix/dao/jDaoParser.class.php
+A   tags/release_1.0beta3/lib/jelix/dao/jDaoParser.class.php
+D   tags/release_1.0beta3/lib/jelix/db/jDb.class.php
+A   tags/release_1.0beta3/lib/jelix/db/jDb.class.php
+D   tags/release_1.0beta3/lib/jelix/db/jDbConnection.class.php
+A   tags/release_1.0beta3/lib/jelix/db/jDbConnection.class.php
+D   tags/release_1.0beta3/lib/jelix/db/jDbTools.class.php
+A   tags/release_1.0beta3/lib/jelix/db/jDbTools.class.php
+D   tags/release_1.0beta3/lib/jelix/db/jDbWidget.class.php
+A   tags/release_1.0beta3/lib/jelix/db/jDbWidget.class.php
+D   tags/release_1.0beta3/lib/jelix/events/jEvent.class.php
+A   tags/release_1.0beta3/lib/jelix/events/jEvent.class.php
+D   tags/release_1.0beta3/lib/jelix/events/jEventListener.class.php
+A   tags/release_1.0beta3/lib/jelix/events/jEventListener.class.php
+D   tags/release_1.0beta3/lib/jelix/events/jEventListenerFactory.class.php
+A   tags/release_1.0beta3/lib/jelix/events/jEventListenerFactory.class.php
+D   tags/release_1.0beta3/lib/jelix/init.php
+A   tags/release_1.0beta3/lib/jelix/init.php
+D   tags/release_1.0beta3/lib/jelix/plugins/auth/db/db.auth.php
+A   tags/release_1.0beta3/lib/jelix/plugins/auth/db/db.auth.php
+D   tags/release_1.0beta3/lib/jelix/plugins/coord/auth/auth.coord.php
+A   tags/release_1.0beta3/lib/jelix/plugins/coord/auth/auth.coord.php
+D   tags/release_1.0beta3/lib/jelix/plugins/db/mysql/mysql.dbconnection.php
+A   tags/release_1.0beta3/lib/jelix/plugins/db/mysql/mysql.dbconnection.php
+D   tags/release_1.0beta3/lib/jelix/plugins/db/mysql/mysql.dbresultset.php
+A   tags/release_1.0beta3/lib/jelix/plugins/db/mysql/mysql.dbresultset.php
+D   tags/release_1.0beta3/lib/jelix/plugins/db/mysql/mysql.dbtools.php
+A   tags/release_1.0beta3/lib/jelix/plugins/db/mysql/mysql.dbtools.php
+D   tags/release_1.0beta3/lib/jelix/plugins/db/postgresql/postgresql.dbconnection.php
+A   tags/release_1.0beta3/lib/jelix/plugins/db/postgresql/postgresql.dbconnection.php
+D   tags/release_1.0beta3/lib/jelix/plugins/db/postgresql/postgresql.dbresultset.php
+A   tags/release_1.0beta3/lib/jelix/plugins/db/postgresql/postgresql.dbresultset.php
+D   tags/release_1.0beta3/lib/jelix/plugins/db/postgresql/postgresql.dbtools.php
+A   tags/release_1.0beta3/lib/jelix/plugins/db/postgresql/postgresql.dbtools.php
+D   tags/release_1.0beta3/lib/jelix/utils/jDateTime.class.php
+A   tags/release_1.0beta3/lib/jelix/utils/jDateTime.class.php
+D   tags/release_1.0beta3/lib/jelix/utils/jXmlRpc.class.php
+A   tags/release_1.0beta3/lib/jelix/utils/jXmlRpc.class.php
+D   tags/release_1.0beta3/lib/jelix/utils/jZone.class.php
+A   tags/release_1.0beta3/lib/jelix/utils/jZone.class.php
+D   tags/release_1.0beta3/lib/jelix-modules/jauth/controllers/login.classic.php
+A   tags/release_1.0beta3/lib/jelix-modules/jauth/controllers/login.classic.php
+U   tags/release_1.0beta3/myapp/VERSION
+U   tags/release_1.0beta3/testapp/VERSION
+
+
+From laurent at xulfr.org  Fri Sep 14 15:29:36 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Fri, 14 Sep 2007 15:29:36 +0200
+Subject: [Jelix-public] checkin SVN-584 (laurentj)
+Message-ID: <46EA8CC0.mailJ9O11MTT5@xulfr.org>
+
+laurentj
+2007-09-14 15:29:34 +0200 (Fri, 14 Sep 2007)
+65
+fixed bug #270: jdao, patterns in property were not supports well
+
+U   trunk/lib/jelix/INSTALL
+U   trunk/lib/jelix/dao/jDaoParser.class.php
+U   trunk/testapp/modules/jelix_tests/tests/jdao.parser.html.php
+
+
+From laurent at xulfr.org  Fri Sep 14 15:31:07 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Fri, 14 Sep 2007 15:31:07 +0200
+Subject: [Jelix-public] checkin SVN-585 (laurentj)
+Message-ID: <46EA8D1B.mailJD81WES1C@xulfr.org>
+
+laurentj
+2007-09-14 15:31:06 +0200 (Fri, 14 Sep 2007)
+37
+fixed bug #270 also for beta3 release
+
+U   tags/release_1.0beta3/lib/jelix/dao/jDaoParser.class.php
+U   tags/release_1.0beta3/testapp/modules/jelix_tests/tests/jdao.parser.html.php
+
+
+From laurent at xulfr.org  Wed Sep 19 15:18:07 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Wed, 19 Sep 2007 15:18:07 +0200
+Subject: [Jelix-public] checkin SVN-586 (laurentj)
+Message-ID: <46F1218F.mailGIR1Y2W3M@xulfr.org>
+
+laurentj
+2007-09-19 15:18:06 +0200 (Wed, 19 Sep 2007)
+239
+fixed ticket #279: old behavior about parameters in xmlrpc and jsonrpc requests is re-enabled. If the RPC parameter is an array, its elements become a jelix parameter. However the RPC parameter is still stored in a 'params' jelix parameter
+
+U   trunk/lib/jelix/core/request/jJsonRpcRequest.class.php
+U   trunk/lib/jelix/core/request/jXmlRpcRequest.class.php
+
+
+From laurent at xulfr.org  Wed Sep 19 15:18:57 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Wed, 19 Sep 2007 15:18:57 +0200
+Subject: [Jelix-public] checkin SVN-587 (laurentj)
+Message-ID: <46F121C1.mailGKQ1SRTLE@xulfr.org>
+
+laurentj
+2007-09-19 15:18:55 +0200 (Wed, 19 Sep 2007)
+32
+created a new branch: 1.0beta3.x
+
+A   branches/1.0beta3.x/
+D   branches/1.0beta3.x/lib/jelix/INSTALL
+A   branches/1.0beta3.x/lib/jelix/INSTALL
+D   branches/1.0beta3.x/lib/jelix/auth/jAuth.class.php
+A   branches/1.0beta3.x/lib/jelix/auth/jAuth.class.php
+D   branches/1.0beta3.x/lib/jelix/core/jContext.class.php
+A   branches/1.0beta3.x/lib/jelix/core/jContext.class.php
+D   branches/1.0beta3.x/lib/jelix/core/jErrorHandler.lib.php
+A   branches/1.0beta3.x/lib/jelix/core/jErrorHandler.lib.php
+D   branches/1.0beta3.x/lib/jelix/core/jIncluder.class.php
+A   branches/1.0beta3.x/lib/jelix/core/jIncluder.class.php
+D   branches/1.0beta3.x/lib/jelix/core/jLocale.class.php
+A   branches/1.0beta3.x/lib/jelix/core/jLocale.class.php
+D   branches/1.0beta3.x/lib/jelix/core/jUrl.class.php
+A   branches/1.0beta3.x/lib/jelix/core/jUrl.class.php
+U   branches/1.0beta3.x/lib/jelix/core/request/jJsonRpcRequest.class.php
+U   branches/1.0beta3.x/lib/jelix/core/request/jXmlRpcRequest.class.php
+D   branches/1.0beta3.x/lib/jelix/dao/jDaoCompiler.class.php
+A   branches/1.0beta3.x/lib/jelix/dao/jDaoCompiler.class.php
+D   branches/1.0beta3.x/lib/jelix/dao/jDaoConditions.class.php
+A   branches/1.0beta3.x/lib/jelix/dao/jDaoConditions.class.php
+D   branches/1.0beta3.x/lib/jelix/dao/jDaoGenerator.class.php
+A   branches/1.0beta3.x/lib/jelix/dao/jDaoGenerator.class.php
+D   branches/1.0beta3.x/lib/jelix/dao/jDaoParser.class.php
+A   branches/1.0beta3.x/lib/jelix/dao/jDaoParser.class.php
+D   branches/1.0beta3.x/lib/jelix/db/jDb.class.php
+A   branches/1.0beta3.x/lib/jelix/db/jDb.class.php
+D   branches/1.0beta3.x/lib/jelix/db/jDbConnection.class.php
+A   branches/1.0beta3.x/lib/jelix/db/jDbConnection.class.php
+D   branches/1.0beta3.x/lib/jelix/db/jDbTools.class.php
+A   branches/1.0beta3.x/lib/jelix/db/jDbTools.class.php
+D   branches/1.0beta3.x/lib/jelix/db/jDbWidget.class.php
+A   branches/1.0beta3.x/lib/jelix/db/jDbWidget.class.php
+D   branches/1.0beta3.x/lib/jelix/events/jEvent.class.php
+A   branches/1.0beta3.x/lib/jelix/events/jEvent.class.php
+D   branches/1.0beta3.x/lib/jelix/events/jEventListener.class.php
+A   branches/1.0beta3.x/lib/jelix/events/jEventListener.class.php
+D   branches/1.0beta3.x/lib/jelix/events/jEventListenerFactory.class.php
+A   branches/1.0beta3.x/lib/jelix/events/jEventListenerFactory.class.php
+D   branches/1.0beta3.x/lib/jelix/init.php
+A   branches/1.0beta3.x/lib/jelix/init.php
+D   branches/1.0beta3.x/lib/jelix/plugins/auth/db/db.auth.php
+A   branches/1.0beta3.x/lib/jelix/plugins/auth/db/db.auth.php
+D   branches/1.0beta3.x/lib/jelix/plugins/coord/auth/auth.coord.php
+A   branches/1.0beta3.x/lib/jelix/plugins/coord/auth/auth.coord.php
+D   branches/1.0beta3.x/lib/jelix/plugins/db/mysql/mysql.dbconnection.php
+A   branches/1.0beta3.x/lib/jelix/plugins/db/mysql/mysql.dbconnection.php
+D   branches/1.0beta3.x/lib/jelix/plugins/db/mysql/mysql.dbresultset.php
+A   branches/1.0beta3.x/lib/jelix/plugins/db/mysql/mysql.dbresultset.php
+D   branches/1.0beta3.x/lib/jelix/plugins/db/mysql/mysql.dbtools.php
+A   branches/1.0beta3.x/lib/jelix/plugins/db/mysql/mysql.dbtools.php
+D   branches/1.0beta3.x/lib/jelix/plugins/db/postgresql/postgresql.dbconnection.php
+A   branches/1.0beta3.x/lib/jelix/plugins/db/postgresql/postgresql.dbconnection.php
+D   branches/1.0beta3.x/lib/jelix/plugins/db/postgresql/postgresql.dbresultset.php
+A   branches/1.0beta3.x/lib/jelix/plugins/db/postgresql/postgresql.dbresultset.php
+D   branches/1.0beta3.x/lib/jelix/plugins/db/postgresql/postgresql.dbtools.php
+A   branches/1.0beta3.x/lib/jelix/plugins/db/postgresql/postgresql.dbtools.php
+D   branches/1.0beta3.x/lib/jelix/utils/jDateTime.class.php
+A   branches/1.0beta3.x/lib/jelix/utils/jDateTime.class.php
+D   branches/1.0beta3.x/lib/jelix/utils/jXmlRpc.class.php
+A   branches/1.0beta3.x/lib/jelix/utils/jXmlRpc.class.php
+D   branches/1.0beta3.x/lib/jelix/utils/jZone.class.php
+A   branches/1.0beta3.x/lib/jelix/utils/jZone.class.php
+D   branches/1.0beta3.x/lib/jelix-modules/jauth/controllers/login.classic.php
+A   branches/1.0beta3.x/lib/jelix-modules/jauth/controllers/login.classic.php
+D   branches/1.0beta3.x/testapp/modules/jelix_tests/tests/jdao.parser.html.php
+A   branches/1.0beta3.x/testapp/modules/jelix_tests/tests/jdao.parser.html.php
+
+
+From laurent at xulfr.org  Mon Sep 24 16:04:00 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Mon, 24 Sep 2007 16:04:00 +0200
+Subject: [Jelix-public] checkin SVN-588 (laurentj)
+Message-ID: <46F7C3D0.mailGPZ11VZHV@xulfr.org>
+
+laurentj
+2007-09-24 16:03:59 +0200 (Mon, 24 Sep 2007)
+85
+improved jbuildtools : extra-whitespace are removed when using the stripcomments flag
+
+U   trunk/build/lib/jManifest.class.php
+
+
+From laurent at xulfr.org  Fri Sep 28 11:02:32 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Fri, 28 Sep 2007 11:02:32 +0200
+Subject: [Jelix-public] checkin SVN-589 (laurentj)
+Message-ID: <46FCC328.mail5IB19HPNL@xulfr.org>
+
+laurentj
+2007-09-28 11:02:31 +0200 (Fri, 28 Sep 2007)
+90
+fixed bug #282 jDao : quote in content of selectpattern was not escaped. p=Bastien Jaillot
+
+U   branches/1.0beta3.x/lib/jelix/CREDITS
+U   branches/1.0beta3.x/lib/jelix/dao/jDaoGenerator.class.php
+U   branches/1.0beta3.x/testapp/modules/jelix_tests/tests/jdao.generator_select.html.php
+U   trunk/lib/jelix/CREDITS
+U   trunk/lib/jelix/dao/jDaoGenerator.class.php
+U   trunk/testapp/modules/jelix_tests/tests/jdao.generator_select.html.php
+
+
+From laurent at xulfr.org  Fri Sep 28 11:10:38 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Fri, 28 Sep 2007 11:10:38 +0200
+Subject: [Jelix-public] checkin SVN-590 (laurentj)
+Message-ID: <46FCC50E.mail62G1JJFIR@xulfr.org>
+
+laurentj
+2007-09-28 11:10:38 +0200 (Fri, 28 Sep 2007)
+104
+fixed bug #283: optional parameter ctrlname on createdaocrud command was not optional. p=Bastien Jaillot
+
+U   branches/1.0beta3.x/lib/jelix-scripts/CREDITS
+U   branches/1.0beta3.x/lib/jelix-scripts/commands/createdaocrud.cmd.php
+U   trunk/lib/jelix-scripts/CREDITS
+U   trunk/lib/jelix-scripts/commands/createdaocrud.cmd.php
+
+
+From laurent at xulfr.org  Fri Sep 28 11:27:21 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Fri, 28 Sep 2007 11:27:21 +0200
+Subject: [Jelix-public] checkin SVN-591 (laurentj)
+Message-ID: <46FCC8F9.mail6NJ11KQ3W@xulfr.org>
+
+laurentj
+2007-09-28 11:27:20 +0200 (Fri, 28 Sep 2007)
+96
+fixed bug #284: bad module context during the run of all unit tests in junittest module. p=Rahal
+
+U   branches/1.0beta3.x/lib/jelix-modules/CREDITS
+U   branches/1.0beta3.x/lib/jelix-modules/junittests/controllers/default.classic.php
+U   branches/1.0beta3.x/lib/jelix-scripts/CREDITS
+U   trunk/lib/jelix-modules/CREDITS
+U   trunk/lib/jelix-modules/junittests/controllers/default.classic.php
+U   trunk/lib/jelix-scripts/CREDITS
+
+
+From laurent at xulfr.org  Fri Sep 28 11:31:46 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Fri, 28 Sep 2007 11:31:46 +0200
+Subject: [Jelix-public] checkin SVN-592 (laurentj)
+Message-ID: <46FCCA02.mail6VI1XRC20@xulfr.org>
+
+laurentj
+2007-09-28 11:31:45 +0200 (Fri, 28 Sep 2007)
+74
+fixed bug #290: use of mktime generated strict message, replace it by time
+
+U   branches/1.0beta3.x/lib/jelix/plugins/coord/auth/auth.coord.php
+U   trunk/lib/jelix/plugins/coord/auth/auth.coord.php
+
+
+From laurent at xulfr.org  Fri Sep 28 12:18:25 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Fri, 28 Sep 2007 12:18:25 +0200
+Subject: [Jelix-public] checkin SVN-593 (laurentj)
+Message-ID: <46FCD4F1.mail8W811DRLS@xulfr.org>
+
+laurentj
+2007-09-28 12:18:25 +0200 (Fri, 28 Sep 2007)
+272
+fixed bug #285: jControllerDaoCrud has now a property to indicate the jDb profil to use for the dao, and it is filled automatically by the createdaocrud command.
+Added also a  parameter to methods of jFormsBase: initFromDao, saveToDao, initControlFromDao, saveControlToDao
+
+U   branches/1.0beta3.x/lib/jelix/controllers/jControllerDaoCrud.class.php
+U   branches/1.0beta3.x/lib/jelix/forms/jFormsBase.class.php
+U   branches/1.0beta3.x/lib/jelix-scripts/commands/createdaocrud.cmd.php
+U   branches/1.0beta3.x/lib/jelix-scripts/templates/controller.daocrud.tpl
+U   trunk/lib/jelix/controllers/jControllerDaoCrud.class.php
+U   trunk/lib/jelix/forms/jFormsBase.class.php
+U   trunk/lib/jelix-scripts/commands/createdaocrud.cmd.php
+U   trunk/lib/jelix-scripts/templates/controller.daocrud.tpl
+
+
+From laurent at xulfr.org  Fri Sep 28 12:39:01 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Fri, 28 Sep 2007 12:39:01 +0200
+Subject: [Jelix-public] checkin SVN-594 (laurentj)
+Message-ID: <46FCD9C5.mail2JY17CCYP@xulfr.org>
+
+laurentj
+2007-09-28 12:39:01 +0200 (Fri, 28 Sep 2007)
+78
+fixed bug #275: a key parameter was missing on the jFormsBase:saveToDao method
+
+U   branches/1.0beta3.x/lib/jelix/controllers/jControllerDaoCrud.class.php
+U   branches/1.0beta3.x/lib/jelix/forms/jFormsBase.class.php
+U   trunk/lib/jelix/controllers/jControllerDaoCrud.class.php
+U   trunk/lib/jelix/forms/jFormsBase.class.php
+
+
+From laurent at xulfr.org  Fri Sep 28 15:38:45 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Fri, 28 Sep 2007 15:38:45 +0200
+Subject: [Jelix-public] checkin SVN-595 (laurentj)
+Message-ID: <46FD03E5.mail5P21J81RC@xulfr.org>
+
+laurentj
+2007-09-28 15:38:45 +0200 (Fri, 28 Sep 2007)
+59
+ticket #281 : added some hook methods on jControllerDaoCrud
+
+U   branches/1.0beta3.x/lib/jelix/controllers/jControllerDaoCrud.class.php
+U   trunk/lib/jelix/controllers/jControllerDaoCrud.class.php
+
+
+From laurent at xulfr.org  Fri Sep 28 16:26:52 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Fri, 28 Sep 2007 16:26:52 +0200
+Subject: [Jelix-public] checkin SVN-596 (laurentj)
+Message-ID: <46FD0F2C.mailCTF119HL1@xulfr.org>
+
+laurentj
+2007-09-28 16:26:51 +0200 (Fri, 28 Sep 2007)
+185
+ticket #280: added table headers in the crud_list.tpl
+added  property on jControllerDaoCrud to specify the records order
+fixed a bug in jDaoBase::findBy : order clause was not generated
+
+U   branches/1.0beta3.x/lib/jelix/controllers/jControllerDaoCrud.class.php
+U   branches/1.0beta3.x/lib/jelix/core-modules/jelix/templates/crud_list.tpl
+U   branches/1.0beta3.x/lib/jelix/dao/jDaoBase.class.php
+U   branches/1.0beta3.x/testapp/modules/testapp/controllers/samplecrud.classic.php
+U   trunk/lib/jelix/controllers/jControllerDaoCrud.class.php
+U   trunk/lib/jelix/core-modules/jelix/templates/crud_list.tpl
+U   trunk/lib/jelix/dao/jDaoBase.class.php
+U   trunk/testapp/modules/testapp/controllers/samplecrud.classic.php
+
+
+From laurent at xulfr.org  Fri Sep 28 17:53:27 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Fri, 28 Sep 2007 17:53:27 +0200
+Subject: [Jelix-public] checkin SVN-597 (laurentj)
+Message-ID: <46FD2377.mailHLJ1K2B7A@xulfr.org>
+
+laurentj
+2007-09-28 17:53:27 +0200 (Fri, 28 Sep 2007)
+62
+Little improvements in the hooks methods of jControllerDaoCrud
+
+U   branches/1.0beta3.x/lib/jelix/controllers/jControllerDaoCrud.class.php
+U   branches/1.0beta3.x/lib/jelix/core-modules/jelix/templates/crud_list.tpl
+U   trunk/lib/jelix/controllers/jControllerDaoCrud.class.php
+U   trunk/lib/jelix/core-modules/jelix/templates/crud_list.tpl
+
+
+From laurent at xulfr.org  Sat Sep 29 21:47:26 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Sat, 29 Sep 2007 21:47:26 +0200
+Subject: [Jelix-public] checkin SVN-598 (laurentj)
+Message-ID: <46FEABCE.mailKZT115GA9@xulfr.org>
+
+laurentj
+2007-09-29 21:47:25 +0200 (Sat, 29 Sep 2007)
+110
+ticket #153: old class namming is now disabled and enableOldClassNaming option in the configuration is removed
+
+U   trunk/build/buildjelix.php
+U   trunk/build/config/jelix-dist-dev.ini
+U   trunk/build/config/jelix-dist-gold.ini
+U   trunk/build/config/jelix-dist-opt.ini
+U   trunk/build/config/jelix-test.ini
+U   trunk/lib/jelix/core/defaultconfig.ini.php
+U   trunk/lib/jelix/core/jSelector.class.php
+U   trunk/lib/jelix/events/jEventListenerFactory.class.php
+U   trunk/lib/jelix/plugins/urls/significant/significant.urls.php
+U   trunk/lib/jelix/utils/jZone.class.php
+
+
+From laurent at xulfr.org  Sat Sep 29 21:51:37 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Sat, 29 Sep 2007 21:51:37 +0200
+Subject: [Jelix-public] checkin SVN-599 (laurentj)
+Message-ID: <46FEACC9.mailL5N11JSF4@xulfr.org>
+
+laurentj
+2007-09-29 21:51:37 +0200 (Sat, 29 Sep 2007)
+103
+removed the use of *motif attribute (deprecated) in dao template in jelix-scripts. beta3.x branch only.
+
+U   branches/1.0beta3.x/lib/jelix-scripts/templates/dao.xml.tpl
+U   branches/1.0beta3.x/lib/jelix-scripts/templates/dao_empty.xml.tpl
+
+
+From laurent at xulfr.org  Sat Sep 29 21:53:53 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Sat, 29 Sep 2007 21:53:53 +0200
+Subject: [Jelix-public] checkin SVN-600 (laurentj)
+Message-ID: <46FEAD51.mailL8H11D0JX@xulfr.org>
+
+laurentj
+2007-09-29 21:53:53 +0200 (Sat, 29 Sep 2007)
+56
+ticket #193: removed support of *motif attribute in jDao
+
+U   trunk/lib/jelix/dao/jDaoParser.class.php
+U   trunk/lib/jelix-scripts/templates/dao.xml.tpl
+U   trunk/lib/jelix-scripts/templates/dao_empty.xml.tpl
+
+
+From laurent at xulfr.org  Sat Sep 29 22:26:30 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Sat, 29 Sep 2007 22:26:30 +0200
+Subject: [Jelix-public] checkin SVN-601 (laurentj)
+Message-ID: <46FEB4F6.mailNHW11C4PU@xulfr.org>
+
+laurentj
+2007-09-29 22:26:30 +0200 (Sat, 29 Sep 2007)
+60
+Ticket #289: added the possibility to overload a jforms form
+
+U   trunk/lib/jelix/core/jSelector.class.php
+
+

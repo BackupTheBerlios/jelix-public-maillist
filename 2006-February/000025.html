@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Jelix-public] checkins du 31/01 au 06/02
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/jelix-public/2006-February/index.html" >
+   <LINK REL="made" HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20checkins%20du%2031/01%20au%2006/02&In-Reply-To=%3C43E7195E.8030506%40xulfr.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000024.html">
+   <LINK REL="Next"  HREF="000026.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Jelix-public] checkins du 31/01 au 06/02</H1>
+    <B>Laurent</B> 
+    <A HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20checkins%20du%2031/01%20au%2006/02&In-Reply-To=%3C43E7195E.8030506%40xulfr.org%3E"
+       TITLE="[Jelix-public] checkins du 31/01 au 06/02">laurent at xulfr.org
+       </A><BR>
+    <I>Mon Feb  6 10:39:42 CET 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000024.html">[Jelix-public] checkins du 31/01 au 06/02
+</A></li>
+        <LI>Next message: <A HREF="000026.html">[Jelix-public] version 1.0 alpha 1
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#25">[ date ]</a>
+              <a href="thread.html#25">[ thread ]</a>
+              <a href="subject.html#25">[ subject ]</a>
+              <a href="author.html#25">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>J'ai oubli&#233; de signaler deux autres nouveaut&#233;s :
+
+- ajout du modificateur jdatetime pour le moteur de template jTpl, par 
+Loic. Permet donc de formater une date en indiquant le format utilis&#233;. 
+Utilise la classe jDateTime.
+
+- ajout d'une classe, jLog, pour logger des choses dans un fichier :
+
+    jLog::dump($variable, &quot;message&quot;); pour faire un dump dans une variable
+    jLog::log(&quot;message&quot;) pour ecrire un simple message
+
+
+Le contenu est ajout&#233; dans un fichier situ&#233; dans var/log de 
+l'application. Dans la configuration, il y a une nouvelle section
+
+[logfiles]
+default=messages.log
+
+-&gt; alias = fichier de log
+Vous pouvez donc avoir plusieurs fichiers de log.
+
+on peut ajouter un param&#232;tre supplementaires &#224; dump et log, indiquant 
+l'alias du fichier dans lequel on veut stocker. Par d&#233;faut, il utilise 
+l'alias &quot;default&quot;.
+
+
+Enfin pour les contributeurs : j'ai ajout&#233; au niveau de l'arbre 
+subversion des propri&#233;t&#233;s svn:ignore pour ignorer les fichiers 
+temporaires et autres fichiers de conf personnalis&#233;s. Ils n'apparaissent 
+donc plus lors d'un svn status ;-)
+
+a+
+
+
+Laurent wrote:
+&gt;<i> Bonjour,
+</I>&gt;<i> 
+</I>&gt;<i> Comme d'hab, voici les nouveaut&#233;s de la semaine pass&#233;e :
+</I>&gt;<i> 
+</I>&gt;<i> - fin du d&#233;veloppement du moteur d'url significatif, qui permet donc de 
+</I>&gt;<i> faire un mapping urls cools &lt;-&gt; actions.
+</I>&gt;<i> - ajout de tests unitaires pour tester le moteur d'urls.
+</I>&gt;<i> - &#233;criture de la doc sur la configuration de ce mapping d'url, et de 
+</I>&gt;<i> l'usage de jUrl et du plugin de template correspondant :
+</I>&gt;<i> 
+</I>&gt;<i> <A HREF="http://www.jelix.org/doku.php?id=manuel:urls">http://www.jelix.org/doku.php?id=manuel:urls</A>
+</I>&gt;<i> <A HREF="http://www.jelix.org/doku.php?id=manuel:urls:significant">http://www.jelix.org/doku.php?id=manuel:urls:significant</A>
+</I>&gt;<i> 
+</I>&gt;<i> J'ai &#233;cris &#231;a vite fait. Donc si vous voyez des coquilles ou si vous 
+</I>&gt;<i> voulez remanier des phrases qui ne sont pas tr&#233;s lisibles ou trop 
+</I>&gt;<i> compliqu&#233;es, n'h&#233;sitez pas &#224; cliquer sur le bouton &quot;&#233;diter cette page&quot; ;-)
+</I>&gt;<i> 
+</I>&gt;<i> Cette semaine, je m'attaque au syst&#232;me de formulaire.
+</I>&gt;<i> 
+</I>&gt;<i> a+
+</I>&gt;<i> 
+</I>&gt;<i> Laurent
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Jelix-public mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/jelix-public">Jelix-public at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="http://lists.berlios.de/mailman/listinfo/jelix-public">http://lists.berlios.de/mailman/listinfo/jelix-public</A>
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000024.html">[Jelix-public] checkins du 31/01 au 06/02
+</A></li>
+	<LI>Next message: <A HREF="000026.html">[Jelix-public] version 1.0 alpha 1
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#25">[ date ]</a>
+              <a href="thread.html#25">[ thread ]</a>
+              <a href="subject.html#25">[ subject ]</a>
+              <a href="author.html#25">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/jelix-public">More information about the Jelix-public
+mailing list</a><br>
+</body></html>

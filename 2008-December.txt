@@ -1,0 +1,177 @@
+From loic at mathaud.net  Tue Dec  9 11:25:42 2008
+From: loic at mathaud.net (Loic Mathaud)
+Date: Tue, 09 Dec 2008 11:25:42 +0100
+Subject: [Jelix-public] Announcement: Jelix 1.1RC1 released !
+Message-ID: <493E47A6.8040403@mathaud.net>
+
+The Jelix Team is proud to announce the release of Jelix 1.1RC1,
+the last release of the Jelix open-source php5 framework that helps you
+to develop any kinds of web applications.
+
+Read more about new features of Jelix 1.1RC1 in the changelog:
+
+  http://jelix.org/articles/en/changelog/1.1
+
+You can also read the announcement on Jelix web site:
+
+  http://jelix.org/en/news/post/jelix-1.1RC1-is-available
+
+Download Jelix 1.1RC1
+---------------------
+
+  http://jelix.org/articles/en/download/stable/1.1
+
+
+If you have any question, or think you may have found a bug, ask on the
+#jelix IRC channel, on Jelix users mailing list, or on Jelix forums:
+
+  #jelix on irc.freenode.net
+  https://developer.berlios.de/mail/?group_id=5643
+  http://jelix.org/forums/
+
+-- 
+Jelix Team
+
+
+From carugnom at gmail.com  Wed Dec 24 13:07:18 2008
+From: carugnom at gmail.com (Mario Daniel Carugno)
+Date: Wed, 24 Dec 2008 10:07:18 -0200
+Subject: [Jelix-public] One application for many companies
+Message-ID: <ea2a56170812240407y487f465dl9f75d3e8d5c2516a@mail.gmail.com>
+
+Hi, i'm Mario and i'm new to webdevelopment. I've tried many
+frameworks, and Jelix looks very good for me. It's somewhat different
+from others. I'm learning from tutorial and manual, they are very good
+too.
+
+I need to develop an application wich will be in a server, and will be
+used by many companies, hopeful ;>)
+
+My thought is to develop a base application with the common
+functionality, and derive instances for each company. Only where a
+company has different needs, i overwrite specific methods.
+
+Can this schema be implemented with Jelix ? How ?
+
+Thanks and Merry Christmas !!!
+
+
+From ljouanneau at gmail.com  Fri Dec 26 11:14:37 2008
+From: ljouanneau at gmail.com (Laurent)
+Date: Fri, 26 Dec 2008 10:14:37 -0000
+Subject: [Jelix-public] One application for many companies
+In-Reply-To: <ea2a56170812240407y487f465dl9f75d3e8d5c2516a@mail.gmail.com>
+References: <ea2a56170812240407y487f465dl9f75d3e8d5c2516a@mail.gmail.com>
+Message-ID: <4954AE86.2040207@xulfr.org>
+
+Hello !
+
+Yes of course, you can do this schema.
+
+
+- You can develop some modules shared by many applications.
+- if you want to have differents templates, you can create a theme for 
+each company
+- you can redefine forms, daos, properties files (localization) for a 
+specific company without modifying the original files
+- and of course, you can add specific modules for the needs of a 
+specific companies.
+
+And there are plugins on many things (template, authentification, acl, 
+coordinator etc..) so you can have different configuration, behavior etc..
+
+So, jelix is highly extensible.
+
+Note that the tutorials and the manual for Jelix 1.1 are not fully 
+complete, and Jelix 1.1 will be release during first weeks of 2009.
+
+Don't hesitate to post questions on the forums or in this mailing-list.
+
+Merry Christmas !
+
+Laurent
+
+
+Mario Daniel Carugno wrote:
+> Hi, i'm Mario and i'm new to webdevelopment. I've tried many
+> frameworks, and Jelix looks very good for me. It's somewhat different
+> from others. I'm learning from tutorial and manual, they are very good
+> too.
+> 
+> I need to develop an application wich will be in a server, and will be
+> used by many companies, hopeful ;>)
+> 
+> My thought is to develop a base application with the common
+> functionality, and derive instances for each company. Only where a
+> company has different needs, i overwrite specific methods.
+> 
+> Can this schema be implemented with Jelix ? How ?
+> 
+> Thanks and Merry Christmas !!!
+> _______________________________________________
+> Jelix-public mailing list
+> Jelix-public at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/jelix-public
+
+
+
+From ljouanneau at gmail.com  Fri Dec 26 11:20:11 2008
+From: ljouanneau at gmail.com (Laurent)
+Date: Fri, 26 Dec 2008 10:20:11 -0000
+Subject: [Jelix-public] One application for many companies
+In-Reply-To: <ea2a56170812240407y487f465dl9f75d3e8d5c2516a@mail.gmail.com>
+References: <ea2a56170812240407y487f465dl9f75d3e8d5c2516a@mail.gmail.com>
+Message-ID: <4954AFD3.6070208@jelix.org>
+
+Hello !
+
+Yes of course, you can do this schema.
+
+
+- You can develop some modules shared by many applications.
+- if you want to have differents templates, you can create a theme for
+each company
+- you can redefine forms, daos, properties files (localization) for a
+specific company without modifying the original files
+- and of course, you can add specific modules for the needs of a
+specific companies.
+
+And there are plugins on many things (template, authentification, acl,
+coordinator etc..) so you can have different configuration, behavior etc..
+
+So, jelix is highly extensible.
+
+Note that the tutorials and the manual for Jelix 1.1 are not fully
+complete, and Jelix 1.1 will be release during first weeks of 2009.
+
+Don't hesitate to post questions on the forums or in this mailing-list.
+
+Merry Christmas !
+
+Laurent
+
+
+Mario Daniel Carugno wrote:
+> Hi, i'm Mario and i'm new to webdevelopment. I've tried many
+> frameworks, and Jelix looks very good for me. It's somewhat different
+> from others. I'm learning from tutorial and manual, they are very good
+> too.
+> 
+> I need to develop an application wich will be in a server, and will be
+> used by many companies, hopeful ;>)
+> 
+> My thought is to develop a base application with the common
+> functionality, and derive instances for each company. Only where a
+> company has different needs, i overwrite specific methods.
+> 
+> Can this schema be implemented with Jelix ? How ?
+> 
+> Thanks and Merry Christmas !!!
+> _______________________________________________
+> Jelix-public mailing list
+> Jelix-public at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/jelix-public
+
+
+
+

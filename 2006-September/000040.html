@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Jelix-public] checkin SVN-252 (laurentj)
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/jelix-public/2006-September/index.html" >
+   <LINK REL="made" HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20checkin%20SVN-252%20%28laurentj%29&In-Reply-To=%3C450725A1.mailI741OMCQP%40xulfr.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000039.html">
+   <LINK REL="Next"  HREF="000041.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Jelix-public] checkin SVN-252 (laurentj)</H1>
+    <B>laurent at xulfr.org</B> 
+    <A HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20checkin%20SVN-252%20%28laurentj%29&In-Reply-To=%3C450725A1.mailI741OMCQP%40xulfr.org%3E"
+       TITLE="[Jelix-public] checkin SVN-252 (laurentj)">laurent at xulfr.org
+       </A><BR>
+    <I>Tue Sep 12 23:24:49 CEST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000039.html">[Jelix-public] checkin SVN-251 (laurentj)
+</A></li>
+        <LI>Next message: <A HREF="000041.html">[Jelix-public] checkin SVN-253 (laurentj)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#40">[ date ]</a>
+              <a href="thread.html#40">[ thread ]</a>
+              <a href="subject.html#40">[ subject ]</a>
+              <a href="author.html#40">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>laurentj
+2006-09-12 23:24:49 +0200 (Tue, 12 Sep 2006)
+421
+- am?\195?\169lioration dans le traitement des erreurs : 
+   - erreur explicite quand une action ou un module est inconnu
+   - erreur selecteur invalide: ajout du type de selecteur (bug #8772)
+- Fix Bug #8771 : mauvaise prise en charge des erreurs ini dans la conf des plugins
+- Fix Bug #8594 : Erreur de conversion jDateTime
+- parser dao : ajout verification que le parametre dans l'attribut way de orderitem existe bien
+
+U   trunk/build/manifests/testapp.mn
+U   trunk/lib/jelix/core/jCoordinator.class.php
+U   trunk/lib/jelix/core/jSelector.class.php
+U   trunk/lib/jelix/dao/jDaoParser.class.php
+U   trunk/lib/jelix/utils/jDateTime.class.php
+U   trunk/lib/jelix-modules/jelix/locales/en_US/daoxml.ISO-8859-1.properties
+U   trunk/lib/jelix-modules/jelix/locales/en_US/errors.ISO-8859-1.properties
+U   trunk/lib/jelix-modules/jelix/locales/fr_FR/daoxml.ISO-8859-1.properties
+U   trunk/lib/jelix-modules/jelix/locales/fr_FR/daoxml.UTF-8.properties
+U   trunk/lib/jelix-modules/jelix/locales/fr_FR/errors.ISO-8859-1.properties
+U   trunk/lib/jelix-modules/jelix/locales/fr_FR/errors.UTF-8.properties
+U   trunk/testapp/modules/unittest/classes/unittestservice.class.php
+U   trunk/testapp/modules/unittest/classes/utdao.class.php
+A   trunk/testapp/modules/unittest/classes/utdao2.class.php
+U   trunk/testapp/modules/unittest/controllers/dao.classic.php
+U   trunk/testapp/modules/unittest/templates/menu.tpl
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000039.html">[Jelix-public] checkin SVN-251 (laurentj)
+</A></li>
+	<LI>Next message: <A HREF="000041.html">[Jelix-public] checkin SVN-253 (laurentj)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#40">[ date ]</a>
+              <a href="thread.html#40">[ thread ]</a>
+              <a href="subject.html#40">[ subject ]</a>
+              <a href="author.html#40">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/jelix-public">More information about the Jelix-public
+mailing list</a><br>
+</body></html>

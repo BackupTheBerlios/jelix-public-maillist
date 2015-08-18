@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Jelix-public] Typos probables et questions
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/jelix-public/2006-January/index.html" >
+   <LINK REL="made" HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20Typos%20probables%20et%20questions&In-Reply-To=%3Cafc7097d0601091110s2710054cj%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000009.html">
+   <LINK REL="Next"  HREF="000013.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Jelix-public] Typos probables et questions</H1>
+    <B>dMp</B> 
+    <A HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20Typos%20probables%20et%20questions&In-Reply-To=%3Cafc7097d0601091110s2710054cj%40mail.gmail.com%3E"
+       TITLE="[Jelix-public] Typos probables et questions">viapanda at gmail.com
+       </A><BR>
+    <I>Mon Jan  9 20:10:14 CET 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000009.html">[Jelix-public] Checkins de la semaine
+</A></li>
+        <LI>Next message: <A HREF="000013.html">[Jelix-public] Typos probables et questions
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#12">[ date ]</a>
+              <a href="thread.html#12">[ thread ]</a>
+              <a href="subject.html#12">[ subject ]</a>
+              <a href="author.html#12">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hello ;)
+
+D'abord quelques trucs &quot;bizarres&quot;:
+
+
+*******
+jelix/auth/jAuth.class.php
+*******
+
+Ligne 31:
+- interface class jIAuthDriver {
++ interface jIAuthDriver {
+
+
+*******
+jelix/utils/jClasses.class.php
+*******
+
+Ligne 38:
+       if(isset(self:_instances[$sel-&gt;toString()])){
+           return (self:_instances[$sel-&gt;toString()]);
+       }else{
+           $o = self::create($selector);
+           self:_instances[$sel-&gt;toString()]=$o;
+
+
+Ca serait pas plut&#244;t un truc genre &#231;a?
+
+       if(isset(self::$_instances[$sel-&gt;toString()])){
+           return (self::$_instances[$sel-&gt;toString()]);
+       }else{
+           $o = self::create($selector);
+           self::$_instances[$sel-&gt;toString()]=$o;
+
+
+
+*******
+jelix/utils/jZone.class.php
+*******
+Ligne 135:
+$params ne semble pas exister dans le contexte de la fonction...
+
+
+
+Ensuite, j'ai une question, &quot;formelle&quot;, concernant les magic_quotes.
+Est-il vraiment n&#233;cessaire d'en faire un plugin?
+Ca me parait &#234;tre un gros marteau pour une petite mouche (mais tu as
+probablement de bonnes raisons)
+Il me semble que les magic quotes GPC sont plus une &quot;bizarrerie&quot; du langage
+qu'un &quot;feature&quot; &#224; int&#233;grer dans une plate-forme, et que l'utilisateur doit
+activer ou non.
+
+Personnellement j'aurai tendance &#224; inclure syst&#233;matiquement la d&#233;tection.
+
+
+D'autre part, je ne vois nulle part de mention de magic_quotes_runtime (&#231;a
+existe toujours en php5 ?).
+Un petit ini_set('magic_quotes_runtime', false); serait probablement
+bienvenue.
+
+
+Pour r&#233;pondre &#224; une question &#233;voqu&#233;e auparavant (concernant
+session_auto_start): oui, il y a des hosts o&#249; c'est activ&#233;.
+C'&#233;tait m&#234;me parfois tr&#232;s probl&#233;matique &#224; cause d'un horrible bug dans php
+4.x (me souviens plus), o&#249; les objets n'&#233;taient pas d&#233;s&#233;rialis&#233;s
+correctement...
+
+
+Toujours dans le m&#234;me ordre d'id&#233;e, je suppose que structurellement jelix
+est relativement immune contre l'injection de variables (dans le cas
+register_globals=true).
+Si ce n'est pas le cas, &#231;a se g&#232;re en quelques lignes a priori...
+
+
+
+Amicalement,
+
+Olivier
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/jelix-public/attachments/20060109/5b27368c/attachment.html">https://lists.berlios.de/pipermail/jelix-public/attachments/20060109/5b27368c/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000009.html">[Jelix-public] Checkins de la semaine
+</A></li>
+	<LI>Next message: <A HREF="000013.html">[Jelix-public] Typos probables et questions
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#12">[ date ]</a>
+              <a href="thread.html#12">[ thread ]</a>
+              <a href="subject.html#12">[ subject ]</a>
+              <a href="author.html#12">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/jelix-public">More information about the Jelix-public
+mailing list</a><br>
+</body></html>

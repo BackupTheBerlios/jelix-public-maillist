@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Jelix-public] Hello
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/jelix-public/2006-January/index.html" >
+   <LINK REL="made" HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20Hello&In-Reply-To=%3Cafc7097d0601031248h7e0ecebp%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000000.html">
+   <LINK REL="Next"  HREF="000003.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Jelix-public] Hello</H1>
+    <B>dMp</B> 
+    <A HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20Hello&In-Reply-To=%3Cafc7097d0601031248h7e0ecebp%40mail.gmail.com%3E"
+       TITLE="[Jelix-public] Hello">viapanda at gmail.com
+       </A><BR>
+    <I>Tue Jan  3 21:48:32 CET 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000000.html">[Jelix-public] C'est parti !
+</A></li>
+        <LI>Next message: <A HREF="000003.html">[Jelix-public] Hello
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1">[ date ]</a>
+              <a href="thread.html#1">[ thread ]</a>
+              <a href="subject.html#1">[ subject ]</a>
+              <a href="author.html#1">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Je suis en train de lire le code de Jelix.
+C'est tr&#232;s int&#233;ressant (surtout parce que c'est tr&#232;s &#233;loign&#233; de mon
+propre php-fu-style ;)).
+
+Je vais essayer d'envoyer de petits patchs quand j'ai un peu de temps
+(j'en ai post&#233; un minuscule tout &#224; l'heure :p).
+
+Sinon, le truc le plus &quot;familier&quot; pour moi l&#224;-dedans, c'est http.
+Question authentification, j'ai d&#233;j&#224; impl&#233;ment&#233; digest en php. Ca
+pourrait peut-&#234;tre resservir.
+C&#244;t&#233; session, on peut facilement r&#233;&#233;crire compl&#232;tement le m&#233;chanisme
+de session de php.
+Les avantages sont nombreux:
+1 - on peut utiliser la nonce digest pour trimbaler le token de
+session (on a alors une session cookie-less / url-less)
+2 - au passage c'est plus direct pour choisir la back-end pour le
+stockage des donn&#233;es
+3 - &#231;a &#233;vite de se prendre la t&#234;te avec les probl&#232;mes li&#233;s &#224; la conf
+session de php (/tmp accessible en lecture, conf du cookie, etc,
+etc...)
+
+
+Toujours question http, pourquoi ne pas:
+- gzipper les contenus &#224; la vol&#233;e (apr&#232;s avoir v&#233;rifi&#233; que le client
+peut lire, et que le serveur peut compresser)
+- impl&#233;menter un syst&#232;me de cache coh&#233;rent (mais je n'ai pas encore
+assez lu ton code, c'est peut-&#234;tre d&#233;j&#224; fait)
+
+D'autre part, je ne vois rien (apr&#232;s lecture rapide) dans ton code
+pour prendre en compte les particularit&#233;s de configuration de php.
+Une petite couche de gestion ne serait peut-&#234;tre pas inutile?
+
+
+Voil&#224;, ben bonne ann&#233;e, et peut-&#234;tre &#224; bient&#244;t ;)
+
+- dMp
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000000.html">[Jelix-public] C'est parti !
+</A></li>
+	<LI>Next message: <A HREF="000003.html">[Jelix-public] Hello
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1">[ date ]</a>
+              <a href="thread.html#1">[ thread ]</a>
+              <a href="subject.html#1">[ subject ]</a>
+              <a href="author.html#1">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/jelix-public">More information about the Jelix-public
+mailing list</a><br>
+</body></html>

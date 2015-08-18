@@ -1,0 +1,86 @@
+From olivier at foxmask.info  Sun Mar 14 18:42:12 2010
+From: olivier at foxmask.info (olivier)
+Date: Sun, 14 Mar 2010 18:42:12 +0100
+Subject: [Jelix-public] Economiser des acces jDao : best practice ?
+Message-ID: <4B9D1FF4.7080202@foxmask.info>
+
+Bonsoir,
+
+ici 
+https://bitbucket.org/foxmask/havefnubb/src/tip/havefnubb/modules/havefnubb/classes/hfnuposts.class.php
+ligne 47 ? 51
+
+On peut voir une m?thode pour ajouter un record $record (un jDaoRecord 
+en fait) ? un array $posts.
+ceci afin de ne lire que ce array pour la session courante plut?t que de 
+faire des allers-retours avec la base de donn?es.
+
+Cependant en me faisant un test unitaire sur cette m?thode j'ai l'erreur :
+Fatal error: Cannot use object of type 
+cDaoRecord_havefnubb_Jx_posts_Jx_mysql as array in hfnuposts.class.php 
+on line 48
+
+J'aurai aim?:
+- soit  "caster" avec un truc du style :
+if ( (jDaoRecord) self::$posts[$id]) mais evidement ?a plait pas ...
+
+- soit un toArray() comme avec PEAR
+http://pear.php.net/manual/fr/package.database.db-dataobject.db-dataobject.toarray.php
+
+Donc selon vous, comment dois-je m'y prendre ?
+
+faire des jdao::get('module~mondao')->get($id); ? tire-la-rigot et ne 
+pas g?rer d'array pour stocker les records ?
+
+Merci de vos lumi?res.
+
+
+
+From olivier at foxmask.info  Sun Mar 14 18:56:28 2010
+From: olivier at foxmask.info (olivier)
+Date: Sun, 14 Mar 2010 18:56:28 +0100
+Subject: [Jelix-public] Economiser des acces jDao : best practice ?
+In-Reply-To: <4B9D1FF4.7080202@foxmask.info>
+References: <4B9D1FF4.7080202@foxmask.info>
+Message-ID: <4B9D234C.8010607@foxmask.info>
+
+bon c'est zarb ; ca doit etre la facon d'enchainer les tests mais l? ; 
+plus d'erreurs...
+
+
+Le 14/03/2010 18:42, olivier a ?crit :
+> Bonsoir,
+>
+> ici 
+> https://bitbucket.org/foxmask/havefnubb/src/tip/havefnubb/modules/havefnubb/classes/hfnuposts.class.php 
+>
+> ligne 47 ? 51
+>
+> On peut voir une m?thode pour ajouter un record $record (un jDaoRecord 
+> en fait) ? un array $posts.
+> ceci afin de ne lire que ce array pour la session courante plut?t que 
+> de faire des allers-retours avec la base de donn?es.
+>
+> Cependant en me faisant un test unitaire sur cette m?thode j'ai 
+> l'erreur :
+> Fatal error: Cannot use object of type 
+> cDaoRecord_havefnubb_Jx_posts_Jx_mysql as array in hfnuposts.class.php 
+> on line 48
+>
+> J'aurai aim?:
+> - soit  "caster" avec un truc du style :
+> if ( (jDaoRecord) self::$posts[$id]) mais evidement ?a plait pas ...
+>
+> - soit un toArray() comme avec PEAR
+> http://pear.php.net/manual/fr/package.database.db-dataobject.db-dataobject.toarray.php 
+>
+>
+> Donc selon vous, comment dois-je m'y prendre ?
+>
+> faire des jdao::get('module~mondao')->get($id); ? tire-la-rigot et ne 
+> pas g?rer d'array pour stocker les records ?
+>
+> Merci de vos lumi?res.
+>
+
+

@@ -1,0 +1,1153 @@
+From foxmask at gmail.com  Fri Aug 14 10:29:07 2009
+From: foxmask at gmail.com (FoxMaSk)
+Date: Fri, 14 Aug 2009 10:29:07 +0200
+Subject: [Jelix-public] =?iso-8859-1?q?Compatibilit=E9_entre_Frameworks?=
+Message-ID: <576746c0908140129x11d29b03hc4c2c6c0317f97e@mail.gmail.com>
+
+bonjour,
+l'un d'entre vous aurait vu passer des ?changes sur le newsgroup
+php.standard concernant la possibilit? de  permettre la compatibilite entre
+frameworks de briques standards (plugins et autre) ?.
+cdt.
+-- 
+http://www.foxmask.info
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/jelix-public/attachments/20090814/c6e586c8/attachment.html>
+
+From mathieu.piette at gmail.com  Tue Aug 25 14:07:53 2009
+From: mathieu.piette at gmail.com (Mathieu Piette)
+Date: Tue, 25 Aug 2009 14:07:53 +0200
+Subject: [Jelix-public] ID unique en VARCHAR
+Message-ID: <1251202073.4177.13.camel@mathieu-desktop>
+
+Bonjour,
+
+Je d?bute avec Jelix, j'?cris ma premi?re application.
+
+J'ai un module appel? ?page? qui sert ? afficher le texte des pages du
+site.
+
+Mon fichier page.dao.xml est le suivant:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<dao xmlns="http://jelix.org/ns/dao/1.0">
+  <datasources>
+    <primarytable name="pages" primarykey="id" />
+  </datasources>
+  <record>
+    <property
+      name="id"
+      fieldname="id"
+      datatype="string"
+      required="true"
+      maxlength="255"
+    />
+    <property
+      name="title"
+      fieldname="title"
+      datatype="string"
+      required="true"
+      maxlength="255"
+    />
+    <property
+      name="text"
+      fieldname="text"
+      datatype="text"
+      required="true"
+    />
+    <property
+      name="date_creation"
+      fieldname="date_creation"
+      datatype="datetime"
+      required="true"
+      insertpattern="NOW()"
+      updatepattern=""
+    />
+    <property
+      name="date_modification"
+      fieldname="date_modification"
+      datatype="datetime"
+      required="true"
+      insertpattern="NOW()"
+      updatepattern="NOW()"
+    />
+  </record>
+  <factory>
+  </factory>
+</dao>
+
+J'ai utilis? insertpattern et updatepattern pour que les dates de
+cr?ation et de mise ? jour soient renseign?e automagicalement, mais je
+me demande comment je vais bien pouvoir faire pour l'ID de mes pages, ce
+serait bien s'il y avait quelque chose de similaire.
+
+Je n'ai pas voulu utiliser un ID num?rique avec auto_increment, mais
+plut?t un ID sous forme de VARCHAR pour que mes URL soient mieux. Par
+exemple, si j'ai une page dont le titre est ??a c'est un joli titre!?,
+son ID serait ?ca_c_est_un_joli_titre? et comme ?a, au lieu d'avoir des
+URL du type http://www.example.com/myapp/www/?page=1, j'aurai plut?t
+quelque chose qui ressemblerait ?
+http://www.example.com/myapp/www/?page=ca_c_est_un_joli_titre.
+
+Mon probl?me c'est que je n'ai pas encore bien d?termin? comment je
+pourrais g?n?rer ces ID ? partir du titre en ?tant s?r qu'ils sont
+uniques (mais ?a je trouverai toujours bien), mais surtout, je ne sais
+pas o? je dois mettre le code qui g?n?re cet ID...
+
+Quelqu'un aurait-il une id?e?
+
+Merci d'avance!
+
+--
+Mathieu.
+
+
+
+From loic at mathaud.net  Tue Aug 25 14:21:22 2009
+From: loic at mathaud.net (Loic Mathaud)
+Date: Tue, 25 Aug 2009 14:21:22 +0200
+Subject: [Jelix-public] ID unique en VARCHAR
+In-Reply-To: <1251202073.4177.13.camel@mathieu-desktop>
+References: <1251202073.4177.13.camel@mathieu-desktop>
+Message-ID: <4A93D742.8070006@mathaud.net>
+
+Bonjour Mathieu,
+
+Mathieu Piette a ?crit :
+> Bonjour,
+> 
+> Je d?bute avec Jelix, j'?cris ma premi?re application.
+
+Bienvenue donc ;)
+
+> 
+> J'ai un module appel? ?page? qui sert ? afficher le texte des pages du
+> site.
+> 
+> Mon fichier page.dao.xml est le suivant:
+> 
+> <?xml version="1.0" encoding="UTF-8"?>
+> <dao xmlns="http://jelix.org/ns/dao/1.0">
+>   <datasources>
+>     <primarytable name="pages" primarykey="id" />
+>   </datasources>
+>   <record>
+>     <property
+>       name="id"
+>       fieldname="id"
+>       datatype="string"
+>       required="true"
+>       maxlength="255"
+>     />
+>     <property
+>       name="title"
+>       fieldname="title"
+>       datatype="string"
+>       required="true"
+>       maxlength="255"
+>     />
+>     <property
+>       name="text"
+>       fieldname="text"
+>       datatype="text"
+>       required="true"
+>     />
+>     <property
+>       name="date_creation"
+>       fieldname="date_creation"
+>       datatype="datetime"
+>       required="true"
+>       insertpattern="NOW()"
+>       updatepattern=""
+>     />
+>     <property
+>       name="date_modification"
+>       fieldname="date_modification"
+>       datatype="datetime"
+>       required="true"
+>       insertpattern="NOW()"
+>       updatepattern="NOW()"
+>     />
+>   </record>
+>   <factory>
+>   </factory>
+> </dao>
+> 
+> J'ai utilis? insertpattern et updatepattern pour que les dates de
+> cr?ation et de mise ? jour soient renseign?e automagicalement, mais je
+> me demande comment je vais bien pouvoir faire pour l'ID de mes pages, ce
+> serait bien s'il y avait quelque chose de similaire.
+> 
+> Je n'ai pas voulu utiliser un ID num?rique avec auto_increment, mais
+> plut?t un ID sous forme de VARCHAR pour que mes URL soient mieux. Par
+> exemple, si j'ai une page dont le titre est ??a c'est un joli titre!?,
+> son ID serait ?ca_c_est_un_joli_titre? et comme ?a, au lieu d'avoir des
+> URL du type http://www.example.com/myapp/www/?page=1, j'aurai plut?t
+> quelque chose qui ressemblerait ?
+> http://www.example.com/myapp/www/?page=ca_c_est_un_joli_titre.
+> 
+> Mon probl?me c'est que je n'ai pas encore bien d?termin? comment je
+> pourrais g?n?rer ces ID ? partir du titre en ?tant s?r qu'ils sont
+> uniques (mais ?a je trouverai toujours bien), mais surtout, je ne sais
+> pas o? je dois mettre le code qui g?n?re cet ID...
+> 
+> Quelqu'un aurait-il une id?e?
+
+Personnellement j'aurais tendance ? te proposer de faire ainsi :
+
+- Tu mets un id en auto_increment comme cl? primaire de ta table. ?a te
+facilitera la vie car g?r? par ta base de donn?es
+- Tu ajoute un champ "slug" avec un index UNIQUE qui serait le titre
+pass? par un jUrl::escape()
+- Un coup d'urls significatives pour avoir de belles urls
+
+Pour enregistrer le "slug" tu le fais au m?me moment que l'enregitrement
+de ta page.
+
+J'esp?re que c'est suffisamment clair.
+
+Si d'autres jelixians veulent proposer d'autres fa?on de faire,
+n'h?sitez pas ! ;)
+
+@+
+Loic
+
+> 
+> Merci d'avance!
+> 
+> --
+> Mathieu.
+> 
+> _______________________________________________
+> Jelix-public mailing list
+> Jelix-public at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/jelix-public
+
+
+
+From mathieu.piette at gmail.com  Thu Aug 27 19:40:27 2009
+From: mathieu.piette at gmail.com (Mathieu Piette)
+Date: Thu, 27 Aug 2009 19:40:27 +0200
+Subject: [Jelix-public] ID unique en VARCHAR
+In-Reply-To: <4A93D742.8070006@mathaud.net>
+References: <1251202073.4177.13.camel@mathieu-desktop>
+	<4A93D742.8070006@mathaud.net>
+Message-ID: <1251394827.4100.0.camel@mathieu-desktop>
+
+Merci! Je vais essayer tout ?a!
+
+Si quelqu'un a une autre id?e pour que je puisse comparer, je prends
+aussi :-)
+
+Le mardi 25 ao?t 2009 ? 14:21 +0200, Loic Mathaud a ?crit :
+> Bonjour Mathieu,
+> 
+> Mathieu Piette a ?crit :
+> > Bonjour,
+> > 
+> > Je d?bute avec Jelix, j'?cris ma premi?re application.
+> 
+> Bienvenue donc ;)
+> 
+> > 
+> > J'ai un module appel? ?page? qui sert ? afficher le texte des pages du
+> > site.
+> > 
+> > Mon fichier page.dao.xml est le suivant:
+> > 
+> > <?xml version="1.0" encoding="UTF-8"?>
+> > <dao xmlns="http://jelix.org/ns/dao/1.0">
+> >   <datasources>
+> >     <primarytable name="pages" primarykey="id" />
+> >   </datasources>
+> >   <record>
+> >     <property
+> >       name="id"
+> >       fieldname="id"
+> >       datatype="string"
+> >       required="true"
+> >       maxlength="255"
+> >     />
+> >     <property
+> >       name="title"
+> >       fieldname="title"
+> >       datatype="string"
+> >       required="true"
+> >       maxlength="255"
+> >     />
+> >     <property
+> >       name="text"
+> >       fieldname="text"
+> >       datatype="text"
+> >       required="true"
+> >     />
+> >     <property
+> >       name="date_creation"
+> >       fieldname="date_creation"
+> >       datatype="datetime"
+> >       required="true"
+> >       insertpattern="NOW()"
+> >       updatepattern=""
+> >     />
+> >     <property
+> >       name="date_modification"
+> >       fieldname="date_modification"
+> >       datatype="datetime"
+> >       required="true"
+> >       insertpattern="NOW()"
+> >       updatepattern="NOW()"
+> >     />
+> >   </record>
+> >   <factory>
+> >   </factory>
+> > </dao>
+> > 
+> > J'ai utilis? insertpattern et updatepattern pour que les dates de
+> > cr?ation et de mise ? jour soient renseign?e automagicalement, mais je
+> > me demande comment je vais bien pouvoir faire pour l'ID de mes pages, ce
+> > serait bien s'il y avait quelque chose de similaire.
+> > 
+> > Je n'ai pas voulu utiliser un ID num?rique avec auto_increment, mais
+> > plut?t un ID sous forme de VARCHAR pour que mes URL soient mieux. Par
+> > exemple, si j'ai une page dont le titre est ??a c'est un joli titre!?,
+> > son ID serait ?ca_c_est_un_joli_titre? et comme ?a, au lieu d'avoir des
+> > URL du type http://www.example.com/myapp/www/?page=1, j'aurai plut?t
+> > quelque chose qui ressemblerait ?
+> > http://www.example.com/myapp/www/?page=ca_c_est_un_joli_titre.
+> > 
+> > Mon probl?me c'est que je n'ai pas encore bien d?termin? comment je
+> > pourrais g?n?rer ces ID ? partir du titre en ?tant s?r qu'ils sont
+> > uniques (mais ?a je trouverai toujours bien), mais surtout, je ne sais
+> > pas o? je dois mettre le code qui g?n?re cet ID...
+> > 
+> > Quelqu'un aurait-il une id?e?
+> 
+> Personnellement j'aurais tendance ? te proposer de faire ainsi :
+> 
+> - Tu mets un id en auto_increment comme cl? primaire de ta table. ?a te
+> facilitera la vie car g?r? par ta base de donn?es
+> - Tu ajoute un champ "slug" avec un index UNIQUE qui serait le titre
+> pass? par un jUrl::escape()
+> - Un coup d'urls significatives pour avoir de belles urls
+> 
+> Pour enregistrer le "slug" tu le fais au m?me moment que l'enregitrement
+> de ta page.
+> 
+> J'esp?re que c'est suffisamment clair.
+> 
+> Si d'autres jelixians veulent proposer d'autres fa?on de faire,
+> n'h?sitez pas ! ;)
+> 
+> @+
+> Loic
+> 
+> > 
+> > Merci d'avance!
+> > 
+> > --
+> > Mathieu.
+> > 
+> > _______________________________________________
+> > Jelix-public mailing list
+> > Jelix-public at lists.berlios.de
+> > https://lists.berlios.de/mailman/listinfo/jelix-public
+> 
+> _______________________________________________
+> Jelix-public mailing list
+> Jelix-public at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/jelix-public
+
+
+
+From brunto at free.fr  Thu Aug 27 22:01:03 2009
+From: brunto at free.fr (brunto)
+Date: Thu, 27 Aug 2009 22:01:03 +0200
+Subject: [Jelix-public] ID unique en VARCHAR
+In-Reply-To: <1251394827.4100.0.camel@mathieu-desktop>
+References: <1251202073.4177.13.camel@mathieu-desktop>
+	<4A93D742.8070006@mathaud.net>
+	<1251394827.4100.0.camel@mathieu-desktop>
+Message-ID: <20090827220103.4105bd15@tms0>
+
+Bonjour et bienvenue :)
+
+La solution de Loic reste la meilleure. Personnellement j'aurai
+tendance ? g?n?rer le titre dans l'url ? la vol?e lors de la
+r?cup?ration des donn?es dans la base. C'est meilleur pour le
+r?f?rencement et au moins si le titre vient ? ?tre modifi? son Url
+aussi. Bien entendu faut pas que l'acc?s ? l'article via l'ancienne Url
+soit invalide du coup faut ajouter l'id de l'article quelque parts, du
+style :
+
+http://www.example.com/myapp/www/?titre=ca_c_est_un_joli_titre&id=211212
+
+et avec les Urls significatives cela pourrai donner quelque chose
+comme :
+
+http://www.example.com/myapp/www/ca_c_est_un_joli_titre/211212
+
+Voil? bonne continuation sous Jelix.
+
+Bruno
+
+
+
+Le Thu, 27 Aug 2009 19:40:27 +0200,
+Mathieu Piette <mathieu.piette at gmail.com> a ?crit :
+
+> Merci! Je vais essayer tout ?a!
+> 
+> Si quelqu'un a une autre id?e pour que je puisse comparer, je prends
+> aussi :-)
+> 
+> Le mardi 25 ao?t 2009 ? 14:21 +0200, Loic Mathaud a ?crit :
+> > Bonjour Mathieu,
+> > 
+> > Mathieu Piette a ?crit :
+> > > Bonjour,
+> > > 
+> > > Je d?bute avec Jelix, j'?cris ma premi?re application.
+> > 
+> > Bienvenue donc ;)
+> > 
+> > > 
+> > > J'ai un module appel? ?page? qui sert ? afficher le texte des
+> > > pages du site.
+> > > 
+> > > Mon fichier page.dao.xml est le suivant:
+> > > 
+> > > <?xml version="1.0" encoding="UTF-8"?>
+> > > <dao xmlns="http://jelix.org/ns/dao/1.0">
+> > >   <datasources>
+> > >     <primarytable name="pages" primarykey="id" />
+> > >   </datasources>
+> > >   <record>
+> > >     <property
+> > >       name="id"
+> > >       fieldname="id"
+> > >       datatype="string"
+> > >       required="true"
+> > >       maxlength="255"
+> > >     />
+> > >     <property
+> > >       name="title"
+> > >       fieldname="title"
+> > >       datatype="string"
+> > >       required="true"
+> > >       maxlength="255"
+> > >     />
+> > >     <property
+> > >       name="text"
+> > >       fieldname="text"
+> > >       datatype="text"
+> > >       required="true"
+> > >     />
+> > >     <property
+> > >       name="date_creation"
+> > >       fieldname="date_creation"
+> > >       datatype="datetime"
+> > >       required="true"
+> > >       insertpattern="NOW()"
+> > >       updatepattern=""
+> > >     />
+> > >     <property
+> > >       name="date_modification"
+> > >       fieldname="date_modification"
+> > >       datatype="datetime"
+> > >       required="true"
+> > >       insertpattern="NOW()"
+> > >       updatepattern="NOW()"
+> > >     />
+> > >   </record>
+> > >   <factory>
+> > >   </factory>
+> > > </dao>
+> > > 
+> > > J'ai utilis? insertpattern et updatepattern pour que les dates de
+> > > cr?ation et de mise ? jour soient renseign?e automagicalement,
+> > > mais je me demande comment je vais bien pouvoir faire pour l'ID
+> > > de mes pages, ce serait bien s'il y avait quelque chose de
+> > > similaire.
+> > > 
+> > > Je n'ai pas voulu utiliser un ID num?rique avec auto_increment,
+> > > mais plut?t un ID sous forme de VARCHAR pour que mes URL soient
+> > > mieux. Par exemple, si j'ai une page dont le titre est ??a c'est
+> > > un joli titre!?, son ID serait ?ca_c_est_un_joli_titre? et comme
+> > > ?a, au lieu d'avoir des URL du type
+> > > http://www.example.com/myapp/www/?page=1, j'aurai plut?t quelque
+> > > chose qui ressemblerait ?
+> > > http://www.example.com/myapp/www/?page=ca_c_est_un_joli_titre.
+> > > 
+> > > Mon probl?me c'est que je n'ai pas encore bien d?termin? comment
+> > > je pourrais g?n?rer ces ID ? partir du titre en ?tant s?r qu'ils
+> > > sont uniques (mais ?a je trouverai toujours bien), mais surtout,
+> > > je ne sais pas o? je dois mettre le code qui g?n?re cet ID...
+> > > 
+> > > Quelqu'un aurait-il une id?e?
+> > 
+> > Personnellement j'aurais tendance ? te proposer de faire ainsi :
+> > 
+> > - Tu mets un id en auto_increment comme cl? primaire de ta table.
+> > ?a te facilitera la vie car g?r? par ta base de donn?es
+> > - Tu ajoute un champ "slug" avec un index UNIQUE qui serait le titre
+> > pass? par un jUrl::escape()
+> > - Un coup d'urls significatives pour avoir de belles urls
+> > 
+> > Pour enregistrer le "slug" tu le fais au m?me moment que
+> > l'enregitrement de ta page.
+> > 
+> > J'esp?re que c'est suffisamment clair.
+> > 
+> > Si d'autres jelixians veulent proposer d'autres fa?on de faire,
+> > n'h?sitez pas ! ;)
+> > 
+> > @+
+> > Loic
+> > 
+> > > 
+> > > Merci d'avance!
+> > > 
+> > > --
+> > > Mathieu.
+> > > 
+> > > _______________________________________________
+> > > Jelix-public mailing list
+> > > Jelix-public at lists.berlios.de
+> > > https://lists.berlios.de/mailman/listinfo/jelix-public
+> > 
+> > _______________________________________________
+> > Jelix-public mailing list
+> > Jelix-public at lists.berlios.de
+> > https://lists.berlios.de/mailman/listinfo/jelix-public
+> 
+> _______________________________________________
+> Jelix-public mailing list
+> Jelix-public at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/jelix-public
+
+
+
+From mathieu.piette at gmail.com  Sat Aug 29 23:49:57 2009
+From: mathieu.piette at gmail.com (Mathieu Piette)
+Date: Sat, 29 Aug 2009 23:49:57 +0200
+Subject: [Jelix-public] ID unique en VARCHAR
+In-Reply-To: <20090827220103.4105bd15@tms0>
+References: <1251202073.4177.13.camel@mathieu-desktop>
+	<4A93D742.8070006@mathaud.net>
+	<1251394827.4100.0.camel@mathieu-desktop>
+	<20090827220103.4105bd15@tms0>
+Message-ID: <1251582597.4076.2.camel@mathieu-desktop>
+
+Re,
+
+Merci, ?a fonctionne bien!
+
+J'ai des urls comme ceci:
+http://www.example.com/myapp/www/index.php/page/ca-c-est-un-joli-titre/3
+J'ai pas encore trouv? comment enlever le index.php, comment est-ce que
+?a se fait que j'ai une erreur 404 quand je ne le mets pas?
+
+Encore merci!
+
+--
+Mathieu.
+
+Le jeudi 27 ao?t 2009 ? 22:01 +0200, brunto a ?crit :
+> Bonjour et bienvenue :)
+> 
+> La solution de Loic reste la meilleure. Personnellement j'aurai
+> tendance ? g?n?rer le titre dans l'url ? la vol?e lors de la
+> r?cup?ration des donn?es dans la base. C'est meilleur pour le
+> r?f?rencement et au moins si le titre vient ? ?tre modifi? son Url
+> aussi. Bien entendu faut pas que l'acc?s ? l'article via l'ancienne Url
+> soit invalide du coup faut ajouter l'id de l'article quelque parts, du
+> style :
+> 
+> http://www.example.com/myapp/www/?titre=ca_c_est_un_joli_titre&id=211212
+> 
+> et avec les Urls significatives cela pourrai donner quelque chose
+> comme :
+> 
+> http://www.example.com/myapp/www/ca_c_est_un_joli_titre/211212
+> 
+> Voil? bonne continuation sous Jelix.
+> 
+> Bruno
+> 
+> 
+> 
+> Le Thu, 27 Aug 2009 19:40:27 +0200,
+> Mathieu Piette <mathieu.piette at gmail.com> a ?crit :
+> 
+> > Merci! Je vais essayer tout ?a!
+> > 
+> > Si quelqu'un a une autre id?e pour que je puisse comparer, je prends
+> > aussi :-)
+> > 
+> > Le mardi 25 ao?t 2009 ? 14:21 +0200, Loic Mathaud a ?crit :
+> > > Bonjour Mathieu,
+> > > 
+> > > Mathieu Piette a ?crit :
+> > > > Bonjour,
+> > > > 
+> > > > Je d?bute avec Jelix, j'?cris ma premi?re application.
+> > > 
+> > > Bienvenue donc ;)
+> > > 
+> > > > 
+> > > > J'ai un module appel? ?page? qui sert ? afficher le texte des
+> > > > pages du site.
+> > > > 
+> > > > Mon fichier page.dao.xml est le suivant:
+> > > > 
+> > > > <?xml version="1.0" encoding="UTF-8"?>
+> > > > <dao xmlns="http://jelix.org/ns/dao/1.0">
+> > > >   <datasources>
+> > > >     <primarytable name="pages" primarykey="id" />
+> > > >   </datasources>
+> > > >   <record>
+> > > >     <property
+> > > >       name="id"
+> > > >       fieldname="id"
+> > > >       datatype="string"
+> > > >       required="true"
+> > > >       maxlength="255"
+> > > >     />
+> > > >     <property
+> > > >       name="title"
+> > > >       fieldname="title"
+> > > >       datatype="string"
+> > > >       required="true"
+> > > >       maxlength="255"
+> > > >     />
+> > > >     <property
+> > > >       name="text"
+> > > >       fieldname="text"
+> > > >       datatype="text"
+> > > >       required="true"
+> > > >     />
+> > > >     <property
+> > > >       name="date_creation"
+> > > >       fieldname="date_creation"
+> > > >       datatype="datetime"
+> > > >       required="true"
+> > > >       insertpattern="NOW()"
+> > > >       updatepattern=""
+> > > >     />
+> > > >     <property
+> > > >       name="date_modification"
+> > > >       fieldname="date_modification"
+> > > >       datatype="datetime"
+> > > >       required="true"
+> > > >       insertpattern="NOW()"
+> > > >       updatepattern="NOW()"
+> > > >     />
+> > > >   </record>
+> > > >   <factory>
+> > > >   </factory>
+> > > > </dao>
+> > > > 
+> > > > J'ai utilis? insertpattern et updatepattern pour que les dates de
+> > > > cr?ation et de mise ? jour soient renseign?e automagicalement,
+> > > > mais je me demande comment je vais bien pouvoir faire pour l'ID
+> > > > de mes pages, ce serait bien s'il y avait quelque chose de
+> > > > similaire.
+> > > > 
+> > > > Je n'ai pas voulu utiliser un ID num?rique avec auto_increment,
+> > > > mais plut?t un ID sous forme de VARCHAR pour que mes URL soient
+> > > > mieux. Par exemple, si j'ai une page dont le titre est ??a c'est
+> > > > un joli titre!?, son ID serait ?ca_c_est_un_joli_titre? et comme
+> > > > ?a, au lieu d'avoir des URL du type
+> > > > http://www.example.com/myapp/www/?page=1, j'aurai plut?t quelque
+> > > > chose qui ressemblerait ?
+> > > > http://www.example.com/myapp/www/?page=ca_c_est_un_joli_titre.
+> > > > 
+> > > > Mon probl?me c'est que je n'ai pas encore bien d?termin? comment
+> > > > je pourrais g?n?rer ces ID ? partir du titre en ?tant s?r qu'ils
+> > > > sont uniques (mais ?a je trouverai toujours bien), mais surtout,
+> > > > je ne sais pas o? je dois mettre le code qui g?n?re cet ID...
+> > > > 
+> > > > Quelqu'un aurait-il une id?e?
+> > > 
+> > > Personnellement j'aurais tendance ? te proposer de faire ainsi :
+> > > 
+> > > - Tu mets un id en auto_increment comme cl? primaire de ta table.
+> > > ?a te facilitera la vie car g?r? par ta base de donn?es
+> > > - Tu ajoute un champ "slug" avec un index UNIQUE qui serait le titre
+> > > pass? par un jUrl::escape()
+> > > - Un coup d'urls significatives pour avoir de belles urls
+> > > 
+> > > Pour enregistrer le "slug" tu le fais au m?me moment que
+> > > l'enregitrement de ta page.
+> > > 
+> > > J'esp?re que c'est suffisamment clair.
+> > > 
+> > > Si d'autres jelixians veulent proposer d'autres fa?on de faire,
+> > > n'h?sitez pas ! ;)
+> > > 
+> > > @+
+> > > Loic
+> > > 
+> > > > 
+> > > > Merci d'avance!
+> > > > 
+> > > > --
+> > > > Mathieu.
+> > > > 
+> > > > _______________________________________________
+> > > > Jelix-public mailing list
+> > > > Jelix-public at lists.berlios.de
+> > > > https://lists.berlios.de/mailman/listinfo/jelix-public
+> > > 
+> > > _______________________________________________
+> > > Jelix-public mailing list
+> > > Jelix-public at lists.berlios.de
+> > > https://lists.berlios.de/mailman/listinfo/jelix-public
+> > 
+> > _______________________________________________
+> > Jelix-public mailing list
+> > Jelix-public at lists.berlios.de
+> > https://lists.berlios.de/mailman/listinfo/jelix-public
+> 
+> _______________________________________________
+> Jelix-public mailing list
+> Jelix-public at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/jelix-public
+
+
+
+From foxmask at gmail.com  Sun Aug 30 08:58:49 2009
+From: foxmask at gmail.com (Foxmask)
+Date: Sun, 30 Aug 2009 08:58:49 +0200
+Subject: [Jelix-public] ID unique en VARCHAR
+In-Reply-To: <1251582597.4076.2.camel@mathieu-desktop>
+References: <1251202073.4177.13.camel@mathieu-desktop>
+	<4A93D742.8070006@mathaud.net>
+	<1251394827.4100.0.camel@mathieu-desktop>
+	<20090827220103.4105bd15@tms0>
+	<1251582597.4076.2.camel@mathieu-desktop>
+Message-ID: <1266EA08-DDCC-4267-BFF7-190416D10F02@gmail.com>
+
+Bonjour,
+Pour cela il suffit d'utiliser le mod rewrite d' apache qui une fois  
+activer, et avec le fichier .htaccess se trouvant dans le dossier www  
+retirera index.php de l' URL
+Cdt
+
+---
+Blog - http://www.foxmask.info
+(d?)p?t de miel -http://projets.foxmask.info
+HaveFnuBB! le forum made in Jelix - http://www.havefnubb.org
+
+
+Le 29 ao?t 2009 ? 23:49, Mathieu Piette <mathieu.piette at gmail.com> a  
+?crit :
+
+> Re,
+>
+> Merci, ?a fonctionne bien!
+>
+> J'ai des urls comme ceci:
+> http://www.example.com/myapp/www/index.php/page/ca-c-est-un-joli-titre/3
+> J'ai pas encore trouv? comment enlever le index.php, comment est-ce  
+> que
+> ?a se fait que j'ai une erreur 404 quand je ne le mets pas?
+>
+> Encore merci!
+>
+> --
+> Mathieu.
+>
+> Le jeudi 27 ao?t 2009 ? 22:01 +0200, brunto a ?crit :
+>> Bonjour et bienvenue :)
+>>
+>> La solution de Loic reste la meilleure. Personnellement j'aurai
+>> tendance ? g?n?rer le titre dans l'url ? la vol?e lors de la
+>> r?cup?ration des donn?es dans la base. C'est meilleur pour le
+>> r?f?rencement et au moins si le titre vient ? ?tre modifi? son  
+>> Url
+>> aussi. Bien entendu faut pas que l'acc?s ? l'article via l'ancienn 
+>> e Url
+>> soit invalide du coup faut ajouter l'id de l'article quelque parts,  
+>> du
+>> style :
+>>
+>> http://www.example.com/myapp/www/?titre=ca_c_est_un_joli_titre&id=211212
+>>
+>> et avec les Urls significatives cela pourrai donner quelque chose
+>> comme :
+>>
+>> http://www.example.com/myapp/www/ca_c_est_un_joli_titre/211212
+>>
+>> Voil? bonne continuation sous Jelix.
+>>
+>> Bruno
+>>
+>>
+>>
+>> Le Thu, 27 Aug 2009 19:40:27 +0200,
+>> Mathieu Piette <mathieu.piette at gmail.com> a ?crit :
+>>
+>>> Merci! Je vais essayer tout ?a!
+>>>
+>>> Si quelqu'un a une autre id?e pour que je puisse comparer, je pr 
+>>> ends
+>>> aussi :-)
+>>>
+>>> Le mardi 25 ao?t 2009 ? 14:21 +0200, Loic Mathaud a ?crit :
+>>>> Bonjour Mathieu,
+>>>>
+>>>> Mathieu Piette a ?crit :
+>>>>> Bonjour,
+>>>>>
+>>>>> Je d?bute avec Jelix, j'?cris ma premi?re application.
+>>>>
+>>>> Bienvenue donc ;)
+>>>>
+>>>>>
+>>>>> J'ai un module appel? ?page? qui sert ? afficher le texte des
+>>>>> pages du site.
+>>>>>
+>>>>> Mon fichier page.dao.xml est le suivant:
+>>>>>
+>>>>> <?xml version="1.0" encoding="UTF-8"?>
+>>>>> <dao xmlns="http://jelix.org/ns/dao/1.0">
+>>>>>  <datasources>
+>>>>>    <primarytable name="pages" primarykey="id" />
+>>>>>  </datasources>
+>>>>>  <record>
+>>>>>    <property
+>>>>>      name="id"
+>>>>>      fieldname="id"
+>>>>>      datatype="string"
+>>>>>      required="true"
+>>>>>      maxlength="255"
+>>>>>    />
+>>>>>    <property
+>>>>>      name="title"
+>>>>>      fieldname="title"
+>>>>>      datatype="string"
+>>>>>      required="true"
+>>>>>      maxlength="255"
+>>>>>    />
+>>>>>    <property
+>>>>>      name="text"
+>>>>>      fieldname="text"
+>>>>>      datatype="text"
+>>>>>      required="true"
+>>>>>    />
+>>>>>    <property
+>>>>>      name="date_creation"
+>>>>>      fieldname="date_creation"
+>>>>>      datatype="datetime"
+>>>>>      required="true"
+>>>>>      insertpattern="NOW()"
+>>>>>      updatepattern=""
+>>>>>    />
+>>>>>    <property
+>>>>>      name="date_modification"
+>>>>>      fieldname="date_modification"
+>>>>>      datatype="datetime"
+>>>>>      required="true"
+>>>>>      insertpattern="NOW()"
+>>>>>      updatepattern="NOW()"
+>>>>>    />
+>>>>>  </record>
+>>>>>  <factory>
+>>>>>  </factory>
+>>>>> </dao>
+>>>>>
+>>>>> J'ai utilis? insertpattern et updatepattern pour que les dates de
+>>>>> cr?ation et de mise ? jour soient renseign?e automagicalement,
+>>>>> mais je me demande comment je vais bien pouvoir faire pour l'ID
+>>>>> de mes pages, ce serait bien s'il y avait quelque chose de
+>>>>> similaire.
+>>>>>
+>>>>> Je n'ai pas voulu utiliser un ID num?rique avec auto_increment,
+>>>>> mais plut?t un ID sous forme de VARCHAR pour que mes URL soient
+>>>>> mieux. Par exemple, si j'ai une page dont le titre est ??a c'est
+>>>>> un joli titre!?, son ID serait ?ca_c_est_un_joli_titre? et 
+>>>>>  comme
+>>>>> ?a, au lieu d'avoir des URL du type
+>>>>> http://www.example.com/myapp/www/?page=1, j'aurai plut?t quelque
+>>>>> chose qui ressemblerait ?
+>>>>> http://www.example.com/myapp/www/?page=ca_c_est_un_joli_titre.
+>>>>>
+>>>>> Mon probl?me c'est que je n'ai pas encore bien d?termin? c 
+>>>>> omment
+>>>>> je pourrais g?n?rer ces ID ? partir du titre en ?tant s?r  
+>>>>> qu'ils
+>>>>> sont uniques (mais ?a je trouverai toujours bien), mais surtout,
+>>>>> je ne sais pas o? je dois mettre le code qui g?n?re cet ID...
+>>>>>
+>>>>> Quelqu'un aurait-il une id?e?
+>>>>
+>>>> Personnellement j'aurais tendance ? te proposer de faire ainsi :
+>>>>
+>>>> - Tu mets un id en auto_increment comme cl? primaire de ta table.
+>>>> ?a te facilitera la vie car g?r? par ta base de donn?es
+>>>> - Tu ajoute un champ "slug" avec un index UNIQUE qui serait le  
+>>>> titre
+>>>> pass? par un jUrl::escape()
+>>>> - Un coup d'urls significatives pour avoir de belles urls
+>>>>
+>>>> Pour enregistrer le "slug" tu le fais au m?me moment que
+>>>> l'enregitrement de ta page.
+>>>>
+>>>> J'esp?re que c'est suffisamment clair.
+>>>>
+>>>> Si d'autres jelixians veulent proposer d'autres fa?on de faire,
+>>>> n'h?sitez pas ! ;)
+>>>>
+>>>> @+
+>>>> Loic
+>>>>
+>>>>>
+>>>>> Merci d'avance!
+>>>>>
+>>>>> --
+>>>>> Mathieu.
+>>>>>
+>>>>> _______________________________________________
+>>>>> Jelix-public mailing list
+>>>>> Jelix-public at lists.berlios.de
+>>>>> https://lists.berlios.de/mailman/listinfo/jelix-public
+>>>>
+>>>> _______________________________________________
+>>>> Jelix-public mailing list
+>>>> Jelix-public at lists.berlios.de
+>>>> https://lists.berlios.de/mailman/listinfo/jelix-public
+>>>
+>>> _______________________________________________
+>>> Jelix-public mailing list
+>>> Jelix-public at lists.berlios.de
+>>> https://lists.berlios.de/mailman/listinfo/jelix-public
+>>
+>> _______________________________________________
+>> Jelix-public mailing list
+>> Jelix-public at lists.berlios.de
+>> https://lists.berlios.de/mailman/listinfo/jelix-public
+>
+> _______________________________________________
+> Jelix-public mailing list
+> Jelix-public at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/jelix-public
+
+
+From loic at mathaud.net  Sun Aug 30 10:24:42 2009
+From: loic at mathaud.net (Loic Mathaud)
+Date: Sun, 30 Aug 2009 10:24:42 +0200
+Subject: [Jelix-public] ID unique en VARCHAR
+In-Reply-To: <1266EA08-DDCC-4267-BFF7-190416D10F02@gmail.com>
+References: <1251202073.4177.13.camel@mathieu-desktop>	<4A93D742.8070006@mathaud.net>	<1251394827.4100.0.camel@mathieu-desktop>	<20090827220103.4105bd15@tms0>	<1251582597.4076.2.camel@mathieu-desktop>
+	<1266EA08-DDCC-4267-BFF7-190416D10F02@gmail.com>
+Message-ID: <4A9A374A.4090604@mathaud.net>
+
+Foxmask a ?crit :
+> Bonjour,
+> Pour cela il suffit d'utiliser le mod rewrite d' apache qui une fois  
+> activer, et avec le fichier .htaccess se trouvant dans le dossier www  
+> retirera index.php de l' URL
+
+Et de mettre l'attribut noentrypoint="true" dans le fichier urls.xml
+
+> Cdt
+> 
+> ---
+> Blog - http://www.foxmask.info
+> (d?)p?t de miel -http://projets.foxmask.info
+> HaveFnuBB! le forum made in Jelix - http://www.havefnubb.org
+> 
+> 
+> Le 29 ao?t 2009 ? 23:49, Mathieu Piette <mathieu.piette at gmail.com> a  
+> ?crit :
+> 
+>> Re,
+>>
+>> Merci, ?a fonctionne bien!
+>>
+>> J'ai des urls comme ceci:
+>> http://www.example.com/myapp/www/index.php/page/ca-c-est-un-joli-titre/3
+>> J'ai pas encore trouv? comment enlever le index.php, comment est-ce  
+>> que
+>> ?a se fait que j'ai une erreur 404 quand je ne le mets pas?
+>>
+>> Encore merci!
+>>
+>> --
+>> Mathieu.
+>>
+>> Le jeudi 27 ao?t 2009 ? 22:01 +0200, brunto a ?crit :
+>>> Bonjour et bienvenue :)
+>>>
+>>> La solution de Loic reste la meilleure. Personnellement j'aurai
+>>> tendance ? g?n?rer le titre dans l'url ? la vol?e lors de la
+>>> r?cup?ration des donn?es dans la base. C'est meilleur pour le
+>>> r?f?rencement et au moins si le titre vient ? ?tre modifi? son  
+>>> Url
+>>> aussi. Bien entendu faut pas que l'acc?s ? l'article via l'ancienn 
+>>> e Url
+>>> soit invalide du coup faut ajouter l'id de l'article quelque parts,  
+>>> du
+>>> style :
+>>>
+>>> http://www.example.com/myapp/www/?titre=ca_c_est_un_joli_titre&id=211212
+>>>
+>>> et avec les Urls significatives cela pourrai donner quelque chose
+>>> comme :
+>>>
+>>> http://www.example.com/myapp/www/ca_c_est_un_joli_titre/211212
+>>>
+>>> Voil? bonne continuation sous Jelix.
+>>>
+>>> Bruno
+>>>
+>>>
+>>>
+>>> Le Thu, 27 Aug 2009 19:40:27 +0200,
+>>> Mathieu Piette <mathieu.piette at gmail.com> a ?crit :
+>>>
+>>>> Merci! Je vais essayer tout ?a!
+>>>>
+>>>> Si quelqu'un a une autre id?e pour que je puisse comparer, je pr 
+>>>> ends
+>>>> aussi :-)
+>>>>
+>>>> Le mardi 25 ao?t 2009 ? 14:21 +0200, Loic Mathaud a ?crit :
+>>>>> Bonjour Mathieu,
+>>>>>
+>>>>> Mathieu Piette a ?crit :
+>>>>>> Bonjour,
+>>>>>>
+>>>>>> Je d?bute avec Jelix, j'?cris ma premi?re application.
+>>>>> Bienvenue donc ;)
+>>>>>
+>>>>>> J'ai un module appel? ?page? qui sert ? afficher le texte des
+>>>>>> pages du site.
+>>>>>>
+>>>>>> Mon fichier page.dao.xml est le suivant:
+>>>>>>
+>>>>>> <?xml version="1.0" encoding="UTF-8"?>
+>>>>>> <dao xmlns="http://jelix.org/ns/dao/1.0">
+>>>>>>  <datasources>
+>>>>>>    <primarytable name="pages" primarykey="id" />
+>>>>>>  </datasources>
+>>>>>>  <record>
+>>>>>>    <property
+>>>>>>      name="id"
+>>>>>>      fieldname="id"
+>>>>>>      datatype="string"
+>>>>>>      required="true"
+>>>>>>      maxlength="255"
+>>>>>>    />
+>>>>>>    <property
+>>>>>>      name="title"
+>>>>>>      fieldname="title"
+>>>>>>      datatype="string"
+>>>>>>      required="true"
+>>>>>>      maxlength="255"
+>>>>>>    />
+>>>>>>    <property
+>>>>>>      name="text"
+>>>>>>      fieldname="text"
+>>>>>>      datatype="text"
+>>>>>>      required="true"
+>>>>>>    />
+>>>>>>    <property
+>>>>>>      name="date_creation"
+>>>>>>      fieldname="date_creation"
+>>>>>>      datatype="datetime"
+>>>>>>      required="true"
+>>>>>>      insertpattern="NOW()"
+>>>>>>      updatepattern=""
+>>>>>>    />
+>>>>>>    <property
+>>>>>>      name="date_modification"
+>>>>>>      fieldname="date_modification"
+>>>>>>      datatype="datetime"
+>>>>>>      required="true"
+>>>>>>      insertpattern="NOW()"
+>>>>>>      updatepattern="NOW()"
+>>>>>>    />
+>>>>>>  </record>
+>>>>>>  <factory>
+>>>>>>  </factory>
+>>>>>> </dao>
+>>>>>>
+>>>>>> J'ai utilis? insertpattern et updatepattern pour que les dates de
+>>>>>> cr?ation et de mise ? jour soient renseign?e automagicalement,
+>>>>>> mais je me demande comment je vais bien pouvoir faire pour l'ID
+>>>>>> de mes pages, ce serait bien s'il y avait quelque chose de
+>>>>>> similaire.
+>>>>>>
+>>>>>> Je n'ai pas voulu utiliser un ID num?rique avec auto_increment,
+>>>>>> mais plut?t un ID sous forme de VARCHAR pour que mes URL soient
+>>>>>> mieux. Par exemple, si j'ai une page dont le titre est ??a c'est
+>>>>>> un joli titre!?, son ID serait ?ca_c_est_un_joli_titre? et 
+>>>>>>  comme
+>>>>>> ?a, au lieu d'avoir des URL du type
+>>>>>> http://www.example.com/myapp/www/?page=1, j'aurai plut?t quelque
+>>>>>> chose qui ressemblerait ?
+>>>>>> http://www.example.com/myapp/www/?page=ca_c_est_un_joli_titre.
+>>>>>>
+>>>>>> Mon probl?me c'est que je n'ai pas encore bien d?termin? c 
+>>>>>> omment
+>>>>>> je pourrais g?n?rer ces ID ? partir du titre en ?tant s?r  
+>>>>>> qu'ils
+>>>>>> sont uniques (mais ?a je trouverai toujours bien), mais surtout,
+>>>>>> je ne sais pas o? je dois mettre le code qui g?n?re cet ID...
+>>>>>>
+>>>>>> Quelqu'un aurait-il une id?e?
+>>>>> Personnellement j'aurais tendance ? te proposer de faire ainsi :
+>>>>>
+>>>>> - Tu mets un id en auto_increment comme cl? primaire de ta table.
+>>>>> ?a te facilitera la vie car g?r? par ta base de donn?es
+>>>>> - Tu ajoute un champ "slug" avec un index UNIQUE qui serait le  
+>>>>> titre
+>>>>> pass? par un jUrl::escape()
+>>>>> - Un coup d'urls significatives pour avoir de belles urls
+>>>>>
+>>>>> Pour enregistrer le "slug" tu le fais au m?me moment que
+>>>>> l'enregitrement de ta page.
+>>>>>
+>>>>> J'esp?re que c'est suffisamment clair.
+>>>>>
+>>>>> Si d'autres jelixians veulent proposer d'autres fa?on de faire,
+>>>>> n'h?sitez pas ! ;)
+>>>>>
+>>>>> @+
+>>>>> Loic
+>>>>>
+>>>>>> Merci d'avance!
+>>>>>>
+>>>>>> --
+>>>>>> Mathieu.
+>>>>>>
+>>>>>> _______________________________________________
+>>>>>> Jelix-public mailing list
+>>>>>> Jelix-public at lists.berlios.de
+>>>>>> https://lists.berlios.de/mailman/listinfo/jelix-public
+>>>>> _______________________________________________
+>>>>> Jelix-public mailing list
+>>>>> Jelix-public at lists.berlios.de
+>>>>> https://lists.berlios.de/mailman/listinfo/jelix-public
+>>>> _______________________________________________
+>>>> Jelix-public mailing list
+>>>> Jelix-public at lists.berlios.de
+>>>> https://lists.berlios.de/mailman/listinfo/jelix-public
+>>> _______________________________________________
+>>> Jelix-public mailing list
+>>> Jelix-public at lists.berlios.de
+>>> https://lists.berlios.de/mailman/listinfo/jelix-public
+>> _______________________________________________
+>> Jelix-public mailing list
+>> Jelix-public at lists.berlios.de
+>> https://lists.berlios.de/mailman/listinfo/jelix-public
+> _______________________________________________
+> Jelix-public mailing list
+> Jelix-public at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/jelix-public
+
+
+

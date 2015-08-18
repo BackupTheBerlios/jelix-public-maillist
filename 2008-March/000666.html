@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Jelix-public] checkin SVN-839 (laurentj)
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/jelix-public/2008-March/index.html" >
+   <LINK REL="made" HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20checkin%20SVN-839%20%28laurentj%29&In-Reply-To=%3C47E8AC9B.mail9101154SU%40xulfr.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000665.html">
+   <LINK REL="Next"  HREF="000667.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Jelix-public] checkin SVN-839 (laurentj)</H1>
+    <B>laurent at xulfr.org</B> 
+    <A HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20checkin%20SVN-839%20%28laurentj%29&In-Reply-To=%3C47E8AC9B.mail9101154SU%40xulfr.org%3E"
+       TITLE="[Jelix-public] checkin SVN-839 (laurentj)">laurent at xulfr.org
+       </A><BR>
+    <I>Tue Mar 25 08:41:15 CET 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000665.html">[Jelix-public] checkin SVN-838 (laurentj)
+</A></li>
+        <LI>Next message: <A HREF="000667.html">[Jelix-public] checkin SVN-840 (laurentj)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#666">[ date ]</a>
+              <a href="thread.html#666">[ thread ]</a>
+              <a href="subject.html#666">[ subject ]</a>
+              <a href="author.html#666">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>laurentj
+2008-03-25 08:41:12 +0100 (Tue, 25 Mar 2008)
+462
+ticket #468: bad spelling in some methods and properties. step 1: changed datas to data
+template plugin formdatasfull renamed to formdatafull
+template plugin formdatas renamed to formdata
+jFormsBase::getDatas() renamed to getAllData()
+jFormsDatasource::getDatas() renamed to getData()
+jFormsDatasource:: renamed to 
+jFormsDataContainer:: renamed to 
+jResponseJson:: renamed to 
+jResponseRdf:: renamed to 
+jControllerDaoCrud::_checkDatas() renamed to _checkData()
+
+U   trunk/build/manifests/jelix-lib.mn
+U   trunk/lib/jelix/acl/jAcl.class.php
+U   trunk/lib/jelix/auth/jAuth.class.php
+U   trunk/lib/jelix/controllers/jControllerDaoCrud.class.php
+U   trunk/lib/jelix/core/jRequest.class.php
+U   trunk/lib/jelix/core/jUrl.class.php
+U   trunk/lib/jelix/core/request/jCmdLineRequest.class.php
+U   trunk/lib/jelix/core/response/jResponseJson.class.php
+U   trunk/lib/jelix/core/response/jResponseJsonrpc.class.php
+U   trunk/lib/jelix/core/response/jResponseRdf.class.php
+U   trunk/lib/jelix/core/response/jResponseXmlrpc.class.php
+U   trunk/lib/jelix/core-modules/jelix/controllers/error.rdf.php
+A   trunk/lib/jelix/core-modules/jelix/install/sql/install_jacl.data.mysql.sql
+A   trunk/lib/jelix/core-modules/jelix/install/sql/install_jacl.data.pgsql.sql
+D   trunk/lib/jelix/core-modules/jelix/install/sql/install_jacl.datas.mysql.sql
+D   trunk/lib/jelix/core-modules/jelix/install/sql/install_jacl.datas.pgsql.sql
+U   trunk/lib/jelix/core-modules/jelix/templates/crud_view.tpl
+U   trunk/lib/jelix/dao/jDaoGenerator.class.php
+U   trunk/lib/jelix/dao/jDaoParser.class.php
+U   trunk/lib/jelix/events/jEvent.class.php
+U   trunk/lib/jelix/forms/jForms.class.php
+U   trunk/lib/jelix/forms/jFormsBase.class.php
+U   trunk/lib/jelix/forms/jFormsCompiler.class.php
+U   trunk/lib/jelix/forms/jFormsControl.class.php
+U   trunk/lib/jelix/forms/jFormsDataContainer.class.php
+U   trunk/lib/jelix/forms/jFormsDatasource.class.php
+U   trunk/lib/jelix/plugins/coord/auth/auth.coord.ini.php.dist
+U   trunk/lib/jelix/plugins/db/oci/oci.daobuilder.php
+U   trunk/lib/jelix/plugins/db/pgsql/pgsql.daobuilder.php
+U   trunk/lib/jelix/plugins/jforms/html/html.jformsbuilder.php
+U   trunk/lib/jelix/plugins/tpl/html/block.form.php
+A   trunk/lib/jelix/plugins/tpl/html/block.formdata.php
+D   trunk/lib/jelix/plugins/tpl/html/block.formdatas.php
+A   trunk/lib/jelix/plugins/tpl/html/function.formdatafull.php
+D   trunk/lib/jelix/plugins/tpl/html/function.formdatasfull.php
+U   trunk/lib/jelix/plugins/urls/significant/significant.urls.php
+U   trunk/lib/jelix/plugins/urls/simple/simple.urls.php
+U   trunk/lib/jelix/utils/jIniFile.class.php
+U   trunk/lib/jelix/utils/jXmlRpc.class.php
+U   trunk/lib/jelix-modules/jauth/install/var/config/auth.coord.ini.php
+U   trunk/testapp/modules/jelix_tests/tests/core.selectors_action.html.php
+U   trunk/testapp/modules/jelix_tests/tests/jforms.check_datas.html_cli.php
+U   trunk/testapp/modules/jelix_tests/tests/jforms.compiler.html_cli.php
+U   trunk/testapp/modules/jelix_tests/tests/jforms.html_cli.php
+U   trunk/testapp/modules/jelix_tests/tests/jforms.htmlbuilder.html_cli.php
+U   trunk/testapp/modules/jelix_tests/tests/jforms.with_dao.html_cli.php
+U   trunk/testapp/modules/testapp/templates/forms_edit.tpl
+U   trunk/testapp/modules/testapp/templates/forms_liste.tpl
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000665.html">[Jelix-public] checkin SVN-838 (laurentj)
+</A></li>
+	<LI>Next message: <A HREF="000667.html">[Jelix-public] checkin SVN-840 (laurentj)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#666">[ date ]</a>
+              <a href="thread.html#666">[ thread ]</a>
+              <a href="subject.html#666">[ subject ]</a>
+              <a href="author.html#666">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/jelix-public">More information about the Jelix-public
+mailing list</a><br>
+</body></html>

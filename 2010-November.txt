@@ -1,0 +1,129 @@
+From mirza.publicol at antilles.inra.fr  Thu Nov 18 15:21:22 2010
+From: mirza.publicol at antilles.inra.fr (Mirza PUBLICOL)
+Date: Thu, 18 Nov 2010 10:21:22 -0400
+Subject: [Jelix-public] =?iso-8859-15?q?Probleme_jelix_=3A_point_d=27entr?=
+	=?iso-8859-15?q?=E9e?=
+Message-ID: <20101118102122.96986zobz8ow6vsw@www2.antilles.inra.fr>
+
+Bonjour,
+
+
+J'ai rajout? quelques modules accessibles via la partie administration  
+de jelix. Le point d'entr? de ces modules est donc "admin.php/toto".
+Mon probleme est que si j'entre directement dans l url  
+"index.php/toto", j'accede aussi ? ce module. Je voudrais emp?cher cela.
+
+Voici ma config :
+engine=basic_significant
+
+[simple_urlengine_entrypoints]
+index="*@classic"
+admin="jacl2db_admin~*@classic,..., toto~*@classic"
+
+
+Merci d'avance pour vos r?ponses!
+-- 
+Mirza
+
+
+From mirza.publicol at antilles.inra.fr  Thu Nov 18 15:43:01 2010
+From: mirza.publicol at antilles.inra.fr (Mirza PUBLICOL)
+Date: Thu, 18 Nov 2010 10:43:01 -0400
+Subject: [Jelix-public] =?iso-8859-15?q?Probleme_jelix_=3A_point_d=27entr?=
+	=?iso-8859-15?q?=E9e?=
+Message-ID: <20101118104301.38945xky1qsjl474@www2.antilles.inra.fr>
+
+
+Bonjour,
+
+
+J'ai rajout? quelques modules accessibles via la partie administration  
+de jelix. Le point d'entr? de ces modules est donc "admin.php/toto".
+Mon probleme est que si j'entre directement dans l url  
+"index.php/toto", j'accede aussi ? ce module. Je voudrais emp?cher cela.
+
+Voici ma config :
+engine=basic_significant
+
+[simple_urlengine_entrypoints]
+index="*@classic"
+admin="jacl2db_admin~*@classic,..., toto~*@classic"
+
+
+Merci d'avance pour vos r?ponses!
+-- 
+Mirza
+
+
+From laurent at jelix.org  Fri Nov 19 09:10:44 2010
+From: laurent at jelix.org (Laurent)
+Date: Fri, 19 Nov 2010 09:10:44 +0100
+Subject: [Jelix-public]
+ =?iso-8859-15?q?Probleme_jelix_=3A_point_d=27entr?=
+ =?iso-8859-15?q?=E9e?=
+In-Reply-To: <20101118104301.38945xky1qsjl474@www2.antilles.inra.fr>
+References: <20101118104301.38945xky1qsjl474@www2.antilles.inra.fr>
+Message-ID: <4CE63104.4090209@jelix.org>
+
+Le 18/11/10 15:43, Mirza PUBLICOL a ?crit :
+>
+> Bonjour,
+
+bonjour
+
+>
+>
+> J'ai rajout? quelques modules accessibles via la partie administration
+> de jelix. Le point d'entr? de ces modules est donc "admin.php/toto".
+
+Le point d'entr?e, c'est admin.php, pas admin.php/toto
+
+> Mon probleme est que si j'entre directement dans l url "index.php/toto",
+> j'accede aussi ? ce module. Je voudrais emp?cher cela.
+
+Empecher pourquoi ? pour des histoires de droits ? ou parce que toto 
+n'est pas un module d'admin ?
+
+
+>
+> Voici ma config :
+> engine=basic_significant
+>
+> [simple_urlengine_entrypoints]
+> index="*@classic"
+> admin="jacl2db_admin~*@classic,..., toto~*@classic"
+>
+>
+> Merci d'avance pour vos r?ponses!
+
+
+
+From mpublicol at antilles.inra.fr  Fri Nov 19 13:31:39 2010
+From: mpublicol at antilles.inra.fr (Mirza PUBLICOL)
+Date: Fri, 19 Nov 2010 08:31:39 -0400
+Subject: [Jelix-public] Probleme jelix : point d'entree
+Message-ID: <20101119083139.84264u06j7vh3ls0@www2.antilles.inra.fr>
+
+Re.bonjour,
+
+
+Le point d'entree est bien "admin.php" pour le module "toto". Je l'ai  
+precise dans les fichiers de config "defaultconfig.ini.php" et  
+"admin/config.ini.php".
+  Je veux donc empecher l'acces au module "toto" via le point d'entree  
+"index.php", pour une question de droits.
+
+J'ai cependant trouver une solution :
+Dans le fichier 'index/config.ini.php", je mets l'option  
+"checkTrustedModules=on" et dans "trustedModules" je n'indique que les  
+modules accessibles via "index.php", donc "toto" n'y figure pas.
+
+Ainsi, meme si un utilisateur entre dans l'url "index.php/toto", il ne  
+pourra pas acc?der au module.
+
+
+Merci Laurent pour ta r?ponse,
+-- 
+Mirza
+
+

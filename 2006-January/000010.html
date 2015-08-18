@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Jelix-public] Surcharge d'une r&#233;ponse
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/jelix-public/2006-January/index.html" >
+   <LINK REL="made" HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20Surcharge%20d%27une%20%3D%3FISO-8859-1%3FQ%3Fr%3DE9ponse%3F%3D&In-Reply-To=%3C43C1B354.2020700%40xulfr.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000008.html">
+   <LINK REL="Next"  HREF="000011.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Jelix-public] Surcharge d'une r&#233;ponse</H1>
+    <B>Webmestre xulfr</B> 
+    <A HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20Surcharge%20d%27une%20%3D%3FISO-8859-1%3FQ%3Fr%3DE9ponse%3F%3D&In-Reply-To=%3C43C1B354.2020700%40xulfr.org%3E"
+       TITLE="[Jelix-public] Surcharge d'une r&#233;ponse">webmestre at xulfr.org
+       </A><BR>
+    <I>Mon Jan  9 01:50:28 CET 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000008.html">[Jelix-public] Surcharge d'une r&#233;ponse
+</A></li>
+        <LI>Next message: <A HREF="000011.html">[Jelix-public] Surcharge d'une r&#233;ponse
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10">[ date ]</a>
+              <a href="thread.html#10">[ thread ]</a>
+              <a href="subject.html#10">[ subject ]</a>
+              <a href="author.html#10">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Gildas GIVAJA wrote:
+&gt;<i> Bonjour &#224; tous.
+</I>&gt;<i> 
+</I>&gt;<i> Je souhaiterais en savoir plus sur les fichiers situ&#233;s dans myapp/responses
+</I>&gt;<i> Comment indiquer que l'on souhaite utiliser un objet surcharg&#233; et non un objet 
+</I>&gt;<i> standard pour une r&#233;ponse, je suppose que c'est au niveau du type de 
+</I>&gt;<i> l'action ?
+</I>&gt;<i> 
+</I>&gt;<i> Merci de me/nous &#233;clairer la dessus :)
+</I>&gt;<i> 
+</I>
+C'est au niveau du fichier de configuration que tu l'indiques, dans la 
+section  [responses].
+
+La structure de cette section est
+
+type_reponse = classe_reponse
+
+Tu as un exemple dans myapp
+
+Ta propre classe reponse doit d&#233;river d'une des classes livr&#233;es par 
+Jelix, et doit &#234;tre stock&#233;e dans le repertoire responses de ton appli.
+
+par d&#233;faut, on a pour html :
+
+html = jResponseHtml
+
+Tu peux avoir ta propre classe d&#233;rivant de celle ci
+
+html = myHtmlResponse
+
+Cela permet donc d'avoir des traitements communs et personnalis&#233;s &#224; 
+toutes les r&#233;ponses de type html (&#233;quivalent en fait des processus 
+standards de Copix)
+
+Tu peux m&#234;me t'inventer d'autres types :
+
+html2 = monAutreReponseHtml
+html3 = EncoreUneAutreReponseHtml
+
+Tu peux te faire ainsi plusieurs traitements communs &#224; diff&#233;rents 
+ensemble d'actions.
+
+Et bien s&#251;r, dans une action :
+  &lt;response type=&quot;html2&quot; name=&quot;foo&quot; /&gt;
+
+
+a+
+
+Laurent
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000008.html">[Jelix-public] Surcharge d'une r&#233;ponse
+</A></li>
+	<LI>Next message: <A HREF="000011.html">[Jelix-public] Surcharge d'une r&#233;ponse
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10">[ date ]</a>
+              <a href="thread.html#10">[ thread ]</a>
+              <a href="subject.html#10">[ subject ]</a>
+              <a href="author.html#10">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/jelix-public">More information about the Jelix-public
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,250 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Jelix-public] Changement de cap pour Jelix
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/jelix-public/2010-February/index.html" >
+   <LINK REL="made" HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20Changement%20de%20cap%20pour%20Jelix&In-Reply-To=%3C4B7E9776.10202%40jelix.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000841.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Jelix-public] Changement de cap pour Jelix</H1>
+    <B>Laurent</B> 
+    <A HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20Changement%20de%20cap%20pour%20Jelix&In-Reply-To=%3C4B7E9776.10202%40jelix.org%3E"
+       TITLE="[Jelix-public] Changement de cap pour Jelix">laurent at jelix.org
+       </A><BR>
+    <I>Fri Feb 19 14:51:50 CET 2010</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000841.html">[Jelix-public] [Jelix-dev] Changement de cap pour Jelix
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#840">[ date ]</a>
+              <a href="thread.html#840">[ thread ]</a>
+              <a href="subject.html#840">[ subject ]</a>
+              <a href="author.html#840">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Bonjour,
+
+(if you are an english reader, please let me know, and I will translate 
+this mail. It talks about the future of the project)
+
+Comme vous l'avez sous doute remarqu&#233;, l'activit&#233; du projet jelix semble 
+au ralenti. Il n'y a pas eu de release majeure depuis un an, alors m&#234;me 
+que l'on avait annonc&#233; une acc&#233;l&#233;ration des releases. (m&#234;me si on 
+commite r&#233;guli&#232;rement <A HREF="http://hg.jelix.org/jelix/jelix-trunk">http://hg.jelix.org/jelix/jelix-trunk</A>)
+
+La faute &#224; beaucoup de choses, principalement au manque de temps. Depuis 
+un an, suite &#224; un changement professionnel, j'ai beaucoup moins de temps 
+&#224; consacrer &#224; Jelix qu'auparavant. Avant je pouvais bosser au moins une 
+journ&#233;e compl&#232;te par semaine (des fois c'&#233;tait 2, voire 3), sans compter 
+mon temps libre personnel. Depuis un an, je n'ai plus que mon temps libre.
+
+Le probl&#232;me, est que le nombre de contributeurs n'a quasiment pas 
+augment&#233; (voir r&#233;gress&#233; ?), et que nous n'avons plus le temps de 
+maintenir cette organisation de &quot;gros&quot; projet, que l'on avait pu mettre 
+en place ces derni&#232;res ann&#233;es (une forge, un serveur d&#233;di&#233;, une roadmap 
+ambitieuse etc...).
+
+Je ne vous cache pas que je ne vais pas pouvoir continuer longtemps &#224; 
+supporter toute cette charge, physiquement et psychologiquement 
+(l'avanc&#233;e de la concurrence n'aide pas &#224; garder le moral). Et j'ai bien 
+l'impression que si j'arr&#234;te, le projet s'arr&#234;tera.
+
+Hier nous en avons discut&#233; sur IRC, et nous en sommes arriv&#233;s &#224; la 
+conclusion, qu'il fallait que l'on se bouge un peu les fesses, mais 
+surtout qu'on se r&#233;organise, qu'on ait une charge de travail de petite 
+&#233;quipe (ce que nous sommes), et qu'on revoit &#224; la baisse nos ambitions, 
+en ce qui concerne en tout cas l'infrastructure du projet.
+
+Voici ce que nous avons &#233;voqu&#233; comme &#233;volutions.
+
+* les sites jelix.org, le serveur
+
+Nous avions d&#251; d&#233;m&#233;nager de serveur il y a quelques semaines. &#231;a a &#233;t&#233; 
+particuli&#232;rement energivore, &#231;a nous a bouff&#233; un temps monstre. La forge 
+en est responsable pour une grosse partie. On a bascul&#233; sur une debian 
+plus r&#233;cente, donc version de trac diff&#233;rente, donc migration &#224; faire 
+des environnements trac etc...
+
+Dans l'&#233;tat actuel des ressources humaines : plus jamais &#231;a. D'ailleurs, 
+on n'a pas encore eu le temps d'adapter les templates pour que &#231;a ait le 
+look &quot;jelix&quot; (le nouveau langage de template de trac &#233;tant 
+particuli&#232;rement d&#233;courageant). Ajoutons le fait aussi que la forge, 
+m&#234;me si peu utilis&#233;e, nous bouffes des ressources syst&#232;mes, et est 
+probablement responsable des plantages qui sont survenus r&#233;guli&#232;rement 
+depuis le d&#233;m&#233;nagement. La forge, par rapport au service qu'elle rend et 
+du nombre d'utilisateurs, n'est absolument pas &quot;rentable&quot;.
+
+premi&#232;re d&#233;cision : on va fermer la forge. Il existe maintenant bien 
+plus de forges sur le web qu'&#224; l'&#233;poque (github, bitbucket etc..), mieux 
+fait que sourceforge ou autre. Ceux qui sont dans la forge jelix ne 
+perdrons donc rien au change, en d&#233;m&#233;nageant vers ces forges nouvelles 
+g&#233;n&#233;rations. Je donnerai des d&#233;tails dans un autre mail sur cette 
+suppression de forge, et j'avertirai par mail les propri&#233;taires des 
+projets. Ne vous inqui&#233;tez pas, on ne va pas fermer brutalement.
+
+deuxi&#232;me d&#233;cision : faire une sorte de addons.mozilla.org. La forge 
+disparait mais il nous est tout de m&#234;me indispensable d'avoir un endroit 
+o&#249; on recense les modules, plugins et autres applications r&#233;alis&#233;es avec 
+jelix. C'est le but de ce nouveau site. Il est en grande partie 
+d&#233;velopp&#233;. Olivier (foxmask), a d&#233;j&#224; fait des d&#233;veloppements en ce sens, 
+qui ont &#233;t&#233; int&#233;gr&#233;s dans l'ex futur site de la forge (pas mis en 
+ligne). &#192; priori, il y aura peu de d&#233;veloppement &#224; faire pour r&#233;utiliser 
+ce qu'a fait Olivier pour ce nouveau site.
+
+Parall&#232;lement &#224; &#231;a, essayer de simplifier les dependances, les 
+&quot;requirements&quot; techniques des sites et du processus de releases, avec le 
+serveur. Dans l'id&#233;al, faudrait tenir sur du mutualis&#233;, mais des choses 
+nous empechera certainement (trac + depots hg, cron pour les nightlies, 
+scripts divers pour le backup, les releases etc..). Objectif donc : 
+diminuer au maximum la charge de travail pour administrer la machine.
+
+
+* la roadmap
+
+Trop de tickets dans les roadmaps, temps de d&#233;veloppements qui n'en 
+finissent plus. Du coup, impression de projet mort, au ralenti. De plus, 
+review souvent trop longue, trop de ticket. Tout &#231;a d&#233;courage les gens &#224; 
+utiliser jelix et &#224; contribuer.
+
+Troisi&#232;me d&#233;cision : changement du cycle de release. &#231;a sera dor&#233;navant 
+des releases ultra courtes (3 mois ?), se focalisant sur 1 ou 2 point 
+importants, donc comportant peu de tickets. (je dis n'importe quoi, mais 
+&#231;a peut &#234;tre : 1.3=am&#233;liorations dans jForms  1.4=am&#233;liorations dans jDB 
+etc.). Bien s&#251;r, si il y a des contributeurs qui proposent des patchs 
+sur d'autres trucs, et qui sont pr&#234;t &#224; &#234;tre int&#233;gr&#233;, on int&#232;gre. Apr&#232;s 
+chaque release, il y aura une r&#233;union IRC/mail pour d&#233;finir les 
+objectifs de la suivante.
+
+Cons&#233;quence :
+
+- release d'une beta 1.2 d&#232;s que possible. Il reste un point assez 
+essentiel &#224; faire je pense : le script de migration 1.1 vers 1.2, qui 
+consiste principalement &#224; remanier les fichiers de conf et &#224; installer 
+&quot;virtuellement&quot; les modules pr&#233;sents de l'application. (sp&#233;ciale 
+dedicace &#224; foxmask pour son probl&#232;me de passage &#224; jelix 1.2 avec 
+havefnubb :-)
+
+- release de la 1.2 peu apr&#232;s : pas de nouvelle features, juste les bugs 
+corrig&#233;s trouv&#233;s dans la beta. Tout le reste des tickets pr&#233;vus 
+initialement pour la 1.2 seront re tri&#233;s et on d&#233;finira la roadmap pour 
+les prochaines versions.
+
+- LTS : on d&#233;finira des releases LTS, des versions qu'on supporte sur le 
+long terme. Car &#224; la fin de l'ann&#233;e, avec le rythme de release accrue, 
+&#231;a va nous faire un paquet de branche &#224; maintenir. Donc on ne 
+maintiendra les versions classiques qu'un an (ou plus ? ou moins ?), et 
+les autres 2-3 ans. C'est &#224; rediscuter.
+
+Quatri&#232;me d&#233;cision : Arr&#234;t prochain de la maintenance de la branche 
+1.0.x. Toujours dans l'optique d'all&#232;ger notre charge de travail, ou en 
+tout cas, d'utiliser ce temps &#224; des choses plus importantes.
+
+
+* process de release
+
+Un truc que l'on a d&#233;tect&#233; comme &#233;tant une charge de travail importante, 
+c'est la sortie d'une nouvelle version. Il y a un paquet de truc que 
+l'on fait plus ou moins &#224; la main ( 
+<A HREF="http://developer.jelix.org/wiki/en/howto_release">http://developer.jelix.org/wiki/en/howto_release</A> ), &#231;a prend des fois 
+des heures pour le faire, alors que l'on pourrait automatiser bien plus. 
+Si on veut sortir des release plus souvent, il faut absolument 
+automatiser un maximum.
+
+J'ai commenc&#233; &#224; y r&#233;fl&#233;chir, &#231;a aboutit &#224; &#231;a 
+<A HREF="http://developer.jelix.org/wiki/en/futur_release_process">http://developer.jelix.org/wiki/en/futur_release_process</A>
+
+J'ai commenc&#233; un peu un module &quot;release&quot; pour &#231;a, mais un peu d'aide ne 
+ferait pas de mal, en tout cas pour la partie visible sur le site. Je me 
+concentrerai ainsi sur le script principale de release.
+
+
+* l'organisation des &#233;quipes
+
+Il faut se reorganiser, et distribuer les t&#226;ches. Je ne peux plus faire 
+tout tout seul. 0n avait essay&#233; de monter des &#233;quipes, mais cela n'a pas 
+fonctionn&#233; ( <A HREF="http://developer.jelix.org/wiki/fr/equipes">http://developer.jelix.org/wiki/fr/equipes</A> )
+
+Peut &#234;tre qu'il faudrait juste des responsables, des r&#233;ferents pour 
+chaque domaine, et que ces personnes aient *vraiment* du temps &#224; passer 
+pour contribuer. Charge aussi &#224; ce responsable de se monter une &#233;quipe, 
+de motiver les troupes.
+
+
+* marketing
+
+Il faut nous faire connaitre un peu plus, pour attirer les utilisateurs, 
+donc les contributeurs, qui permettront de faire avancer le projet un 
+peu mieux, ce qui attirera alors d'autres utilisateurs etc.
+
+Plusieurs moyens :
+
+- mettre plus en avant la liste des sites et projets reposant sur jelix, 
+en indiquant par ex en page d'accueil nos &quot;killer&quot; app. Pour l'instant 
+on peut mettre en avant HavefnuBB, Overblog... On en a une qui est aussi 
+en cours de dev, Rarangi (<A HREF="http://forge.jelix.org/projects/rarangi/">http://forge.jelix.org/projects/rarangi/</A>) qui 
+pourrait int&#233;resser pas mal les d&#233;veloppeurs (un phpdoc ++ avec moteur 
+de recherche)
+
+- des news plus souvent
+
+- autres...
+
+
+
+Conclusion :
+
+Dans l'ordre des priorit&#233;s :
+1) d&#233;finir des responsables pour chaque domaine : dev, doc, site web, 
+marketing
+2) d&#233;veloppement du nouveau processus de release
+3) sur la home, mise en avant des applis actuelles bas&#233;es sur jelix.
+4) sortie de la 1.2 beta
+5) fermeture de la forge
+6) d&#233;veloppement du site addict.jelix.org (ou autre nom :-))
+
+
+J'attends vos questions, vos propositions, vos id&#233;es, vos remarques, vos 
+envies et surtout, j'aimerais savoir si il y a encore des volontaires 
+dans la salle pour nous aider :-)
+
+
+Laurent
+
+
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000841.html">[Jelix-public] [Jelix-dev] Changement de cap pour Jelix
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#840">[ date ]</a>
+              <a href="thread.html#840">[ thread ]</a>
+              <a href="subject.html#840">[ subject ]</a>
+              <a href="author.html#840">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/jelix-public">More information about the Jelix-public
+mailing list</a><br>
+</body></html>

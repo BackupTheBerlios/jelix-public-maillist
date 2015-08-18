@@ -1,0 +1,279 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Jelix-public] checkin SVN-676 (laurentj)
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/jelix-public/2007-December/index.html" >
+   <LINK REL="made" HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20checkin%20SVN-676%20%28laurentj%29&In-Reply-To=%3C4756989C.mailERJ1UI9WS%40xulfr.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000501.html">
+   <LINK REL="Next"  HREF="000503.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Jelix-public] checkin SVN-676 (laurentj)</H1>
+    <B>laurent at xulfr.org</B> 
+    <A HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20checkin%20SVN-676%20%28laurentj%29&In-Reply-To=%3C4756989C.mailERJ1UI9WS%40xulfr.org%3E"
+       TITLE="[Jelix-public] checkin SVN-676 (laurentj)">laurent at xulfr.org
+       </A><BR>
+    <I>Wed Dec  5 13:25:00 CET 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000501.html">[Jelix-public] checkin SVN-675 (laurentj)
+</A></li>
+        <LI>Next message: <A HREF="000503.html">[Jelix-public] checkin SVN-677 (laurentj)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#502">[ date ]</a>
+              <a href="thread.html#502">[ thread ]</a>
+              <a href="subject.html#502">[ subject ]</a>
+              <a href="author.html#502">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>laurentj
+2007-12-05 13:18:41 +0100 (Wed, 05 Dec 2007)
+164
+worked on ticket #131 : added tcpdf and fonts for the futur jResponsePDF + all things to include them in a package, and to generate a separate package for the fonts
+
+A   trunk/build/buildfonts.php
+U   trunk/build/buildjelix.php
+U   trunk/build/config/jelix-dist-dev.ini
+U   trunk/build/config/jelix-dist-gold.ini
+U   trunk/build/config/jelix-dist-opt.ini
+A   trunk/build/config/jelix-fonts-dist.ini
+U   trunk/build/config/jelix-test.ini
+A   trunk/build/manifests/fonts.mn
+U   trunk/build/manifests/jelix-lib.mn
+A   trunk/lib/fonts/
+A   trunk/lib/fonts/README.TXT
+A   trunk/lib/fonts/dejavu-ttf-2.15/
+A   trunk/lib/fonts/dejavu-ttf-2.15/AUTHORS
+A   trunk/lib/fonts/dejavu-ttf-2.15/BUGS
+A   trunk/lib/fonts/dejavu-ttf-2.15/LICENSE
+A   trunk/lib/fonts/dejavu-ttf-2.15/NEWS
+A   trunk/lib/fonts/dejavu-ttf-2.15/README
+A   trunk/lib/fonts/dejavu-ttf-2.15/langcover.txt
+A   trunk/lib/fonts/dejavu-ttf-2.15/status.txt
+A   trunk/lib/fonts/dejavu-ttf-2.15/unicover.txt
+A   trunk/lib/fonts/dejavusans-bold.ctg.z
+A   trunk/lib/fonts/dejavusans-bold.z
+A   trunk/lib/fonts/dejavusans-boldoblique.ctg.z
+A   trunk/lib/fonts/dejavusans-boldoblique.z
+A   trunk/lib/fonts/dejavusans-extralight.ctg.z
+A   trunk/lib/fonts/dejavusans-extralight.php
+A   trunk/lib/fonts/dejavusans-extralight.z
+A   trunk/lib/fonts/dejavusans-oblique.ctg.z
+A   trunk/lib/fonts/dejavusans-oblique.z
+A   trunk/lib/fonts/dejavusans.ctg.z
+A   trunk/lib/fonts/dejavusans.php
+A   trunk/lib/fonts/dejavusans.z
+A   trunk/lib/fonts/dejavusansb.php
+A   trunk/lib/fonts/dejavusansbi.php
+A   trunk/lib/fonts/dejavusanscondensed-bold.ctg.z
+A   trunk/lib/fonts/dejavusanscondensed-bold.z
+A   trunk/lib/fonts/dejavusanscondensed-boldoblique.ctg.z
+A   trunk/lib/fonts/dejavusanscondensed-boldoblique.z
+A   trunk/lib/fonts/dejavusanscondensed-oblique.ctg.z
+A   trunk/lib/fonts/dejavusanscondensed-oblique.z
+A   trunk/lib/fonts/dejavusanscondensed.ctg.z
+A   trunk/lib/fonts/dejavusanscondensed.php
+A   trunk/lib/fonts/dejavusanscondensed.z
+A   trunk/lib/fonts/dejavusanscondensedb.php
+A   trunk/lib/fonts/dejavusanscondensedbi.php
+A   trunk/lib/fonts/dejavusanscondensedi.php
+A   trunk/lib/fonts/dejavusansi.php
+A   trunk/lib/fonts/dejavusansmono-bold.ctg.z
+A   trunk/lib/fonts/dejavusansmono-bold.z
+A   trunk/lib/fonts/dejavusansmono-boldoblique.ctg.z
+A   trunk/lib/fonts/dejavusansmono-boldoblique.z
+A   trunk/lib/fonts/dejavusansmono-oblique.ctg.z
+A   trunk/lib/fonts/dejavusansmono-oblique.z
+A   trunk/lib/fonts/dejavusansmono.ctg.z
+A   trunk/lib/fonts/dejavusansmono.php
+A   trunk/lib/fonts/dejavusansmono.z
+A   trunk/lib/fonts/dejavusansmonob.php
+A   trunk/lib/fonts/dejavusansmonobi.php
+A   trunk/lib/fonts/dejavusansmonoi.php
+A   trunk/lib/fonts/dejavuserif-bold.ctg.z
+A   trunk/lib/fonts/dejavuserif-bold.z
+A   trunk/lib/fonts/dejavuserif-boldoblique.ctg.z
+A   trunk/lib/fonts/dejavuserif-boldoblique.z
+A   trunk/lib/fonts/dejavuserif-oblique.ctg.z
+A   trunk/lib/fonts/dejavuserif-oblique.z
+A   trunk/lib/fonts/dejavuserif.ctg.z
+A   trunk/lib/fonts/dejavuserif.php
+A   trunk/lib/fonts/dejavuserif.z
+A   trunk/lib/fonts/dejavuserifb.php
+A   trunk/lib/fonts/dejavuserifbi.php
+A   trunk/lib/fonts/dejavuserifcondensed-bold.ctg.z
+A   trunk/lib/fonts/dejavuserifcondensed-bold.z
+A   trunk/lib/fonts/dejavuserifcondensed-boldoblique.ctg.z
+A   trunk/lib/fonts/dejavuserifcondensed-boldoblique.z
+A   trunk/lib/fonts/dejavuserifcondensed-oblique.ctg.z
+A   trunk/lib/fonts/dejavuserifcondensed-oblique.z
+A   trunk/lib/fonts/dejavuserifcondensed.ctg.z
+A   trunk/lib/fonts/dejavuserifcondensed.php
+A   trunk/lib/fonts/dejavuserifcondensed.z
+A   trunk/lib/fonts/dejavuserifcondensedb.php
+A   trunk/lib/fonts/dejavuserifcondensedbi.php
+A   trunk/lib/fonts/dejavuserifcondensedi.php
+A   trunk/lib/fonts/dejavuserifi.php
+A   trunk/lib/fonts/freefont/
+A   trunk/lib/fonts/freefont/AUTHORS
+A   trunk/lib/fonts/freefont/CREDITS
+A   trunk/lib/fonts/freefont/ChangeLog
+A   trunk/lib/fonts/freefont/INSTALL
+A   trunk/lib/fonts/freefont/README
+A   trunk/lib/fonts/freemono.ctg.z
+A   trunk/lib/fonts/freemono.php
+A   trunk/lib/fonts/freemono.z
+A   trunk/lib/fonts/freemonob.php
+A   trunk/lib/fonts/freemonobi.php
+A   trunk/lib/fonts/freemonobold.ctg.z
+A   trunk/lib/fonts/freemonobold.z
+A   trunk/lib/fonts/freemonoboldoblique.ctg.z
+A   trunk/lib/fonts/freemonoboldoblique.z
+A   trunk/lib/fonts/freemonoi.php
+A   trunk/lib/fonts/freemonooblique.ctg.z
+A   trunk/lib/fonts/freemonooblique.z
+A   trunk/lib/fonts/freesans.ctg.z
+A   trunk/lib/fonts/freesans.php
+A   trunk/lib/fonts/freesans.z
+A   trunk/lib/fonts/freesansb.php
+A   trunk/lib/fonts/freesansbi.php
+A   trunk/lib/fonts/freesansbold.ctg.z
+A   trunk/lib/fonts/freesansbold.z
+A   trunk/lib/fonts/freesansboldoblique.ctg.z
+A   trunk/lib/fonts/freesansboldoblique.z
+A   trunk/lib/fonts/freesansi.php
+A   trunk/lib/fonts/freesansoblique.ctg.z
+A   trunk/lib/fonts/freesansoblique.z
+A   trunk/lib/fonts/freeserif.ctg.z
+A   trunk/lib/fonts/freeserif.php
+A   trunk/lib/fonts/freeserif.z
+A   trunk/lib/fonts/freeserifb.php
+A   trunk/lib/fonts/freeserifbi.php
+A   trunk/lib/fonts/freeserifbold.ctg.z
+A   trunk/lib/fonts/freeserifbold.z
+A   trunk/lib/fonts/freeserifbolditalic.ctg.z
+A   trunk/lib/fonts/freeserifbolditalic.z
+A   trunk/lib/fonts/freeserifi.php
+A   trunk/lib/fonts/freeserifitalic.ctg.z
+A   trunk/lib/fonts/freeserifitalic.z
+A   trunk/lib/fonts/old/
+A   trunk/lib/fonts/old/.noencode
+A   trunk/lib/fonts/old/courier.php
+A   trunk/lib/fonts/old/helvetica.php
+A   trunk/lib/fonts/old/helveticab.php
+A   trunk/lib/fonts/old/helveticabi.php
+A   trunk/lib/fonts/old/helveticai.php
+A   trunk/lib/fonts/old/makefont/
+A   trunk/lib/fonts/old/makefont/cp1250.map
+A   trunk/lib/fonts/old/makefont/cp1251.map
+A   trunk/lib/fonts/old/makefont/cp1252.map
+A   trunk/lib/fonts/old/makefont/cp1253.map
+A   trunk/lib/fonts/old/makefont/cp1254.map
+A   trunk/lib/fonts/old/makefont/cp1255.map
+A   trunk/lib/fonts/old/makefont/cp1257.map
+A   trunk/lib/fonts/old/makefont/cp1258.map
+A   trunk/lib/fonts/old/makefont/cp874.map
+A   trunk/lib/fonts/old/makefont/iso-8859-1.map
+A   trunk/lib/fonts/old/makefont/iso-8859-11.map
+A   trunk/lib/fonts/old/makefont/iso-8859-15.map
+A   trunk/lib/fonts/old/makefont/iso-8859-16.map
+A   trunk/lib/fonts/old/makefont/iso-8859-2.map
+A   trunk/lib/fonts/old/makefont/iso-8859-4.map
+A   trunk/lib/fonts/old/makefont/iso-8859-5.map
+A   trunk/lib/fonts/old/makefont/iso-8859-7.map
+A   trunk/lib/fonts/old/makefont/iso-8859-9.map
+A   trunk/lib/fonts/old/makefont/koi8-r.map
+A   trunk/lib/fonts/old/makefont/koi8-u.map
+A   trunk/lib/fonts/old/makefont/makefont.php
+A   trunk/lib/fonts/old/symbol.php
+A   trunk/lib/fonts/old/times.php
+A   trunk/lib/fonts/old/timesb.php
+A   trunk/lib/fonts/old/timesbi.php
+A   trunk/lib/fonts/old/timesi.php
+A   trunk/lib/fonts/old/zapfdingbats.php
+A   trunk/lib/fonts/ttf-bitstream-vera-1.10/
+A   trunk/lib/fonts/ttf-bitstream-vera-1.10/COPYRIGHT.TXT
+A   trunk/lib/fonts/ttf-bitstream-vera-1.10/README.TXT
+A   trunk/lib/fonts/ttf-bitstream-vera-1.10/RELEASENOTES.TXT
+A   trunk/lib/fonts/ttf-bitstream-vera-1.10/local.conf
+A   trunk/lib/fonts/vera.ctg.z
+A   trunk/lib/fonts/vera.php
+A   trunk/lib/fonts/vera.z
+A   trunk/lib/fonts/verab.ctg.z
+A   trunk/lib/fonts/verab.php
+A   trunk/lib/fonts/verab.z
+A   trunk/lib/fonts/verabi.ctg.z
+A   trunk/lib/fonts/verabi.php
+A   trunk/lib/fonts/verabi.z
+A   trunk/lib/fonts/verai.ctg.z
+A   trunk/lib/fonts/verai.php
+A   trunk/lib/fonts/verai.z
+A   trunk/lib/fonts/veramo.ctg.z
+A   trunk/lib/fonts/veramo.php
+A   trunk/lib/fonts/veramo.z
+A   trunk/lib/fonts/veramob.ctg.z
+A   trunk/lib/fonts/veramob.php
+A   trunk/lib/fonts/veramob.z
+A   trunk/lib/fonts/veramobi.ctg.z
+A   trunk/lib/fonts/veramobi.php
+A   trunk/lib/fonts/veramobi.z
+A   trunk/lib/fonts/veramoi.ctg.z
+A   trunk/lib/fonts/veramoi.php
+A   trunk/lib/fonts/veramoi.z
+A   trunk/lib/fonts/verase.ctg.z
+A   trunk/lib/fonts/verase.php
+A   trunk/lib/fonts/verase.z
+A   trunk/lib/fonts/veraseb.ctg.z
+A   trunk/lib/fonts/veraseb.php
+A   trunk/lib/fonts/veraseb.z
+U   trunk/lib/jelix/plugins/tpl/html/meta.html.php
+A   trunk/lib/tcpdf/
+A   trunk/lib/tcpdf/LICENSE.TXT
+A   trunk/lib/tcpdf/README.TXT
+A   trunk/lib/tcpdf/barcode/
+A   trunk/lib/tcpdf/barcode/barcode.php
+A   trunk/lib/tcpdf/barcode/c128aobject.php
+A   trunk/lib/tcpdf/barcode/c128bobject.php
+A   trunk/lib/tcpdf/barcode/c128cobject.php
+A   trunk/lib/tcpdf/barcode/c39object.php
+A   trunk/lib/tcpdf/barcode/i25object.php
+A   trunk/lib/tcpdf/barcode/image.php
+A   trunk/lib/tcpdf/barcode/lesser.txt
+A   trunk/lib/tcpdf/config/
+A   trunk/lib/tcpdf/config/lang/
+A   trunk/lib/tcpdf/config/lang/eng.php
+A   trunk/lib/tcpdf/config/tcpdf_config.php
+A   trunk/lib/tcpdf/tcpdf.php
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000501.html">[Jelix-public] checkin SVN-675 (laurentj)
+</A></li>
+	<LI>Next message: <A HREF="000503.html">[Jelix-public] checkin SVN-677 (laurentj)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#502">[ date ]</a>
+              <a href="thread.html#502">[ thread ]</a>
+              <a href="subject.html#502">[ subject ]</a>
+              <a href="author.html#502">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/jelix-public">More information about the Jelix-public
+mailing list</a><br>
+</body></html>

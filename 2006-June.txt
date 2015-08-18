@@ -1,0 +1,50 @@
+From laurent at xulfr.org  Thu Jun  8 01:10:12 2006
+From: laurent at xulfr.org (Laurent)
+Date: Thu, 08 Jun 2006 01:10:12 +0200
+Subject: [Jelix-public] svn 192 : iterateurs dans jDb, et nouvelles configs
+Message-ID: <44875CD4.3010100@xulfr.org>
+
+Bonjour,
+
+Depuis la version 1.0 alpha3, pas mal de changements (voir 
+http://jelix.org/articles/changelog ).
+
+Ce soir, je viens d'impl?menter l'interface Iterator sur jDbRecordSet. 
+cela va permettre d'?conomiser de la m?moire, surtout pour ceux qui 
+r?cup?rent des gros ensemble de donn?es (via les dao notament) ;-)
+
+Concretement, les m?thodes de type select dans les daos ne renvoient 
+plus un tableau mais un recordset. Comme un recordset, c'est maintenant 
+un iterateur, au niveau utilisation, cela ne change rien par rapport ? 
+un tableau.  Si par exemple vous faisiez que des foreachs sur les 
+r?sultats : votre code ne change pas.
+
+Dans les daos, j'ai fais quelques modifs : cela n'utilise plus jDbWidget 
+(cela ne valait finalement pas le coup, surtout avec la modif sur les 
+recordset). Cela va contribuer ? am?liorer les perfs.
+
+Pour ceux qui r?cup?re ? partir du svn : il va falloir vider le temp 
+pour que les daos soient reg?n?r?es correctement.
+
+? noter que je n'ai test? qu'avec le driver mysql. Donc ceux qui sont 
+postgresql ou sqlite, ou qui passent par pdo, peuvent me signaler les 
+?ventuels bugs ;-)
+
+
+Con?ernant la config : il y a maintenant un fichier de config commun ? 
+tous les points d'entr?es. Il doit avoir pour nom 
+var/config/defaultconfig.ini.php . Il sera automatiquement pris en 
+compte. Et dans les fichiers de conf sp?cifiques ? vos points d'entr?es, 
+vous n'y mettez que les options ayant des valeurs sp?cifiques.
+
+De plus, les modifs effectu?es sur la gestion de la conf ne g?n?re plus 
+qu'un fichier temporaire pour chaque point d'entr?e : vous pouvez donc 
+vider votre temp pour virer les fichiers temporaires obsol?tes.
+
+
+a+
+
+Laurent
+
+
+

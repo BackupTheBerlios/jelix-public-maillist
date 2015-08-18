@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Jelix-public] Search Engine
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/jelix-public/2009-February/index.html" >
+   <LINK REL="made" HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20Search%20Engine&In-Reply-To=%3Cb4c5a4f30902160941p3716bd06vcaee50d8ff5ae905%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000813.html">
+   <LINK REL="Next"  HREF="000815.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Jelix-public] Search Engine</H1>
+    <B>Lionel [Over-Blog]</B> 
+    <A HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20Search%20Engine&In-Reply-To=%3Cb4c5a4f30902160941p3716bd06vcaee50d8ff5ae905%40mail.gmail.com%3E"
+       TITLE="[Jelix-public] Search Engine">lionel at over-blog.com
+       </A><BR>
+    <I>Mon Feb 16 18:41:56 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000813.html">[Jelix-public] Search Engine
+</A></li>
+        <LI>Next message: <A HREF="000815.html">[Jelix-public] Search Engine
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#814">[ date ]</a>
+              <a href="thread.html#814">[ thread ]</a>
+              <a href="subject.html#814">[ subject ]</a>
+              <a href="author.html#814">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Il y a xapian :
+<A HREF="http://xapian.org/">http://xapian.org/</A>
+
+Semble tr&#232;s performant. J'ai index&#233; les 1 millions d'articles du wikipedia
+fr avec pour tester.
+Les recherches sont toutes sous la seconde avec une pertinence tr&#232;s bonne.
+
+Lucene, c'&#233;tait Java, et quand je peux me passer de Java....
+
+L.
+
+Le 16 f&#233;vrier 2009 17:34, foxmask &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/jelix-public">foxmask at gmail.com</A>&gt; a &#233;crit :
+
+&gt;<i> Bonjour,
+</I>&gt;<i> merci,
+</I>&gt;<i> je viens de tomber dessus egalement.
+</I>&gt;<i> je vais tester :D
+</I>&gt;<i> Cdt.
+</I>&gt;<i>
+</I>&gt;<i> Le 16 f&#233;vrier 2009 17:25, LELIO-Mailing-List &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/jelix-public">mailing-list at lelio.fr</A>&gt; a
+</I>&gt;<i> &#233;crit :
+</I>&gt;<i>
+</I>&gt;<i> Il y a lucene PHP avec le ZendFramework.
+</I>&gt;&gt;<i> C'est hors base de donn&#233;es. Personnellement je suis en train de l'essayer.
+</I>&gt;&gt;<i> Je ne peux donc pas te donner de retour sur les perfs mais ce que j'ai pu
+</I>&gt;&gt;<i> en
+</I>&gt;&gt;<i> lire m'ont convaincu...
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> &gt; -----Message d'origine-----
+</I>&gt;&gt;<i> &gt; De : <A HREF="https://lists.berlios.de/mailman/listinfo/jelix-public">jelix-public-bounces at lists.berlios.de</A>
+</I>&gt;&gt;<i> &gt; [mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/jelix-public">jelix-public-bounces at lists.berlios.de</A>] De la part de foxmask
+</I>&gt;&gt;<i> &gt; Envoy&#233; : lundi 16 f&#233;vrier 2009 17:16
+</I>&gt;&gt;<i> &gt; &#192; : <A HREF="https://lists.berlios.de/mailman/listinfo/jelix-public">jelix-public at lists.berlios.de</A>
+</I>&gt;&gt;<i> &gt; Objet : [Jelix-public] Search Engine
+</I>&gt;&gt;<i> &gt;
+</I>&gt;&gt;<i> &gt; Bonjour,
+</I>&gt;&gt;<i> &gt;
+</I>&gt;&gt;<i> &gt; Cela fait quelques jours que je cherche un peu tout ce qui se
+</I>&gt;&gt;<i> &gt; fait sur le sujet, sur la toile. (avec pour point de d&#233;part
+</I>&gt;&gt;<i> &gt; &lt;<A HREF="http://www.roscripts.com/PHP_search_engine-119.html">http://www.roscripts.com/PHP_search_engine-119.html</A>&gt; )
+</I>&gt;&gt;<i> &gt;
+</I>&gt;&gt;<i> &gt; J'aimerai utiliser un moteur de recherche pour un forum.
+</I>&gt;&gt;<i> &gt;
+</I>&gt;&gt;<i> &gt; mais la plupart des solutions que je trouve sont :
+</I>&gt;&gt;<i> &gt;
+</I>&gt;&gt;<i> &gt; 1) des moteurs qui sont des outils tiers (htdig,sphinx,BOSS,
+</I>&gt;&gt;<i> &gt; GoogleSearch, etc...) n&#233;c&#233;ssitant donc un h&#233;bergement
+</I>&gt;&gt;<i> &gt; particuliers (cas de htdig,sphinx) ou que le site soit
+</I>&gt;&gt;<i> &gt; r&#233;f&#233;renc&#233; (cas de googlesearch/BOSS) etc...
+</I>&gt;&gt;<i> &gt;
+</I>&gt;&gt;<i> &gt; 2) des moteurs d&#233;p&#233;dants du SGBD ; exemple phorum est li&#233; &#224;
+</I>&gt;&gt;<i> &gt; MySQL et utilise du fulltext avec MyISAM ; le reste de la
+</I>&gt;&gt;<i> &gt; base etant utilisable avec Innodb si on veut.
+</I>&gt;&gt;<i> &gt;
+</I>&gt;&gt;<i> &gt; j'avais song&#233; aussi &#224; cela mais alors quid des autres SGBD
+</I>&gt;&gt;<i> &gt; support&#233;es par Jelix ...
+</I>&gt;&gt;<i> &gt;
+</I>&gt;&gt;<i> &gt; Donc ce que j'aimerai ; c'est bel et bien utiliser un moteur
+</I>&gt;&gt;<i> &gt; &quot;maison&quot; en &#233;tant le moins restrictif (pas li&#233; &#224; un SGBD si possible).
+</I>&gt;&gt;<i> &gt;
+</I>&gt;&gt;<i> &gt; Les implem' que j'ai regard&#233; sont :
+</I>&gt;&gt;<i> &gt;
+</I>&gt;&gt;<i> &gt; Phorum : Creations de tables &quot;HEAP&quot; temporaire &#224; chaque
+</I>&gt;&gt;<i> &gt; recherche ; &#224; partir de la table des messages. (&#224; lire
+</I>&gt;&gt;<i> &gt; MySQL.com ; c'est plus rapide pour le fulltext plutot que
+</I>&gt;&gt;<i> &gt; d'ajoute un record dans une table contenant une colonne
+</I>&gt;&gt;<i> &gt; fulltext) FluxBB : ajoute des mots dans une table d&#233;di&#233;e au
+</I>&gt;&gt;<i> &gt; fur et a mesure que les messages sont cr&#233;&#233;s.
+</I>&gt;&gt;<i> &gt; SimpleMachines : m&#234;me technique que Phorum, creation de table
+</I>&gt;&gt;<i> &gt; type HEAP et insertion de record dans cette table &#224; partir de
+</I>&gt;&gt;<i> &gt; la table des messages phpBB : m&#234;me technique, &#224; vu de nez, que fluxbb.
+</I>&gt;&gt;<i> &gt;
+</I>&gt;&gt;<i> &gt; Avez vous d&#233;j&#224; implement&#233; quelquechose de similaire ?
+</I>&gt;&gt;<i> &gt;
+</I>&gt;&gt;<i> &gt; merci de vos reponses ;)
+</I>&gt;&gt;<i> &gt;
+</I>&gt;&gt;<i> &gt; cdt.
+</I>&gt;&gt;<i> &gt;
+</I>&gt;&gt;<i> &gt;
+</I>&gt;&gt;<i> &gt;
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> _______________________________________________
+</I>&gt;&gt;<i> Jelix-public mailing list
+</I>&gt;&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/jelix-public">Jelix-public at lists.berlios.de</A>
+</I>&gt;&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/jelix-public">https://lists.berlios.de/mailman/listinfo/jelix-public</A>
+</I>&gt;&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> --
+</I>&gt;<i> <A HREF="http://www.foxmask.info">http://www.foxmask.info</A>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Jelix-public mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/jelix-public">Jelix-public at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/jelix-public">https://lists.berlios.de/mailman/listinfo/jelix-public</A>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>
+
+-- 
+Lionel TRESSENS
+JFG Networks
++33562483390 / +33661340142
+overblog.com 1&#232;re plateforme de blogs en France
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/jelix-public/attachments/20090216/71e6fbf7/attachment.html">https://lists.berlios.de/pipermail/jelix-public/attachments/20090216/71e6fbf7/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000813.html">[Jelix-public] Search Engine
+</A></li>
+	<LI>Next message: <A HREF="000815.html">[Jelix-public] Search Engine
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#814">[ date ]</a>
+              <a href="thread.html#814">[ thread ]</a>
+              <a href="subject.html#814">[ subject ]</a>
+              <a href="author.html#814">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/jelix-public">More information about the Jelix-public
+mailing list</a><br>
+</body></html>

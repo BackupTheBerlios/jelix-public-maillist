@@ -1,0 +1,21 @@
+From laurent at xulfr.org  Wed Jun 17 13:06:41 2009
+From: laurent at xulfr.org (laurent)
+Date: Wed, 17 Jun 2009 13:06:41 +0200
+Subject: [Jelix-public] New releases of Jelix : 1.0.9 and 1.13
+Message-ID: <4A38CE41.6080305@xulfr.org>
+
+Hello,
+
+Today we released some new maintenance releases. Update your 
+applications :-)
+
+The news in english:
+http://jelix.org/en/news/post/release-of-jelix-1.0.9-and-1.1.3
+
+En fran?ais :
+http://jelix.org/fr/news/post/sortie-de-jelix-1.0.9-et-1.1.3
+
+
+Laurent
+
+

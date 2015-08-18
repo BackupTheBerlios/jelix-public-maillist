@@ -1,0 +1,35 @@
+From laurent at jelix.org  Wed Oct 19 11:41:18 2011
+From: laurent at jelix.org (Laurent)
+Date: Wed, 19 Oct 2011 11:41:18 +0200
+Subject: [Jelix-public] Jelix 1.3 is available!
+Message-ID: <4E9E9B3E.1040708@jelix.org>
+
+Hi,
+
+After months of development, of tests and stabilization, the new version 
+of jelix is available.
+
+What's new ?
+
+* a better errors management, and some improvements in the log system
+* a new debug bar, extensible
+* an improved HTML response object, which is now extensible too.
+* some simplifications in the structure of an application, and in cli 
+scripts for developments
+* unified management of connection profiles (jDb, jKvdb, soap etc)
+* improvements in rights management
+
+And many other new features : http://jelix.org/articles/en/changelog/1.3
+
+* Download: http://jelix.org/articles/en/download/stable/1.3
+* Migration: http://jelix.org/articles/en/manual-1.3/installation/migrate
+
+And as usual, the full manual is available, online or in PDF. 
+http://jelix.org/articles/en/manual-1.3/
+
+
+Thanks to all contributors!
+
+Laurent
+
+

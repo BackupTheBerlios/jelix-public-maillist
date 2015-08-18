@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Jelix-public] checkin SVN-691 (laurentj)
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/jelix-public/2007-December/index.html" >
+   <LINK REL="made" HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20checkin%20SVN-691%20%28laurentj%29&In-Reply-To=%3C475F150A.mail2PX1113VW%40xulfr.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000516.html">
+   <LINK REL="Next"  HREF="000518.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Jelix-public] checkin SVN-691 (laurentj)</H1>
+    <B>laurent at xulfr.org</B> 
+    <A HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20checkin%20SVN-691%20%28laurentj%29&In-Reply-To=%3C475F150A.mail2PX1113VW%40xulfr.org%3E"
+       TITLE="[Jelix-public] checkin SVN-691 (laurentj)">laurent at xulfr.org
+       </A><BR>
+    <I>Tue Dec 11 23:54:02 CET 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000516.html">[Jelix-public] checkin SVN-690 (bballizlife)
+</A></li>
+        <LI>Next message: <A HREF="000518.html">[Jelix-public] checkin SVN-692 (bballizlife)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#517">[ date ]</a>
+              <a href="thread.html#517">[ thread ]</a>
+              <a href="subject.html#517">[ subject ]</a>
+              <a href="author.html#517">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>laurentj
+2007-12-11 23:53:59 +0100 (Tue, 11 Dec 2007)
+84
+ticket #317: main patch for the new action selector format. p=Thibault Piront and me
+
+U   trunk/build/buildjelix.php
+U   trunk/build/config/jelix-dist-dev.ini
+U   trunk/build/config/jelix-dist-gold.ini
+U   trunk/build/config/jelix-dist-opt.ini
+U   trunk/build/config/jelix-test.ini
+U   trunk/build/manifests/jelix-ext-php.mn
+U   trunk/build/manifests/jelix-lib.mn
+U   trunk/build/manifests/testapp.mn
+U   trunk/ext/jelix/jelix.c
+U   trunk/ext/jelix/php_jelix.h
+U   trunk/ext/jelix/tests/scan_action_sel_001.phpt
+U   trunk/ext/jelix/tests/scan_action_sel_002.phpt
+A   trunk/ext/jelix/tests/scan_old_action_sel_001.phpt
+A   trunk/ext/jelix/tests/scan_old_action_sel_002.phpt
+U   trunk/lib/jelix/CREDITS
+U   trunk/lib/jelix/controllers/jControllerDaoCrud.class.php
+U   trunk/lib/jelix/core/defaultconfig.ini.php
+U   trunk/lib/jelix/core/jConfigCompiler.class.php
+U   trunk/lib/jelix/core/jCoordinator.class.php
+U   trunk/lib/jelix/core/jSelector.class.php
+U   trunk/lib/jelix/core/jUrl.class.php
+U   trunk/lib/jelix/core/request/jCmdLineRequest.class.php
+U   trunk/lib/jelix/core/request/jXmlRpcRequest.class.php
+U   trunk/lib/jelix/core-modules/jelix/controllers/help.cmdline.php
+U   trunk/lib/jelix/init.php
+U   trunk/lib/jelix/plugins/coord/auth/auth.coord.ini.php.dist
+U   trunk/lib/jelix/plugins/urls/significant/jSignificantUrlsCompiler.class.php
+U   trunk/lib/jelix/plugins/urls/significant/significant.urls.php
+U   trunk/lib/jelix/plugins/urls/simple/simple.urls.php
+U   trunk/lib/jelix/tpl/jTpl.class.php
+U   trunk/lib/jelix-modules/jauth/templates/login.form.tpl
+U   trunk/lib/jelix-modules/junittests/templates/main.tpl
+U   trunk/lib/jelix-scripts/templates/var/config/cmdline/config.ini.php.tpl
+U   trunk/lib/jelix-scripts/templates/var/config/defaultconfig.ini.php.tpl
+U   trunk/lib/jelix-scripts/templates/var/config/index/config.ini.php.tpl
+U   trunk/lib/jelix-scripts/templates/var/config/jsonrpc/config.ini.php.tpl
+U   trunk/lib/jelix-scripts/templates/var/config/xmlrpc/config.ini.php.tpl
+U   trunk/myapp/var/config/defaultconfig.ini.php
+U   trunk/myapp/var/config/index/config.ini.php
+U   trunk/testapp/modules/jelix_tests/templates/menu.tpl
+A   trunk/testapp/modules/jelix_tests/tests/core.old_selectors_action.html.php
+A   trunk/testapp/modules/jelix_tests/tests/core.old_urls_generation.html.php
+A   trunk/testapp/modules/jelix_tests/tests/core.old_urls_parsing.html.php
+U   trunk/testapp/modules/jelix_tests/tests/core.selectors_action.html.php
+U   trunk/testapp/modules/jelix_tests/tests/core.urls_generation.html.php
+U   trunk/testapp/modules/jelix_tests/tests/core.urls_parsing.html.php
+U   trunk/testapp/modules/jelix_tests/tests/jforms.htmlbuilder.html.php
+U   trunk/testapp/modules/testapp/controllers/forms.classic.php
+U   trunk/testapp/modules/testapp/controllers/sampleform.classic.php
+U   trunk/testapp/modules/testapp/templates/forms_edit.tpl
+U   trunk/testapp/modules/testapp/templates/forms_liste.tpl
+U   trunk/testapp/modules/testapp/templates/forms_view.tpl
+U   trunk/testapp/modules/testapp/templates/hello.tpl
+U   trunk/testapp/modules/testapp/templates/hello2.tpl
+U   trunk/testapp/modules/testapp/templates/sampleform.tpl
+U   trunk/testapp/modules/testapp/templates/sommaire.tpl
+U   trunk/testapp/modules/testapp/templates/testzone.tpl
+U   trunk/testapp/var/config/defaultconfig.ini.php
+U   trunk/testapp/var/config/index/config.ini.php
+U   trunk/testapp/var/config/jsonrpc/config.ini.php
+U   trunk/testapp/var/config/urls.xml
+A   trunk/testapp/var/config/urls_old.xml
+U   trunk/testapp/var/config/xmlrpc/config.ini.php
+U   trunk/testapp/var/themes/default/junittests/main.tpl
+U   trunk/testapp/var/themes/default/testapp/hello2.tpl
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000516.html">[Jelix-public] checkin SVN-690 (bballizlife)
+</A></li>
+	<LI>Next message: <A HREF="000518.html">[Jelix-public] checkin SVN-692 (bballizlife)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#517">[ date ]</a>
+              <a href="thread.html#517">[ thread ]</a>
+              <a href="subject.html#517">[ subject ]</a>
+              <a href="author.html#517">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/jelix-public">More information about the Jelix-public
+mailing list</a><br>
+</body></html>

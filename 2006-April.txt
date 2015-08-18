@@ -1,0 +1,61 @@
+From yoop at bballizlife.com  Sun Apr  9 10:41:16 2006
+From: yoop at bballizlife.com (Loic Mathaud)
+Date: Sun, 09 Apr 2006 10:41:16 +0200
+Subject: [Jelix-public] [dao] support SQLite
+Message-ID: <4438C8AC.9060501@bballizlife.com>
+
+Hello,
+
+je pense utiliser SQLite pour une petite application web et donc je
+regarde comment impl?menter le driver pour SQLite dans Jelix.
+Je pense avoir un driver qui devrait fonctionner, mais je voudrais un
+avis sur la mani?re de mettre en place la s?lection du fichier de base
+de donn?es SQLite.
+Je pensais peut-?tre ajouter un s?lecteur sp?cifique h?ritant de
+jSelectorSimpleFile qui irait ouvrir le fichier dans un r?pertoire
+d?fini de l'application (appli/var/db/sqlite/ par exemple).
+D'autres id?es ? Laurent, tu avais peut-?tre d?j? r?fl?chi ? ?a, et la
+mani?re d'impl?menter le support pour SQLite ?
+
+@+
+
+-- 
+Loic Mathaud
+<mail>loic at mathaud.net</mail>
+<url="http://bballizlife.com" type="perso"/>
+<url="http://www.kayuko.com" type="pro"/>
+
+
+From webmestre at xulfr.org  Mon Apr 10 10:16:42 2006
+From: webmestre at xulfr.org (Laurent)
+Date: Mon, 10 Apr 2006 10:16:42 +0200
+Subject: [Jelix-public] [dao] support SQLite
+In-Reply-To: <4438C8AC.9060501@bballizlife.com>
+References: <4438C8AC.9060501@bballizlife.com>
+Message-ID: <443A146A.9030809@xulfr.org>
+
+Salut,
+
+
+et pourquoi pas l'indiquer plutot dans le fichier de conf de connection ?
+
+
+Loic Mathaud wrote:
+> Hello,
+> 
+> je pense utiliser SQLite pour une petite application web et donc je
+> regarde comment impl?menter le driver pour SQLite dans Jelix.
+> Je pense avoir un driver qui devrait fonctionner, mais je voudrais un
+> avis sur la mani?re de mettre en place la s?lection du fichier de base
+> de donn?es SQLite.
+> Je pensais peut-?tre ajouter un s?lecteur sp?cifique h?ritant de
+> jSelectorSimpleFile qui irait ouvrir le fichier dans un r?pertoire
+> d?fini de l'application (appli/var/db/sqlite/ par exemple).
+> D'autres id?es ? Laurent, tu avais peut-?tre d?j? r?fl?chi ? ?a, et la
+> mani?re d'impl?menter le support pour SQLite ?
+> 
+> @+
+> 
+
+
+

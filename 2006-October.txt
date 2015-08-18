@@ -1,0 +1,592 @@
+From laurent at xulfr.org  Sun Oct  1 15:08:02 2006
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Sun, 01 Oct 2006 15:08:02 +0200
+Subject: [Jelix-public] checkin SVN-268 (laurentj)
+Message-ID: <451FBDB2.mail4I711GYFF@xulfr.org>
+
+laurentj
+2006-10-01 15:08:01 +0200 (Sun, 01 Oct 2006)
+67
+petite modif sur le make pour g?\195?\169n?\195?\169rer les nightly
+
+U   trunk/Makefile
+
+
+From laurent at xulfr.org  Sun Oct  1 23:01:46 2006
+From: laurent at xulfr.org (Laurent)
+Date: Sun, 01 Oct 2006 23:01:46 +0200
+Subject: [Jelix-public] Nouveau serveur
+Message-ID: <45202CBA.3000005@xulfr.org>
+
+Bonjour,
+
+Le site est en cours de d?m?nagement vers un nouveau serveur. C'est 
+pourquoi, si les dns de votre FAI ne sont pas encore ? jour, vous 
+trouverez les forums et le wiki ferm? (si vous les trouvez ouvert, c'est 
+que vous ?tes sur le nouveau serveur).
+
+Le nouveau serveur est beaucoup moins charg? que l'actuel, il y aura 
+donc plus de r?activit?. Nous aurons aussi plus de libert? pour y faire 
+ce que l'on veut.
+
+Je viens par exemple de mettre en place la g?n?ration automatique de 
+"nightly". Tous les jours, vous aurez donc les derni?res versions de 
+Jelix, jtpl &cie, issues du trunk, en t?l?chargement.
+
+La doc de r?f?rence est ?galement mise ? jour toutes les nuits.
+
+Nous allons aussi installer d'autres outils par la suite...
+
+
+Laurent.
+
+
+From laurent at xulfr.org  Mon Oct  2 00:03:59 2006
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Mon, 02 Oct 2006 00:03:59 +0200
+Subject: [Jelix-public] checkin SVN-269 (laurentj)
+Message-ID: <45203B4F.mailDGT1LMYXT@xulfr.org>
+
+laurentj
+2006-10-02 00:03:58 +0200 (Mon, 02 Oct 2006)
+34
+ajout de l'appli de la demo en xul
+
+A   trunk/demoxul/
+A   trunk/demoxul/application.init.php
+A   trunk/demoxul/modules/
+A   trunk/demoxul/plugins/
+A   trunk/demoxul/project.xml
+A   trunk/demoxul/responses/
+A   trunk/demoxul/var/
+A   trunk/demoxul/var/config/
+A   trunk/demoxul/var/config/dbprofils.ini.php.dist
+A   trunk/demoxul/var/config/defaultconfig.ini.php.dist
+A   trunk/demoxul/var/config/index/
+A   trunk/demoxul/var/config/index/auth.plugin.ini.php
+A   trunk/demoxul/var/config/index/config.ini.php
+A   trunk/demoxul/var/config/jsonrpc/
+A   trunk/demoxul/var/config/jsonrpc/auth.plugin.ini.php
+A   trunk/demoxul/var/config/jsonrpc/config.ini.php
+A   trunk/demoxul/var/config/rdf/
+A   trunk/demoxul/var/config/rdf/auth.plugin.ini.php
+A   trunk/demoxul/var/config/rdf/config.ini.php
+A   trunk/demoxul/var/config/xmlrpc/
+A   trunk/demoxul/var/config/xmlrpc/auth.plugin.ini.php
+A   trunk/demoxul/var/config/xmlrpc/config.ini.php
+A   trunk/demoxul/var/log/
+A   trunk/demoxul/var/overloads/
+A   trunk/demoxul/var/themes/
+A   trunk/demoxul/var/themes/default/
+A   trunk/demoxul/www/
+A   trunk/demoxul/www/index.php
+A   trunk/demoxul/www/jsonrpc.php
+A   trunk/demoxul/www/rdf.php
+A   trunk/demoxul/www/xmlrpc.php
+A   trunk/demoxul/www/xulapp/
+A   trunk/demoxul/www/xulapp/login.js
+A   trunk/demoxul/www/xulapp/main.js
+U   trunk/myapp/var/config/defaultconfig.ini.php.dist
+U   trunk/testapp/var/config/defaultconfig.ini.php.dist
+
+
+From laurent at xulfr.org  Mon Oct  2 23:18:31 2006
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Mon, 02 Oct 2006 23:18:31 +0200
+Subject: [Jelix-public] checkin SVN-270 (laurentj)
+Message-ID: <45218227.mailNN711F0CZ@xulfr.org>
+
+laurentj
+2006-10-02 23:18:30 +0200 (Mon, 02 Oct 2006)
+83
+travail sur l'interface xul de jxacl, et petite correction sur le xbl templatepager
+
+U   trunk/build/manifests/jelix-lib.mn
+U   trunk/lib/jelix-modules/jxacl/classes/acl.listener.php
+U   trunk/lib/jelix-modules/jxacl/controllers/xuladmin.classic.php
+A   trunk/lib/jelix-modules/jxacl/templates/jxauthovlay.tpl
+U   trunk/lib/jelix-modules/jxacl/templates/xuladmin.tpl
+U   trunk/lib/jelix-modules/jxauth/controllers/xuladmin.classic.php
+U   trunk/lib/jelix-www/xul/jxbl.xml
+
+
+From laurent at xulfr.org  Wed Oct  4 00:11:16 2006
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Wed, 04 Oct 2006 00:11:16 +0200
+Subject: [Jelix-public] checkin SVN-271 (laurentj)
+Message-ID: <4522E004.mail20L115A3Z@xulfr.org>
+
+laurentj
+2006-10-04 00:11:15 +0200 (Wed, 04 Oct 2006)
+519
+-patch 1525 : Ajout d'une commande d'effacement de cache
+-fix Bug 8939 : sur l'affichage des erreurs, xhtml invalide
+-fix Bug 8903 : mauvaise sortie d'erreur quand le log est impossible
+-ajout d'une commande dans le make pour g?\195?\169n?\195?\169rer un paquet demoxul
+-fix Bug 8785 : l'encryptage du mot de passe devrait d?\195?\169pendre du driver
+ 
+  ATTENTION : dans la config du plugin auth, le param?\195?\168tre password_crypt_function
+  doit maintenant ?\195?\170tre plac?\195?\169 dans la section Db ou Class 
+
+U   trunk/Makefile
+A   trunk/build/manifests/demoxul.mn
+U   trunk/build/manifests/jelix-dev.mn
+U   trunk/build/mkmanifest.php
+U   trunk/demoxul/var/config/index/auth.plugin.ini.php
+U   trunk/demoxul/var/config/jsonrpc/auth.plugin.ini.php
+U   trunk/demoxul/var/config/rdf/auth.plugin.ini.php
+U   trunk/demoxul/var/config/xmlrpc/auth.plugin.ini.php
+U   trunk/lib/jelix/auth/jAuth.class.php
+U   trunk/lib/jelix/auth/jAuthDriverClass.class.php
+U   trunk/lib/jelix/auth/jAuthDriverDb.class.php
+U   trunk/lib/jelix/core/jErrorHandler.lib.php
+U   trunk/lib/jelix/core/response/jResponseHtml.class.php
+U   trunk/lib/jelix-modules/jxauth/plugins/auth/auth.plugin.ini.php.dist
+A   trunk/lib/jelix-scripts/commands/clearcache.cmd.php
+
+
+From laurent at xulfr.org  Wed Oct  4 10:54:40 2006
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Wed, 04 Oct 2006 10:54:40 +0200
+Subject: [Jelix-public] checkin SVN-272 (bballizlife)
+Message-ID: <452376D0.mailLWY11SVM5@xulfr.org>
+
+bballizlife
+2006-10-04 10:54:39 +0200 (Wed, 04 Oct 2006)
+98
+correction bug dans plugin autolocale : mauvais nom de l'interface ?\195?\160 impl?\195?\169menter
+
+U   trunk/lib/jelix-plugins/autolocale/autolocale.plugin.php
+
+
+From laurent at xulfr.org  Fri Oct  6 16:25:10 2006
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Fri, 06 Oct 2006 16:25:10 +0200
+Subject: [Jelix-public] checkin SVN-273 (laurentj)
+Message-ID: <45266746.mailEBU11RFOB@xulfr.org>
+
+laurentj
+2006-10-06 16:25:09 +0200 (Fri, 06 Oct 2006)
+73
+ajout de l'affichage du numero de version de php et de jelix dans testapp
+
+U   trunk/testapp/modules/unittest/templates/menu.tpl
+U   trunk/testapp/responses/testUnitResponse.class.php
+
+
+From laurent at xulfr.org  Fri Oct  6 16:32:57 2006
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Fri, 06 Oct 2006 16:32:57 +0200
+Subject: [Jelix-public] checkin SVN-274 (bballizlife)
+Message-ID: <45266919.mailF2V19TPI3@xulfr.org>
+
+bballizlife
+2006-10-06 16:32:56 +0200 (Fri, 06 Oct 2006)
+295
+- ajout d'une classe utilitaire jIniFile permettant de lire et ecrire un fichier ini
+- utilisation de cette classe par une classe du core, jConfigCompiler
+- ajout d'une option -cmdline sur la commande jelix createmodule afin de creer un module contenant un controller pour la ligne de 
+commande
+
+U   trunk/build/manifests/jelix-lib.mn
+U   trunk/lib/jelix/core/jConfigCompiler.class.php
+A   trunk/lib/jelix/utils/jIniFile.class.php
+U   trunk/lib/jelix-modules/jelix/locales/en_US/errors.ISO-8859-1.properties
+U   trunk/lib/jelix-modules/jelix/locales/fr_FR/errors.ISO-8859-1.properties
+U   trunk/lib/jelix-modules/jelix/locales/fr_FR/errors.UTF-8.properties
+U   trunk/lib/jelix-scripts/commands/createmodule.cmd.php
+
+
+From laurent at xulfr.org  Fri Oct  6 22:29:43 2006
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Fri, 06 Oct 2006 22:29:43 +0200
+Subject: [Jelix-public] checkin SVN-275 (laurentj)
+Message-ID: <4526BCB7.mailLKI11BZQO@xulfr.org>
+
+laurentj
+2006-10-06 22:29:35 +0200 (Fri, 06 Oct 2006)
+62
+mise ?\195?\160 jour de simpletest vers la version 1.0.1alpha3
+
+U   trunk/build/manifests/jelix-dev.mn
+U   trunk/lib/jelix-scripts/CREDITS
+U   trunk/lib/simpletest/HELP_MY_TESTS_DONT_WORK_ANYMORE
+U   trunk/lib/simpletest/LICENSE
+U   trunk/lib/simpletest/README
+D   trunk/lib/simpletest/README_JELIX
+U   trunk/lib/simpletest/VERSION
+U   trunk/lib/simpletest/authentication.php
+U   trunk/lib/simpletest/browser.php
+A   trunk/lib/simpletest/collector.php
+A   trunk/lib/simpletest/compatibility.php
+A   trunk/lib/simpletest/cookies.php
+A   trunk/lib/simpletest/detached.php
+D   trunk/lib/simpletest/docs/
+U   trunk/lib/simpletest/dumper.php
+U   trunk/lib/simpletest/encoding.php
+U   trunk/lib/simpletest/errors.php
+A   trunk/lib/simpletest/exceptions.php
+U   trunk/lib/simpletest/expectation.php
+U   trunk/lib/simpletest/form.php
+U   trunk/lib/simpletest/frames.php
+U   trunk/lib/simpletest/http.php
+A   trunk/lib/simpletest/invoker.php
+U   trunk/lib/simpletest/mock_objects.php
+D   trunk/lib/simpletest/options.php
+U   trunk/lib/simpletest/page.php
+U   trunk/lib/simpletest/parser.php
+A   trunk/lib/simpletest/reflection_php4.php
+A   trunk/lib/simpletest/reflection_php5.php
+U   trunk/lib/simpletest/remote.php
+U   trunk/lib/simpletest/reporter.php
+D   trunk/lib/simpletest/runner.php
+U   trunk/lib/simpletest/scorer.php
+A   trunk/lib/simpletest/selector.php
+U   trunk/lib/simpletest/shell_tester.php
+D   trunk/lib/simpletest/simple_test.php
+A   trunk/lib/simpletest/simpletest.php
+U   trunk/lib/simpletest/socket.php
+U   trunk/lib/simpletest/tag.php
+U   trunk/lib/simpletest/test/acceptance_test.php
+U   trunk/lib/simpletest/test/adapter_test.php
+U   trunk/lib/simpletest/test/all_tests.php
+U   trunk/lib/simpletest/test/authentication_test.php
+U   trunk/lib/simpletest/test/browser_test.php
+A   trunk/lib/simpletest/test/collector_test.php
+A   trunk/lib/simpletest/test/compatibility_test.php
+A   trunk/lib/simpletest/test/cookies_test.php
+A   trunk/lib/simpletest/test/detached_test.php
+U   trunk/lib/simpletest/test/dumper_test.php
+U   trunk/lib/simpletest/test/encoding_test.php
+U   trunk/lib/simpletest/test/expectation_test.php
+U   trunk/lib/simpletest/test/form_test.php
+U   trunk/lib/simpletest/test/frames_test.php
+U   trunk/lib/simpletest/test/http_test.php
+A   trunk/lib/simpletest/test/interfaces_test.php
+U   trunk/lib/simpletest/test/live_test.php
+A   trunk/lib/simpletest/test/mock_objects_test.php
+D   trunk/lib/simpletest/test/options_test.php
+U   trunk/lib/simpletest/test/page_test.php
+U   trunk/lib/simpletest/test/parse_error_test.php
+U   trunk/lib/simpletest/test/parser_test.php
+A   trunk/lib/simpletest/test/reflection_php4_test.php
+A   trunk/lib/simpletest/test/reflection_php5_test.php
+U   trunk/lib/simpletest/test/remote_test.php
+U   trunk/lib/simpletest/test/shell_test.php
+U   trunk/lib/simpletest/test/shell_tester_test.php
+D   trunk/lib/simpletest/test/simple_mock_test.php
+A   trunk/lib/simpletest/test/simpletest_test.php
+A   trunk/lib/simpletest/test/support/
+A   trunk/lib/simpletest/test/support/collector/
+A   trunk/lib/simpletest/test/support/collector/collectable.1
+A   trunk/lib/simpletest/test/support/collector/collectable.2
+A   trunk/lib/simpletest/test/support/latin1_sample
+A   trunk/lib/simpletest/test/support/spl_examples.php
+A   trunk/lib/simpletest/test/support/supplementary_upload_sample.txt
+A   trunk/lib/simpletest/test/support/upload_sample.txt
+U   trunk/lib/simpletest/test/tag_test.php
+A   trunk/lib/simpletest/test/test_groups.php
+U   trunk/lib/simpletest/test/unit_tester_test.php
+U   trunk/lib/simpletest/test/unit_tests.php
+U   trunk/lib/simpletest/test/url_test.php
+U   trunk/lib/simpletest/test/user_agent_test.php
+U   trunk/lib/simpletest/test/visual_test.php
+U   trunk/lib/simpletest/test/web_tester_test.php
+U   trunk/lib/simpletest/test/xml_test.php
+A   trunk/lib/simpletest/test_case.php
+U   trunk/lib/simpletest/unit_tester.php
+U   trunk/lib/simpletest/url.php
+U   trunk/lib/simpletest/user_agent.php
+U   trunk/lib/simpletest/web_tester.php
+U   trunk/lib/simpletest/xml.php
+
+
+From laurent at xulfr.org  Sat Oct  7 00:48:27 2006
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Sat, 07 Oct 2006 00:48:27 +0200
+Subject: [Jelix-public] checkin SVN-276 (laurentj)
+Message-ID: <4526DD3B.mail87V11UUFY@xulfr.org>
+
+laurentj
+2006-10-07 00:48:25 +0200 (Sat, 07 Oct 2006)
+232
+- fix d'erreurs strict dans simpletest
+- corrections de bugs dans junittestcase::assertComplexIdenticalStr pour les tests
+- corrections de bugs dans les tests unitaires sur les daos (mais toujours pas de bug dans les dao,  ouf ! :-)
+
+U   trunk/build/manifests/testapp.mn
+U   trunk/lib/simpletest/authentication.php
+U   trunk/lib/simpletest/encoding.php
+U   trunk/lib/simpletest/errors.php
+U   trunk/lib/simpletest/expectation.php
+U   trunk/lib/simpletest/invoker.php
+U   trunk/lib/simpletest/parser.php
+U   trunk/lib/simpletest/reflection_php5.php
+U   trunk/lib/simpletest/reporter.php
+U   trunk/lib/simpletest/scorer.php
+U   trunk/lib/simpletest/selector.php
+U   trunk/lib/simpletest/shell_tester.php
+U   trunk/lib/simpletest/tag.php
+U   trunk/lib/simpletest/test_case.php
+U   trunk/lib/simpletest/unit_tester.php
+U   trunk/testapp/modules/unittest/classes/junittestcase.class.php
+U   trunk/testapp/modules/unittest/classes/unittestservice.class.php
+U   trunk/testapp/modules/unittest/classes/utdao.class.php
+U   trunk/testapp/modules/unittest/classes/utdao2.class.php
+A   trunk/testapp/modules/unittest/classes/utdao_conditions.class.php
+U   trunk/testapp/modules/unittest/controllers/dao.classic.php
+U   trunk/testapp/modules/unittest/templates/menu.tpl
+
+
+From laurent at xulfr.org  Sat Oct  7 16:14:12 2006
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Sat, 07 Oct 2006 16:14:12 +0200
+Subject: [Jelix-public] checkin SVN-277 (laurentj)
+Message-ID: <4527B634.mail43F1LVISC@xulfr.org>
+
+laurentj
+2006-10-07 16:14:12 +0200 (Sat, 07 Oct 2006)
+421
+- fix bug #9007 : constructeur PDO : notices sur les param?\195?\168tres user et password quand ils sont inexistants dans la config (ce qui peut ?\195?\170tre le cas quand on utilise sqlite)
+- fix bug #9008 : jDbPDOResultSet::fetchAll() ne fonctionne pas
+- fix bug classe statique dans jDb::testProfil() (Patch #1531 de doubleface)
+- fix bug dans jelix-script : Erreur nom de fichier de config (Patch #1532 de doubleface)
+
+U   trunk/lib/jelix/db/jDb.class.php
+U   trunk/lib/jelix/db/jDbConnection.class.php
+U   trunk/lib/jelix/db/jDbPDOConnection.class.php
+U   trunk/lib/jelix-scripts/scripts.conf.php
+
+
+From laurent at xulfr.org  Sat Oct  7 16:58:44 2006
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Sat, 07 Oct 2006 16:58:44 +0200
+Subject: [Jelix-public] checkin SVN-278 (laurentj)
+Message-ID: <4527C0A4.mail7ZT11VM4W@xulfr.org>
+
+laurentj
+2006-10-07 16:58:44 +0200 (Sat, 07 Oct 2006)
+46
+ajout d'une lib diff et d'un plugin tpl {diff}
+
+U   trunk/build/manifests/jelix-lib.mn
+A   trunk/lib/diff/
+A   trunk/lib/diff/README
+A   trunk/lib/diff/diffhtml.php
+A   trunk/lib/diff/difflib.php
+U   trunk/lib/jelix/CREDITS
+A   trunk/lib/jelix/tpl/plugins/html/function.diff.php
+
+
+From laurent at xulfr.org  Wed Oct 11 22:12:05 2006
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Wed, 11 Oct 2006 22:12:05 +0200
+Subject: [Jelix-public] checkin SVN-279 (laurentj)
+Message-ID: <452D5015.mailIQT11VHC5@xulfr.org>
+
+laurentj
+2006-10-11 22:12:05 +0200 (Wed, 11 Oct 2006)
+114
+int?\195?\169gration de wikirenderer, accessible via la classe jWiki, ou un plugin 'modifier' de template : 'wiki'
+
+U   trunk/build/manifests/jelix-lib.mn
+U   trunk/build/mkmanifest.php
+U   trunk/lib/jelix/forms/jFormsDatasource.class.php
+A   trunk/lib/jelix/tpl/plugins/common/modifier.wiki.php
+U   trunk/lib/jelix/tpl/plugins/html/function.diff.php
+A   trunk/lib/jelix/utils/jWiki.class.php
+A   trunk/lib/wikirenderer/
+A   trunk/lib/wikirenderer/CHANGELOG
+A   trunk/lib/wikirenderer/CREDITS
+A   trunk/lib/wikirenderer/LICENCE
+A   trunk/lib/wikirenderer/WikiRenderer.lib.php
+A   trunk/lib/wikirenderer/rules/
+A   trunk/lib/wikirenderer/rules/classicwr_to_text.php
+A   trunk/lib/wikirenderer/rules/classicwr_to_wr3.php
+A   trunk/lib/wikirenderer/rules/classicwr_to_xhtml.php
+A   trunk/lib/wikirenderer/rules/wr3_to_text.php
+A   trunk/lib/wikirenderer/rules/wr3_to_xhtml.php
+
+
+From laurent at xulfr.org  Thu Oct 12 10:38:51 2006
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Thu, 12 Oct 2006 10:38:51 +0200
+Subject: [Jelix-public] checkin SVN-280 (bballizlife)
+Message-ID: <452DFF1B.mail3171JUP9G@xulfr.org>
+
+bballizlife
+2006-10-12 10:38:51 +0200 (Thu, 12 Oct 2006)
+220
+- patch #1535 : cr?\195?\169ation jAppManager avec m?\195?\169thode clearTemp().
+                renommage du jelix-script clearcache en cleartemp
+                et refactorisation en utilisant jAppManager::clearTemp()
+
+U   trunk/build/manifests/jelix-dev.mn
+U   trunk/build/manifests/jelix-lib.mn
+A   trunk/lib/jelix/utils/jAppManager.class.php
+U   trunk/lib/jelix/utils/jFile.class.php
+D   trunk/lib/jelix-scripts/commands/clearcache.cmd.php
+A   trunk/lib/jelix-scripts/commands/cleartemp.cmd.php
+
+
+From laurent at xulfr.org  Thu Oct 12 11:06:13 2006
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Thu, 12 Oct 2006 11:06:13 +0200
+Subject: [Jelix-public] checkin SVN-281 (bballizlife)
+Message-ID: <452E0585.mail5GI1GGFJ1@xulfr.org>
+
+bballizlife
+2006-10-12 11:06:12 +0200 (Thu, 12 Oct 2006)
+86
+patch #1548 : ajout des methodes addXSLStyleSheet et addCSSStyleSheet sur jResponseXml
+
+U   trunk/lib/jelix/core/response/jResponseXml.class.php
+
+
+From laurent at xulfr.org  Tue Oct 17 23:46:51 2006
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Tue, 17 Oct 2006 23:46:51 +0200
+Subject: [Jelix-public] checkin SVN-282 (bballizlife)
+Message-ID: <45354F4B.mailHP1S801W@xulfr.org>
+
+bballizlife
+2006-10-17 23:46:50 +0200 (Tue, 17 Oct 2006)
+179
+prise en compte du rapport de bug #9109 : inversion du <title> et de la d?\195?\169claration du charset dans la g?\195?\169n?\195?\169ration de la balise <head> avec jResponseHtml
+
+U   trunk/lib/jelix/core/response/jResponseHtml.class.php
+
+
+From laurent at xulfr.org  Wed Oct 18 00:15:52 2006
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Wed, 18 Oct 2006 00:15:52 +0200
+Subject: [Jelix-public] checkin SVN-283 (bballizlife)
+Message-ID: <45355618.mail3IR11SORX@xulfr.org>
+
+bballizlife
+2006-10-18 00:15:51 +0200 (Wed, 18 Oct 2006)
+91
+modification de jUrl::escape() afin de supprimer aussi les accents des lettres en majuscule
+
+U   trunk/lib/jelix/core/url/jUrl.class.php
+
+
+From laurent at xulfr.org  Fri Oct 20 14:50:58 2006
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Fri, 20 Oct 2006 14:50:58 +0200
+Subject: [Jelix-public] checkin SVN-284 (bballizlife)
+Message-ID: <4538C632.mail5VP1NVYTZ@xulfr.org>
+
+bballizlife
+2006-10-20 14:50:57 +0200 (Fri, 20 Oct 2006)
+83
+premi?\195?\168re impl?\195?\169mentation de jResponseRss20, non finalis?\195?\169e
+
+U   trunk/build/manifests/jelix-lib.mn
+U   trunk/lib/jelix/core/defaultconfig.ini.php
+A   trunk/lib/jelix/core/response/jResponseRss20.class.php
+A   trunk/lib/jelix/utils/jRss20Item.class.php
+A   trunk/lib/jelix-modules/jelix/templates/rss20items.tpl
+
+
+From laurent at xulfr.org  Tue Oct 24 11:42:18 2006
+From: laurent at xulfr.org (Laurent)
+Date: Tue, 24 Oct 2006 11:42:18 +0200
+Subject: [Jelix-public] Nouveau site developer.jelix.org
+Message-ID: <453DDFFA.4040107@xulfr.org>
+
+Bonjour,
+
+en excluclu, voici http://developer.jelix.org (ou http://dev.jelix.org 
+pour les intimes)
+
+C'est le nouveau lieu pour y poster les bugs, les propositions 
+d'am?liorations etc... C'est aussi le lieu o? on peut se balader dans 
+les sources, conna?tre l'avancement etc. En clair, ?a repose sur "trac".
+
+Toutefois le d?pot subversion reste sur developer.berlios.de, ainsi que 
+la mailing-list et les t?l?chargements.
+
+Les pages du wiki de www.jelix.org con?ernant la partie hackersmanual, 
+vont ?tre bascul?es sur developer.jelix.org. Les bugs, features requests 
+et patches ont d?j? ?t? migr?s (il n'y a plus rien donc sur berlios.de).
+
+
+Si vous trouvez des probl?mes sur le site, qu'il soit de nature 
+fonctionnel ou graphique, si vous trouvez des trucs trop moche et pas 
+lisible, faite le moi savoir.. (modifier les templates de trac, c'est 
+pas ?vident :-) ).  (En particulier, Sylvain, si tu as des conseils ;-) )
+
+
+Laurent
+
+
+From sylvain.lelievre at laposte.net  Tue Oct 24 15:51:27 2006
+From: sylvain.lelievre at laposte.net (=?windows-1252?Q?Sylvain_Leli=E8vre?=)
+Date: Tue, 24 Oct 2006 15:51:27 +0200
+Subject: [Jelix-public] Nouveau site developer.jelix.org
+In-Reply-To: <453DDFFA.4040107@xulfr.org>
+References: <453DDFFA.4040107@xulfr.org>
+Message-ID: <453E1A5F.6020408@laposte.net>
+
+Laurent a ?crit :
+> Bonjour,
+> 
+> en excluclu, voici http://developer.jelix.org (ou http://dev.jelix.org 
+> pour les intimes)
+> 
+> Si vous trouvez des probl?mes sur le site, qu'il soit de nature 
+> fonctionnel ou graphique, si vous trouvez des trucs trop moche et pas 
+> lisible, faite le moi savoir.. (modifier les templates de trac, c'est 
+> pas ?vident :-) ).  (En particulier, Sylvain, si tu as des conseils ;-) )
+> 
+J'ai jet? un rapide coup d'?il, pour l'instant je n'ai rien ? redire. Je 
+trouve que le design a ?t? tr?s bien int?gr? dans trac, et ?a fait tr?s 
+propre. Je vais regarder plus en d?tail et je vous tiens au courant.
+
+a+
+
+-- 
+Sylvain Leli?vre
+
+
+From laurent at xulfr.org  Tue Oct 24 17:52:43 2006
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Tue, 24 Oct 2006 17:52:43 +0200
+Subject: [Jelix-public] checkin SVN-285 (laurentj)
+Message-ID: <453E36CB.mailDQC119BOD@xulfr.org>
+
+laurentj
+2006-10-24 17:52:42 +0200 (Tue, 24 Oct 2006)
+75
+correction des fichiers de conf dans l'appli demo con?\195?\167ernant jauth
+
+U   trunk/demoxul/var/config/index/auth.plugin.ini.php
+U   trunk/demoxul/var/config/jsonrpc/auth.plugin.ini.php
+U   trunk/demoxul/var/config/rdf/auth.plugin.ini.php
+U   trunk/demoxul/var/config/xmlrpc/auth.plugin.ini.php
+U   trunk/lib/jelix/auth/jAuth.class.php
+U   trunk/lib/jelix-modules/jxauth/controllers/login.classic.php
+U   trunk/lib/jelix-modules/jxauth/plugins/auth/auth.plugin.ini.php.dist
+
+
+From laurent at xulfr.org  Tue Oct 31 01:31:12 2006
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Tue, 31 Oct 2006 01:31:12 +0100
+Subject: [Jelix-public] checkin SVN-286 (laurentj)
+Message-ID: <45469950.mail6Z61CYHJ2@xulfr.org>
+
+laurentj
+2006-10-31 01:31:11 +0100 (Tue, 31 Oct 2006)
+63
+ajout d'une classe d'envoi de mail bas?\195?\169e sur phpmailer
+
+U   trunk/lib/jelix/core/defaultconfig.ini.php
+A   trunk/lib/jelix/utils/jMailer.class.php
+A   trunk/lib/jelix/utils/jSmtp.class.php
+U   trunk/lib/jelix-modules/jelix/locales/en_US/errors.ISO-8859-1.properties
+U   trunk/lib/jelix-modules/jelix/locales/fr_FR/errors.ISO-8859-1.properties
+U   trunk/lib/jelix-modules/jelix/locales/fr_FR/errors.UTF-8.properties
+U   trunk/lib/jelix-scripts/templates/var/config/defaultconfig.ini.php.tpl
+
+

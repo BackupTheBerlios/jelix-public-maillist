@@ -1,0 +1,135 @@
+From laurent at xulfr.org  Sun Jun  1 00:30:50 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Sun, 01 Jun 2008 00:30:50 +0200
+Subject: [Jelix-public] checkin SVN-974 (laurentj)
+Message-ID: <4841D19A.mailE7H128ZI5@xulfr.org>
+
+laurentj
+2008-06-01 00:30:49 +0200 (Sun, 01 Jun 2008)
+46
+updated wikirenderer to its last trunk version
+
+U   trunk/lib/wikirenderer/VERSION
+U   trunk/lib/wikirenderer/WikiRenderer.lib.php
+U   trunk/lib/wikirenderer/rules/classicwr_to_text.php
+U   trunk/lib/wikirenderer/rules/classicwr_to_wr3.php
+U   trunk/lib/wikirenderer/rules/classicwr_to_xhtml.php
+U   trunk/lib/wikirenderer/rules/wr3_to_docbook.php
+U   trunk/lib/wikirenderer/rules/wr3_to_text.php
+U   trunk/lib/wikirenderer/rules/wr3_to_xhtml.php
+
+
+From laurent at xulfr.org  Mon Jun  2 14:43:38 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Mon, 02 Jun 2008 14:43:38 +0200
+Subject: [Jelix-public] checkin SVN-975 (laurentj)
+Message-ID: <4843EAFA.mailOQB1MYH0U@xulfr.org>
+
+laurentj
+2008-06-02 14:43:38 +0200 (Mon, 02 Jun 2008)
+22
+Release of Jelix 1.0.4
+
+A   tags/release_1.0.4/
+U   tags/release_1.0.4/lib/jelix/VERSION
+U   tags/release_1.0.4/testapp/VERSION
+
+
+From laurent at xulfr.org  Wed Jun  4 23:43:50 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Wed, 04 Jun 2008 23:43:50 +0200
+Subject: [Jelix-public] checkin SVN-976 (laurentj)
+Message-ID: <48470C96.mailAB11690L@xulfr.org>
+
+laurentj
+2008-06-04 23:43:50 +0200 (Wed, 04 Jun 2008)
+102
+performance improvement: the check of the temp dir is now made when creating the cache of the ini file
+
+U   trunk/lib/jelix/core/jConfigCompiler.class.php
+U   trunk/lib/jelix/core/jCoordinator.class.php
+
+
+From laurent at xulfr.org  Fri Jun  6 16:44:58 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Fri, 06 Jun 2008 16:44:58 +0200
+Subject: [Jelix-public] checkin SVN-977 (bastnic)
+Message-ID: <48494D6A.mailDNG11NEOS@xulfr.org>
+
+bastnic
+2008-06-06 16:44:57 +0200 (Fri, 06 Jun 2008)
+59
+error on the exception's selector in modifier.jdatetime.php
+
+U   trunk/lib/jelix/plugins/tpl/common/modifier.jdatetime.php
+
+
+From laurent at xulfr.org  Fri Jun  6 16:46:29 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Fri, 06 Jun 2008 16:46:29 +0200
+Subject: [Jelix-public] checkin SVN-978 (bastnic)
+Message-ID: <48494DC5.mailDTG1UYVE0@xulfr.org>
+
+bastnic
+2008-06-06 16:46:29 +0200 (Fri, 06 Jun 2008)
+59
+error on the exception's selector in modifier.jdatetime.php
+
+U   branches/1.0.x/lib/jelix/plugins/tpl/common/modifier.jdatetime.php
+
+
+From laurent at xulfr.org  Fri Jun  6 16:49:45 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Fri, 06 Jun 2008 16:49:45 +0200
+Subject: [Jelix-public] checkin SVN-979 (bastnic)
+Message-ID: <48494E89.mailE1011XMOL@xulfr.org>
+
+bastnic
+2008-06-06 16:49:45 +0200 (Fri, 06 Jun 2008)
+43
+login tpl of jauth : <label> weren't closed
+
+U   branches/1.0.x/lib/jelix-modules/jauth/templates/login.form.tpl
+
+
+From laurent at xulfr.org  Fri Jun  6 16:50:34 2008
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Fri, 06 Jun 2008 16:50:34 +0200
+Subject: [Jelix-public] checkin SVN-980 (bastnic)
+Message-ID: <48494EBA.mailE3J1GQ3B5@xulfr.org>
+
+bastnic
+2008-06-06 16:50:34 +0200 (Fri, 06 Jun 2008)
+43
+login tpl of jauth : <label> weren't closed
+
+U   trunk/lib/jelix-modules/jauth/templates/login.form.tpl
+
+
+From laurent at xulfr.org  Sun Jun  8 11:25:24 2008
+From: laurent at xulfr.org (laurent)
+Date: Sun, 08 Jun 2008 11:25:24 +0200
+Subject: [Jelix-public] New mailing list / Nouvelle mailing list
+Message-ID: <484BA584.4040705@xulfr.org>
+
+Hello
+
+a new mailing list has been created : jelix-dev . With this mailing 
+list, you receive all automatic mails :
+
+- commits
+- nightlies building
+- results of automatic unit tests
+- results of builds of PDFs and API reference
+
+And it is dedicated also for technical discussion about development of 
+jelix. So all members of the jelix team and active contributors are 
+encouraged to subscribe to this mailing-list.
+
+Jelix-public is now dedicated exclusively for discussions about the use 
+of Jelix.
+
+Laurent
+
+
+

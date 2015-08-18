@@ -1,0 +1,145 @@
+From laurent at xulfr.org  Thu Feb  2 22:44:18 2006
+From: laurent at xulfr.org (Laurent Jouanneau)
+Date: Thu, 02 Feb 2006 22:44:18 +0100
+Subject: [Jelix-public] Nouveau forum
+Message-ID: <43E27D32.1030500@xulfr.org>
+
+Bonjour,
+
+J'ai install? en d?but de semaine un forum : 
+http://www.jelix.org/forums/index.php
+
+a+
+
+
+From laurent at xulfr.org  Mon Feb  6 09:47:11 2006
+From: laurent at xulfr.org (Laurent)
+Date: Mon, 06 Feb 2006 09:47:11 +0100
+Subject: [Jelix-public] checkins du 31/01 au 06/02
+Message-ID: <43E70D0F.9000809@xulfr.org>
+
+Bonjour,
+
+Comme d'hab, voici les nouveaut?s de la semaine pass?e :
+
+- fin du d?veloppement du moteur d'url significatif, qui permet donc de 
+faire un mapping urls cools <-> actions.
+- ajout de tests unitaires pour tester le moteur d'urls.
+- ?criture de la doc sur la configuration de ce mapping d'url, et de 
+l'usage de jUrl et du plugin de template correspondant :
+
+http://www.jelix.org/doku.php?id=manuel:urls
+http://www.jelix.org/doku.php?id=manuel:urls:significant
+
+J'ai ?cris ?a vite fait. Donc si vous voyez des coquilles ou si vous 
+voulez remanier des phrases qui ne sont pas tr?s lisibles ou trop 
+compliqu?es, n'h?sitez pas ? cliquer sur le bouton "?diter cette page" ;-)
+
+Cette semaine, je m'attaque au syst?me de formulaire.
+
+a+
+
+Laurent
+
+
+From laurent at xulfr.org  Mon Feb  6 10:39:42 2006
+From: laurent at xulfr.org (Laurent)
+Date: Mon, 06 Feb 2006 10:39:42 +0100
+Subject: [Jelix-public] checkins du 31/01 au 06/02
+In-Reply-To: <43E70D0F.9000809@xulfr.org>
+References: <43E70D0F.9000809@xulfr.org>
+Message-ID: <43E7195E.8030506@xulfr.org>
+
+J'ai oubli? de signaler deux autres nouveaut?s :
+
+- ajout du modificateur jdatetime pour le moteur de template jTpl, par 
+Loic. Permet donc de formater une date en indiquant le format utilis?. 
+Utilise la classe jDateTime.
+
+- ajout d'une classe, jLog, pour logger des choses dans un fichier :
+
+    jLog::dump($variable, "message"); pour faire un dump dans une variable
+    jLog::log("message") pour ecrire un simple message
+
+
+Le contenu est ajout? dans un fichier situ? dans var/log de 
+l'application. Dans la configuration, il y a une nouvelle section
+
+[logfiles]
+default=messages.log
+
+-> alias = fichier de log
+Vous pouvez donc avoir plusieurs fichiers de log.
+
+on peut ajouter un param?tre supplementaires ? dump et log, indiquant 
+l'alias du fichier dans lequel on veut stocker. Par d?faut, il utilise 
+l'alias "default".
+
+
+Enfin pour les contributeurs : j'ai ajout? au niveau de l'arbre 
+subversion des propri?t?s svn:ignore pour ignorer les fichiers 
+temporaires et autres fichiers de conf personnalis?s. Ils n'apparaissent 
+donc plus lors d'un svn status ;-)
+
+a+
+
+
+Laurent wrote:
+> Bonjour,
+> 
+> Comme d'hab, voici les nouveaut?s de la semaine pass?e :
+> 
+> - fin du d?veloppement du moteur d'url significatif, qui permet donc de 
+> faire un mapping urls cools <-> actions.
+> - ajout de tests unitaires pour tester le moteur d'urls.
+> - ?criture de la doc sur la configuration de ce mapping d'url, et de 
+> l'usage de jUrl et du plugin de template correspondant :
+> 
+> http://www.jelix.org/doku.php?id=manuel:urls
+> http://www.jelix.org/doku.php?id=manuel:urls:significant
+> 
+> J'ai ?cris ?a vite fait. Donc si vous voyez des coquilles ou si vous 
+> voulez remanier des phrases qui ne sont pas tr?s lisibles ou trop 
+> compliqu?es, n'h?sitez pas ? cliquer sur le bouton "?diter cette page" ;-)
+> 
+> Cette semaine, je m'attaque au syst?me de formulaire.
+> 
+> a+
+> 
+> Laurent
+> _______________________________________________
+> Jelix-public mailing list
+> Jelix-public at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/jelix-public
+> 
+> 
+
+
+
+From laurent at xulfr.org  Mon Feb 20 00:57:31 2006
+From: laurent at xulfr.org (Laurent Jouanneau)
+Date: Mon, 20 Feb 2006 00:57:31 +0100
+Subject: [Jelix-public] version 1.0 alpha 1
+Message-ID: <43F905EB.2050008@xulfr.org>
+
+Bonjour,
+
+Avec quelques retards sur le calendrier, la version 1.0 alpha1 est sortie.
+
+Voir un r?capitulatif de toutes les modifications apport?es depuis la 
+1.0pre-alpha. http://www.jelix.org/doku.php?id=changelog
+
+Le framework en lui m?me est utilisable. Il manque en fait surtout 
+quelques trucs "p?riph?rique" comme jForms le syst?me de formulaire (en 
+cours de d?veloppement) et jAcl pour les syst?me de droit.
+
+Des retours sur son utilisation seraient vraiment appr?ci?s. N'h?sitez 
+donc pas ? tester le framework et faire part de vos probl?mes (ou de 
+votre enthousiasme :-) sur la mailing list ou le forum 
+(http://www.jelix.org/forums/)
+
+merci
+
+Laurent
+
+

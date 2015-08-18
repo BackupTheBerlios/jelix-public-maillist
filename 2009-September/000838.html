@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Jelix-public] setData sur upload
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/jelix-public/2009-September/index.html" >
+   <LINK REL="made" HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20setData%20sur%20upload&In-Reply-To=%3C39d56f980909140107s3c91397co2052ae4c32355f58%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000837.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Jelix-public] setData sur upload</H1>
+    <B>steven j</B> 
+    <A HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20setData%20sur%20upload&In-Reply-To=%3C39d56f980909140107s3c91397co2052ae4c32355f58%40mail.gmail.com%3E"
+       TITLE="[Jelix-public] setData sur upload">sjehann at gmail.com
+       </A><BR>
+    <I>Mon Sep 14 10:07:23 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000837.html">[Jelix-public] setData sur upload
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#838">[ date ]</a>
+              <a href="thread.html#838">[ thread ]</a>
+              <a href="subject.html#838">[ subject ]</a>
+              <a href="author.html#838">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Salut, je dirais qu'il faut utiliser 2 fichier form.xml, un pour l'upload et
+un pour l'edition.
+Et ducoup ne pas utiliser jControllerDaoCrud, tu vas devoir faire ton propre
+controlleur.
+
+Le 13 septembre 2009 17:43, Mathieu Piette &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/jelix-public">mathieu.piette at gmail.com</A>&gt; a
+&#233;crit :
+
+&gt;<i> Bonjour,
+</I>&gt;<i>
+</I>&gt;<i> J'ai un module de mon application qui permet d'uploader des fichiers.
+</I>&gt;<i> J'ai donc un formulaire qui contient un champ de type &quot;upload&quot;, ainsi
+</I>&gt;<i> qu'un champ texte qui s'appelle &quot;description&quot;.
+</I>&gt;<i>
+</I>&gt;<i> J'utilise &quot;b&#234;tement&quot; un CRUD (avec donc un contr&#244;leur qui extends
+</I>&gt;<i> jControllerDaoCrud) et c'est la mise &#224; jour des enregistrement qui me
+</I>&gt;<i> pose probl&#232;me.
+</I>&gt;<i>
+</I>&gt;<i> Dans la page de mise &#224; jour, j'ai mon formulaire avec ma description qui
+</I>&gt;<i> apparait bien, mais j'ai aussi mon champ upload, qui est vide.
+</I>&gt;<i>
+</I>&gt;<i> Je voudrais pouvoir mettre &#224; jour tous les champs de mes
+</I>&gt;<i> enregistrements, sauf le nom du fichier, qui ne change pas une fois
+</I>&gt;<i> qu'il est upload&#233;. Donc:
+</I>&gt;<i>
+</I>&gt;<i>      * soit je d&#233;sactive mon champ upload, mais alors l&#224; il n'est pas
+</I>&gt;<i>        content parce que c'est un champ obligatoire,
+</I>&gt;<i>      * soit je pr&#233;remplis le champ upload avec le nom du fichier qui
+</I>&gt;<i>        existe d&#233;j&#224;. Mais l&#224; &#231;a amrche pas non plus parce que, de un,
+</I>&gt;<i>        l'utilisateur s'en fout de voir le nom du fichier s'il ne peut
+</I>&gt;<i>        pas le modifier, et de deux, je voudrais que l'utilisateur ne
+</I>&gt;<i>        puisse pas modifier le nom du fichier.
+</I>&gt;<i>
+</I>&gt;<i> En r&#233;sum&#233;, si on veut pouvoir mettre &#224; jour des enregistrements qui
+</I>&gt;<i> contiennent un nom de fichier, on fait comment?
+</I>&gt;<i>
+</I>&gt;<i> Merci!
+</I>&gt;<i>
+</I>&gt;<i> --
+</I>&gt;<i> Mathieu.
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Jelix-public mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/jelix-public">Jelix-public at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/jelix-public">https://lists.berlios.de/mailman/listinfo/jelix-public</A>
+</I>&gt;<i>
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/jelix-public/attachments/20090914/e3870373/attachment.html">https://lists.berlios.de/pipermail/jelix-public/attachments/20090914/e3870373/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000837.html">[Jelix-public] setData sur upload
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#838">[ date ]</a>
+              <a href="thread.html#838">[ thread ]</a>
+              <a href="subject.html#838">[ subject ]</a>
+              <a href="author.html#838">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/jelix-public">More information about the Jelix-public
+mailing list</a><br>
+</body></html>

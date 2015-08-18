@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Jelix-public] checkin SVN-879 (laurentj)
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/jelix-public/2008-April/index.html" >
+   <LINK REL="made" HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20checkin%20SVN-879%20%28laurentj%29&In-Reply-To=%3C4801C45F.mailKPP11L49Y%40xulfr.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000705.html">
+   <LINK REL="Next"  HREF="000707.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Jelix-public] checkin SVN-879 (laurentj)</H1>
+    <B>laurent at xulfr.org</B> 
+    <A HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20checkin%20SVN-879%20%28laurentj%29&In-Reply-To=%3C4801C45F.mailKPP11L49Y%40xulfr.org%3E"
+       TITLE="[Jelix-public] checkin SVN-879 (laurentj)">laurent at xulfr.org
+       </A><BR>
+    <I>Sun Apr 13 10:29:19 CEST 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000705.html">[Jelix-public] checkin SVN-878 (bballizlife)
+</A></li>
+        <LI>Next message: <A HREF="000707.html">[Jelix-public] checkin SVN-880 (bastnic)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#706">[ date ]</a>
+              <a href="thread.html#706">[ thread ]</a>
+              <a href="subject.html#706">[ subject ]</a>
+              <a href="author.html#706">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>laurentj
+2008-04-13 10:29:17 +0200 (Sun, 13 Apr 2008)
+54
+ticket #377: added soap support. p=Sylvain de Vathaire
+
+U   trunk/build/manifests/jelix-dev.mn
+U   trunk/build/manifests/jelix-lib.mn
+U   trunk/build/manifests/testapp.mn
+U   trunk/lib/jelix/core/defaultconfig.ini.php
+A   trunk/lib/jelix/core/jSoapCoordinator.class.php
+A   trunk/lib/jelix/core/request/jSoapRequest.class.php
+A   trunk/lib/jelix/core/response/jResponseSoap.class.php
+A   trunk/lib/jelix/utils/jWSDL.class.php
+A   trunk/lib/jelix-modules/jWSDL/
+A   trunk/lib/jelix-modules/jWSDL/controllers/
+A   trunk/lib/jelix-modules/jWSDL/controllers/WSDL.classic.php
+A   trunk/lib/jelix-modules/jWSDL/locales/
+A   trunk/lib/jelix-modules/jWSDL/locales/en_EN/
+A   trunk/lib/jelix-modules/jWSDL/locales/en_EN/errors.ISO-8859-1.properties
+A   trunk/lib/jelix-modules/jWSDL/locales/en_EN/errors.UTF-8.properties
+A   trunk/lib/jelix-modules/jWSDL/locales/en_US/
+A   trunk/lib/jelix-modules/jWSDL/locales/en_US/errors.ISO-8859-1.properties
+A   trunk/lib/jelix-modules/jWSDL/locales/en_US/errors.UTF-8.properties
+A   trunk/lib/jelix-modules/jWSDL/locales/fr_FR/
+A   trunk/lib/jelix-modules/jWSDL/locales/fr_FR/errors.ISO-8859-1.properties
+A   trunk/lib/jelix-modules/jWSDL/locales/fr_FR/errors.UTF-8.properties
+A   trunk/lib/jelix-modules/jWSDL/module.xml
+A   trunk/lib/jelix-modules/jWSDL/templates/
+A   trunk/lib/jelix-modules/jWSDL/templates/soap_doc.tpl
+A   trunk/lib/jelix-scripts/templates/var/config/soap/
+A   trunk/lib/jelix-scripts/templates/var/config/soap/config.ini.php.tpl
+A   trunk/lib/jelix-scripts/templates/www/soap.php.tpl
+U   trunk/lib/wshelper/IPReflectionCommentParser.class.php
+U   trunk/lib/wshelper/IPReflectionMethod.class.php
+U   trunk/lib/wshelper/IPXMLSchema.class.php
+U   trunk/lib/wshelper/WSDLStruct.class.php
+U   trunk/lib/wshelper/jelix.diff
+A   trunk/lib/wshelper/unpatched/
+A   trunk/lib/wshelper/unpatched/IPPhpDoc.class.php
+A   trunk/lib/wshelper/unpatched/IPReflectionClass.class.php
+A   trunk/lib/wshelper/unpatched/IPReflectionCommentParser.class.php
+A   trunk/lib/wshelper/unpatched/IPReflectionMethod.class.php
+A   trunk/lib/wshelper/unpatched/IPReflectionProperty.class.php
+A   trunk/lib/wshelper/unpatched/IPXMLSchema.class.php
+A   trunk/lib/wshelper/unpatched/README.jelix
+A   trunk/lib/wshelper/unpatched/WSDLException.class.php
+A   trunk/lib/wshelper/unpatched/WSDLStruct.class.php
+A   trunk/lib/wshelper/unpatched/WSException.class.php
+A   trunk/lib/wshelper/unpatched/WSHelper.class.php
+A   trunk/lib/wshelper/update_diff.sh
+A   trunk/testapp/modules/jelix_tests/tests/core.soap.html.php
+A   trunk/testapp/modules/testapp/controllers/clientSoap.classic.php
+A   trunk/testapp/modules/testapp/controllers/soap.soap.php
+A   trunk/testapp/modules/testapp/templates/soap.tpl
+U   trunk/testapp/modules/testapp/templates/sommaire.tpl
+A   trunk/testapp/var/config/soap/
+A   trunk/testapp/var/config/soap/config.ini.php
+A   trunk/testapp/www/soap.php
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000705.html">[Jelix-public] checkin SVN-878 (bballizlife)
+</A></li>
+	<LI>Next message: <A HREF="000707.html">[Jelix-public] checkin SVN-880 (bastnic)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#706">[ date ]</a>
+              <a href="thread.html#706">[ thread ]</a>
+              <a href="subject.html#706">[ subject ]</a>
+              <a href="author.html#706">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/jelix-public">More information about the Jelix-public
+mailing list</a><br>
+</body></html>

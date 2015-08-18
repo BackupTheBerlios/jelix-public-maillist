@@ -1,0 +1,687 @@
+From laurent at xulfr.org  Wed Jan  3 21:41:26 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Wed, 03 Jan 2007 21:41:26 +0100
+Subject: [Jelix-public] checkin SVN-341 (laurentj)
+Message-ID: <459C14F6.mailA8P11GG2G@xulfr.org>
+
+laurentj
+2007-01-03 21:41:26 +0100 (Wed, 03 Jan 2007)
+49
+fix ticket #70 : mauvaise reconnaissance de macos
+
+U   trunk/lib/jelix/core/jConfigCompiler.class.php
+
+
+From laurent at xulfr.org  Wed Jan  3 21:56:20 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Wed, 03 Jan 2007 21:56:20 +0100
+Subject: [Jelix-public] checkin SVN-342 (laurentj)
+Message-ID: <459C1874.mailBCW112RV8@xulfr.org>
+
+laurentj
+2007-01-03 21:56:19 +0100 (Wed, 03 Jan 2007)
+100
+fix ticket #74 : ajout d'une exception lors d'une mauvaise connection ?\195?\160 une base postgresql
+
+U   trunk/lib/jelix/db/drivers/postgresql/jDbConnection.postgresql.class.php
+
+
+From laurent at xulfr.org  Wed Jan  3 22:14:58 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Wed, 03 Jan 2007 22:14:58 +0100
+Subject: [Jelix-public] checkin SVN-343 (laurentj)
+Message-ID: <459C1CD2.mailD0N11I6OX@xulfr.org>
+
+laurentj
+2007-01-03 22:14:57 +0100 (Wed, 03 Jan 2007)
+198
+jZone::processZone renomm?\195?\169 en jZone::get, jZone::clearZone en jZone::clear, et jZone::clearAllZone en jZone::clearAll. les anciennes m?\195?\169thodes existent toujours mais sont deprecated
+
+U   trunk/lib/jelix/tpl/jTpl.class.php
+U   trunk/lib/jelix/tpl/plugins/common/function.zone.php
+U   trunk/lib/jelix/utils/jZone.class.php
+
+
+From laurent at xulfr.org  Sun Jan  7 13:58:57 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Sun, 07 Jan 2007 13:58:57 +0100
+Subject: [Jelix-public] checkin SVN-344 (bballizlife)
+Message-ID: <45A0EE91.mail2ZV11T4WP@xulfr.org>
+
+bballizlife
+2007-01-07 13:58:57 +0100 (Sun, 07 Jan 2007)
+60
+fix ticket #76 : erreur dans la regex de jFilter::isEmail()
+
+U   trunk/lib/jelix/utils/jFilter.class.php
+
+
+From laurent at xulfr.org  Wed Jan 10 00:07:24 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Wed, 10 Jan 2007 00:07:24 +0100
+Subject: [Jelix-public] checkin SVN-345 (laurentj)
+Message-ID: <45A4202C.mail6ED11AWGZ@xulfr.org>
+
+laurentj
+2007-01-10 00:07:23 +0100 (Wed, 10 Jan 2007)
+416
+-amelioration des scripts de builds : nouvelle declaration avanc?\195?\169e des options, ajout des switch -h et -ini
+-amelioration du preprocesseur : ajout de #ifnot et #elseif
+-prise en compte des caches de bytecode type apc pour generer le cache de config en php ou ini    
+-fix bug regression : le fichier de cache de la config n'?\195?\169tait pas pris en compte
+-remplacement des #ifdef par #if quand necessaire
+
+U   trunk/build/buildapp.php
+U   trunk/build/buildjbt.php
+U   trunk/build/buildjelix.php
+U   trunk/build/buildjtpl.php
+U   trunk/build/buildmodules.php
+U   trunk/build/lib/jBuild.inc.php
+U   trunk/build/lib/preprocessor.lib.php
+U   trunk/build/manifests/jelix-lib.mn
+U   trunk/build/manifests/jelix-no-opt.mn
+U   trunk/lib/jelix/core/jConfig.class.php
+U   trunk/lib/jelix/core/jConfigCompiler.class.php
+U   trunk/lib/jelix/core/jController.class.php
+U   trunk/lib/jelix/core/jSelector.class.php
+U   trunk/lib/jelix/core/response/jResponseJson.class.php
+U   trunk/lib/jelix/core/url/jUrlEngine.significant.class.php
+U   trunk/lib/jelix/dao/jDaoCompiler.class.php
+U   trunk/lib/jelix/db/jDb.class.php
+U   trunk/lib/jelix/events/jEvent.class.php
+U   trunk/lib/jelix/events/jEventListenerFactory.class.php
+U   trunk/lib/jelix/init.php
+U   trunk/lib/jelix/tpl/jTpl.class.php
+U   trunk/lib/jelix/tpl/jTplCompiler.class.php
+U   trunk/lib/jelix/utils/jDateTime.class.php
+U   trunk/lib/jelix/utils/jFilter.class.php
+U   trunk/lib/jelix/utils/jJsonRpc.class.php
+U   trunk/lib/jelix/utils/jZone.class.php
+
+
+From laurent at xulfr.org  Wed Jan 10 11:40:07 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Wed, 10 Jan 2007 11:40:07 +0100
+Subject: [Jelix-public] checkin SVN-346 (laurentj)
+Message-ID: <45A4C287.mail1PJ1VLIMH@xulfr.org>
+
+laurentj
+2007-01-10 11:40:07 +0100 (Wed, 10 Jan 2007)
+48
+fix ticket #79 : var naming error in atom10.tpl 
+
+U   trunk/lib/jelix-modules/jelix/templates/atom10.tpl
+
+
+From laurent at xulfr.org  Wed Jan 10 13:44:46 2007
+From: laurent at xulfr.org (laurent)
+Date: Wed, 10 Jan 2007 13:44:46 +0100
+Subject: [Jelix-public] =?iso-8859-1?q?anglais_ou_fran=E7ais?=
+Message-ID: <45A4DFBE.4050205@xulfr.org>
+
+Bonjour la liste !
+
+Vous avez sans doute remarqu? tout ce spam infernale en provenance 
+direct du d?pot subversion :-)
+
+Dans une optique de conqu?te du monde, et ? l'approche imminente de la 
+sortie de la beta, on est en train de se demander si on allait pas 
+commencer ? mettre les messages de commit en anglais, et pourquoi pas 
+aussi les tickets sur http://developer.jelix.org.
+
+
+Qu'en pensez vous ? On reste en Fran?ais ? on fait en Anglais ? les deux ?
+
+Rassurez vous, la documentation restera toujours en fran?ais (et en 
+anglais quand on a le temps). idem pour le forum o? il y r?gne une 
+activit? folle :-)
+
+
+Laurent
+
+
+From laurent at xulfr.org  Wed Jan 10 13:53:19 2007
+From: laurent at xulfr.org (laurent)
+Date: Wed, 10 Jan 2007 13:53:19 +0100
+Subject: [Jelix-public] =?iso-8859-1?q?anglais_ou_fran=E7ais?=
+Message-ID: <45A4E1BF.2050303@xulfr.org>
+
+Bonjour la liste !
+
+Vous avez sans doute remarqu? tout ce spam infernale en provenance 
+direct du d?pot subversion :-)
+
+Dans une optique de conqu?te du monde, et ? l'approche imminente de la 
+sortie de la beta, on est en train de se demander si on allait pas 
+commencer ? mettre les messages de commit en anglais, et pourquoi pas 
+aussi les tickets sur http://developer.jelix.org.
+
+
+Qu'en pensez vous ? On reste en Fran?ais ? on fait en Anglais ? les deux ?
+
+Rassurez vous, la documentation restera toujours en fran?ais (et en 
+anglais quand on a le temps). idem pour le forum o? il y r?gne une 
+activit? folle :-)
+
+
+Laurent
+
+
+From david.tourel at laposte.net  Wed Jan 10 15:22:18 2007
+From: david.tourel at laposte.net (David Tourel)
+Date: Wed, 10 Jan 2007 15:22:18 +0100
+Subject: [Jelix-public] =?iso-8859-1?q?anglais_ou_fran=E7ais?=
+In-Reply-To: <45A4E1BF.2050303@xulfr.org>
+References: <45A4E1BF.2050303@xulfr.org>
+Message-ID: <45A4F69A.8070406@laposte.net>
+
+Bonjour,
+
+Suivant fr?quemment le d?veloppement de Jelix d'un oeil curieux mais 
+attentif, et pour l'instant totalement inactif pour son avenir, je me 
+permet quand m?me de r?pondre ? la question.
+
+Sans aucun doute, pour voir grand il faut utiliser l'anglais, c'est pas 
+un secret :-)
+
+apr?s, personnellement j'appr?cie beaucoup le fait que Jelix revendique 
+un peu le cot? fran?ais.
+
+je vote en faveur de l'anglais, avec une doc restant au moins bilingue 
+fr/en.
+
+David
+laurent a ?crit :
+> Bonjour la liste !
+>
+> Vous avez sans doute remarqu? tout ce spam infernale en provenance 
+> direct du d?pot subversion :-)
+>
+> Dans une optique de conqu?te du monde, et ? l'approche imminente de la 
+> sortie de la beta, on est en train de se demander si on allait pas 
+> commencer ? mettre les messages de commit en anglais, et pourquoi pas 
+> aussi les tickets sur http://developer.jelix.org.
+>
+>
+> Qu'en pensez vous ? On reste en Fran?ais ? on fait en Anglais ? les deux ?
+>
+> Rassurez vous, la documentation restera toujours en fran?ais (et en 
+> anglais quand on a le temps). idem pour le forum o? il y r?gne une 
+> activit? folle :-)
+>
+>
+> Laurent
+> _______________________________________________
+> Jelix-public mailing list
+> Jelix-public at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/jelix-public
+>
+>   
+
+
+
+From laurent at xulfr.org  Sat Jan 13 00:03:39 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Sat, 13 Jan 2007 00:03:39 +0100
+Subject: [Jelix-public] checkin SVN-347 (laurentj)
+Message-ID: <45A813CB.mail3WD11R1G7@xulfr.org>
+
+laurentj
+2007-01-13 00:03:39 +0100 (Sat, 13 Jan 2007)
+83
+correction bug dans jbuild et mise ?\195?\160 jour des fichiers CREDITS, INSTALL...
+
+U   trunk/build/CREDITS
+U   trunk/build/buildjelix.php
+U   trunk/build/lib/jBuild.inc.php
+U   trunk/lib/jelix/CREDITS
+U   trunk/lib/jelix/INSTALL
+
+
+From laurent at xulfr.org  Sat Jan 13 17:20:32 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Sat, 13 Jan 2007 17:20:32 +0100
+Subject: [Jelix-public] checkin SVN-348 (laurentj)
+Message-ID: <45A906D0.mailJCF11RSHW@xulfr.org>
+
+laurentj
+2007-01-13 17:20:31 +0100 (Sat, 13 Jan 2007)
+27
+little fix in build scripts
+
+U   trunk/build/buildapp.php
+U   trunk/build/buildjbt.php
+U   trunk/build/buildjelix.php
+U   trunk/build/buildjtpl.php
+
+
+From laurent at xulfr.org  Sat Jan 13 17:32:06 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Sat, 13 Jan 2007 17:32:06 +0100
+Subject: [Jelix-public] checkin SVN-349 (laurentj)
+Message-ID: <45A90986.mailKT71I6HDV@xulfr.org>
+
+laurentj
+2007-01-13 17:32:05 +0100 (Sat, 13 Jan 2007)
+51
+release of jelix 1.0b1, jtpl 1.0b1, jbuildtools 1.1
+
+A   tags/release_1.0beta1/
+U   tags/release_1.0beta1/build/VERSION
+U   tags/release_1.0beta1/build/buildapp.php
+U   tags/release_1.0beta1/build/buildjbt.php
+U   tags/release_1.0beta1/build/buildjelix.php
+U   tags/release_1.0beta1/build/buildjtpl.php
+U   tags/release_1.0beta1/build/config/jbt-dist.ini
+U   tags/release_1.0beta1/build/config/jbt-test.ini
+U   tags/release_1.0beta1/build/config/jelix-dist-dev.ini
+U   tags/release_1.0beta1/build/config/jelix-dist-opt.ini
+U   tags/release_1.0beta1/build/config/jelix-test.ini
+U   tags/release_1.0beta1/build/config/jtpl-dist.ini
+U   tags/release_1.0beta1/build/config/myapp-dist.ini
+U   tags/release_1.0beta1/build/config/testapp-dist.ini
+U   tags/release_1.0beta1/lib/jelix/VERSION
+U   tags/release_1.0beta1/lib/jelix/tpl/VERSION
+U   tags/release_1.0beta1/myapp/VERSION
+U   tags/release_1.0beta1/testapp/VERSION
+
+
+From laurent at xulfr.org  Sat Jan 13 18:46:37 2007
+From: laurent at xulfr.org (laurent)
+Date: Sat, 13 Jan 2007 18:46:37 +0100
+Subject: [Jelix-public] Sortie de Jelix 1.0 beta1
+Message-ID: <45A91AFD.1080606@xulfr.org>
+
+Bonjour,
+
+
+La premi?re beta de Jelix est sortie. Utilis?e sur plusieurs sites dont 
+un ? tr?s forte audience (tr?s prochainement :-)), on peut dire que 
+jelix est maintenant tr?s stable. Il manque encore des choses, mais ce 
+sera plus des ?volutions "p?riph?riques" (classes utilitaires) que des 
+modifications du coeur.
+
+N'h?sitez pas ? me dire si il y a des trucs qui cloche sur le site 
+(genre ?a parle encore de la version 1.0 alpha5, lien incorrect ou 
+autre), qui sont pas clair, ou sur le t?l?chargement.
+
+Bon dev !
+
+Laurent
+
+PS: on a besoin de volontaires pour compl?ter la doc, en particulier la 
+doc en anglais.
+
+
+
+
+From loic at mathaud.net  Sat Jan 13 12:07:56 2007
+From: loic at mathaud.net (Loic Mathaud)
+Date: Sat, 13 Jan 2007 12:07:56 +0100
+Subject: [Jelix-public] =?iso-8859-1?q?anglais_ou_fran=E7ais?=
+In-Reply-To: <45A4E1BF.2050303@xulfr.org>
+References: <45A4E1BF.2050303@xulfr.org>
+Message-ID: <45A8BD8C.7070801@mathaud.net>
+
+laurent a ?crit :
+> Bonjour la liste !
+> 
+> Vous avez sans doute remarqu? tout ce spam infernale en provenance 
+> direct du d?pot subversion :-)
+> 
+> Dans une optique de conqu?te du monde, et ? l'approche imminente de la 
+> sortie de la beta, on est en train de se demander si on allait pas 
+> commencer ? mettre les messages de commit en anglais, et pourquoi pas 
+> aussi les tickets sur http://developer.jelix.org.
+> 
+> 
+> Qu'en pensez vous ? On reste en Fran?ais ? on fait en Anglais ? les deux ?
+> 
+> Rassurez vous, la documentation restera toujours en fran?ais (et en 
+> anglais quand on a le temps). idem pour le forum o? il y r?gne une 
+> activit? folle :-)
+> 
+
+Je me jette et je r?ponds ? mon tour ici, bien que nous en ayons parl?
+sur le chan IRC.
+
+Je ne commit pas souvent et cela ne me d?range pas d'?crire les
+commentaires en anglais. Par contre je ne suis pas trop pour une double
+saisie anglais/fran?ais : un texte en doublon n'apporte pas grand chose.
+Tant qu'a choisir une langue, autant que ?a soit l'anglais. Et puis nous
+n'?crivons pas des romans, les commentaires de commit sont en anglais
+assez simple et sont compr?hensibles par tout d?veloppeur non ?
+Je rajouterais que les commentaires phpdoc dans le code sont d?j? en
+anglais ;)
+
+Sinon on est bien d'accord que la documentation de base est et restera
+en fran?ais et sera traduite au mieux en anglais pour pouvoir donner une
+meilleure visibilit? dans le monde anglophone tout en permettant aux
+francophones d'avoir une doc maintenue dans leur langue.
+
+--
+Loic Mathaud
+loic at mathaud.net
+
+
+From laurent at xulfr.org  Mon Jan 15 11:29:32 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Mon, 15 Jan 2007 11:29:32 +0100
+Subject: [Jelix-public] checkin SVN-350 (bballizlife)
+Message-ID: <45AB578C.mailDKM117RQ9@xulfr.org>
+
+bballizlife
+2007-01-15 11:29:32 +0100 (Mon, 15 Jan 2007)
+53
+add method to jDaoFactoryBase : countBy($searchcond)
+
+U   trunk/lib/jelix/dao/jDaoBase.class.php
+
+
+From laurent at xulfr.org  Fri Jan 19 23:23:12 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Fri, 19 Jan 2007 23:23:12 +0100
+Subject: [Jelix-public] checkin SVN-351 (laurentj)
+Message-ID: <45B144D0.mailD7A11BFHV@xulfr.org>
+
+laurentj
+2007-01-19 23:23:11 +0100 (Fri, 19 Jan 2007)
+170
+- fix bug ticket #91 jelix~notfound action doesn't exist
+- fix bug ticket #87 bad character un atom10.tpl
+- fix bug in autolocale plugin : country letter not in uppercase
+
+U   trunk/lib/jelix/core/defaultconfig.ini.php
+U   trunk/lib/jelix-modules/jelix/controllers/error.classic.php
+U   trunk/lib/jelix-modules/jelix/controllers/error.jsonrpc.php
+U   trunk/lib/jelix-modules/jelix/controllers/error.rdf.php
+U   trunk/lib/jelix-modules/jelix/controllers/error.xmlrpc.php
+U   trunk/lib/jelix-modules/jelix/controllers/error.xul.php
+U   trunk/lib/jelix-modules/jxxulapp/install/var/config/config.classic.ini.php
+U   trunk/lib/jelix-modules/jxxulapp/install/var/config/config.jsonrpc.ini.php
+U   trunk/lib/jelix-modules/jxxulapp/install/var/config/config.rdf.ini.php
+U   trunk/lib/jelix-modules/jxxulapp/install/var/config/configxul.classic.ini.php
+U   trunk/lib/jelix-plugins/autolocale/autolocale.plugin.php
+U   trunk/lib/jelix-scripts/templates/var/config/defaultconfig.ini.php.tpl
+
+
+From laurent at xulfr.org  Wed Jan 24 00:46:07 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Wed, 24 Jan 2007 00:46:07 +0100
+Subject: [Jelix-public] checkin SVN-352 (laurentj)
+Message-ID: <45B69E3F.mailMBK158YYY@xulfr.org>
+
+laurentj
+2007-01-24 00:46:06 +0100 (Wed, 24 Jan 2007)
+77
+fix bug ticket #97 : database connector didn't use charset of the application
+
+U   trunk/lib/jelix/db/drivers/mysql/jDbConnection.mysql.class.php
+U   trunk/lib/jelix/db/drivers/postgresql/jDbConnection.postgresql.class.php
+U   trunk/lib/jelix/db/jDbPDOConnection.class.php
+
+
+From laurent at xulfr.org  Wed Jan 24 00:47:28 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Wed, 24 Jan 2007 00:47:28 +0100
+Subject: [Jelix-public] checkin SVN-353 (laurentj)
+Message-ID: <45B69E90.mailNUV11VSVY@xulfr.org>
+
+laurentj
+2007-01-24 00:47:28 +0100 (Wed, 24 Jan 2007)
+74
+fix bug ticket #93 : strict message on mktime, when using jZone with cache
+
+U   trunk/lib/jelix/utils/jZone.class.php
+
+
+From laurent at xulfr.org  Wed Jan 24 00:51:12 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Wed, 24 Jan 2007 00:51:12 +0100
+Subject: [Jelix-public] checkin SVN-354 (laurentj)
+Message-ID: <45B69F70.mail1RX1177IY@xulfr.org>
+
+laurentj
+2007-01-24 00:51:00 +0100 (Wed, 24 Jan 2007)
+86
+fix ticket #94 : adding locales files in UTF-8 for en_EN and en_US in the jelix module
+
+U   trunk/build/manifests/jelix-lib.mn
+A   trunk/lib/jelix-modules/jelix/locales/en_EN/
+A   trunk/lib/jelix-modules/jelix/locales/en_EN/auth.ISO-8859-1.properties
+A   trunk/lib/jelix-modules/jelix/locales/en_EN/auth.UTF-8.properties
+A   trunk/lib/jelix-modules/jelix/locales/en_EN/common.ISO-8859-1.properties
+A   trunk/lib/jelix-modules/jelix/locales/en_EN/common.UTF-8.properties
+A   trunk/lib/jelix-modules/jelix/locales/en_EN/dao.ISO-8859-1.properties
+A   trunk/lib/jelix-modules/jelix/locales/en_EN/dao.UTF-8.properties
+A   trunk/lib/jelix-modules/jelix/locales/en_EN/daoxml.ISO-8859-1.properties
+A   trunk/lib/jelix-modules/jelix/locales/en_EN/daoxml.UTF-8.properties
+A   trunk/lib/jelix-modules/jelix/locales/en_EN/db.ISO-8859-1.properties
+A   trunk/lib/jelix-modules/jelix/locales/en_EN/db.UTF-8.properties
+A   trunk/lib/jelix-modules/jelix/locales/en_EN/errors.ISO-8859-1.properties
+A   trunk/lib/jelix-modules/jelix/locales/en_EN/errors.UTF-8.properties
+A   trunk/lib/jelix-modules/jelix/locales/en_EN/format.ISO-8859-1.properties
+A   trunk/lib/jelix-modules/jelix/locales/en_EN/format.UTF-8.properties
+A   trunk/lib/jelix-modules/jelix/locales/en_EN/jelix.ISO-8859-1.properties
+A   trunk/lib/jelix-modules/jelix/locales/en_EN/jelix.UTF-8.properties
+A   trunk/lib/jelix-modules/jelix/locales/en_EN/ui.ISO-8859-1.properties
+A   trunk/lib/jelix-modules/jelix/locales/en_EN/ui.UTF-8.properties
+A   trunk/lib/jelix-modules/jelix/locales/en_US/auth.UTF-8.properties
+A   trunk/lib/jelix-modules/jelix/locales/en_US/common.UTF-8.properties
+A   trunk/lib/jelix-modules/jelix/locales/en_US/dao.UTF-8.properties
+A   trunk/lib/jelix-modules/jelix/locales/en_US/daoxml.UTF-8.properties
+A   trunk/lib/jelix-modules/jelix/locales/en_US/db.UTF-8.properties
+A   trunk/lib/jelix-modules/jelix/locales/en_US/errors.UTF-8.properties
+A   trunk/lib/jelix-modules/jelix/locales/en_US/format.UTF-8.properties
+A   trunk/lib/jelix-modules/jelix/locales/en_US/jelix.UTF-8.properties
+A   trunk/lib/jelix-modules/jelix/locales/en_US/ui.UTF-8.properties
+
+
+From laurent at xulfr.org  Wed Jan 24 01:11:00 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Wed, 24 Jan 2007 01:11:00 +0100
+Subject: [Jelix-public] checkin SVN-355 (laurentj)
+Message-ID: <45B6A414.mailKF0118SIY@xulfr.org>
+
+laurentj
+2007-01-24 01:10:59 +0100 (Wed, 24 Jan 2007)
+86
+fix bug ticket #92 : isnull and isnotnull tag in dao file were not supported correctly
+
+U   trunk/lib/jelix/dao/jDaoGenerator.class.php
+U   trunk/lib/jelix/dao/jDaoParser.class.php
+U   trunk/testapp/modules/testapp/daos/testnews.dao.xml
+
+
+From laurent at xulfr.org  Wed Jan 24 01:24:30 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Wed, 24 Jan 2007 01:24:30 +0100
+Subject: [Jelix-public] checkin SVN-356 (laurentj)
+Message-ID: <45B6A73E.mailCSC1118Y5@xulfr.org>
+
+laurentj
+2007-01-24 01:24:30 +0100 (Wed, 24 Jan 2007)
+58
+fix ticket 85 : adding support of favicon in jResponseHtml
+
+U   trunk/lib/jelix/core/response/jResponseHtml.class.php
+
+
+From laurent at xulfr.org  Wed Jan 24 02:21:36 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Wed, 24 Jan 2007 02:21:36 +0100
+Subject: [Jelix-public] checkin SVN-357 (laurentj)
+Message-ID: <45B6B4A0.mailG8L11IAR2@xulfr.org>
+
+laurentj
+2007-01-24 02:21:28 +0100 (Wed, 24 Jan 2007)
+181
+- ENABLE_PHP_JELIX : a first step to the world domination :-)
+change ENABLE_OPTIMIZE to ENABLE_OPTIMIZED_SOURCE
+- fix ticket #75 : error message on unknow controller is not coherent
+
+U   trunk/build/buildjelix.php
+U   trunk/build/config/jelix-dist-dev.ini
+U   trunk/build/config/jelix-dist-opt.ini
+U   trunk/build/config/jelix-test.ini
+U   trunk/build/lib/jBuild.inc.php
+U   trunk/build/manifests/jelix-lib.mn
+A   trunk/build/manifests/jelix-no-ext.mn
+U   trunk/build/manifests/jelix-no-opt.mn
+U   trunk/lib/jelix/auth/jAuth.class.php
+U   trunk/lib/jelix/core/jConfig.class.php
+U   trunk/lib/jelix/core/jConfigCompiler.class.php
+U   trunk/lib/jelix/core/jController.class.php
+U   trunk/lib/jelix/core/jIncluder.class.php
+U   trunk/lib/jelix/core/jSelector.class.php
+U   trunk/lib/jelix/core/url/jUrl.class.php
+U   trunk/lib/jelix/dao/jDaoCompiler.class.php
+U   trunk/lib/jelix/db/jDb.class.php
+U   trunk/lib/jelix/events/jEvent.class.php
+U   trunk/lib/jelix/init.php
+
+
+From laurent at xulfr.org  Wed Jan 24 18:00:15 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Wed, 24 Jan 2007 18:00:15 +0100
+Subject: [Jelix-public] checkin SVN-358 (laurentj)
+Message-ID: <45B7909F.mail3UL1PNJ9N@xulfr.org>
+
+laurentj
+2007-01-24 18:00:15 +0100 (Wed, 24 Jan 2007)
+14
+fix php syntax
+
+U   trunk/lib/jelix/core/jConfigCompiler.class.php
+
+
+From laurent at xulfr.org  Sat Jan 27 01:01:40 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Sat, 27 Jan 2007 01:01:40 +0100
+Subject: [Jelix-public] checkin SVN-359 (laurentj)
+Message-ID: <45BA9664.mailIS9113I26@xulfr.org>
+
+laurentj
+2007-01-27 01:01:39 +0100 (Sat, 27 Jan 2007)
+170
+fix bug ticket #99 : lors d'un createdao, avec postgresql, la script ne rammene pas tous les champs des la tables, et ne trouve pas la cl?\195?\169 primaire. patch=njeudy
+
+U   trunk/lib/jelix/db/drivers/postgresql/jDbTools.postgresql.class.php
+U   trunk/lib/jelix-scripts/commands/createaction.cmd.php
+U   trunk/lib/jelix-scripts/commands/createapp.cmd.php
+U   trunk/lib/jelix-scripts/commands/createctrl.cmd.php
+U   trunk/lib/jelix-scripts/commands/createdao.cmd.php
+U   trunk/lib/jelix-scripts/commands/createmodule.cmd.php
+U   trunk/lib/jelix-scripts/commands/createzone.cmd.php
+U   trunk/lib/jelix-scripts/commands/help.cmd.php
+
+
+From laurent at xulfr.org  Sat Jan 27 01:10:09 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Sat, 27 Jan 2007 01:10:09 +0100
+Subject: [Jelix-public] checkin SVN-360 (laurentj)
+Message-ID: <45BA9861.mail1ZD11N5ZA@xulfr.org>
+
+laurentj
+2007-01-27 01:10:08 +0100 (Sat, 27 Jan 2007)
+163
+ticket #102 : Renommer jAuth::createUser en jAuth::createUserObject. l'ancienne m?\195?\169thode reste utilisable mais d?\195?\169clar?\195?\169e obsol?\195?\168te
+
+U   trunk/lib/jelix/auth/jAuth.class.php
+U   trunk/lib/jelix/auth/jAuthDriverClass.class.php
+U   trunk/lib/jelix/auth/jAuthDriverDb.class.php
+U   trunk/lib/jelix/auth/jAuthDriverLDS.class.php
+U   trunk/lib/jelix-modules/jxauth/controllers/admin.jsonrpc.php
+
+
+From laurent at xulfr.org  Sat Jan 27 22:59:29 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Sat, 27 Jan 2007 22:59:29 +0100
+Subject: [Jelix-public] checkin SVN-361 (laurentj)
+Message-ID: <45BBCB41.mailM8P11LCH1@xulfr.org>
+
+laurentj
+2007-01-27 22:59:28 +0100 (Sat, 27 Jan 2007)
+105
+fix ticket #69 : jBuildTools, mkmanifest didn't show empty directory. A switch -e for the script is added
+
+U   trunk/build/mkmanifest.php
+
+
+From laurent at xulfr.org  Sat Jan 27 23:29:39 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Sat, 27 Jan 2007 23:29:39 +0100
+Subject: [Jelix-public] checkin SVN-362 (laurentj)
+Message-ID: <45BBD253.mailNGD13A2J8@xulfr.org>
+
+laurentj
+2007-01-27 23:29:39 +0100 (Sat, 27 Jan 2007)
+110
+Ticket #77: improvement on error message when a selector is invalid. Added the type of selector in the message
+
+U   trunk/lib/jelix/core/jSelector.class.php
+U   trunk/lib/jelix-modules/jelix/locales/en_EN/errors.ISO-8859-1.properties
+U   trunk/lib/jelix-modules/jelix/locales/en_EN/errors.UTF-8.properties
+U   trunk/lib/jelix-modules/jelix/locales/en_US/errors.ISO-8859-1.properties
+U   trunk/lib/jelix-modules/jelix/locales/en_US/errors.UTF-8.properties
+U   trunk/lib/jelix-modules/jelix/locales/fr_FR/errors.ISO-8859-1.properties
+U   trunk/lib/jelix-modules/jelix/locales/fr_FR/errors.UTF-8.properties
+
+
+From laurent at xulfr.org  Sat Jan 27 23:51:04 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Sat, 27 Jan 2007 23:51:04 +0100
+Subject: [Jelix-public] checkin SVN-363 (laurentj)
+Message-ID: <45BBD758.mailOB311DF1L@xulfr.org>
+
+laurentj
+2007-01-27 23:51:03 +0100 (Sat, 27 Jan 2007)
+261
+fix bug Ticket #83 : directory not created in the createapp command with withcmdline switch (patch=giviz)
+fix bug ticket #103 : api documentation of autolocale plugin is not correct
+fix bug Ticket #104 : bad context change when a plugin redirect to a new action
+
+U   trunk/lib/jelix/core/jCoordinator.class.php
+U   trunk/lib/jelix-plugins/autolocale/autolocale.plugin.php
+U   trunk/lib/jelix-plugins/magicquotes/magicquotes.plugin.php
+U   trunk/lib/jelix-scripts/commands/createapp.cmd.php
+
+
+From laurent at xulfr.org  Sun Jan 28 00:08:04 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Sun, 28 Jan 2007 00:08:04 +0100
+Subject: [Jelix-public] checkin SVN-364 (laurentj)
+Message-ID: <45BBDB54.mailOVJ11JUD3@xulfr.org>
+
+laurentj
+2007-01-28 00:08:01 +0100 (Sun, 28 Jan 2007)
+155
+Ticket #105 :  an example of a dao for the jAuth db driver is added in the jauth module
+fix bug Ticket #100 : dao, syntaxe of property name was not checked
+
+U   trunk/build/manifests/jelix-lib.mn
+U   trunk/lib/jelix/dao/jDaoParser.class.php
+A   trunk/lib/jelix-modules/jauth/daos/
+A   trunk/lib/jelix-modules/jauth/daos/jelixuser.dao.xml
+U   trunk/lib/jelix-modules/jelix/locales/en_EN/daoxml.ISO-8859-1.properties
+U   trunk/lib/jelix-modules/jelix/locales/en_EN/daoxml.UTF-8.properties
+U   trunk/lib/jelix-modules/jelix/locales/en_US/daoxml.ISO-8859-1.properties
+U   trunk/lib/jelix-modules/jelix/locales/en_US/daoxml.UTF-8.properties
+U   trunk/lib/jelix-modules/jelix/locales/fr_FR/daoxml.ISO-8859-1.properties
+U   trunk/lib/jelix-modules/jelix/locales/fr_FR/daoxml.UTF-8.properties
+
+
+From laurent at xulfr.org  Sun Jan 28 01:00:45 2007
+From: laurent at xulfr.org (laurent at xulfr.org)
+Date: Sun, 28 Jan 2007 01:00:45 +0100
+Subject: [Jelix-public] checkin SVN-365 (laurentj)
+Message-ID: <45BBE7AD.mail933119QJR@xulfr.org>
+
+laurentj
+2007-01-28 01:00:44 +0100 (Sun, 28 Jan 2007)
+62
+fix bug Ticket #86 : better check of basePath config parameter
+
+U   trunk/lib/jelix/core/jRequest.class.php
+
+

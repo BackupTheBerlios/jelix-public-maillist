@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Jelix-public] Syst&#232;me de build/preprocessing
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/jelix-public/2006-January/index.html" >
+   <LINK REL="made" HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20%3D%3FISO-8859-1%3FQ%3FSyst%3DE8me_de_build/preprocessing%3F%3D&In-Reply-To=%3C43DD506B.9010609%40xulfr.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000022.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Jelix-public] Syst&#232;me de build/preprocessing</H1>
+    <B>Laurent Jouanneau</B> 
+    <A HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20%3D%3FISO-8859-1%3FQ%3FSyst%3DE8me_de_build/preprocessing%3F%3D&In-Reply-To=%3C43DD506B.9010609%40xulfr.org%3E"
+       TITLE="[Jelix-public] Syst&#232;me de build/preprocessing">laurent at xulfr.org
+       </A><BR>
+    <I>Mon Jan 30 00:31:55 CET 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000022.html">[Jelix-public] checkins du 17/01 au 29/01
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#21">[ date ]</a>
+              <a href="thread.html#21">[ thread ]</a>
+              <a href="subject.html#21">[ subject ]</a>
+              <a href="author.html#21">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Bonjour,
+
+Afin de pouvoir produire facilement des releases, je compte faire des 
+fichiers Makefile pour g&#233;n&#233;rer des archives zip/tgz.
+
+Le makefile contiendrait des regles differentes pour faire des archives 
+avec tels ou tels fichiers. (genre g&#233;n&#233;rer une version pour un site en 
+prod, donc sans les scripts en ligne de commande, sans les tests 
+unitaires, sans l'appli exemple myapp etc..)
+
+
+J'ai aussi une autre probl&#232;matique : pouvoir avoir des sources qui 
+soient diff&#233;rentes en fonction de la version que l'on veut obtenir. Par 
+exemple j'aimerai fournir une version de Jelix optimis&#233;e pour un site en 
+prod, et une autre bourr&#233;e de tests pour le d&#233;veloppement de votre appli 
+afin de mieux aider &#224; d&#233;busquer les bugs etc.
+
+Dans un premier temps, j'avais pens&#233; &#224; faire plusieurs branches dans le 
+d&#233;pot (une branche pour la version developpeur, une autre pour la 
+version optimis&#233; etc..) , mais je trouve que &#231;a risque vite d'&#234;tre 
+lourdingue &#224; g&#233;rer, &#224; cause des synchros &#224; faire entre les branches 
+lorsqu'il y a une &#233;volution, un bug etc.
+
+J'ai donc eu l'id&#233;e de d&#233;velopper un pr&#233;processeur qui g&#233;n&#232;rerait les 
+sources de Jelix en fonction de param&#232;tres. On disposerait alors de 
+directives de pr&#233;processeur comme en C/C++ par exemple, du genre #ifdef, 
+#define (macros, constantes) etc.
+
+Cela apporterait alors plus de possibilit&#233;s. On pourrait donc comme je 
+l'ai dit g&#233;n&#233;rer une version de jelix optimis&#233;e, une autre pour le dev 
+avec des possibilit&#233;s de debug. Ou encore, on pourrait faire des 
+versions optimis&#233;es en fonction de la version de PHP. Du style, une 
+fonction foo qui existe en PHP 5.1 mais pas en PHP 5.0. Il faut donc 
+faire une fonction foo pour PHP 5.0. Mais il ne faut pas que cette 
+fonction foo soit d&#233;finit en PHP 5.1. Bien s&#251;r, on a en PHP la 
+possibilit&#233; de faire
+
+if(!function_exists('foo')){
+    function foo(){
+     ...
+    }
+}
+
+Mais l'inconvenient, est que ce code est toujours l&#224; quelque soit la 
+version : c'est donc du code mort dans certain cas, qui fait perdre du 
+temps en parsing PHP.
+
+Avec la possibilit&#233; du preprocessing, on pourrait avoir ce genre de chose :
+
+#ifdef PHP_VERSION_5_0
+  // code existant uniquement dans Jelix pour PHP 5.0
+  function foo(){
+     // definition d'une fonction foo identique &#224; la version
+     // propos&#233;e dans php5.1
+  }
+#endif
+
+Si on appelle le pr&#233;processeur en d&#233;finissant la constante 
+PHP_VERSION_5_0, on a la fonction foo qui est incluse dans le source 
+finale. Sinon elle ne l'est pas.
+
+On aurait donc un code plus l&#233;ger pour la version speciale PHP5.1, tout 
+en restant fonctionnelle dans une version speciale PHP5.0.
+
+
+Un inconv&#233;nient du preprocessing est que les sources de Jelix prisent 
+directement &#224; partir du d&#233;pot svn ne seraient pas utilisables telle 
+quelles. Les contributeurs devront, &#224; chaque modification de fichier, 
+executer le preprocesseur pour g&#233;nerer le source final et faire leurs tests.
+Cet inconv&#233;nient peut-&#234;tre supprim&#233; en utilisant un &#233;diteur &#233;volu&#233;, qui 
+offre la possibilit&#233; d'executer un script lors de la sauvegarde d'un 
+fichier (Comme le permet Kate sous KDE), en l'occurence donc, d'&#233;xecuter 
+le preprocesseur sur le fichier.
+
+Le d&#233;veloppeur aurait donc deux r&#233;pertoires : un r&#233;pertoire contenant 
+les sources provenant du d&#233;pot svn, non utilisables directement, avec 
+les directives de pr&#233;processing, et un repertoire &quot;resultat&quot;, contenant 
+les sources de Jelix, g&#233;n&#233;r&#233;es par le preprocesseur, executable par PHP, 
+et sur lequel pointe Apache.
+
+Ce syst&#232;me de pr&#233;processing pourrait &#234;tre utilis&#233; pour vos propres 
+applis bas&#233;es sur jelix. Pour par exemple g&#233;n&#233;rer une version de dev, et 
+une autre de production. y a souvent des trucs qui changent entre les 
+deux, genre les param&#232;tres de connections, donc des fichiers de conf 
+diff&#233;rents etc.. Ou lors de la g&#233;n&#233;ration de la version de prod, on 
+n'inclus pas les test unitaires, les instructions de debogages etc..
+
+Qu'en pensez vous ? Un tel syst&#232;me vous aiderait-il dans vos propres 
+applis ? Avez vous d'autres id&#233;es pour r&#233;gler ces probl&#233;matiques de 
+version prod/dev etc ?
+
+Laurent
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000022.html">[Jelix-public] checkins du 17/01 au 29/01
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#21">[ date ]</a>
+              <a href="thread.html#21">[ thread ]</a>
+              <a href="subject.html#21">[ subject ]</a>
+              <a href="author.html#21">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/jelix-public">More information about the Jelix-public
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Jelix-public] setData sur upload
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/jelix-public/2009-September/index.html" >
+   <LINK REL="made" HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20setData%20sur%20upload&In-Reply-To=%3C1252856626.4172.48.camel%40mathieu-desktop%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000838.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Jelix-public] setData sur upload</H1>
+    <B>Mathieu Piette</B> 
+    <A HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20setData%20sur%20upload&In-Reply-To=%3C1252856626.4172.48.camel%40mathieu-desktop%3E"
+       TITLE="[Jelix-public] setData sur upload">mathieu.piette at gmail.com
+       </A><BR>
+    <I>Sun Sep 13 17:43:46 CEST 2009</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000838.html">[Jelix-public] setData sur upload
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#837">[ date ]</a>
+              <a href="thread.html#837">[ thread ]</a>
+              <a href="subject.html#837">[ subject ]</a>
+              <a href="author.html#837">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Bonjour,
+
+J'ai un module de mon application qui permet d'uploader des fichiers.
+J'ai donc un formulaire qui contient un champ de type &quot;upload&quot;, ainsi
+qu'un champ texte qui s'appelle &quot;description&quot;.
+
+J'utilise &quot;b&#234;tement&quot; un CRUD (avec donc un contr&#244;leur qui extends
+jControllerDaoCrud) et c'est la mise &#224; jour des enregistrement qui me
+pose probl&#232;me.
+
+Dans la page de mise &#224; jour, j'ai mon formulaire avec ma description qui
+apparait bien, mais j'ai aussi mon champ upload, qui est vide.
+
+Je voudrais pouvoir mettre &#224; jour tous les champs de mes
+enregistrements, sauf le nom du fichier, qui ne change pas une fois
+qu'il est upload&#233;. Donc:
+
+      * soit je d&#233;sactive mon champ upload, mais alors l&#224; il n'est pas
+        content parce que c'est un champ obligatoire,
+      * soit je pr&#233;remplis le champ upload avec le nom du fichier qui
+        existe d&#233;j&#224;. Mais l&#224; &#231;a amrche pas non plus parce que, de un,
+        l'utilisateur s'en fout de voir le nom du fichier s'il ne peut
+        pas le modifier, et de deux, je voudrais que l'utilisateur ne
+        puisse pas modifier le nom du fichier.
+
+En r&#233;sum&#233;, si on veut pouvoir mettre &#224; jour des enregistrements qui
+contiennent un nom de fichier, on fait comment?
+
+Merci!
+
+--
+Mathieu.
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000838.html">[Jelix-public] setData sur upload
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#837">[ date ]</a>
+              <a href="thread.html#837">[ thread ]</a>
+              <a href="subject.html#837">[ subject ]</a>
+              <a href="author.html#837">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/jelix-public">More information about the Jelix-public
+mailing list</a><br>
+</body></html>

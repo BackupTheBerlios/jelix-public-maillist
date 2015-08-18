@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Jelix-public] Version 1.0pre-alpha
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/jelix-public/2006-January/index.html" >
+   <LINK REL="made" HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20Version%201.0pre-alpha&In-Reply-To=%3C43CC350C.3090500%40xulfr.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000014.html">
+   <LINK REL="Next"  HREF="000016.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Jelix-public] Version 1.0pre-alpha</H1>
+    <B>Laurent Jouanneau</B> 
+    <A HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20Version%201.0pre-alpha&In-Reply-To=%3C43CC350C.3090500%40xulfr.org%3E"
+       TITLE="[Jelix-public] Version 1.0pre-alpha">laurent at xulfr.org
+       </A><BR>
+    <I>Tue Jan 17 01:06:36 CET 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000014.html">[Jelix-public] checkins du 09 au 15
+</A></li>
+        <LI>Next message: <A HREF="000016.html">[Jelix-public] &#224; propos de la 1.0pre-alpha
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#15">[ date ]</a>
+              <a href="thread.html#15">[ thread ]</a>
+              <a href="subject.html#15">[ subject ]</a>
+              <a href="author.html#15">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Bonjour,
+
+
+Une premi&#232;re version de test de Jelix est disponible en t&#233;l&#233;chargement
+<A HREF="https://developer.berlios.de/project/showfiles.php?group_id=5643">https://developer.berlios.de/project/showfiles.php?group_id=5643</A>
+
+Aujourd'hui,
+- encore quelques bugs corrig&#233;s, surtout dans la gestion des erreurs 
+(qui ne s'affichaient pas...).
+- &#201;galement des modifications internes du cot&#233; de la gestion des Urls, 
+en pr&#233;paration de la future prise en charge des urls significatifs.
+- Ajout d'un plugin de template pour les urls
+    {jurl &quot;unmodule~<A HREF="https://lists.berlios.de/mailman/listinfo/jelix-public">uneaction at type_requete</A>&quot;}
+   vous cr&#233;e l'url correspondant &#224; l'action.
+    {jurl &quot;test~<A HREF="https://lists.berlios.de/mailman/listinfo/jelix-public">hello at classic</A>&quot;, array(&quot;autres&quot;=&gt;&quot;parametres&quot;, 
+&quot;foo&quot;=&gt;&quot;bar&quot;)}
+- changement dans l'api de la classe actiongroup
+     _get() devient param() (pour ne pas confondre avec $_GET)
+     _getResponse() devient getResponse()
+
+
+
+Tout retour d'experience est le bienvenue (bugs, remarques ...)
+
+
+a+
+
+Laurent
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000014.html">[Jelix-public] checkins du 09 au 15
+</A></li>
+	<LI>Next message: <A HREF="000016.html">[Jelix-public] &#224; propos de la 1.0pre-alpha
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#15">[ date ]</a>
+              <a href="thread.html#15">[ thread ]</a>
+              <a href="subject.html#15">[ subject ]</a>
+              <a href="author.html#15">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/jelix-public">More information about the Jelix-public
+mailing list</a><br>
+</body></html>

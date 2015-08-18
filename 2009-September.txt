@@ -1,0 +1,99 @@
+From mathieu.piette at gmail.com  Sun Sep 13 17:43:46 2009
+From: mathieu.piette at gmail.com (Mathieu Piette)
+Date: Sun, 13 Sep 2009 17:43:46 +0200
+Subject: [Jelix-public] setData sur upload
+Message-ID: <1252856626.4172.48.camel@mathieu-desktop>
+
+Bonjour,
+
+J'ai un module de mon application qui permet d'uploader des fichiers.
+J'ai donc un formulaire qui contient un champ de type "upload", ainsi
+qu'un champ texte qui s'appelle "description".
+
+J'utilise "b?tement" un CRUD (avec donc un contr?leur qui extends
+jControllerDaoCrud) et c'est la mise ? jour des enregistrement qui me
+pose probl?me.
+
+Dans la page de mise ? jour, j'ai mon formulaire avec ma description qui
+apparait bien, mais j'ai aussi mon champ upload, qui est vide.
+
+Je voudrais pouvoir mettre ? jour tous les champs de mes
+enregistrements, sauf le nom du fichier, qui ne change pas une fois
+qu'il est upload?. Donc:
+
+      * soit je d?sactive mon champ upload, mais alors l? il n'est pas
+        content parce que c'est un champ obligatoire,
+      * soit je pr?remplis le champ upload avec le nom du fichier qui
+        existe d?j?. Mais l? ?a amrche pas non plus parce que, de un,
+        l'utilisateur s'en fout de voir le nom du fichier s'il ne peut
+        pas le modifier, et de deux, je voudrais que l'utilisateur ne
+        puisse pas modifier le nom du fichier.
+
+En r?sum?, si on veut pouvoir mettre ? jour des enregistrements qui
+contiennent un nom de fichier, on fait comment?
+
+Merci!
+
+--
+Mathieu.
+
+
+
+From sjehann at gmail.com  Mon Sep 14 10:07:23 2009
+From: sjehann at gmail.com (steven j)
+Date: Mon, 14 Sep 2009 10:07:23 +0200
+Subject: [Jelix-public] setData sur upload
+In-Reply-To: <1252856626.4172.48.camel@mathieu-desktop>
+References: <1252856626.4172.48.camel@mathieu-desktop>
+Message-ID: <39d56f980909140107s3c91397co2052ae4c32355f58@mail.gmail.com>
+
+Salut, je dirais qu'il faut utiliser 2 fichier form.xml, un pour l'upload et
+un pour l'edition.
+Et ducoup ne pas utiliser jControllerDaoCrud, tu vas devoir faire ton propre
+controlleur.
+
+Le 13 septembre 2009 17:43, Mathieu Piette <mathieu.piette at gmail.com> a
+?crit :
+
+> Bonjour,
+>
+> J'ai un module de mon application qui permet d'uploader des fichiers.
+> J'ai donc un formulaire qui contient un champ de type "upload", ainsi
+> qu'un champ texte qui s'appelle "description".
+>
+> J'utilise "b?tement" un CRUD (avec donc un contr?leur qui extends
+> jControllerDaoCrud) et c'est la mise ? jour des enregistrement qui me
+> pose probl?me.
+>
+> Dans la page de mise ? jour, j'ai mon formulaire avec ma description qui
+> apparait bien, mais j'ai aussi mon champ upload, qui est vide.
+>
+> Je voudrais pouvoir mettre ? jour tous les champs de mes
+> enregistrements, sauf le nom du fichier, qui ne change pas une fois
+> qu'il est upload?. Donc:
+>
+>      * soit je d?sactive mon champ upload, mais alors l? il n'est pas
+>        content parce que c'est un champ obligatoire,
+>      * soit je pr?remplis le champ upload avec le nom du fichier qui
+>        existe d?j?. Mais l? ?a amrche pas non plus parce que, de un,
+>        l'utilisateur s'en fout de voir le nom du fichier s'il ne peut
+>        pas le modifier, et de deux, je voudrais que l'utilisateur ne
+>        puisse pas modifier le nom du fichier.
+>
+> En r?sum?, si on veut pouvoir mettre ? jour des enregistrements qui
+> contiennent un nom de fichier, on fait comment?
+>
+> Merci!
+>
+> --
+> Mathieu.
+>
+> _______________________________________________
+> Jelix-public mailing list
+> Jelix-public at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/jelix-public
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/jelix-public/attachments/20090914/e3870373/attachment.html>
+

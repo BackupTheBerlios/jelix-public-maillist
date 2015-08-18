@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Jelix-public] checkin SVN-699 (laurentj)
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/jelix-public/2007-December/index.html" >
+   <LINK REL="made" HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20checkin%20SVN-699%20%28laurentj%29&In-Reply-To=%3C47631AC9.mailJTS1EQMNO%40xulfr.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000524.html">
+   <LINK REL="Next"  HREF="000526.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Jelix-public] checkin SVN-699 (laurentj)</H1>
+    <B>laurent at xulfr.org</B> 
+    <A HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20checkin%20SVN-699%20%28laurentj%29&In-Reply-To=%3C47631AC9.mailJTS1EQMNO%40xulfr.org%3E"
+       TITLE="[Jelix-public] checkin SVN-699 (laurentj)">laurent at xulfr.org
+       </A><BR>
+    <I>Sat Dec 15 01:07:37 CET 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000524.html">[Jelix-public] checkin SVN-698 (laurentj)
+</A></li>
+        <LI>Next message: <A HREF="000526.html">[Jelix-public] checkin SVN-700 (laurentj)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#525">[ date ]</a>
+              <a href="thread.html#525">[ thread ]</a>
+              <a href="subject.html#525">[ subject ]</a>
+              <a href="author.html#525">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>laurentj
+2007-12-15 01:07:30 +0100 (Sat, 15 Dec 2007)
+66
+worked on ticket #371: fixed phpdoc warnings and fixed indentation
+
+U   trunk/lib/jelix/acl/jAcl.class.php
+U   trunk/lib/jelix/acl/jAclDbManager.class.php
+U   trunk/lib/jelix/acl/jAclDbUserGroup.class.php
+U   trunk/lib/jelix/auth/jAuth.class.php
+U   trunk/lib/jelix/auth/jAuthDummyUser.class.php
+U   trunk/lib/jelix/auth/jAuthUser.class.php
+U   trunk/lib/jelix/checker.php
+U   trunk/lib/jelix/controllers/jControllerDaoCrud.class.php
+U   trunk/lib/jelix/core/jConfigCompiler.class.php
+U   trunk/lib/jelix/core/jContext.class.php
+U   trunk/lib/jelix/core/jController.class.php
+U   trunk/lib/jelix/core/jCoordinator.class.php
+U   trunk/lib/jelix/core/jErrorHandler.lib.php
+U   trunk/lib/jelix/core/jInstallChecker.class.php
+U   trunk/lib/jelix/core/jRequest.class.php
+U   trunk/lib/jelix/core/jSelector.class.php
+U   trunk/lib/jelix/core/jUrl.class.php
+U   trunk/lib/jelix/core/request/jXmlRpcRequest.class.php
+U   trunk/lib/jelix/core/request/jXulRequest.class.php
+U   trunk/lib/jelix/core/response/jResponseBinary.class.php
+U   trunk/lib/jelix/core/response/jResponseCss.class.php
+U   trunk/lib/jelix/core/response/jResponseHtml.class.php
+U   trunk/lib/jelix/core/response/jResponseJson.class.php
+U   trunk/lib/jelix/core/response/jResponseJsonrpc.class.php
+U   trunk/lib/jelix/core/response/jResponseLatexToPdf.class.php
+U   trunk/lib/jelix/core/response/jResponseRdf.class.php
+U   trunk/lib/jelix/core/response/jResponseRss20.class.php
+U   trunk/lib/jelix/core/response/jResponseXml.class.php
+U   trunk/lib/jelix/core/response/jResponseXmlrpc.class.php
+U   trunk/lib/jelix/core/response/jResponseXul.class.php
+U   trunk/lib/jelix/core-modules/jelix/controllers/error.classic.php
+U   trunk/lib/jelix/core-modules/jelix/controllers/error.jsonrpc.php
+U   trunk/lib/jelix/core-modules/jelix/controllers/error.rdf.php
+U   trunk/lib/jelix/core-modules/jelix/controllers/error.xmlrpc.php
+U   trunk/lib/jelix/core-modules/jelix/controllers/error.xul.php
+U   trunk/lib/jelix/core-modules/jelix/controllers/help.cmdline.php
+U   trunk/lib/jelix/dao/jDao.class.php
+U   trunk/lib/jelix/dao/jDaoCompiler.class.php
+U   trunk/lib/jelix/dao/jDaoConditions.class.php
+U   trunk/lib/jelix/dao/jDaoFactoryBase.class.php
+U   trunk/lib/jelix/dao/jDaoGenerator.class.php
+U   trunk/lib/jelix/dao/jDaoMethod.class.php
+U   trunk/lib/jelix/dao/jDaoParser.class.php
+U   trunk/lib/jelix/dao/jDaoProperty.class.php
+U   trunk/lib/jelix/dao/jDaoRecordBase.class.php
+U   trunk/lib/jelix/db/jDb.class.php
+U   trunk/lib/jelix/db/jDbConnection.class.php
+U   trunk/lib/jelix/db/jDbPDOConnection.class.php
+U   trunk/lib/jelix/db/jDbResultSet.class.php
+U   trunk/lib/jelix/db/jDbTools.class.php
+U   trunk/lib/jelix/events/jEventListener.class.php
+U   trunk/lib/jelix/forms/jForms.class.php
+U   trunk/lib/jelix/forms/jFormsBase.class.php
+U   trunk/lib/jelix/forms/jFormsCompiler.class.php
+U   trunk/lib/jelix/init.php
+U   trunk/lib/jelix/plugins/coord/auth/auth.coord.php
+U   trunk/lib/jelix/plugins/db/intuition/intuition.dbconnection.php
+U   trunk/lib/jelix/plugins/tpl/common/block.stripws.php
+U   trunk/lib/jelix/plugins/tpl/common/modifier.wiki.php
+U   trunk/lib/jelix/utils/jCrypt.class.php
+U   trunk/lib/jelix/utils/jDatatype.class.php
+U   trunk/lib/jelix/utils/jDateTime.class.php
+U   trunk/lib/jelix/utils/jLog.class.php
+U   trunk/lib/jelix/utils/jMailer.class.php
+U   trunk/lib/jelix/utils/jSmtp.class.php
+U   trunk/lib/jelix/utils/jWiki.class.php
+U   trunk/lib/jelix/utils/jXmlRpc.class.php
+U   trunk/lib/jelix/utils/jZone.class.php
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000524.html">[Jelix-public] checkin SVN-698 (laurentj)
+</A></li>
+	<LI>Next message: <A HREF="000526.html">[Jelix-public] checkin SVN-700 (laurentj)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#525">[ date ]</a>
+              <a href="thread.html#525">[ thread ]</a>
+              <a href="subject.html#525">[ subject ]</a>
+              <a href="author.html#525">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/jelix-public">More information about the Jelix-public
+mailing list</a><br>
+</body></html>

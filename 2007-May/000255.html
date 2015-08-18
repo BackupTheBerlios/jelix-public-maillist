@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Jelix-public] Envoyer HTTP 500
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/jelix-public/2007-May/index.html" >
+   <LINK REL="made" HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20Envoyer%20HTTP%20500&In-Reply-To=%3C4656FA4C.5020207%40xulfr.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000254.html">
+   <LINK REL="Next"  HREF="000256.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Jelix-public] Envoyer HTTP 500</H1>
+    <B>laurent</B> 
+    <A HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20Envoyer%20HTTP%20500&In-Reply-To=%3C4656FA4C.5020207%40xulfr.org%3E"
+       TITLE="[Jelix-public] Envoyer HTTP 500">laurent at xulfr.org
+       </A><BR>
+    <I>Fri May 25 17:01:32 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000254.html">[Jelix-public] Envoyer HTTP 500
+</A></li>
+        <LI>Next message: <A HREF="000256.html">[Jelix-public] Envoyer HTTP 500
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#255">[ date ]</a>
+              <a href="thread.html#255">[ thread ]</a>
+              <a href="subject.html#255">[ subject ]</a>
+              <a href="author.html#255">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Bonjour,
+
+David Tourel wrote:
+&gt;<i> Bonjour,
+</I>&gt;<i> 
+</I>&gt;<i> Je suis dans l'initiation &#224; Jelix et plus particuli&#232;rement en ce moment 
+</I>&gt;<i> je cherche &#224; g&#233;n&#233;rer un code http autre que 200 afin de l'utiliser avec 
+</I>&gt;<i> prototype.js pour faire de l'ajax.
+</I>&gt;<i> 
+</I>&gt;<i> dans mon contr&#244;leur pour envoyer ce code j'utilise setHttpStatus de la 
+</I>&gt;<i> fa&#231;on suivante:
+</I>&gt;<i> 
+</I>&gt;<i> $oJson-&gt;setHttpStatus(500, 'Internal Error');
+</I>&gt;<i> $oJson-&gt;datas = array('msg' =&gt; 'mon message d\'erreur');
+</I>&gt;<i> return $oJson;
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> malgr&#233; cel&#224; je n'arrive pas &#224; obtenir autre chose que 200 Ok, je lis les 
+</I>&gt;<i> ent&#234;tes de la r&#233;ponse avec LiveHTTPHeaders extension pour Firefox.
+</I>
+Oui, c'est un probl&#232;me connu : <A HREF="http://dev.jelix.org/ticket/157">http://dev.jelix.org/ticket/157</A>
+
+&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> Pourriez vous me donner une piste pour faire &#231;a avec Jelix ?
+</I>
+en attendant la correction du bug, utilise la fonction php header &#224; la 
+fin de ton action, juste avant de renvoyer la r&#233;ponse. &#199;a devrait 
+fonctionner.
+
+Laurent
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000254.html">[Jelix-public] Envoyer HTTP 500
+</A></li>
+	<LI>Next message: <A HREF="000256.html">[Jelix-public] Envoyer HTTP 500
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#255">[ date ]</a>
+              <a href="thread.html#255">[ thread ]</a>
+              <a href="subject.html#255">[ subject ]</a>
+              <a href="author.html#255">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/jelix-public">More information about the Jelix-public
+mailing list</a><br>
+</body></html>

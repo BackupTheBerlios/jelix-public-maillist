@@ -1,0 +1,24 @@
+From laurent at xulfr.org  Sun Nov 22 15:42:17 2009
+From: laurent at xulfr.org (laurent)
+Date: Sun, 22 Nov 2009 15:42:17 +0100
+Subject: [Jelix-public] Release of Jelix 1.1.5
+Message-ID: <4B094DC9.20907@xulfr.org>
+
+Hello,
+
+I just released jelix 1.1.5, because of an anoying warning which appears 
+when we use 1.1.4 with PHP 5.3.
+
+I fixed also other minor bugs. We have now only one known bug on stable 
+branches :-)
+
+http://jelix.org/articles/en/changelog/1.1.5
+http://jelix.org/articles/en/download/stable/1.1
+
+http://jelix.org/articles/fr/changelog/1.1.5
+http://jelix.org/articles/fr/telechargement/stable/1.1
+
+
+Laurent
+
+

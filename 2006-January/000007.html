@@ -1,0 +1,183 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Jelix-public] Re: [Jelix-public] Re: [Jelix-public] Deux ou trois choses que j'ai du mal &#224; comprendre...
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/jelix-public/2006-January/index.html" >
+   <LINK REL="made" HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20%3D%3FISO-8859-1%3FQ%3FRe%3D3A_%3D5BJelix-public%3D5D_Re%3D3A_%3D5BJelix-pub%3F%3D%0A%20%3D%3FISO-8859-1%3FQ%3Flic%3D5D_Deux_ou_trois_choses_que_j%3D27ai_du_%3F%3D%0A%20%3D%3FISO-8859-1%3FQ%3Fmal_%3DE0_comprendre%3D2E%3D2E%3D2E%3F%3D&In-Reply-To=%3C43BB9169.2070909%40xulfr.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000006.html">
+   <LINK REL="Next"  HREF="000008.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Jelix-public] Re: [Jelix-public] Re: [Jelix-public] Deux ou trois choses que j'ai du mal &#224; comprendre...</H1>
+    <B>Laurent</B> 
+    <A HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20%3D%3FISO-8859-1%3FQ%3FRe%3D3A_%3D5BJelix-public%3D5D_Re%3D3A_%3D5BJelix-pub%3F%3D%0A%20%3D%3FISO-8859-1%3FQ%3Flic%3D5D_Deux_ou_trois_choses_que_j%3D27ai_du_%3F%3D%0A%20%3D%3FISO-8859-1%3FQ%3Fmal_%3DE0_comprendre%3D2E%3D2E%3D2E%3F%3D&In-Reply-To=%3C43BB9169.2070909%40xulfr.org%3E"
+       TITLE="[Jelix-public] Re: [Jelix-public] Re: [Jelix-public] Deux ou trois choses que j'ai du mal &#224; comprendre...">laurent at xulfr.org
+       </A><BR>
+    <I>Wed Jan  4 10:12:09 CET 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000006.html">[Jelix-public] Re: [Jelix-public] Deux ou trois choses que j'ai du mal &#224; comprendre...
+</A></li>
+        <LI>Next message: <A HREF="000008.html">[Jelix-public] Surcharge d'une r&#233;ponse
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#7">[ date ]</a>
+              <a href="thread.html#7">[ thread ]</a>
+              <a href="subject.html#7">[ subject ]</a>
+              <a href="author.html#7">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>J'ai fait une mauvaise manip hier soir, j'ai d&#233;j&#224; r&#233;pondu &#224; tout &#231;a, 
+mais sans envoyer &#224; la mailing list :-/
+
+Voici donc quelles ont &#233;t&#233; mes r&#233;ponses.
+
+Loic Mathaud wrote:
+&gt;<i> dMp a &#233;crit :
+</I>&gt;<i> 
+</I>&gt;&gt;<i>Tu pardonneras ma n00bitude avec Jelix... J'essaie de comprendre par
+</I>&gt;&gt;<i>l&#224; o&#249; je peux...
+</I>&gt;&gt;<i>Donc, quelques questions / remarques:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>Fichier: lib/jelix/dao/jDAOBase.class.php
+</I>&gt;&gt;<i>Ligne: 154
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>   protected function  _fetchAllRecords ($query, $class,
+</I>&gt;&gt;<i>$limitOffset=null, $limitCount=null){
+</I>&gt;&gt;<i>        $rs = $this-&gt;_getResultSetFromQuery ($query, $limitOffset, $limitCount);
+</I>&gt;&gt;<i>        $result = array();
+</I>&gt;&gt;<i>        if ($rs){
+</I>&gt;&gt;<i>            while($res = &amp; $rs-&gt;fetchRecord ($recordName)){
+</I>&gt;&gt;<i>                $result[] = &amp; $res;
+</I>&gt;&gt;<i>            }
+</I>&gt;&gt;<i>        }
+</I>&gt;&gt;<i>        return $result;
+</I>&gt;&gt;<i>    }
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>Je ne vois nulle part dans la code base _getResultSetFromQuery ()?
+</I>&gt;&gt;<i>D'autre part, cette fonction mentionne la variable $recordName qui
+</I>&gt;&gt;<i>n'existe (probablement) pas dans le contexte de la fonction....
+</I>&gt;&gt;<i>
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> A premi&#232;re vue, cette fonction est dans la classe jDAOFactoryBase qui
+</I>&gt;<i> est d&#233;clar&#233;e abstraite. Cette classe devra donc &#234;tre &#233;tendue et ce sont
+</I>&gt;<i> les classes h&#233;riti&#232;res qui impl&#233;menteraient _getResultSetFromQuery().
+</I>&gt;<i> C'est vrai qu'il faudrait peut-&#234;tre par contre donner le prototype :
+</I>&gt;<i> 
+</I>&gt;<i> abstract protected function _getResultSetFromQuery($query, $limitOffset,
+</I>&gt;<i> $limitCount);
+</I>&gt;<i> 
+</I>&gt;<i> Maintenant je connais pas vraiment le code et ma r&#233;ponse n'est pas
+</I>&gt;<i> forc&#233;ment juste. Laurent saura nous le dire.
+</I>
+Non, _fetchAllRecords est du code mort, issue de Copix, qui est obsol&#232;te 
+pour Jelix. J'ai donc fais le nettoyage hier soir.
+
+
+&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>ligne: 251
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>D'o&#249; vient la variable $principal ?
+</I>&gt;&gt;<i>
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> Bonne question ;)
+</I>
+C'est un param&#232;tre de la m&#233;thode, qui a &#233;t&#233; je ne sais plus pourquoi 
+supprim&#233;. Je l'ai remis.
+
+
+&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>Ligne 272:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>on peut simplifier tout ce qui suit dans la condition par:
+</I>&gt;&gt;<i>            $value = $value === null ? 'NULL' : (int) $value;
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>Non?
+</I>&gt;&gt;<i>
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> Euh, oui il me semble. Mais pour ma part je trouve plus lisible le code
+</I>&gt;<i> actuel. Question de go&#251;t peut-&#234;tre.
+</I>
+Non car ici $value contient un bigint, qui a donc des limites superieurs 
+&#224; int. Si on fait un (int), les nombres d&#233;passants les limites de int 
+seront tronqu&#233;s.
+
+
+&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>Fichier: lib/jelix/db/drivers/mysql/jDbTools.mysql.class.php
+</I>&gt;&gt;<i>Ligne: 88
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>D'o&#249; vient la var $p_result_line ?
+</I>&gt;&gt;<i>
+</I>
+Cette classe n'est pas pass&#233; v&#233;ritablement par la case &quot;adaptation&quot;. 
+C'est maintenant chose faite.
+
+&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> Pas trouv&#233; non plus o&#249; elle &#233;tait d&#233;clar&#233;e.
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;&gt;<i>Fichier: lib/jelix-scripts/commands/createmodule.cmd.php
+</I>&gt;&gt;<i>Ligne: 34
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>$module?
+</I>&gt;&gt;<i>
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> Devrait &#234;tre $this-&gt;_parameters['module'] normalement.
+</I>
+oui, je l'ai corrig&#233;.
+
+
+Merci pour cette &quot;review&quot; de code :-) C'est ce genre d'initiative qui 
+permette d'am&#233;liorer la qualit&#233; du code.
+
+a+
+
+Laurent
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000006.html">[Jelix-public] Re: [Jelix-public] Deux ou trois choses que j'ai du mal &#224; comprendre...
+</A></li>
+	<LI>Next message: <A HREF="000008.html">[Jelix-public] Surcharge d'une r&#233;ponse
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#7">[ date ]</a>
+              <a href="thread.html#7">[ thread ]</a>
+              <a href="subject.html#7">[ subject ]</a>
+              <a href="author.html#7">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/jelix-public">More information about the Jelix-public
+mailing list</a><br>
+</body></html>

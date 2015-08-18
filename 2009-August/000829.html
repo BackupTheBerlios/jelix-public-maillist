@@ -1,0 +1,173 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Jelix-public] ID unique en VARCHAR
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/jelix-public/2009-August/index.html" >
+   <LINK REL="made" HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20ID%20unique%20en%20VARCHAR&In-Reply-To=%3C4A93D742.8070006%40mathaud.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000828.html">
+   <LINK REL="Next"  HREF="000830.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Jelix-public] ID unique en VARCHAR</H1>
+    <B>Loic Mathaud</B> 
+    <A HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20ID%20unique%20en%20VARCHAR&In-Reply-To=%3C4A93D742.8070006%40mathaud.net%3E"
+       TITLE="[Jelix-public] ID unique en VARCHAR">loic at mathaud.net
+       </A><BR>
+    <I>Tue Aug 25 14:21:22 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000828.html">[Jelix-public] ID unique en VARCHAR
+</A></li>
+        <LI>Next message: <A HREF="000830.html">[Jelix-public] ID unique en VARCHAR
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#829">[ date ]</a>
+              <a href="thread.html#829">[ thread ]</a>
+              <a href="subject.html#829">[ subject ]</a>
+              <a href="author.html#829">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Bonjour Mathieu,
+
+Mathieu Piette a &#233;crit :
+&gt;<i> Bonjour,
+</I>&gt;<i> 
+</I>&gt;<i> Je d&#233;bute avec Jelix, j'&#233;cris ma premi&#232;re application.
+</I>
+Bienvenue donc ;)
+
+&gt;<i> 
+</I>&gt;<i> J'ai un module appel&#233; &#171;page&#187; qui sert &#224; afficher le texte des pages du
+</I>&gt;<i> site.
+</I>&gt;<i> 
+</I>&gt;<i> Mon fichier page.dao.xml est le suivant:
+</I>&gt;<i> 
+</I>&gt;<i> &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+</I>&gt;<i> &lt;dao xmlns=&quot;<A HREF="http://jelix.org/ns/dao/1.0">http://jelix.org/ns/dao/1.0</A>&quot;&gt;
+</I>&gt;<i>   &lt;datasources&gt;
+</I>&gt;<i>     &lt;primarytable name=&quot;pages&quot; primarykey=&quot;id&quot; /&gt;
+</I>&gt;<i>   &lt;/datasources&gt;
+</I>&gt;<i>   &lt;record&gt;
+</I>&gt;<i>     &lt;property
+</I>&gt;<i>       name=&quot;id&quot;
+</I>&gt;<i>       fieldname=&quot;id&quot;
+</I>&gt;<i>       datatype=&quot;string&quot;
+</I>&gt;<i>       required=&quot;true&quot;
+</I>&gt;<i>       maxlength=&quot;255&quot;
+</I>&gt;<i>     /&gt;
+</I>&gt;<i>     &lt;property
+</I>&gt;<i>       name=&quot;title&quot;
+</I>&gt;<i>       fieldname=&quot;title&quot;
+</I>&gt;<i>       datatype=&quot;string&quot;
+</I>&gt;<i>       required=&quot;true&quot;
+</I>&gt;<i>       maxlength=&quot;255&quot;
+</I>&gt;<i>     /&gt;
+</I>&gt;<i>     &lt;property
+</I>&gt;<i>       name=&quot;text&quot;
+</I>&gt;<i>       fieldname=&quot;text&quot;
+</I>&gt;<i>       datatype=&quot;text&quot;
+</I>&gt;<i>       required=&quot;true&quot;
+</I>&gt;<i>     /&gt;
+</I>&gt;<i>     &lt;property
+</I>&gt;<i>       name=&quot;date_creation&quot;
+</I>&gt;<i>       fieldname=&quot;date_creation&quot;
+</I>&gt;<i>       datatype=&quot;datetime&quot;
+</I>&gt;<i>       required=&quot;true&quot;
+</I>&gt;<i>       insertpattern=&quot;NOW()&quot;
+</I>&gt;<i>       updatepattern=&quot;&quot;
+</I>&gt;<i>     /&gt;
+</I>&gt;<i>     &lt;property
+</I>&gt;<i>       name=&quot;date_modification&quot;
+</I>&gt;<i>       fieldname=&quot;date_modification&quot;
+</I>&gt;<i>       datatype=&quot;datetime&quot;
+</I>&gt;<i>       required=&quot;true&quot;
+</I>&gt;<i>       insertpattern=&quot;NOW()&quot;
+</I>&gt;<i>       updatepattern=&quot;NOW()&quot;
+</I>&gt;<i>     /&gt;
+</I>&gt;<i>   &lt;/record&gt;
+</I>&gt;<i>   &lt;factory&gt;
+</I>&gt;<i>   &lt;/factory&gt;
+</I>&gt;<i> &lt;/dao&gt;
+</I>&gt;<i> 
+</I>&gt;<i> J'ai utilis&#233; insertpattern et updatepattern pour que les dates de
+</I>&gt;<i> cr&#233;ation et de mise &#224; jour soient renseign&#233;e automagicalement, mais je
+</I>&gt;<i> me demande comment je vais bien pouvoir faire pour l'ID de mes pages, ce
+</I>&gt;<i> serait bien s'il y avait quelque chose de similaire.
+</I>&gt;<i> 
+</I>&gt;<i> Je n'ai pas voulu utiliser un ID num&#233;rique avec auto_increment, mais
+</I>&gt;<i> plut&#244;t un ID sous forme de VARCHAR pour que mes URL soient mieux. Par
+</I>&gt;<i> exemple, si j'ai une page dont le titre est &#171;&#199;a c'est un joli titre!&#187;,
+</I>&gt;<i> son ID serait &#171;ca_c_est_un_joli_titre&#187; et comme &#231;a, au lieu d'avoir des
+</I>&gt;<i> URL du type <A HREF="http://www.example.com/myapp/www/?page=1,">http://www.example.com/myapp/www/?page=1,</A> j'aurai plut&#244;t
+</I>&gt;<i> quelque chose qui ressemblerait &#224;
+</I>&gt;<i> <A HREF="http://www.example.com/myapp/www/?page=ca_c_est_un_joli_titre.">http://www.example.com/myapp/www/?page=ca_c_est_un_joli_titre.</A>
+</I>&gt;<i> 
+</I>&gt;<i> Mon probl&#232;me c'est que je n'ai pas encore bien d&#233;termin&#233; comment je
+</I>&gt;<i> pourrais g&#233;n&#233;rer ces ID &#224; partir du titre en &#233;tant s&#251;r qu'ils sont
+</I>&gt;<i> uniques (mais &#231;a je trouverai toujours bien), mais surtout, je ne sais
+</I>&gt;<i> pas o&#249; je dois mettre le code qui g&#233;n&#232;re cet ID...
+</I>&gt;<i> 
+</I>&gt;<i> Quelqu'un aurait-il une id&#233;e?
+</I>
+Personnellement j'aurais tendance &#224; te proposer de faire ainsi :
+
+- Tu mets un id en auto_increment comme cl&#233; primaire de ta table. &#199;a te
+facilitera la vie car g&#233;r&#233; par ta base de donn&#233;es
+- Tu ajoute un champ &quot;slug&quot; avec un index UNIQUE qui serait le titre
+pass&#233; par un jUrl::escape()
+- Un coup d'urls significatives pour avoir de belles urls
+
+Pour enregistrer le &quot;slug&quot; tu le fais au m&#234;me moment que l'enregitrement
+de ta page.
+
+J'esp&#232;re que c'est suffisamment clair.
+
+Si d'autres jelixians veulent proposer d'autres fa&#231;on de faire,
+n'h&#233;sitez pas ! ;)
+
+@+
+Loic
+
+&gt;<i> 
+</I>&gt;<i> Merci d'avance!
+</I>&gt;<i> 
+</I>&gt;<i> --
+</I>&gt;<i> Mathieu.
+</I>&gt;<i> 
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Jelix-public mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/jelix-public">Jelix-public at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/jelix-public">https://lists.berlios.de/mailman/listinfo/jelix-public</A>
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000828.html">[Jelix-public] ID unique en VARCHAR
+</A></li>
+	<LI>Next message: <A HREF="000830.html">[Jelix-public] ID unique en VARCHAR
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#829">[ date ]</a>
+              <a href="thread.html#829">[ thread ]</a>
+              <a href="subject.html#829">[ subject ]</a>
+              <a href="author.html#829">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/jelix-public">More information about the Jelix-public
+mailing list</a><br>
+</body></html>

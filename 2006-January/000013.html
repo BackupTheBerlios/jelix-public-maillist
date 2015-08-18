@@ -1,0 +1,177 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Jelix-public] Typos probables et questions
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/jelix-public/2006-January/index.html" >
+   <LINK REL="made" HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20Typos%20probables%20et%20questions&In-Reply-To=%3C43C2E845.70700%40xulfr.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000012.html">
+   <LINK REL="Next"  HREF="000014.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Jelix-public] Typos probables et questions</H1>
+    <B>Webmestre xulfr</B> 
+    <A HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20Typos%20probables%20et%20questions&In-Reply-To=%3C43C2E845.70700%40xulfr.org%3E"
+       TITLE="[Jelix-public] Typos probables et questions">webmestre at xulfr.org
+       </A><BR>
+    <I>Mon Jan  9 23:48:37 CET 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000012.html">[Jelix-public] Typos probables et questions
+</A></li>
+        <LI>Next message: <A HREF="000014.html">[Jelix-public] checkins du 09 au 15
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#13">[ date ]</a>
+              <a href="thread.html#13">[ thread ]</a>
+              <a href="subject.html#13">[ subject ]</a>
+              <a href="author.html#13">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>dMp wrote:
+&gt;<i> Hello ;)
+</I>&gt;<i> 
+</I>&gt;<i> D'abord quelques trucs &quot;bizarres&quot;:
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> *******
+</I>&gt;<i> jelix/auth/jAuth.class.php
+</I>&gt;<i> *******
+</I>&gt;<i> 
+</I>&gt;<i> Ligne 31:
+</I>&gt;<i> - interface class jIAuthDriver {
+</I>&gt;<i> + interface jIAuthDriver {
+</I>
+corrig&#233;
+
+&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> *******
+</I>&gt;<i> jelix/utils/jClasses.class.php
+</I>&gt;<i> *******
+</I>&gt;<i> 
+</I>&gt;<i> Ligne 38:
+</I>&gt;<i>        if(isset(self:_instances[$sel-&gt;toString()])){
+</I>&gt;<i>            return (self:_instances[$sel-&gt;toString()]);
+</I>&gt;<i>        }else{
+</I>&gt;<i>            $o = self::create($selector);
+</I>&gt;<i>            self:_instances[$sel-&gt;toString()]=$o;
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> Ca serait pas plut&#244;t un truc genre &#231;a?
+</I>&gt;<i> 
+</I>&gt;<i>        if(isset(self::$_instances[$sel-&gt;toString()])){
+</I>&gt;<i>            return (self::$_instances[$sel-&gt;toString()]);
+</I>&gt;<i>        }else{
+</I>&gt;<i>            $o = self::create($selector);
+</I>&gt;<i>            self::$_instances[$sel-&gt;toString()]=$o;
+</I>&gt;<i> 
+</I>
+oui tout &#224; fait... (oui, je n'ai pas test&#233; cette classe :-) )
+
+&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> *******
+</I>&gt;<i> jelix/utils/jZone.class.php
+</I>&gt;<i> *******
+</I>&gt;<i> Ligne 135:
+</I>&gt;<i> $params ne semble pas exister dans le contexte de la fonction...
+</I>
+exact, la ligne d'ailleurs n'est pas utile.
+
+&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> Ensuite, j'ai une question, &quot;formelle&quot;, concernant les magic_quotes.
+</I>&gt;<i> Est-il vraiment n&#233;cessaire d'en faire un plugin?
+</I>&gt;<i> Ca me parait &#234;tre un gros marteau pour une petite mouche (mais tu as
+</I>&gt;<i> probablement de bonnes raisons)
+</I>&gt;<i> Il me semble que les magic quotes GPC sont plus une &quot;bizarrerie&quot; du langage
+</I>&gt;<i> qu'un &quot;feature&quot; &#224; int&#233;grer dans une plate-forme, et que l'utilisateur doit
+</I>&gt;<i> activer ou non.
+</I>
+Justement, comme c'est une bizarrerie, on le met dans un plugin. Ainsi, 
+pour une plateforme correctement configur&#233; (pas de magicquotes), il n'y 
+a pas &#224; activer le plugin, donc c'est du code en moins dans le framework 
+&#224; parser pour rien. Pour celui qui est sur un serveur avec les 
+magicquotes activ&#233;s, il faut qu'il active le plugin :-)
+
+
+&gt;<i> 
+</I>&gt;<i> Personnellement j'aurai tendance &#224; inclure syst&#233;matiquement la d&#233;tection.
+</I>
+comme j'&#233;crivais juste avant, une plateforme bien configur&#233;e, et une 
+plateforme qui n'active pas les magicquotes. Inclure donc la detection 
+ne sert &#224; rien la plupart du temps sinon &#224; inclure du code inutile. Et 
+cela va &#234;tre d'autant plus vrai &#224; l'avenir que les magicquotes vont &#234;tre 
+abandonn&#233;e.
+
+
+&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> D'autre part, je ne vois nulle part de mention de magic_quotes_runtime (&#231;a
+</I>&gt;<i> existe toujours en php5 ?).
+</I>&gt;<i> Un petit ini_set('magic_quotes_runtime', false); serait probablement
+</I>&gt;<i> bienvenue.
+</I>
+l&#224; encore, dans la config par defaut de php5, c'est d&#233;sactiv&#233; par 
+d&#233;faut. Et on consid&#232;re que &#231;a doit &#234;tre d&#233;sactiv&#233;. Par contre, faudrait 
+peut &#234;tre effectivement l'ajouter dans le plugin magicquotes. Ce que je 
+viens de faire.
+
+
+&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> Pour r&#233;pondre &#224; une question &#233;voqu&#233;e auparavant (concernant
+</I>&gt;<i> session_auto_start): oui, il y a des hosts o&#249; c'est activ&#233;.
+</I>&gt;<i> C'&#233;tait m&#234;me parfois tr&#232;s probl&#233;matique &#224; cause d'un horrible bug dans php
+</I>&gt;<i> 4.x (me souviens plus), o&#249; les objets n'&#233;taient pas d&#233;s&#233;rialis&#233;s
+</I>&gt;<i> correctement...
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> Toujours dans le m&#234;me ordre d'id&#233;e, je suppose que structurellement jelix
+</I>&gt;<i> est relativement immune contre l'injection de variables (dans le cas
+</I>&gt;<i> register_globals=true).
+</I>&gt;<i> Si ce n'est pas le cas, &#231;a se g&#232;re en quelques lignes a priori...
+</I>&gt;<i> 
+</I>
+je pense aussi que c'est le cas. Tout est encapsul&#233; dans des objets, 
+donc pas d'acces aux variables globales, et les rares variables globales 
+utilis&#233;es sont de toutes fa&#231;on initialis&#233;es.
+
+a+
+
+Laurent
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000012.html">[Jelix-public] Typos probables et questions
+</A></li>
+	<LI>Next message: <A HREF="000014.html">[Jelix-public] checkins du 09 au 15
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#13">[ date ]</a>
+              <a href="thread.html#13">[ thread ]</a>
+              <a href="subject.html#13">[ subject ]</a>
+              <a href="author.html#13">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/jelix-public">More information about the Jelix-public
+mailing list</a><br>
+</body></html>

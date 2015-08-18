@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Jelix-public] Search Engine
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/jelix-public/2009-February/index.html" >
+   <LINK REL="made" HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20Search%20Engine&In-Reply-To=%3C499A8FF9.3040208%40lepeltier.info%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000824.html">
+   <LINK REL="Next"  HREF="000822.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Jelix-public] Search Engine</H1>
+    <B>Lepeltier k&#233;vin</B> 
+    <A HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20Search%20Engine&In-Reply-To=%3C499A8FF9.3040208%40lepeltier.info%3E"
+       TITLE="[Jelix-public] Search Engine">kevin at lepeltier.info
+       </A><BR>
+    <I>Tue Feb 17 11:22:49 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000824.html">[Jelix-public] Search Engine
+</A></li>
+        <LI>Next message: <A HREF="000822.html">[Jelix-public] Search Engine
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#825">[ date ]</a>
+              <a href="thread.html#825">[ thread ]</a>
+              <a href="subject.html#825">[ subject ]</a>
+              <a href="author.html#825">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Lionel [Over-Blog] a &#233;crit :
+&gt;<i> C'est un syst&#232;me que j'ai d&#233;j&#224; test&#233;. Inconv&#233;nient : r&#233;sultats m&#233;diocres.
+</I>&gt;<i>
+</I>&gt;<i> En effet, cela ne prend pas en compte le poids des mots (un mot dont 
+</I>&gt;<i> l'occurence est faible dans un document doit avoir un poids fort dans 
+</I>&gt;<i> le ranking de recherche).
+</I>&gt;<i> Il ne prend pas en compte la distance des mots (si je cherche &quot;grosse 
+</I>&gt;<i> brute&quot;, j'esp&#232;re un meilleur ranking pour les documents ayant ces mots 
+</I>&gt;<i> adjacents).
+</I>&gt;<i> Il ne prend pas en compte la lexemisation (si je cherche restaurant, 
+</I>&gt;<i> j'aimerai que restaurateur soit match&#233; aussi).
+</I>&gt;<i> Il ne prend pas en compte les fautes de frappe (si je cherche villahe 
+</I>&gt;<i> -au lieu de village- le soundex ne sera pas le m&#234;me, mais un moteur 
+</I>&gt;<i> meilleur m'aurait propos&#233; l'orthographe approch&#233;e &quot;village&quot;).
+</I>&gt;<i>
+</I>&gt;<i> Voila quelques exemples des d&#233;fauts d'un tel moteur, mais il y en a 
+</I>&gt;<i> d'autres, et mis bout a bout, ca donne un r&#233;sultat tr&#232;s moyen...
+</I>&gt;<i>
+</I>&gt;<i> Lionel
+</I>&gt;<i>
+</I>Pour le poids des mots, c'est pas dur, il suffit d'ajouter, un champ de 
+plus dans la table d'indexation.
+
+en phonex, le plus sensible.
+restaurant -&gt; 0.648737364
+restaurateur -&gt; 0.648737369
+villahe -&gt; 0.292411837
+village -&gt; 0.292356018
+
+en soundex_fr, plus simple
+restaurant -&gt;  R836
+restaurateur -&gt;   R836
+villahe -&gt;   V400
+village -&gt;   V470
+
+en soundex 2
+restaurant -&gt; RSTR
+restaurateur -&gt;  RSTR
+villahe -&gt;  VL__
+village -&gt;  VLG__
+
+En arrondissant plus ou moins &#231;a passe.
+
+
+Pour ce qui est de la distance des mots, la je vois vraiment pas comment 
+faire s'en obtenir une base de donn&#233;e monstrueuse.
+
+k&#233;vin [lipki]
+
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000824.html">[Jelix-public] Search Engine
+</A></li>
+	<LI>Next message: <A HREF="000822.html">[Jelix-public] Search Engine
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#825">[ date ]</a>
+              <a href="thread.html#825">[ thread ]</a>
+              <a href="subject.html#825">[ subject ]</a>
+              <a href="author.html#825">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/jelix-public">More information about the Jelix-public
+mailing list</a><br>
+</body></html>

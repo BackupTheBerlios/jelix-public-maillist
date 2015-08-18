@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Jelix-public] checkin SVN-769 (laurentj)
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/jelix-public/2008-February/index.html" >
+   <LINK REL="made" HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20checkin%20SVN-769%20%28laurentj%29&In-Reply-To=%3C47B46C4E.mailKZA11685C%40xulfr.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000595.html">
+   <LINK REL="Next"  HREF="000597.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Jelix-public] checkin SVN-769 (laurentj)</H1>
+    <B>laurent at xulfr.org</B> 
+    <A HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20checkin%20SVN-769%20%28laurentj%29&In-Reply-To=%3C47B46C4E.mailKZA11685C%40xulfr.org%3E"
+       TITLE="[Jelix-public] checkin SVN-769 (laurentj)">laurent at xulfr.org
+       </A><BR>
+    <I>Thu Feb 14 17:29:02 CET 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000595.html">[Jelix-public] checkin SVN-768 (laurentj)
+</A></li>
+        <LI>Next message: <A HREF="000597.html">[Jelix-public] checkin SVN-770 (laurentj)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#596">[ date ]</a>
+              <a href="thread.html#596">[ thread ]</a>
+              <a href="subject.html#596">[ subject ]</a>
+              <a href="author.html#596">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>laurentj
+2008-02-14 17:28:57 +0100 (Thu, 14 Feb 2008)
+131
+ticket #214: integrate a javascript script to do html wydiwyg editing
+added also jquery, and two plugins, date_input and dimensions
+
+U   trunk/build/lib/jManifest.class.php
+U   trunk/build/manifests/jelix-lib.mn
+A   trunk/lib/jelix-www/jquery/
+A   trunk/lib/jelix-www/jquery/GPL-LICENSE.txt
+A   trunk/lib/jelix-www/jquery/MIT-LICENSE.txt
+A   trunk/lib/jelix-www/jquery/README
+A   trunk/lib/jelix-www/jquery/VERSION
+A   trunk/lib/jelix-www/jquery/date_input/
+A   trunk/lib/jelix-www/jquery/date_input/CHANGELOG
+A   trunk/lib/jelix-www/jquery/date_input/LICENCE
+A   trunk/lib/jelix-www/jquery/date_input/NOTES
+A   trunk/lib/jelix-www/jquery/date_input/README
+A   trunk/lib/jelix-www/jquery/date_input/date_input.css
+A   trunk/lib/jelix-www/jquery/date_input/jquery.date_input.de_DE.js
+A   trunk/lib/jelix-www/jquery/date_input/jquery.date_input.es_ES.js
+A   trunk/lib/jelix-www/jquery/date_input/jquery.date_input.js
+A   trunk/lib/jelix-www/jquery/date_input/jquery.date_input.nl_NL.js
+A   trunk/lib/jelix-www/jquery/date_input/jquery.date_input.pt_PT.js
+A   trunk/lib/jelix-www/jquery/date_input/jquery.date_input.ru_RU.js
+A   trunk/lib/jelix-www/jquery/dimensions/
+A   trunk/lib/jelix-www/jquery/dimensions/ChangeLog.txt
+A   trunk/lib/jelix-www/jquery/dimensions/jquery.dimensions.js
+A   trunk/lib/jelix-www/jquery/jquery.js
+A   trunk/lib/jelix-www/wymeditor/
+A   trunk/lib/jelix-www/wymeditor/GPL-license.txt
+A   trunk/lib/jelix-www/wymeditor/MIT-license.txt
+A   trunk/lib/jelix-www/wymeditor/README
+A   trunk/lib/jelix-www/wymeditor/VERSION
+A   trunk/lib/jelix-www/wymeditor/iframe/
+A   trunk/lib/jelix-www/wymeditor/iframe/default/
+A   trunk/lib/jelix-www/wymeditor/iframe/default/lbl-blockquote.png
+A   trunk/lib/jelix-www/wymeditor/iframe/default/lbl-h1.png
+A   trunk/lib/jelix-www/wymeditor/iframe/default/lbl-h2.png
+A   trunk/lib/jelix-www/wymeditor/iframe/default/lbl-h3.png
+A   trunk/lib/jelix-www/wymeditor/iframe/default/lbl-h4.png
+A   trunk/lib/jelix-www/wymeditor/iframe/default/lbl-h5.png
+A   trunk/lib/jelix-www/wymeditor/iframe/default/lbl-h6.png
+A   trunk/lib/jelix-www/wymeditor/iframe/default/lbl-p.png
+A   trunk/lib/jelix-www/wymeditor/iframe/default/lbl-pre.png
+A   trunk/lib/jelix-www/wymeditor/iframe/default/wymiframe.css
+A   trunk/lib/jelix-www/wymeditor/iframe/default/wymiframe.html
+A   trunk/lib/jelix-www/wymeditor/jquery.wymeditor.js
+A   trunk/lib/jelix-www/wymeditor/lang/
+A   trunk/lib/jelix-www/wymeditor/lang/ca.js
+A   trunk/lib/jelix-www/wymeditor/lang/de.js
+A   trunk/lib/jelix-www/wymeditor/lang/en.js
+A   trunk/lib/jelix-www/wymeditor/lang/es.js
+A   trunk/lib/jelix-www/wymeditor/lang/fr.js
+A   trunk/lib/jelix-www/wymeditor/lang/hu.js
+A   trunk/lib/jelix-www/wymeditor/lang/it.js
+A   trunk/lib/jelix-www/wymeditor/lang/nl.js
+A   trunk/lib/jelix-www/wymeditor/lang/pl.js
+A   trunk/lib/jelix-www/wymeditor/lang/sv.js
+A   trunk/lib/jelix-www/wymeditor/plugins/
+A   trunk/lib/jelix-www/wymeditor/plugins/hovertools/
+A   trunk/lib/jelix-www/wymeditor/plugins/hovertools/jquery.wymeditor.hovertools.js
+A   trunk/lib/jelix-www/wymeditor/plugins/tidy/
+A   trunk/lib/jelix-www/wymeditor/plugins/tidy/README
+A   trunk/lib/jelix-www/wymeditor/plugins/tidy/jquery.wymeditor.tidy.js
+A   trunk/lib/jelix-www/wymeditor/plugins/tidy/tidy.php
+A   trunk/lib/jelix-www/wymeditor/plugins/tidy/wand.png
+A   trunk/lib/jelix-www/wymeditor/skins/
+A   trunk/lib/jelix-www/wymeditor/skins/default/
+A   trunk/lib/jelix-www/wymeditor/skins/default/icons.png
+A   trunk/lib/jelix-www/wymeditor/skins/default/screen.css
+A   trunk/lib/jelix-www/wymeditor/skins/wymeditor_icon.png
+A   trunk/lib/jelix-www/wymeditor/wym_css_parser.js
+A   trunk/lib/jelix-www/wymeditor/xhtml_parser.js
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000595.html">[Jelix-public] checkin SVN-768 (laurentj)
+</A></li>
+	<LI>Next message: <A HREF="000597.html">[Jelix-public] checkin SVN-770 (laurentj)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#596">[ date ]</a>
+              <a href="thread.html#596">[ thread ]</a>
+              <a href="subject.html#596">[ subject ]</a>
+              <a href="author.html#596">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/jelix-public">More information about the Jelix-public
+mailing list</a><br>
+</body></html>

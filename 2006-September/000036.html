@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Jelix-public] checkin SVN-248 (laurentj)
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/jelix-public/2006-September/index.html" >
+   <LINK REL="made" HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20checkin%20SVN-248%20%28laurentj%29&In-Reply-To=%3C44FB5EE9.mailLBI16IK26%40xulfr.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000035.html">
+   <LINK REL="Next"  HREF="000037.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Jelix-public] checkin SVN-248 (laurentj)</H1>
+    <B>laurent at xulfr.org</B> 
+    <A HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20checkin%20SVN-248%20%28laurentj%29&In-Reply-To=%3C44FB5EE9.mailLBI16IK26%40xulfr.org%3E"
+       TITLE="[Jelix-public] checkin SVN-248 (laurentj)">laurent at xulfr.org
+       </A><BR>
+    <I>Mon Sep  4 01:02:01 CEST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000035.html">[Jelix-public] checkin SVN-247 (laurentj)
+</A></li>
+        <LI>Next message: <A HREF="000037.html">[Jelix-public] checkin SVN-249 (bballizlife)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#36">[ date ]</a>
+              <a href="thread.html#36">[ thread ]</a>
+              <a href="subject.html#36">[ subject ]</a>
+              <a href="author.html#36">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>laurentj
+2006-09-04 01:01:42 +0200 (Mon, 04 Sep 2006)
+304
+- travail sur la documentation dans les sources
+- gJContext n'existe plus, remplac?\195?\169 par une propri?\195?\169t?\195?\169 statique dans jContext
+- jIncluder::inc ou incAll ne retournent plus le tableau d'?\195?\169tats de la compilation (inutile)
+- renommage de CopixBinary en jBinaryData (xmlrpc)
+
+U   trunk/Makefile
+U   trunk/lib/jelix/auth/jAuth.class.php
+U   trunk/lib/jelix/auth/jAuthDriverDb.class.php
+U   trunk/lib/jelix/auth/jAuthUser.class.php
+U   trunk/lib/jelix/controllers/jControllerCmdLine.class.php
+U   trunk/lib/jelix/core/jConfig.class.php
+U   trunk/lib/jelix/core/jConfigCompiler.class.php
+U   trunk/lib/jelix/core/jContext.class.php
+U   trunk/lib/jelix/core/jController.class.php
+U   trunk/lib/jelix/core/jCoordinator.class.php
+U   trunk/lib/jelix/core/jErrorHandler.lib.php
+U   trunk/lib/jelix/core/jException.lib.php
+U   trunk/lib/jelix/core/jIPlugin.iface.php
+U   trunk/lib/jelix/core/jIncluder.class.php
+U   trunk/lib/jelix/core/jLocale.class.php
+U   trunk/lib/jelix/core/jRequest.class.php
+U   trunk/lib/jelix/core/jResponse.class.php
+U   trunk/lib/jelix/core/request/jClassicRequest.class.php
+U   trunk/lib/jelix/core/request/jCmdLineRequest.class.php
+U   trunk/lib/jelix/core/request/jJsonRpcRequest.class.php
+U   trunk/lib/jelix/core/request/jRdfRequest.class.php
+U   trunk/lib/jelix/core/request/jXmlRpcRequest.class.php
+U   trunk/lib/jelix/core/request/jXulRequest.class.php
+U   trunk/lib/jelix/core/response/jResponseBinary.class.php
+U   trunk/lib/jelix/core/response/jResponseHtml.class.php
+U   trunk/lib/jelix/core/response/jResponseJsonrpc.class.php
+U   trunk/lib/jelix/core/response/jResponseRdf.class.php
+U   trunk/lib/jelix/core/response/jResponseRedirect.class.php
+U   trunk/lib/jelix/core/response/jResponseRedirectUrl.class.php
+U   trunk/lib/jelix/core/response/jResponseText.class.php
+U   trunk/lib/jelix/core/response/jResponseXml.class.php
+U   trunk/lib/jelix/core/response/jResponseXmlrpc.class.php
+U   trunk/lib/jelix/core/response/jResponseXul.class.php
+U   trunk/lib/jelix/core/response/jResponseXulDialog.class.php
+U   trunk/lib/jelix/core/response/jResponseXulOverlay.class.php
+U   trunk/lib/jelix/core/response/jResponseXulPage.class.php
+U   trunk/lib/jelix/core/response/jResponseZip.class.php
+U   trunk/lib/jelix/core/url/jUrl.class.php
+U   trunk/lib/jelix/core/url/jUrlCompiler.significant.class.php
+U   trunk/lib/jelix/core/url/jUrlEngine.significant.class.php
+U   trunk/lib/jelix/core/url/jUrlEngine.simple.class.php
+U   trunk/lib/jelix/dao/jDao.class.php
+U   trunk/lib/jelix/dao/jDaoBase.class.php
+U   trunk/lib/jelix/dao/jDaoCompiler.class.php
+U   trunk/lib/jelix/dao/jDaoConditions.class.php
+U   trunk/lib/jelix/dao/jDaoGenerator.class.php
+U   trunk/lib/jelix/dao/jDaoParser.class.php
+U   trunk/lib/jelix/db/drivers/mysql/jDbConnection.mysql.class.php
+U   trunk/lib/jelix/db/drivers/mysql/jDbResultSet.mysql.class.php
+U   trunk/lib/jelix/db/drivers/mysql/jDbTools.mysql.class.php
+U   trunk/lib/jelix/db/drivers/postgresql/jDbConnection.postgresql.class.php
+U   trunk/lib/jelix/db/drivers/postgresql/jDbResultSet.postgresql.class.php
+U   trunk/lib/jelix/db/drivers/postgresql/jDbTools.postgresql.class.php
+U   trunk/lib/jelix/db/drivers/sqlite/jDbConnection.sqlite.class.php
+U   trunk/lib/jelix/db/drivers/sqlite/jDbResultSet.sqlite.class.php
+U   trunk/lib/jelix/db/drivers/sqlite/jDbTools.sqlite.class.php
+U   trunk/lib/jelix/db/jDb.class.php
+U   trunk/lib/jelix/db/jDbConnection.class.php
+U   trunk/lib/jelix/db/jDbPDOConnection.class.php
+U   trunk/lib/jelix/db/jDbResultSet.class.php
+U   trunk/lib/jelix/db/jDbTools.class.php
+U   trunk/lib/jelix/db/jDbWidget.class.php
+U   trunk/lib/jelix/events/jEvent.class.php
+U   trunk/lib/jelix/events/jEventCompiler.class.php
+U   trunk/lib/jelix/events/jEventListener.class.php
+U   trunk/lib/jelix/events/jEventListenerFactory.class.php
+U   trunk/lib/jelix/forms/jForms.class.php
+U   trunk/lib/jelix/forms/jFormsBase.class.php
+U   trunk/lib/jelix/forms/jFormsCompiler.class.php
+U   trunk/lib/jelix/forms/jFormsControl.class.php
+U   trunk/lib/jelix/forms/jFormsDataContainer.class.php
+U   trunk/lib/jelix/forms/jFormsDatasource.class.php
+U   trunk/lib/jelix/init.php
+U   trunk/lib/jelix/tpl/jTpl.class.php
+U   trunk/lib/jelix/tpl/jTplCompiler.class.php
+U   trunk/lib/jelix/tpl/plugins/common/block.ifacl.php
+U   trunk/lib/jelix/tpl/plugins/common/block.ifnotacl.php
+U   trunk/lib/jelix/tpl/plugins/common/block.ifuserconnected.php
+U   trunk/lib/jelix/tpl/plugins/common/block.ifusernotconnected.php
+U   trunk/lib/jelix/utils/jClasses.class.php
+U   trunk/lib/jelix/utils/jCmdUtils.class.php
+U   trunk/lib/jelix/utils/jDatatype.class.php
+U   trunk/lib/jelix/utils/jDateTime.class.php
+U   trunk/lib/jelix/utils/jFile.class.php
+U   trunk/lib/jelix/utils/jJsonRpc.class.php
+U   trunk/lib/jelix/utils/jLog.class.php
+U   trunk/lib/jelix/utils/jXmlRpc.class.php
+U   trunk/lib/jelix/utils/jZipCreator.class.php
+U   trunk/lib/jelix/utils/jZone.class.php
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000035.html">[Jelix-public] checkin SVN-247 (laurentj)
+</A></li>
+	<LI>Next message: <A HREF="000037.html">[Jelix-public] checkin SVN-249 (bballizlife)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#36">[ date ]</a>
+              <a href="thread.html#36">[ thread ]</a>
+              <a href="subject.html#36">[ subject ]</a>
+              <a href="author.html#36">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/jelix-public">More information about the Jelix-public
+mailing list</a><br>
+</body></html>

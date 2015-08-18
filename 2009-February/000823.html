@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Jelix-public] Search Engine
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/jelix-public/2009-February/index.html" >
+   <LINK REL="made" HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20Search%20Engine&In-Reply-To=%3C4999E821.20603%40lepeltier.info%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000821.html">
+   <LINK REL="Next"  HREF="000824.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Jelix-public] Search Engine</H1>
+    <B>Lepeltier k&#233;vin</B> 
+    <A HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20Search%20Engine&In-Reply-To=%3C4999E821.20603%40lepeltier.info%3E"
+       TITLE="[Jelix-public] Search Engine">kevin at lepeltier.info
+       </A><BR>
+    <I>Mon Feb 16 23:26:41 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000821.html">[Jelix-public] Search Engine
+</A></li>
+        <LI>Next message: <A HREF="000824.html">[Jelix-public] Search Engine
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#823">[ date ]</a>
+              <a href="thread.html#823">[ thread ]</a>
+              <a href="subject.html#823">[ subject ]</a>
+              <a href="author.html#823">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>  Voil&#224; comment je vois les choses :
+
+une recherche s'effectue sur une ou plusieur tables.
+une t&#226;che cron (ou pseudo cron) index les tables.
+lors de l'indexation, on &#233;clat en mot
+suppression des mots de liaison.
+chaque mot et converti en soundex ou phonex. (choisit en fonction de la 
+langue de l'enregistrement.)
+puis enregistrer :
+
+|<i> id | soundex | nom de la table de r&#233;f | id de l'enregistrement | champ 
+</I>de l'enregistrement | langue |
+
+Une table peut &#234;tre cr&#233;&#233;e pour marquer les couples [nom de 
+table|id|champ] qui on &#233;tait modifi&#233;, pour all&#233;ger la t&#226;che de l'indexation.
+
+|<i> nom de la table de r&#233;f | id de l'enregistrement | champ de 
+</I>l'enregistrement | est modifi&#233; oui/non |
+
+pour chaque [nom de table|id|champ] modifier, on supprime toutes les 
+lignes dans la table, avant de recommencer l'indexation.
+
+Au moment de la recherche,
+&#233;clat en mots la recherche, en prenant en compte, le signe d'exclusion (-)
+chaque mot et converti en soundex.
+si'il y a plusieurs fois le m&#234;me soundex, on en garde qu'un.
+recherche d'&#233;galit&#233; : SELECT table_item, id_item, champ_item FROM search 
+WHERE soundex = 'mot1' || soundex = 'mot2';
+Cette requ&#234;te est multi-SGBD je pense.
+chaque ligne du r&#233;sultat doit-&#234;tre afficher en fonction de son contenu.
+
+Dans la config :
+dur&#233;e entre deux indexations.
+Si le moteur utilise les soundex
+la langue par d&#233;faut
+Listes des tables a index&#233; (le moteur se limite naturellement au champ 
+varchar, texte)
+la langue pour chaque champ (si diff&#233;rent de d&#233;faut)
+
+
+C'est un peu grossier :)
+
+Mais je vois pas de souci majeur, c'est une base de moteur de recherche.
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000821.html">[Jelix-public] Search Engine
+</A></li>
+	<LI>Next message: <A HREF="000824.html">[Jelix-public] Search Engine
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#823">[ date ]</a>
+              <a href="thread.html#823">[ thread ]</a>
+              <a href="subject.html#823">[ subject ]</a>
+              <a href="author.html#823">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/jelix-public">More information about the Jelix-public
+mailing list</a><br>
+</body></html>

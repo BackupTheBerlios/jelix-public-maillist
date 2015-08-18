@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Jelix-public] checkin SVN-781 (laurentj)
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/jelix-public/2008-February/index.html" >
+   <LINK REL="made" HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20checkin%20SVN-781%20%28laurentj%29&In-Reply-To=%3C47C5404F.mailG8811TJZ9%40xulfr.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000607.html">
+   <LINK REL="Next"  HREF="000609.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Jelix-public] checkin SVN-781 (laurentj)</H1>
+    <B>laurent at xulfr.org</B> 
+    <A HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20checkin%20SVN-781%20%28laurentj%29&In-Reply-To=%3C47C5404F.mailG8811TJZ9%40xulfr.org%3E"
+       TITLE="[Jelix-public] checkin SVN-781 (laurentj)">laurent at xulfr.org
+       </A><BR>
+    <I>Wed Feb 27 11:49:51 CET 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000607.html">[Jelix-public] checkin SVN-780 (laurentj)
+</A></li>
+        <LI>Next message: <A HREF="000609.html">[Jelix-public] checkin SVN-782 (laurentj)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#608">[ date ]</a>
+              <a href="thread.html#608">[ thread ]</a>
+              <a href="subject.html#608">[ subject ]</a>
+              <a href="author.html#608">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>laurentj
+2008-02-27 11:49:50 +0100 (Wed, 27 Feb 2008)
+54
+ticket #454: Added support of CLI in module junittests
+
+U   trunk/build/manifests/jelix-dev.mn
+U   trunk/build/manifests/testapp.mn
+A   trunk/lib/jelix-modules/junittests/classes/jtextrespreporter.class.php
+A   trunk/lib/jelix-modules/junittests/controllers/default.cmdline.php
+A   trunk/lib/jelix-modules/junittests/install/application-cli.init.php
+A   trunk/lib/jelix-modules/junittests/install/scripts/
+A   trunk/lib/jelix-modules/junittests/install/scripts/tests.php
+A   trunk/lib/jelix-modules/junittests/install/var/
+A   trunk/lib/jelix-modules/junittests/install/var/config/
+A   trunk/lib/jelix-modules/junittests/install/var/config/cmdline/
+A   trunk/lib/jelix-modules/junittests/install/var/config/cmdline/configtests.ini.php
+A   trunk/lib/jelix-modules/junittests/install/var/log-cli/
+A   trunk/temp/testapp-cli/
+A   trunk/testapp/application-cli.init.php
+D   trunk/testapp/modules/jelix_tests/tests/core.jlocale.html.php
+A   trunk/testapp/modules/jelix_tests/tests/core.jlocale.html_cli.php
+U   trunk/testapp/modules/jelix_tests/tests/core.old_selectors_action.html.php
+D   trunk/testapp/modules/jelix_tests/tests/core.selectors_module.html.php
+A   trunk/testapp/modules/jelix_tests/tests/core.selectors_module.html_cli.php
+D   trunk/testapp/modules/jelix_tests/tests/core.urls_parsing.html.php
+A   trunk/testapp/modules/jelix_tests/tests/core.urls_parsing.html_cli.php
+D   trunk/testapp/modules/jelix_tests/tests/events.simple_test.html.php
+A   trunk/testapp/modules/jelix_tests/tests/events.simple_test.html_cli.php
+D   trunk/testapp/modules/jelix_tests/tests/jacl.main_api.html.php
+A   trunk/testapp/modules/jelix_tests/tests/jacl.main_api.html_cli.php
+D   trunk/testapp/modules/jelix_tests/tests/jacl.manager.html.php
+A   trunk/testapp/modules/jelix_tests/tests/jacl.manager.html_cli.php
+D   trunk/testapp/modules/jelix_tests/tests/jacl.users_and_groups.html.php
+A   trunk/testapp/modules/jelix_tests/tests/jacl.users_and_groups.html_cli.php
+D   trunk/testapp/modules/jelix_tests/tests/jdao.conditions.html.php
+A   trunk/testapp/modules/jelix_tests/tests/jdao.conditions.html_cli.php
+D   trunk/testapp/modules/jelix_tests/tests/jdao.generator.html.php
+A   trunk/testapp/modules/jelix_tests/tests/jdao.generator.html_cli.php
+D   trunk/testapp/modules/jelix_tests/tests/jdao.generator_select.html.php
+A   trunk/testapp/modules/jelix_tests/tests/jdao.generator_select.html_cli.php
+D   trunk/testapp/modules/jelix_tests/tests/jdao.main_api.html.php
+A   trunk/testapp/modules/jelix_tests/tests/jdao.main_api.html_cli.php
+D   trunk/testapp/modules/jelix_tests/tests/jdao.main_api_with_pdo.html.php
+A   trunk/testapp/modules/jelix_tests/tests/jdao.main_api_with_pdo.html_cli.php
+D   trunk/testapp/modules/jelix_tests/tests/jdao.parser.html.php
+A   trunk/testapp/modules/jelix_tests/tests/jdao.parser.html_cli.php
+D   trunk/testapp/modules/jelix_tests/tests/jdao.parser2.html.php
+A   trunk/testapp/modules/jelix_tests/tests/jdao.parser2.html_cli.php
+D   trunk/testapp/modules/jelix_tests/tests/jdao.parser_update.html.php
+A   trunk/testapp/modules/jelix_tests/tests/jdao.parser_update.html_cli.php
+D   trunk/testapp/modules/jelix_tests/tests/jdb.0_profiles.html.php
+A   trunk/testapp/modules/jelix_tests/tests/jdb.0_profiles.html_cli.php
+D   trunk/testapp/modules/jelix_tests/tests/jdb.1_queries.html.php
+A   trunk/testapp/modules/jelix_tests/tests/jdb.1_queries.html_cli.php
+D   trunk/testapp/modules/jelix_tests/tests/jdb.2_queries_with_pdo.html.php
+A   trunk/testapp/modules/jelix_tests/tests/jdb.2_queries_with_pdo.html_cli.php
+D   trunk/testapp/modules/jelix_tests/tests/jdb.pgsql.html.php
+A   trunk/testapp/modules/jelix_tests/tests/jdb.pgsql.html_cli.php
+D   trunk/testapp/modules/jelix_tests/tests/jdb.sqlite.html.php
+A   trunk/testapp/modules/jelix_tests/tests/jdb.sqlite.html_cli.php
+D   trunk/testapp/modules/jelix_tests/tests/jforms.check_datas.html.php
+A   trunk/testapp/modules/jelix_tests/tests/jforms.check_datas.html_cli.php
+D   trunk/testapp/modules/jelix_tests/tests/jforms.compiler.html.php
+A   trunk/testapp/modules/jelix_tests/tests/jforms.compiler.html_cli.php
+D   trunk/testapp/modules/jelix_tests/tests/jforms.html.php
+A   trunk/testapp/modules/jelix_tests/tests/jforms.html_cli.php
+D   trunk/testapp/modules/jelix_tests/tests/jforms.htmlbuilder.html.php
+A   trunk/testapp/modules/jelix_tests/tests/jforms.htmlbuilder.html_cli.php
+D   trunk/testapp/modules/jelix_tests/tests/jforms.with_dao.html.php
+A   trunk/testapp/modules/jelix_tests/tests/jforms.with_dao.html_cli.php
+U   trunk/testapp/scripts/cmdline.php
+A   trunk/testapp/scripts/tests.php
+A   trunk/testapp/var/config/cmdline/configtests.ini.php
+A   trunk/testapp/var/log-cli/
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000607.html">[Jelix-public] checkin SVN-780 (laurentj)
+</A></li>
+	<LI>Next message: <A HREF="000609.html">[Jelix-public] checkin SVN-782 (laurentj)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#608">[ date ]</a>
+              <a href="thread.html#608">[ thread ]</a>
+              <a href="subject.html#608">[ subject ]</a>
+              <a href="author.html#608">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/jelix-public">More information about the Jelix-public
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,264 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Jelix-public] ID unique en VARCHAR
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/jelix-public/2009-August/index.html" >
+   <LINK REL="made" HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20ID%20unique%20en%20VARCHAR&In-Reply-To=%3C4A9A374A.4090604%40mathaud.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000835.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Jelix-public] ID unique en VARCHAR</H1>
+    <B>Loic Mathaud</B> 
+    <A HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20ID%20unique%20en%20VARCHAR&In-Reply-To=%3C4A9A374A.4090604%40mathaud.net%3E"
+       TITLE="[Jelix-public] ID unique en VARCHAR">loic at mathaud.net
+       </A><BR>
+    <I>Sun Aug 30 10:24:42 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000835.html">[Jelix-public] ID unique en VARCHAR
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#836">[ date ]</a>
+              <a href="thread.html#836">[ thread ]</a>
+              <a href="subject.html#836">[ subject ]</a>
+              <a href="author.html#836">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Foxmask a &#233;crit :
+&gt;<i> Bonjour,
+</I>&gt;<i> Pour cela il suffit d'utiliser le mod rewrite d' apache qui une fois  
+</I>&gt;<i> activer, et avec le fichier .htaccess se trouvant dans le dossier www  
+</I>&gt;<i> retirera index.php de l' URL
+</I>
+Et de mettre l'attribut noentrypoint=&quot;true&quot; dans le fichier urls.xml
+
+&gt;<i> Cdt
+</I>&gt;<i> 
+</I>&gt;<i> ---
+</I>&gt;<i> Blog - <A HREF="http://www.foxmask.info">http://www.foxmask.info</A>
+</I>&gt;<i> (d&#233;)p&#244;t de miel -<A HREF="http://projets.foxmask.info">http://projets.foxmask.info</A>
+</I>&gt;<i> HaveFnuBB! le forum made in Jelix - <A HREF="http://www.havefnubb.org">http://www.havefnubb.org</A>
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> Le 29 ao&#251;t 2009 &#224; 23:49, Mathieu Piette &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/jelix-public">mathieu.piette at gmail.com</A>&gt; a  
+</I>&gt;<i> &#233;crit :
+</I>&gt;<i> 
+</I>&gt;&gt;<i> Re,
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Merci, &#231;a fonctionne bien!
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> J'ai des urls comme ceci:
+</I>&gt;&gt;<i> <A HREF="http://www.example.com/myapp/www/index.php/page/ca-c-est-un-joli-titre/3">http://www.example.com/myapp/www/index.php/page/ca-c-est-un-joli-titre/3</A>
+</I>&gt;&gt;<i> J'ai pas encore trouv&#233; comment enlever le index.php, comment est-ce  
+</I>&gt;&gt;<i> que
+</I>&gt;&gt;<i> &#231;a se fait que j'ai une erreur 404 quand je ne le mets pas?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Encore merci!
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> --
+</I>&gt;&gt;<i> Mathieu.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Le jeudi 27 ao&#251;t 2009 &#224; 22:01 +0200, brunto a &#233;crit :
+</I>&gt;&gt;&gt;<i> Bonjour et bienvenue :)
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> La solution de Loic reste la meilleure. Personnellement j'aurai
+</I>&gt;&gt;&gt;<i> tendance &#224; g&#233;n&#233;rer le titre dans l'url &#224; la vol&#233;e lors de la
+</I>&gt;&gt;&gt;<i> r&#233;cup&#233;ration des donn&#233;es dans la base. C'est meilleur pour le
+</I>&gt;&gt;&gt;<i> r&#233;f&#233;rencement et au moins si le titre vient &#224; &#234;tre modifi&#233; son  
+</I>&gt;&gt;&gt;<i> Url
+</I>&gt;&gt;&gt;<i> aussi. Bien entendu faut pas que l'acc&#232;s &#224; l'article via l'ancienn 
+</I>&gt;&gt;&gt;<i> e Url
+</I>&gt;&gt;&gt;<i> soit invalide du coup faut ajouter l'id de l'article quelque parts,  
+</I>&gt;&gt;&gt;<i> du
+</I>&gt;&gt;&gt;<i> style :
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> <A HREF="http://www.example.com/myapp/www/?titre=ca_c_est_un_joli_titre&amp;id=211212">http://www.example.com/myapp/www/?titre=ca_c_est_un_joli_titre&amp;id=211212</A>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> et avec les Urls significatives cela pourrai donner quelque chose
+</I>&gt;&gt;&gt;<i> comme :
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> <A HREF="http://www.example.com/myapp/www/ca_c_est_un_joli_titre/211212">http://www.example.com/myapp/www/ca_c_est_un_joli_titre/211212</A>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Voil&#224; bonne continuation sous Jelix.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Bruno
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Le Thu, 27 Aug 2009 19:40:27 +0200,
+</I>&gt;&gt;&gt;<i> Mathieu Piette &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/jelix-public">mathieu.piette at gmail.com</A>&gt; a &#233;crit :
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> Merci! Je vais essayer tout &#231;a!
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> Si quelqu'un a une autre id&#233;e pour que je puisse comparer, je pr 
+</I>&gt;&gt;&gt;&gt;<i> ends
+</I>&gt;&gt;&gt;&gt;<i> aussi :-)
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> Le mardi 25 ao&#251;t 2009 &#224; 14:21 +0200, Loic Mathaud a &#233;crit :
+</I>&gt;&gt;&gt;&gt;&gt;<i> Bonjour Mathieu,
+</I>&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;<i> Mathieu Piette a &#233;crit :
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> Bonjour,
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> Je d&#233;bute avec Jelix, j'&#233;cris ma premi&#232;re application.
+</I>&gt;&gt;&gt;&gt;&gt;<i> Bienvenue donc ;)
+</I>&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> J'ai un module appel&#233; &#171;page&#187; qui sert &#224; afficher le texte des
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> pages du site.
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> Mon fichier page.dao.xml est le suivant:
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> &lt;dao xmlns=&quot;<A HREF="http://jelix.org/ns/dao/1.0">http://jelix.org/ns/dao/1.0</A>&quot;&gt;
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>  &lt;datasources&gt;
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>    &lt;primarytable name=&quot;pages&quot; primarykey=&quot;id&quot; /&gt;
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>  &lt;/datasources&gt;
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>  &lt;record&gt;
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>    &lt;property
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>      name=&quot;id&quot;
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>      fieldname=&quot;id&quot;
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>      datatype=&quot;string&quot;
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>      required=&quot;true&quot;
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>      maxlength=&quot;255&quot;
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>    /&gt;
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>    &lt;property
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>      name=&quot;title&quot;
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>      fieldname=&quot;title&quot;
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>      datatype=&quot;string&quot;
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>      required=&quot;true&quot;
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>      maxlength=&quot;255&quot;
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>    /&gt;
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>    &lt;property
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>      name=&quot;text&quot;
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>      fieldname=&quot;text&quot;
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>      datatype=&quot;text&quot;
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>      required=&quot;true&quot;
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>    /&gt;
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>    &lt;property
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>      name=&quot;date_creation&quot;
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>      fieldname=&quot;date_creation&quot;
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>      datatype=&quot;datetime&quot;
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>      required=&quot;true&quot;
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>      insertpattern=&quot;NOW()&quot;
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>      updatepattern=&quot;&quot;
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>    /&gt;
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>    &lt;property
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>      name=&quot;date_modification&quot;
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>      fieldname=&quot;date_modification&quot;
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>      datatype=&quot;datetime&quot;
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>      required=&quot;true&quot;
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>      insertpattern=&quot;NOW()&quot;
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>      updatepattern=&quot;NOW()&quot;
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>    /&gt;
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>  &lt;/record&gt;
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>  &lt;factory&gt;
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>  &lt;/factory&gt;
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> &lt;/dao&gt;
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> J'ai utilis&#233; insertpattern et updatepattern pour que les dates de
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> cr&#233;ation et de mise &#224; jour soient renseign&#233;e automagicalement,
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> mais je me demande comment je vais bien pouvoir faire pour l'ID
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> de mes pages, ce serait bien s'il y avait quelque chose de
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> similaire.
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> Je n'ai pas voulu utiliser un ID num&#233;rique avec auto_increment,
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> mais plut&#244;t un ID sous forme de VARCHAR pour que mes URL soient
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> mieux. Par exemple, si j'ai une page dont le titre est &#171;&#199;a c'est
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> un joli titre!&#187;, son ID serait &#171;ca_c_est_un_joli_titre&#187; et 
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>  comme
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> &#231;a, au lieu d'avoir des URL du type
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> <A HREF="http://www.example.com/myapp/www/?page=1,">http://www.example.com/myapp/www/?page=1,</A> j'aurai plut&#244;t quelque
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> chose qui ressemblerait &#224;
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> <A HREF="http://www.example.com/myapp/www/?page=ca_c_est_un_joli_titre.">http://www.example.com/myapp/www/?page=ca_c_est_un_joli_titre.</A>
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> Mon probl&#232;me c'est que je n'ai pas encore bien d&#233;termin&#233; c 
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> omment
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> je pourrais g&#233;n&#233;rer ces ID &#224; partir du titre en &#233;tant s&#251;r  
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> qu'ils
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> sont uniques (mais &#231;a je trouverai toujours bien), mais surtout,
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> je ne sais pas o&#249; je dois mettre le code qui g&#233;n&#232;re cet ID...
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> Quelqu'un aurait-il une id&#233;e?
+</I>&gt;&gt;&gt;&gt;&gt;<i> Personnellement j'aurais tendance &#224; te proposer de faire ainsi :
+</I>&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;<i> - Tu mets un id en auto_increment comme cl&#233; primaire de ta table.
+</I>&gt;&gt;&gt;&gt;&gt;<i> &#199;a te facilitera la vie car g&#233;r&#233; par ta base de donn&#233;es
+</I>&gt;&gt;&gt;&gt;&gt;<i> - Tu ajoute un champ &quot;slug&quot; avec un index UNIQUE qui serait le  
+</I>&gt;&gt;&gt;&gt;&gt;<i> titre
+</I>&gt;&gt;&gt;&gt;&gt;<i> pass&#233; par un jUrl::escape()
+</I>&gt;&gt;&gt;&gt;&gt;<i> - Un coup d'urls significatives pour avoir de belles urls
+</I>&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;<i> Pour enregistrer le &quot;slug&quot; tu le fais au m&#234;me moment que
+</I>&gt;&gt;&gt;&gt;&gt;<i> l'enregitrement de ta page.
+</I>&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;<i> J'esp&#232;re que c'est suffisamment clair.
+</I>&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;<i> Si d'autres jelixians veulent proposer d'autres fa&#231;on de faire,
+</I>&gt;&gt;&gt;&gt;&gt;<i> n'h&#233;sitez pas ! ;)
+</I>&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;<i> @+
+</I>&gt;&gt;&gt;&gt;&gt;<i> Loic
+</I>&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> Merci d'avance!
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> --
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> Mathieu.
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> _______________________________________________
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> Jelix-public mailing list
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/jelix-public">Jelix-public at lists.berlios.de</A>
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/jelix-public">https://lists.berlios.de/mailman/listinfo/jelix-public</A>
+</I>&gt;&gt;&gt;&gt;&gt;<i> _______________________________________________
+</I>&gt;&gt;&gt;&gt;&gt;<i> Jelix-public mailing list
+</I>&gt;&gt;&gt;&gt;&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/jelix-public">Jelix-public at lists.berlios.de</A>
+</I>&gt;&gt;&gt;&gt;&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/jelix-public">https://lists.berlios.de/mailman/listinfo/jelix-public</A>
+</I>&gt;&gt;&gt;&gt;<i> _______________________________________________
+</I>&gt;&gt;&gt;&gt;<i> Jelix-public mailing list
+</I>&gt;&gt;&gt;&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/jelix-public">Jelix-public at lists.berlios.de</A>
+</I>&gt;&gt;&gt;&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/jelix-public">https://lists.berlios.de/mailman/listinfo/jelix-public</A>
+</I>&gt;&gt;&gt;<i> _______________________________________________
+</I>&gt;&gt;&gt;<i> Jelix-public mailing list
+</I>&gt;&gt;&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/jelix-public">Jelix-public at lists.berlios.de</A>
+</I>&gt;&gt;&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/jelix-public">https://lists.berlios.de/mailman/listinfo/jelix-public</A>
+</I>&gt;&gt;<i> _______________________________________________
+</I>&gt;&gt;<i> Jelix-public mailing list
+</I>&gt;&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/jelix-public">Jelix-public at lists.berlios.de</A>
+</I>&gt;&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/jelix-public">https://lists.berlios.de/mailman/listinfo/jelix-public</A>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Jelix-public mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/jelix-public">Jelix-public at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/jelix-public">https://lists.berlios.de/mailman/listinfo/jelix-public</A>
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000835.html">[Jelix-public] ID unique en VARCHAR
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#836">[ date ]</a>
+              <a href="thread.html#836">[ thread ]</a>
+              <a href="subject.html#836">[ subject ]</a>
+              <a href="author.html#836">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/jelix-public">More information about the Jelix-public
+mailing list</a><br>
+</body></html>

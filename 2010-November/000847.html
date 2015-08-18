@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Jelix-public] Probleme jelix : point d'entree
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/jelix-public/2010-November/index.html" >
+   <LINK REL="made" HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20Probleme%20jelix%20%3A%20point%20d%27entree&In-Reply-To=%3C20101119083139.84264u06j7vh3ls0%40www2.antilles.inra.fr%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000846.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Jelix-public] Probleme jelix : point d'entree</H1>
+    <B>Mirza PUBLICOL</B> 
+    <A HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20Probleme%20jelix%20%3A%20point%20d%27entree&In-Reply-To=%3C20101119083139.84264u06j7vh3ls0%40www2.antilles.inra.fr%3E"
+       TITLE="[Jelix-public] Probleme jelix : point d'entree">mpublicol at antilles.inra.fr
+       </A><BR>
+    <I>Fri Nov 19 13:31:39 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000846.html">[Jelix-public] Probleme jelix : point d'entr&#233;e
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#847">[ date ]</a>
+              <a href="thread.html#847">[ thread ]</a>
+              <a href="subject.html#847">[ subject ]</a>
+              <a href="author.html#847">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Re.bonjour,
+
+
+Le point d'entree est bien &quot;admin.php&quot; pour le module &quot;toto&quot;. Je l'ai  
+precise dans les fichiers de config &quot;defaultconfig.ini.php&quot; et  
+&quot;admin/config.ini.php&quot;.
+  Je veux donc empecher l'acces au module &quot;toto&quot; via le point d'entree  
+&quot;index.php&quot;, pour une question de droits.
+
+J'ai cependant trouver une solution :
+Dans le fichier 'index/config.ini.php&quot;, je mets l'option  
+&quot;checkTrustedModules=on&quot; et dans &quot;trustedModules&quot; je n'indique que les  
+modules accessibles via &quot;index.php&quot;, donc &quot;toto&quot; n'y figure pas.
+
+Ainsi, meme si un utilisateur entre dans l'url &quot;index.php/toto&quot;, il ne  
+pourra pas acc&#233;der au module.
+
+
+Merci Laurent pour ta r&#233;ponse,
+-- 
+Mirza
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000846.html">[Jelix-public] Probleme jelix : point d'entr&#233;e
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#847">[ date ]</a>
+              <a href="thread.html#847">[ thread ]</a>
+              <a href="subject.html#847">[ subject ]</a>
+              <a href="author.html#847">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/jelix-public">More information about the Jelix-public
+mailing list</a><br>
+</body></html>

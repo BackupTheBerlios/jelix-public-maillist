@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Jelix-public] Search Engine
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/jelix-public/2009-February/index.html" >
+   <LINK REL="made" HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20Search%20Engine&In-Reply-To=%3C576746c0902160816r25b15584i1bf8a0d9c0bdb096%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000812.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Jelix-public] Search Engine</H1>
+    <B>foxmask</B> 
+    <A HREF="mailto:jelix-public%40lists.berlios.de?Subject=Re%3A%20%5BJelix-public%5D%20Search%20Engine&In-Reply-To=%3C576746c0902160816r25b15584i1bf8a0d9c0bdb096%40mail.gmail.com%3E"
+       TITLE="[Jelix-public] Search Engine">foxmask at gmail.com
+       </A><BR>
+    <I>Mon Feb 16 17:16:23 CET 2009</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000812.html">[Jelix-public] Search Engine
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#811">[ date ]</a>
+              <a href="thread.html#811">[ thread ]</a>
+              <a href="subject.html#811">[ subject ]</a>
+              <a href="author.html#811">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Bonjour,
+
+Cela fait quelques jours que je cherche un peu tout ce qui se fait sur le
+sujet, sur la toile. (avec pour point de
+d&#233;part&lt;<A HREF="http://www.roscripts.com/PHP_search_engine-119.html">http://www.roscripts.com/PHP_search_engine-119.html</A>&gt;
+)
+
+J'aimerai utiliser un moteur de recherche pour un forum.
+
+mais la plupart des solutions que je trouve sont :
+
+1) des moteurs qui sont des outils tiers (htdig,sphinx,BOSS, GoogleSearch,
+etc...) n&#233;c&#233;ssitant donc un h&#233;bergement particuliers (cas de htdig,sphinx)
+ou que le site soit r&#233;f&#233;renc&#233; (cas de googlesearch/BOSS) etc...
+
+2) des moteurs d&#233;p&#233;dants du SGBD ; exemple phorum est li&#233; &#224; MySQL et utilise
+du fulltext avec MyISAM ; le reste de la base etant utilisable avec Innodb
+si on veut.
+
+j'avais song&#233; aussi &#224; cela mais alors quid des autres SGBD support&#233;es par
+Jelix ...
+
+Donc ce que j'aimerai ; c'est bel et bien utiliser un moteur &quot;maison&quot; en
+&#233;tant le moins restrictif (pas li&#233; &#224; un SGBD si possible).
+
+Les implem' que j'ai regard&#233; sont :
+
+Phorum : Creations de tables &quot;HEAP&quot; temporaire &#224; chaque recherche ; &#224;
+partir de la table des messages. (&#224; lire MySQL.com ; c'est plus rapide
+pour le fulltext plutot que d'ajoute un record dans une table
+contenant une colonne fulltext)
+
+FluxBB : ajoute des mots dans une table d&#233;di&#233;e au fur et a mesure que
+les messages sont cr&#233;&#233;s.
+
+SimpleMachines : m&#234;me technique que Phorum, creation de table type
+HEAP et insertion de record dans cette table &#224; partir de la table des
+messages
+
+phpBB : m&#234;me technique, &#224; vu de nez, que fluxbb.
+
+Avez vous d&#233;j&#224; implement&#233; quelquechose de similaire ?
+
+merci de vos reponses ;)
+
+cdt.
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/jelix-public/attachments/20090216/8829c186/attachment.html">https://lists.berlios.de/pipermail/jelix-public/attachments/20090216/8829c186/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000812.html">[Jelix-public] Search Engine
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#811">[ date ]</a>
+              <a href="thread.html#811">[ thread ]</a>
+              <a href="subject.html#811">[ subject ]</a>
+              <a href="author.html#811">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/jelix-public">More information about the Jelix-public
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,1457 @@
+From laurent at xulfr.org  Tue Jan  3 20:23:02 2006
+From: laurent at xulfr.org (Laurent Jouanneau)
+Date: Tue, 03 Jan 2006 20:23:02 +0100
+Subject: [Jelix-public] C'est parti !
+Message-ID: <43BACF16.9040807@xulfr.org>
+
+Bonjour,
+
+Depuis le 1er janvier, le projet Jelix existe officiellement. Comme vous 
+avez pu le voir, un site est en place, avec un wiki pour la doc.
+
+Vous pouvez d'hors et d?j? r?cup?rer une version de dev du framework ? 
+partir du d?pot subversion, et le tester.
+
+Bien s?r, il est loin d'?tre finalis?. Je pense en fin de semaine ou la 
+semaine prochaine, livrer une premi?re version 1.0 pre-alpha. Un truc 
+donc ? ne pas utiliser en prod, car il contient certainement des bugs, 
+et des mises au point ? faire. Mais on peut faire un hello world, 
+utiliser une base de donn?e avec les daos, bref faire des choses simples :-)
+
+Il manque encore principalement le syst?me d'authentification, la prise 
+en charge des urls significatifs, et un syst?me de droits. J'essaierai 
+de livrer tout ?a dans une version alpha. Et il manque bien entendu la 
+doc :-)
+
+N'hesitez pas ? tester Jelix, ? rapporter des bugs dans le tracker. Si 
+vous avez des id?es d'am?liorations, parlez-en sur la mailing list. Je 
+suis ? l'?coute de toutes remarques.
+
+Si vous voulez contribuer activement (pour quoi que ce soit, surtout 
+pour la doc en ce moment), faites le moi savoir ?galement. Je ne compte 
+pas rester tout seul sur le projet :-)
+
+Bonne ann?e ? tous,
+
+Laurent
+
+
+From viapanda at gmail.com  Tue Jan  3 21:48:32 2006
+From: viapanda at gmail.com (dMp)
+Date: Tue, 3 Jan 2006 21:48:32 +0100
+Subject: [Jelix-public] Hello
+Message-ID: <afc7097d0601031248h7e0ecebp@mail.gmail.com>
+
+Je suis en train de lire le code de Jelix.
+C'est tr?s int?ressant (surtout parce que c'est tr?s ?loign? de mon
+propre php-fu-style ;)).
+
+Je vais essayer d'envoyer de petits patchs quand j'ai un peu de temps
+(j'en ai post? un minuscule tout ? l'heure :p).
+
+Sinon, le truc le plus "familier" pour moi l?-dedans, c'est http.
+Question authentification, j'ai d?j? impl?ment? digest en php. Ca
+pourrait peut-?tre resservir.
+C?t? session, on peut facilement r??crire compl?tement le m?chanisme
+de session de php.
+Les avantages sont nombreux:
+1 - on peut utiliser la nonce digest pour trimbaler le token de
+session (on a alors une session cookie-less / url-less)
+2 - au passage c'est plus direct pour choisir la back-end pour le
+stockage des donn?es
+3 - ?a ?vite de se prendre la t?te avec les probl?mes li?s ? la conf
+session de php (/tmp accessible en lecture, conf du cookie, etc,
+etc...)
+
+
+Toujours question http, pourquoi ne pas:
+- gzipper les contenus ? la vol?e (apr?s avoir v?rifi? que le client
+peut lire, et que le serveur peut compresser)
+- impl?menter un syst?me de cache coh?rent (mais je n'ai pas encore
+assez lu ton code, c'est peut-?tre d?j? fait)
+
+D'autre part, je ne vois rien (apr?s lecture rapide) dans ton code
+pour prendre en compte les particularit?s de configuration de php.
+Une petite couche de gestion ne serait peut-?tre pas inutile?
+
+
+Voil?, ben bonne ann?e, et peut-?tre ? bient?t ;)
+
+- dMp
+
+
+From viapanda at gmail.com  Tue Jan  3 22:29:22 2006
+From: viapanda at gmail.com (dMp)
+Date: Tue, 3 Jan 2006 22:29:22 +0100
+Subject: [Jelix-public] =?ISO-8859-1?Q?Deux_ou_trois_choses_que_j'ai_du_mal_=E0_comprendre...?=
+Message-ID: <afc7097d0601031329o4ea8f0c7h@mail.gmail.com>
+
+Tu pardonneras ma n00bitude avec Jelix... J'essaie de comprendre par
+l? o? je peux...
+Donc, quelques questions / remarques:
+
+
+Fichier: lib/jelix/dao/jDAOBase.class.php
+Ligne: 154
+
+   protected function  _fetchAllRecords ($query, $class,
+$limitOffset=null, $limitCount=null){
+        $rs = $this->_getResultSetFromQuery ($query, $limitOffset, $limitCount);
+        $result = array();
+        if ($rs){
+            while($res = & $rs->fetchRecord ($recordName)){
+                $result[] = & $res;
+            }
+        }
+        return $result;
+    }
+
+
+
+Je ne vois nulle part dans la code base _getResultSetFromQuery ()?
+D'autre part, cette fonction mentionne la variable $recordName qui
+n'existe (probablement) pas dans le contexte de la fonction....
+
+
+
+ligne: 251
+
+D'o? vient la variable $principal ?
+
+
+
+Ligne 272:
+
+on peut simplifier tout ce qui suit dans la condition par:
+            $value = $value === null ? 'NULL' : (int) $value;
+
+Non?
+
+
+
+
+Fichier: lib/jelix/db/drivers/mysql/jDbTools.mysql.class.php
+Ligne: 88
+
+D'o? vient la var $p_result_line ?
+
+
+Fichier: lib/jelix-scripts/commands/createmodule.cmd.php
+Ligne: 34
+
+$module?
+
+
+
+
+Regards
+
+- dMp
+
+
+From webmestre at xulfr.org  Wed Jan  4 00:17:19 2006
+From: webmestre at xulfr.org (Webmestre xulfr)
+Date: Wed, 04 Jan 2006 00:17:19 +0100
+Subject: [Jelix-public] Hello
+In-Reply-To: <afc7097d0601031248h7e0ecebp@mail.gmail.com>
+References: <afc7097d0601031248h7e0ecebp@mail.gmail.com>
+Message-ID: <43BB05FF.7060104@xulfr.org>
+
+dMp wrote:
+> Je suis en train de lire le code de Jelix.
+> C'est tr?s int?ressant (surtout parce que c'est tr?s ?loign? de mon
+> propre php-fu-style ;)).
+> 
+> Je vais essayer d'envoyer de petits patchs quand j'ai un peu de temps
+> (j'en ai post? un minuscule tout ? l'heure :p).
+
+merci
+
+> 
+> Sinon, le truc le plus "familier" pour moi l?-dedans, c'est http.
+> Question authentification, j'ai d?j? impl?ment? digest en php. Ca
+> pourrait peut-?tre resservir.
+
+Faut voir :-) Je ne connais pas digest.
+
+> C?t? session, on peut facilement r??crire compl?tement le m?chanisme
+> de session de php.
+> Les avantages sont nombreux:
+> 1 - on peut utiliser la nonce digest pour trimbaler le token de
+> session (on a alors une session cookie-less / url-less)
+> 2 - au passage c'est plus direct pour choisir la back-end pour le
+> stockage des donn?es
+> 3 - ?a ?vite de se prendre la t?te avec les probl?mes li?s ? la conf
+> session de php (/tmp accessible en lecture, conf du cookie, etc,
+> etc...)
+
+Pourquoi pas. Ce n'est pas une priorit? pour moi pour le moment (manque 
+de temps), mais ?a peut ?tre interressant effectivement
+
+> 
+> 
+> Toujours question http, pourquoi ne pas:
+> - gzipper les contenus ? la vol?e (apr?s avoir v?rifi? que le client
+> peut lire, et que le serveur peut compresser)
+
+C'est pas apache qui le fait automatiquement avec mod_gzip je crois ? 
+Est ce vraiment le r?le du framework ?
+
+> - impl?menter un syst?me de cache coh?rent (mais je n'ai pas encore
+> assez lu ton code, c'est peut-?tre d?j? fait)
+
+C'est un point compliqu?.. ? ?tudier.
+
+> 
+> D'autre part, je ne vois rien (apr?s lecture rapide) dans ton code
+> pour prendre en compte les particularit?s de configuration de php.
+> Une petite couche de gestion ne serait peut-?tre pas inutile?
+
+? quelles particularit?s penses-tu ?
+
+a+
+
+Laurent
+
+
+From viapanda at gmail.com  Wed Jan  4 00:55:17 2006
+From: viapanda at gmail.com (dMp)
+Date: Wed, 4 Jan 2006 00:55:17 +0100
+Subject: [Jelix-public] Hello
+In-Reply-To: <43BB05FF.7060104@xulfr.org>
+References: <afc7097d0601031248h7e0ecebp@mail.gmail.com>
+	 <43BB05FF.7060104@xulfr.org>
+Message-ID: <afc7097d0601031555n78ce81act@mail.gmail.com>
+
+> [snip digest]
+> Faut voir :-) Je ne connais pas digest.
+
+Ben ?a poutre :p
+"Basic", ou toute forme d'authentification "POST", repose
+intrins?quement sur la transmission du login et du password en clair.
+(et, non, hasher le pass en md5 avec javascript ne sert strictement ?
+rien).
+
+Digest est tr?s diff?rent en cela que le serveur transmet un
+challenge, ? partir duquel le client le client g?n?re un hash qui lui
+sert ? s'authentifier.
+
+Du point de vue s?curit?, ?a n'a tout simplement rien ? voir.
+
+> > Toujours question http, pourquoi ne pas:
+> > - gzipper les contenus ? la vol?e (apr?s avoir v?rifi? que le client
+> > peut lire, et que le serveur peut compresser)
+>
+> C'est pas apache qui le fait automatiquement avec mod_gzip je crois ?
+> Est ce vraiment le r?le du framework ?
+
+Oui (IMHO).
+On peut effectivement confer apache pour gzipper les contenus
+"statiques" (js, css); par contre il est assez facile de faire la m?me
+chose en pur php, et ainsi de gzipper n'importe quel contenu g?n?r?
+dynamiquement.
+Est-ce que ?a vaut le coup?
+=> ? savoir: est-ce int?ressant en terme de volume?
+Je pense que dans tous les cas, tout ce qui r?duit le traffic est bon ? prendre.
+On peut m?me pousser le vice jusqu'? stocker en cache une version
+gzipp?e et une vanilla...
+
+> [cache]
+> C'est un point compliqu?.. ? ?tudier.
+
+Oui.
+
+> [php configuration]
+> ? quelles particularit?s penses-tu ?
+
+Comment se comporte l'appli avec les magic quotes? avec
+session_auto_start? avec le safe_mode?
+
+- dMp
+
+
+From laurent at xulfr.org  Wed Jan  4 01:27:06 2006
+From: laurent at xulfr.org (Laurent Jouanneau)
+Date: Wed, 04 Jan 2006 01:27:06 +0100
+Subject: [Jelix-public] Hello
+In-Reply-To: <afc7097d0601031555n78ce81act@mail.gmail.com>
+References: <afc7097d0601031248h7e0ecebp@mail.gmail.com>	 <43BB05FF.7060104@xulfr.org> <afc7097d0601031555n78ce81act@mail.gmail.com>
+Message-ID: <43BB165A.5020906@xulfr.org>
+
+dMp wrote:
+(...)
+> 
+> 
+>>[php configuration]
+>>? quelles particularit?s penses-tu ?
+> 
+> 
+> Comment se comporte l'appli avec les magic quotes? 
+
+Si magicquotes est activ? sur le serveur, il faut activer le plugin 
+magicquotes (qui annule l'effet du magicquotes)
+
+> avec
+> session_auto_start? avec le safe_mode?
+
+safe_mode, c'est le truc horrible qui va apparement passer ? la trappe 
+dans les futures versions de PHP si j'ai bien compris. Donc, pas de 
+prise en charge du safe mode de prevue. Mais si ?a se trouve, ?a passe 
+:-)...
+
+pour le session_auto_start : c'est pas activ? par d?faut il me semble. 
+Ceux qui le mettent donc en g?n?ral, sont ceux qui ont acc?s au php.ini 
+ou ? la conf d'apache.  (il y a des hebergeurs qui l'activent ?). Donc 
+ceux l? peuvent tr?s bien le d?sactiver pour une appli jelix.
+
+
+Laurent
+
+
+From yoop at bballizlife.com  Wed Jan  4 09:03:43 2006
+From: yoop at bballizlife.com (Loic Mathaud)
+Date: Wed, 04 Jan 2006 09:03:43 +0100
+Subject: [Jelix-public] =?ISO-8859-1?Q?Re=3A_=5BJelix-public=5D_Deux_ou_trois_?=
+ =?ISO-8859-1?Q?choses_que_j=27ai_du_mal_=E0_comprendre=2E=2E?=
+ =?ISO-8859-1?Q?=2E?=
+In-Reply-To: <afc7097d0601031329o4ea8f0c7h@mail.gmail.com>
+References: <afc7097d0601031329o4ea8f0c7h@mail.gmail.com>
+Message-ID: <43BB815F.6030309@bballizlife.com>
+
+dMp a ?crit :
+> Tu pardonneras ma n00bitude avec Jelix... J'essaie de comprendre par
+> l? o? je peux...
+> Donc, quelques questions / remarques:
+> 
+> 
+> Fichier: lib/jelix/dao/jDAOBase.class.php
+> Ligne: 154
+> 
+>    protected function  _fetchAllRecords ($query, $class,
+> $limitOffset=null, $limitCount=null){
+>         $rs = $this->_getResultSetFromQuery ($query, $limitOffset, $limitCount);
+>         $result = array();
+>         if ($rs){
+>             while($res = & $rs->fetchRecord ($recordName)){
+>                 $result[] = & $res;
+>             }
+>         }
+>         return $result;
+>     }
+> 
+> 
+> 
+> Je ne vois nulle part dans la code base _getResultSetFromQuery ()?
+> D'autre part, cette fonction mentionne la variable $recordName qui
+> n'existe (probablement) pas dans le contexte de la fonction....
+> 
+
+A premi?re vue, cette fonction est dans la classe jDAOFactoryBase qui
+est d?clar?e abstraite. Cette classe devra donc ?tre ?tendue et ce sont
+les classes h?riti?res qui impl?menteraient _getResultSetFromQuery().
+C'est vrai qu'il faudrait peut-?tre par contre donner le prototype :
+
+abstract protected function _getResultSetFromQuery($query, $limitOffset,
+$limitCount);
+
+Maintenant je connais pas vraiment le code et ma r?ponse n'est pas
+forc?ment juste. Laurent saura nous le dire.
+
+> 
+> 
+> ligne: 251
+> 
+> D'o? vient la variable $principal ?
+> 
+
+Bonne question ;)
+
+> 
+> 
+> Ligne 272:
+> 
+> on peut simplifier tout ce qui suit dans la condition par:
+>             $value = $value === null ? 'NULL' : (int) $value;
+> 
+> Non?
+> 
+
+Euh, oui il me semble. Mais pour ma part je trouve plus lisible le code
+actuel. Question de go?t peut-?tre.
+
+> 
+> 
+> 
+> Fichier: lib/jelix/db/drivers/mysql/jDbTools.mysql.class.php
+> Ligne: 88
+> 
+> D'o? vient la var $p_result_line ?
+> 
+
+Pas trouv? non plus o? elle ?tait d?clar?e.
+
+> 
+> Fichier: lib/jelix-scripts/commands/createmodule.cmd.php
+> Ligne: 34
+> 
+> $module?
+> 
+
+Devrait ?tre $this->_parameters['module'] normalement.
+
+> 
+> 
+> 
+> Regards
+> 
+> - dMp
+
+--
+Loic Mathaud
+<mail>loic at mathaud.net</mail>
+
+> _______________________________________________
+> Jelix-public mailing list
+> Jelix-public at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/jelix-public
+> 
+
+
+From laurent at xulfr.org  Wed Jan  4 10:12:09 2006
+From: laurent at xulfr.org (Laurent)
+Date: Wed, 04 Jan 2006 10:12:09 +0100
+Subject: [Jelix-public] =?ISO-8859-1?Q?Re=3A_=5BJelix-public=5D_Re=3A_=5BJelix-pub?=
+ =?ISO-8859-1?Q?lic=5D_Deux_ou_trois_choses_que_j=27ai_du_?=
+ =?ISO-8859-1?Q?mal_=E0_comprendre=2E=2E=2E?=
+In-Reply-To: <43BB815F.6030309@bballizlife.com>
+References: <afc7097d0601031329o4ea8f0c7h@mail.gmail.com> <43BB815F.6030309@bballizlife.com>
+Message-ID: <43BB9169.2070909@xulfr.org>
+
+J'ai fait une mauvaise manip hier soir, j'ai d?j? r?pondu ? tout ?a, 
+mais sans envoyer ? la mailing list :-/
+
+Voici donc quelles ont ?t? mes r?ponses.
+
+Loic Mathaud wrote:
+> dMp a ?crit :
+> 
+>>Tu pardonneras ma n00bitude avec Jelix... J'essaie de comprendre par
+>>l? o? je peux...
+>>Donc, quelques questions / remarques:
+>>
+>>
+>>Fichier: lib/jelix/dao/jDAOBase.class.php
+>>Ligne: 154
+>>
+>>   protected function  _fetchAllRecords ($query, $class,
+>>$limitOffset=null, $limitCount=null){
+>>        $rs = $this->_getResultSetFromQuery ($query, $limitOffset, $limitCount);
+>>        $result = array();
+>>        if ($rs){
+>>            while($res = & $rs->fetchRecord ($recordName)){
+>>                $result[] = & $res;
+>>            }
+>>        }
+>>        return $result;
+>>    }
+>>
+>>
+>>
+>>Je ne vois nulle part dans la code base _getResultSetFromQuery ()?
+>>D'autre part, cette fonction mentionne la variable $recordName qui
+>>n'existe (probablement) pas dans le contexte de la fonction....
+>>
+> 
+> 
+> A premi?re vue, cette fonction est dans la classe jDAOFactoryBase qui
+> est d?clar?e abstraite. Cette classe devra donc ?tre ?tendue et ce sont
+> les classes h?riti?res qui impl?menteraient _getResultSetFromQuery().
+> C'est vrai qu'il faudrait peut-?tre par contre donner le prototype :
+> 
+> abstract protected function _getResultSetFromQuery($query, $limitOffset,
+> $limitCount);
+> 
+> Maintenant je connais pas vraiment le code et ma r?ponse n'est pas
+> forc?ment juste. Laurent saura nous le dire.
+
+Non, _fetchAllRecords est du code mort, issue de Copix, qui est obsol?te 
+pour Jelix. J'ai donc fais le nettoyage hier soir.
+
+
+> 
+> 
+>>
+>>ligne: 251
+>>
+>>D'o? vient la variable $principal ?
+>>
+> 
+> 
+> Bonne question ;)
+
+C'est un param?tre de la m?thode, qui a ?t? je ne sais plus pourquoi 
+supprim?. Je l'ai remis.
+
+
+> 
+> 
+>>
+>>Ligne 272:
+>>
+>>on peut simplifier tout ce qui suit dans la condition par:
+>>            $value = $value === null ? 'NULL' : (int) $value;
+>>
+>>Non?
+>>
+> 
+> 
+> Euh, oui il me semble. Mais pour ma part je trouve plus lisible le code
+> actuel. Question de go?t peut-?tre.
+
+Non car ici $value contient un bigint, qui a donc des limites superieurs 
+? int. Si on fait un (int), les nombres d?passants les limites de int 
+seront tronqu?s.
+
+
+> 
+> 
+>>
+>>
+>>Fichier: lib/jelix/db/drivers/mysql/jDbTools.mysql.class.php
+>>Ligne: 88
+>>
+>>D'o? vient la var $p_result_line ?
+>>
+
+Cette classe n'est pas pass? v?ritablement par la case "adaptation". 
+C'est maintenant chose faite.
+
+> 
+> 
+> Pas trouv? non plus o? elle ?tait d?clar?e.
+> 
+> 
+>>Fichier: lib/jelix-scripts/commands/createmodule.cmd.php
+>>Ligne: 34
+>>
+>>$module?
+>>
+> 
+> 
+> Devrait ?tre $this->_parameters['module'] normalement.
+
+oui, je l'ai corrig?.
+
+
+Merci pour cette "review" de code :-) C'est ce genre d'initiative qui 
+permette d'am?liorer la qualit? du code.
+
+a+
+
+Laurent
+
+
+From giviz at pyronux.net  Sun Jan  8 22:59:11 2006
+From: giviz at pyronux.net (Gildas GIVAJA)
+Date: Sun, 8 Jan 2006 22:59:11 +0100
+Subject: [Jelix-public] Surcharge d'une =?iso-8859-1?q?r=E9ponse?=
+Message-ID: <200601082259.11182.giviz@pyronux.net>
+
+Bonjour ? tous.
+
+Je souhaiterais en savoir plus sur les fichiers situ?s dans myapp/responses
+Comment indiquer que l'on souhaite utiliser un objet surcharg? et non un objet 
+standard pour une r?ponse, je suppose que c'est au niveau du type de 
+l'action ?
+
+Merci de me/nous ?clairer la dessus :)
+
+++
+
+Giviz.
+
+
+From webmaster at excel-racing-cars.com  Mon Jan  9 01:38:49 2006
+From: webmaster at excel-racing-cars.com (Laurent)
+Date: Mon, 09 Jan 2006 01:38:49 +0100
+Subject: [Jelix-public] Checkins de la semaine
+Message-ID: <43C1B099.9000300@excel-racing-cars.com>
+
+Bonjour,
+
+Toutes les semaines, je vais essayer de faire un mail r?sumant tout ce 
+qui ?t? fait sur le projet.
+
+Cette semaine donc, il a ?t? fait :
+
+- corrections des erreurs de syntaxe trouv?s par dmp (dont le patch 780)
+- ajout du syst?me d'authentification (non test? pour le moment)
+- ajout gestion d'un code num?rique pour toutes les erreurs (php et 
+exceptions), en plus du message en lui m?me.
+- correction bug 6023: probleme de locale quand le repertoire temp est 
+non modifiable
+- correction de bugs sur le gestionnaire d'erreur
+- ajout d'un plugin magicquotes
+- ajout de plugins de template pour jtpl
+- doc : pas grand chose
+
+? cause de probl?me logistique, je n'ai absolument pas pu avancer ce 
+week end (changement de disque sur ma machine, donc r?installation, qui 
+malheureusement ne s'est pas super bien pass?e, mais tout est d?sormais 
+arrang?)
+
+Pour cette semaine, il est pr?vue de faire de la doc, de la doc et 
+encore de la doc. Et sortie d'une 1.0 pre-alpha.
+
+a+
+
+Laurent
+
+
+
+From webmestre at xulfr.org  Mon Jan  9 01:50:28 2006
+From: webmestre at xulfr.org (Webmestre xulfr)
+Date: Mon, 09 Jan 2006 01:50:28 +0100
+Subject: [Jelix-public] Surcharge d'une =?ISO-8859-1?Q?r=E9ponse?=
+In-Reply-To: <200601082259.11182.giviz@pyronux.net>
+References: <200601082259.11182.giviz@pyronux.net>
+Message-ID: <43C1B354.2020700@xulfr.org>
+
+Gildas GIVAJA wrote:
+> Bonjour ? tous.
+> 
+> Je souhaiterais en savoir plus sur les fichiers situ?s dans myapp/responses
+> Comment indiquer que l'on souhaite utiliser un objet surcharg? et non un objet 
+> standard pour une r?ponse, je suppose que c'est au niveau du type de 
+> l'action ?
+> 
+> Merci de me/nous ?clairer la dessus :)
+> 
+
+C'est au niveau du fichier de configuration que tu l'indiques, dans la 
+section  [responses].
+
+La structure de cette section est
+
+type_reponse = classe_reponse
+
+Tu as un exemple dans myapp
+
+Ta propre classe reponse doit d?river d'une des classes livr?es par 
+Jelix, et doit ?tre stock?e dans le repertoire responses de ton appli.
+
+par d?faut, on a pour html :
+
+html = jResponseHtml
+
+Tu peux avoir ta propre classe d?rivant de celle ci
+
+html = myHtmlResponse
+
+Cela permet donc d'avoir des traitements communs et personnalis?s ? 
+toutes les r?ponses de type html (?quivalent en fait des processus 
+standards de Copix)
+
+Tu peux m?me t'inventer d'autres types :
+
+html2 = monAutreReponseHtml
+html3 = EncoreUneAutreReponseHtml
+
+Tu peux te faire ainsi plusieurs traitements communs ? diff?rents 
+ensemble d'actions.
+
+Et bien s?r, dans une action :
+  <response type="html2" name="foo" />
+
+
+a+
+
+Laurent
+
+
+From giviz at pyronux.net  Mon Jan  9 08:54:26 2006
+From: giviz at pyronux.net (Gildas GIVAJA)
+Date: Mon, 9 Jan 2006 08:54:26 +0100
+Subject: [Jelix-public] Surcharge d'une =?iso-8859-1?q?r=E9ponse?=
+In-Reply-To: <43C1B354.2020700@xulfr.org>
+References: <200601082259.11182.giviz@pyronux.net> <43C1B354.2020700@xulfr.org>
+Message-ID: <200601090854.26412.giviz@pyronux.net>
+
+Ok je vois, c'est super ca :)
+
+Ca me semble bien utile pour les diff?rents affichages d'une GUI.
+
+Merci!
+
+> Gildas GIVAJA wrote:
+> > Bonjour ? tous.
+> >
+> > Je souhaiterais en savoir plus sur les fichiers situ?s dans
+> > myapp/responses Comment indiquer que l'on souhaite utiliser un objet
+> > surcharg? et non un objet standard pour une r?ponse, je suppose que c'est
+> > au niveau du type de l'action ?
+> >
+> > Merci de me/nous ?clairer la dessus :)
+>
+> C'est au niveau du fichier de configuration que tu l'indiques, dans la
+> section  [responses].
+>
+> La structure de cette section est
+>
+> type_reponse = classe_reponse
+>
+> Tu as un exemple dans myapp
+>
+> Ta propre classe reponse doit d?river d'une des classes livr?es par
+> Jelix, et doit ?tre stock?e dans le repertoire responses de ton appli.
+>
+> par d?faut, on a pour html :
+>
+> html = jResponseHtml
+>
+> Tu peux avoir ta propre classe d?rivant de celle ci
+>
+> html = myHtmlResponse
+>
+> Cela permet donc d'avoir des traitements communs et personnalis?s ?
+> toutes les r?ponses de type html (?quivalent en fait des processus
+> standards de Copix)
+>
+> Tu peux m?me t'inventer d'autres types :
+>
+> html2 = monAutreReponseHtml
+> html3 = EncoreUneAutreReponseHtml
+>
+> Tu peux te faire ainsi plusieurs traitements communs ? diff?rents
+> ensemble d'actions.
+>
+> Et bien s?r, dans une action :
+>   <response type="html2" name="foo" />
+>
+>
+> a+
+>
+> Laurent
+> _______________________________________________
+> Jelix-public mailing list
+> Jelix-public at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/jelix-public
+
+
+From viapanda at gmail.com  Mon Jan  9 20:10:14 2006
+From: viapanda at gmail.com (dMp)
+Date: Mon, 9 Jan 2006 20:10:14 +0100
+Subject: [Jelix-public] Typos probables et questions
+Message-ID: <afc7097d0601091110s2710054cj@mail.gmail.com>
+
+Hello ;)
+
+D'abord quelques trucs "bizarres":
+
+
+*******
+jelix/auth/jAuth.class.php
+*******
+
+Ligne 31:
+- interface class jIAuthDriver {
++ interface jIAuthDriver {
+
+
+*******
+jelix/utils/jClasses.class.php
+*******
+
+Ligne 38:
+       if(isset(self:_instances[$sel->toString()])){
+           return (self:_instances[$sel->toString()]);
+       }else{
+           $o = self::create($selector);
+           self:_instances[$sel->toString()]=$o;
+
+
+Ca serait pas plut?t un truc genre ?a?
+
+       if(isset(self::$_instances[$sel->toString()])){
+           return (self::$_instances[$sel->toString()]);
+       }else{
+           $o = self::create($selector);
+           self::$_instances[$sel->toString()]=$o;
+
+
+
+*******
+jelix/utils/jZone.class.php
+*******
+Ligne 135:
+$params ne semble pas exister dans le contexte de la fonction...
+
+
+
+Ensuite, j'ai une question, "formelle", concernant les magic_quotes.
+Est-il vraiment n?cessaire d'en faire un plugin?
+Ca me parait ?tre un gros marteau pour une petite mouche (mais tu as
+probablement de bonnes raisons)
+Il me semble que les magic quotes GPC sont plus une "bizarrerie" du langage
+qu'un "feature" ? int?grer dans une plate-forme, et que l'utilisateur doit
+activer ou non.
+
+Personnellement j'aurai tendance ? inclure syst?matiquement la d?tection.
+
+
+D'autre part, je ne vois nulle part de mention de magic_quotes_runtime (?a
+existe toujours en php5 ?).
+Un petit ini_set('magic_quotes_runtime', false); serait probablement
+bienvenue.
+
+
+Pour r?pondre ? une question ?voqu?e auparavant (concernant
+session_auto_start): oui, il y a des hosts o? c'est activ?.
+C'?tait m?me parfois tr?s probl?matique ? cause d'un horrible bug dans php
+4.x (me souviens plus), o? les objets n'?taient pas d?s?rialis?s
+correctement...
+
+
+Toujours dans le m?me ordre d'id?e, je suppose que structurellement jelix
+est relativement immune contre l'injection de variables (dans le cas
+register_globals=true).
+Si ce n'est pas le cas, ?a se g?re en quelques lignes a priori...
+
+
+
+Amicalement,
+
+Olivier
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/jelix-public/attachments/20060109/5b27368c/attachment.html>
+
+From webmestre at xulfr.org  Mon Jan  9 23:48:37 2006
+From: webmestre at xulfr.org (Webmestre xulfr)
+Date: Mon, 09 Jan 2006 23:48:37 +0100
+Subject: [Jelix-public] Typos probables et questions
+In-Reply-To: <afc7097d0601091110s2710054cj@mail.gmail.com>
+References: <afc7097d0601091110s2710054cj@mail.gmail.com>
+Message-ID: <43C2E845.70700@xulfr.org>
+
+dMp wrote:
+> Hello ;)
+> 
+> D'abord quelques trucs "bizarres":
+> 
+> 
+> *******
+> jelix/auth/jAuth.class.php
+> *******
+> 
+> Ligne 31:
+> - interface class jIAuthDriver {
+> + interface jIAuthDriver {
+
+corrig?
+
+> 
+> 
+> *******
+> jelix/utils/jClasses.class.php
+> *******
+> 
+> Ligne 38:
+>        if(isset(self:_instances[$sel->toString()])){
+>            return (self:_instances[$sel->toString()]);
+>        }else{
+>            $o = self::create($selector);
+>            self:_instances[$sel->toString()]=$o;
+> 
+> 
+> Ca serait pas plut?t un truc genre ?a?
+> 
+>        if(isset(self::$_instances[$sel->toString()])){
+>            return (self::$_instances[$sel->toString()]);
+>        }else{
+>            $o = self::create($selector);
+>            self::$_instances[$sel->toString()]=$o;
+> 
+
+oui tout ? fait... (oui, je n'ai pas test? cette classe :-) )
+
+> 
+> 
+> *******
+> jelix/utils/jZone.class.php
+> *******
+> Ligne 135:
+> $params ne semble pas exister dans le contexte de la fonction...
+
+exact, la ligne d'ailleurs n'est pas utile.
+
+> 
+> 
+> 
+> Ensuite, j'ai une question, "formelle", concernant les magic_quotes.
+> Est-il vraiment n?cessaire d'en faire un plugin?
+> Ca me parait ?tre un gros marteau pour une petite mouche (mais tu as
+> probablement de bonnes raisons)
+> Il me semble que les magic quotes GPC sont plus une "bizarrerie" du langage
+> qu'un "feature" ? int?grer dans une plate-forme, et que l'utilisateur doit
+> activer ou non.
+
+Justement, comme c'est une bizarrerie, on le met dans un plugin. Ainsi, 
+pour une plateforme correctement configur? (pas de magicquotes), il n'y 
+a pas ? activer le plugin, donc c'est du code en moins dans le framework 
+? parser pour rien. Pour celui qui est sur un serveur avec les 
+magicquotes activ?s, il faut qu'il active le plugin :-)
+
+
+> 
+> Personnellement j'aurai tendance ? inclure syst?matiquement la d?tection.
+
+comme j'?crivais juste avant, une plateforme bien configur?e, et une 
+plateforme qui n'active pas les magicquotes. Inclure donc la detection 
+ne sert ? rien la plupart du temps sinon ? inclure du code inutile. Et 
+cela va ?tre d'autant plus vrai ? l'avenir que les magicquotes vont ?tre 
+abandonn?e.
+
+
+> 
+> 
+> D'autre part, je ne vois nulle part de mention de magic_quotes_runtime (?a
+> existe toujours en php5 ?).
+> Un petit ini_set('magic_quotes_runtime', false); serait probablement
+> bienvenue.
+
+l? encore, dans la config par defaut de php5, c'est d?sactiv? par 
+d?faut. Et on consid?re que ?a doit ?tre d?sactiv?. Par contre, faudrait 
+peut ?tre effectivement l'ajouter dans le plugin magicquotes. Ce que je 
+viens de faire.
+
+
+> 
+> 
+> Pour r?pondre ? une question ?voqu?e auparavant (concernant
+> session_auto_start): oui, il y a des hosts o? c'est activ?.
+> C'?tait m?me parfois tr?s probl?matique ? cause d'un horrible bug dans php
+> 4.x (me souviens plus), o? les objets n'?taient pas d?s?rialis?s
+> correctement...
+> 
+> 
+> Toujours dans le m?me ordre d'id?e, je suppose que structurellement jelix
+> est relativement immune contre l'injection de variables (dans le cas
+> register_globals=true).
+> Si ce n'est pas le cas, ?a se g?re en quelques lignes a priori...
+> 
+
+je pense aussi que c'est le cas. Tout est encapsul? dans des objets, 
+donc pas d'acces aux variables globales, et les rares variables globales 
+utilis?es sont de toutes fa?on initialis?es.
+
+a+
+
+Laurent
+
+
+
+
+From webmestre at xulfr.org  Mon Jan 16 02:02:01 2006
+From: webmestre at xulfr.org (Webmestre xulfr)
+Date: Mon, 16 Jan 2006 02:02:01 +0100
+Subject: [Jelix-public] checkins du 09 au 15
+Message-ID: <43CAF089.2020408@xulfr.org>
+
+Bonjour,
+
+Voici les changements qu'il y a eu cette semaine :
+
+- nombreux bugs corrig?s notament dans les daos, le driver db postgresql 
+(merci ? Giviz pour ses nombreux tests)
+- d'autres bugs notament corrig?s par dmp
+- quelques modifications pour pouvoir utiliser les classes de jelix hors 
+web, et donc notamment dans les scripts en ligne de commande.
+- commande de script createdao, maintenant operationnelle
+   jelix.php createdao monModule nomDao uneTable
+
+   cr?er un fichier xml de dao mapp? sur la table uneTable
+
+
+Il n'y a pas eu donc ?norm?ment d'?volutions cette semaine. J'ai plut?t 
+port? mes efforts sur la documentation sur www.jelix.org , avec un 
+tutoriel "rapide" donnant un aper?u de la structure d'une appli, et le 
+commencement d'un tutoriel assez complet.
+Vous trouverez ?galement une roadmap approximative...
+
+Sortie le 16 en soir?e d'une version 1.0pre-alpha.
+
+a+
+
+Laurent
+
+
+
+From laurent at xulfr.org  Tue Jan 17 01:06:36 2006
+From: laurent at xulfr.org (Laurent Jouanneau)
+Date: Tue, 17 Jan 2006 01:06:36 +0100
+Subject: [Jelix-public] Version 1.0pre-alpha
+Message-ID: <43CC350C.3090500@xulfr.org>
+
+Bonjour,
+
+
+Une premi?re version de test de Jelix est disponible en t?l?chargement
+https://developer.berlios.de/project/showfiles.php?group_id=5643
+
+Aujourd'hui,
+- encore quelques bugs corrig?s, surtout dans la gestion des erreurs 
+(qui ne s'affichaient pas...).
+- ?galement des modifications internes du cot? de la gestion des Urls, 
+en pr?paration de la future prise en charge des urls significatifs.
+- Ajout d'un plugin de template pour les urls
+    {jurl "unmodule~uneaction at type_requete"}
+   vous cr?e l'url correspondant ? l'action.
+    {jurl "test~hello at classic", array("autres"=>"parametres", 
+"foo"=>"bar")}
+- changement dans l'api de la classe actiongroup
+     _get() devient param() (pour ne pas confondre avec $_GET)
+     _getResponse() devient getResponse()
+
+
+
+Tout retour d'experience est le bienvenue (bugs, remarques ...)
+
+
+a+
+
+Laurent
+
+
+From yoop at bballizlife.com  Wed Jan 18 17:54:49 2006
+From: yoop at bballizlife.com (Loic Mathaud)
+Date: Wed, 18 Jan 2006 17:54:49 +0100
+Subject: [Jelix-public] =?ISO-8859-1?Q?=E0_propos_de_la_1=2E0pre-alpha?=
+Message-ID: <43CE72D9.9090402@bballizlife.com>
+
+J'ai r?cup?r? la 1.0pre-alpha. Voici dors et d?j? quelques remarques :
+
+A propos du script jelix.php :
+
+- commande createag :
+
+elle cr?e bien un fichier actiongroup avec une m?thode GetDefault() par
+d?faut. Mais il y a une erreur dans cette fonction :
+	$rep = $this->_getResponse('default');
+au lieu de :
+	$rep = $this->getResponse('default');
+
+- commande createdao :
+Pour ce que j'ai fait pour le moment, elle cr?e bien les fichiers DAO
+en fonction des tables demand?es.
+Je ferais juste une remarque c'est qu'elle ne g?n?re que l'attribut
+"name" des "property". Ces attributs prennent le nom du champ dans la
+table pour valeur. J'aime chipoter et je pense qu'il serait plus
+judicieux de cr?er ? la fois les attributs "name" et "fieldname", avec
+bien s?r les m?mes valeurs. Ceci permettant de rapidement renommer les
+"name" pour donner des alias aux champs. Actuellement on doit ?crire les
+"fieldname" puis renommer les "name".
+J'avais dit que je chipotais, mais je suis partisan du "il n'y a pas de
+petites ?conomies" ;)
+
+Toujours pour les DAO :
+Probl?me sur le nom de l'attribut "type" des "property". En effet, fichier :
+lib/dao/jDAOParser.class.php, classe jDAOProperty, on attend
+un attribut nomm? "datatype"
+J'ai du coup une erreur :
+
+[error 512] DAO dao:jblog~post,Attribut "type" obligatoire dans une
+balise "field" (fichier
+www/jelix_1.0pre-alpha/jblog/modules/jblog/daos/post.dao.xml)
+www/jelix_1.0pre-alpha/lib/jelix/dao/jDAOCompiler.class.php 85
+
+J'ai test? en corrigeant tous les "datatype" de la classe jDAOProperty
+par des "type" et l'erreur disparait.
+
+Voil? pour le moment ;)
+
+-- 
+Loic Mathaud
+<mail>loic at mathaud.net</mail>
+<url="http://bballizlife.com" type="perso"/>
+<url="http://www.kayuko.com" type="pro"/>
+
+
+
+From laurent at xulfr.org  Thu Jan 19 00:16:25 2006
+From: laurent at xulfr.org (Laurent Jouanneau)
+Date: Thu, 19 Jan 2006 00:16:25 +0100
+Subject: [Jelix-public] =?ISO-8859-1?Q?=E0_propos_de_la_1=2E0?=
+ =?ISO-8859-1?Q?pre-alpha?=
+In-Reply-To: <43CE72D9.9090402@bballizlife.com>
+References: <43CE72D9.9090402@bballizlife.com>
+Message-ID: <43CECC49.1070105@xulfr.org>
+
+Loic Mathaud wrote:
+> J'ai r?cup?r? la 1.0pre-alpha. Voici dors et d?j? quelques remarques :
+> 
+> A propos du script jelix.php :
+> 
+> - commande createag :
+> 
+> elle cr?e bien un fichier actiongroup avec une m?thode GetDefault() par
+> d?faut. Mais il y a une erreur dans cette fonction :
+> 	$rep = $this->_getResponse('default');
+> au lieu de :
+> 	$rep = $this->getResponse('default');
+
+Ok, corrig?. Il faut savoir que la plupart des fichiers g?n?r?s par les 
+commandes le sont ? partir de templates situ?s dans le repertoire 
+jelix-scripts/templates/ (ce ne sont pas des templates jtpl)
+
+> 
+> - commande createdao :
+> Pour ce que j'ai fait pour le moment, elle cr?e bien les fichiers DAO
+> en fonction des tables demand?es.
+> Je ferais juste une remarque c'est qu'elle ne g?n?re que l'attribut
+> "name" des "property". Ces attributs prennent le nom du champ dans la
+> table pour valeur. J'aime chipoter et je pense qu'il serait plus
+> judicieux de cr?er ? la fois les attributs "name" et "fieldname", avec
+> bien s?r les m?mes valeurs. Ceci permettant de rapidement renommer les
+> "name" pour donner des alias aux champs. Actuellement on doit ?crire les
+> "fieldname" puis renommer les "name".
+> J'avais dit que je chipotais, mais je suis partisan du "il n'y a pas de
+> petites ?conomies" ;)
+
+ok, remarque prise en compte :-)
+
+
+> 
+> Toujours pour les DAO :
+> Probl?me sur le nom de l'attribut "type" des "property". En effet, fichier :
+> lib/dao/jDAOParser.class.php, classe jDAOProperty, on attend
+> un attribut nomm? "datatype"
+> J'ai du coup une erreur :
+> 
+> [error 512] DAO dao:jblog~post,Attribut "type" obligatoire dans une
+> balise "field" (fichier
+> www/jelix_1.0pre-alpha/jblog/modules/jblog/daos/post.dao.xml)
+> www/jelix_1.0pre-alpha/lib/jelix/dao/jDAOCompiler.class.php 85
+> 
+> J'ai test? en corrigeant tous les "datatype" de la classe jDAOProperty
+> par des "type" et l'erreur disparait.
+
+mmm non, mauvais id?e. C'est plutot la commande qu'il faut corriger :-) 
+Ce que j'ai fait.
+
+
+> 
+> Voil? pour le moment ;)
+> 
+
+Merci de ces retours !
+
+Au passage : la doc sur les templates est pratiquement faite :-)
+
+
+a+
+
+laurent
+
+
+
+
+From sylvain.lelievre at laposte.net  Sat Jan 21 20:48:42 2006
+From: sylvain.lelievre at laposte.net (=?ISO-8859-1?Q?Sylvain_Leli=E8vre?=)
+Date: Sat, 21 Jan 2006 20:48:42 +0100
+Subject: [Jelix-public] Design pour jelix.org
+Message-ID: <43D2901A.4000101@laposte.net>
+
+Bonjour
+
+Je suis Sylvain Leli?vre et pour me pr?senter rapidement, je suis 
+d?veloppeur web avec un pass? de graphiste autodidacte. Je contribue ? 
+Pompage ( http://pompage.net/ ), je suis tr?s au courant de l'actualit? 
+des navigateurs, des standards web, tout ?a tout ?a.
+
+Et comme Laurent semble avoir besoin d'aide pour le site de jelix.org je 
+viens ici pour voir dans quelle mesure je peux apporter ma contribution.
+
+Si vous voulez voir certaines choses de mon cru, il y a entre autres :
+- http://dianosis.org/
+C'est le site de promotion d'un logiciel libre en cours de d?v, qui sert 
+? aider les diab?tiques insulino-d?pendants ? se soigner gr?ce ? une 
+th?rapie un peu barbante ? utiliser (calculs, etc.) et que le logiciel 
+rend justement moins barbante.
+Le design et l'int?gration sont totalement de moi, par contre le code 
+PHP a ?t? cod? il y a longtemps par le dev principal du logiciel, et 
+c'est pas super parce qu'il a fait ?a ? l'arrache durant ses ?tudes.
+Actuellement un nouveau site est en pr?paration, bas? sur Copix, qui va 
+g?rer de nouveaux services en rapport avec des nouvelles fonctionnalit?s 
+du logiciel (t?l?chargement de plugins, etc.)
+
+- http://sylozofy.apinc.org/
+Un site/blog personnel qui est en pr?paration depuis quelques ann?es, 
+que je n'ai jamais eu le temps ni la motivation pour le terminer et m'y 
+mettre s?rieusement.
+
+Maintenant on peut discuter de ce dont il y a besoin, en rapport avec 
+mes disponibilit?s.
+
+a+
+
+-- 
+Sylvain Leli?vre
+
+
+From laurent at xulfr.org  Sun Jan 22 23:02:02 2006
+From: laurent at xulfr.org (Laurent Jouanneau)
+Date: Sun, 22 Jan 2006 23:02:02 +0100
+Subject: [Jelix-public] Design pour jelix.org
+In-Reply-To: <43D2901A.4000101@laposte.net>
+References: <43D2901A.4000101@laposte.net>
+Message-ID: <43D400DA.6040608@xulfr.org>
+
+Bonjour Sylvain,
+
+
+Merci de te proposer pour nous faire une petite charte graphique :-) Ce 
+que tu as fait pour dianosis.org, c'est tr?s sympa.
+
+Pour jelix.org, je te laisse carte blanche. Il faut au niveau contenu 
+une zone de login, un menu principal pr?sentant les diff?rentes 
+rubriques du site (accueil, ? propos, download, forums, documentation 
+...). Pr?voir un emplacement pour un sous menu pour certaines rubriques. 
+Par exemple, pour le wiki/documentation, il faut un emplacement pour les 
+boutons "editer cette page", "anciennes r?visions" etc.... Prevoir aussi 
+une zone "rechercher". Bref, regarde l'actuel www.jelix.org pour avoir 
+une id?e de ce qu'il faut, sachant que toutes les rubriques n'auront pas 
+forcement tout ces boutons.
+
+Cot? design, quelque chose de clair, rafraichissant. T'emb?te pas non 
+plus ? faire quelque chose de tr?s sophistiqu?. Je n'ai pas de couleurs 
+pr?f?r?es. Dans la foul?e, si tu pouvais faire un logo pour jelix...
+
+Je ne sais pas comment tu travailles, mais si par exemple tu fais 
+d'abord ton travail sur photoshop/gimp et qu'ensuite tu fais 
+l'int?gration HTML, sache que je peux faire cette deuxi?me partie si tu 
+n'a pas assez de temps.
+
+Merci beaucoup
+
+a+
+
+
+
+
+
+Sylvain Leli?vre wrote:
+> Bonjour
+> 
+> Je suis Sylvain Leli?vre et pour me pr?senter rapidement, je suis 
+> d?veloppeur web avec un pass? de graphiste autodidacte. Je contribue ? 
+> Pompage ( http://pompage.net/ ), je suis tr?s au courant de l'actualit? 
+> des navigateurs, des standards web, tout ?a tout ?a.
+> 
+> Et comme Laurent semble avoir besoin d'aide pour le site de jelix.org je 
+> viens ici pour voir dans quelle mesure je peux apporter ma contribution.
+> 
+> Si vous voulez voir certaines choses de mon cru, il y a entre autres :
+> - http://dianosis.org/
+> C'est le site de promotion d'un logiciel libre en cours de d?v, qui sert 
+> ? aider les diab?tiques insulino-d?pendants ? se soigner gr?ce ? une 
+> th?rapie un peu barbante ? utiliser (calculs, etc.) et que le logiciel 
+> rend justement moins barbante.
+> Le design et l'int?gration sont totalement de moi, par contre le code 
+> PHP a ?t? cod? il y a longtemps par le dev principal du logiciel, et 
+> c'est pas super parce qu'il a fait ?a ? l'arrache durant ses ?tudes.
+> Actuellement un nouveau site est en pr?paration, bas? sur Copix, qui va 
+> g?rer de nouveaux services en rapport avec des nouvelles fonctionnalit?s 
+> du logiciel (t?l?chargement de plugins, etc.)
+> 
+> - http://sylozofy.apinc.org/
+> Un site/blog personnel qui est en pr?paration depuis quelques ann?es, 
+> que je n'ai jamais eu le temps ni la motivation pour le terminer et m'y 
+> mettre s?rieusement.
+> 
+> Maintenant on peut discuter de ce dont il y a besoin, en rapport avec 
+> mes disponibilit?s.
+> 
+> a+
+> 
+
+
+
+From laurent at xulfr.org  Sun Jan 29 23:47:54 2006
+From: laurent at xulfr.org (Laurent Jouanneau)
+Date: Sun, 29 Jan 2006 23:47:54 +0100
+Subject: [Jelix-public] checkins du 17/01 au 29/01
+Message-ID: <43DD461A.7000504@xulfr.org>
+
+Bonjour,
+
+
+Quelques nouvelles des d?veloppements depuis la sortie de la version 
+1.0pre-alpha :
+
+Nouveaut?s :
+
+- mise en place dans l'application testapp, d'un module de test 
+unitaires. Il va contenir des tests unitaires pour tester les 
+diff?rentes API de Jelix. Ces tests reposent sur SimpleTest que j'ai du 
+hack? pour que ?a fonctionne avec PHP5 sans g?n?rer de notices/strict en 
+tout genre.
+- Il n'y a pour le moment que des test unitaires sur jEvent, le syst?me 
+?v?nementiel de Jelix. Ils m'ont d'ailleurs permis de corriger des bugs.
+- d?veloppement de la prise en charge des urls significatives. Il reste 
+des tests ? effectuer (et donc je suis en train de metter en place des 
+tests unitaires sur jUrl).
+- La surcharge des templates se fait maintenant uniquement dans 
+var/themes (et non plus dans var/themes/ et var/overloads/). De plus 
+l'option de conf use_theme est obsol?te
+- Implementation de la Feature Request #1643 : on peut indiquer une 
+variable dans une cl? de locale dans un template (pour avoir des noms de 
+cl? "dynamiques" : @une.cle.$foo@
+- Ajout d'un plugin de template jlocale pour pouvoir indiquer des 
+param?tres en plus d'une cl?.
+- Implementation de la Feature Request #1638 : nouveau type de m?thode 
+"count" dans les daos, et ajout d'une m?thode countAll g?n?rique
+- ajout de jtpl::append("nom_var", $valeur)
+- remplacement de jResponseHtml/Xul::add*ofBody par addContent()
+- ajout d'une option de conf use_error_handler (mais c'est d?stin? ? un 
+usage interne pour le d?veloppement de jelix
+
+
+Corrections de bug :
+
+- Correction du bug 6214 : les fichiers temp/*.list.php n'?taient pas 
+d?di?s ? une conf
+- Correction du bug 6134 : Si les propri?t?s de type autoincrement dans 
+un record DAO ne sont pas nulles ou superieur ? 1, alors elles sont 
+dor?navants incluses dans la requ?te d'insertion lors de l'appel de la 
+m?thode insert($record)
+- Correction du bug 5996 : Les fichiers compil?s d'actions sont 
+maintenant synchronis?s (quand une action ?tait supprim?s, le fichier 
+"compil?" correspondant ne l'?tait pas).
+- ajout d'un exemple de profil pdo dans dbprofil.ini.php.dist, et 
+corrections de bug sur le support pdo
+- corrections de bugs divers et vari?s (merci ? Loic)
+
+
+
+Laurent
+
+
+From laurent at xulfr.org  Mon Jan 30 00:31:55 2006
+From: laurent at xulfr.org (Laurent Jouanneau)
+Date: Mon, 30 Jan 2006 00:31:55 +0100
+Subject: [Jelix-public] =?ISO-8859-1?Q?Syst=E8me_de_build/preprocessing?=
+Message-ID: <43DD506B.9010609@xulfr.org>
+
+Bonjour,
+
+Afin de pouvoir produire facilement des releases, je compte faire des 
+fichiers Makefile pour g?n?rer des archives zip/tgz.
+
+Le makefile contiendrait des regles differentes pour faire des archives 
+avec tels ou tels fichiers. (genre g?n?rer une version pour un site en 
+prod, donc sans les scripts en ligne de commande, sans les tests 
+unitaires, sans l'appli exemple myapp etc..)
+
+
+J'ai aussi une autre probl?matique : pouvoir avoir des sources qui 
+soient diff?rentes en fonction de la version que l'on veut obtenir. Par 
+exemple j'aimerai fournir une version de Jelix optimis?e pour un site en 
+prod, et une autre bourr?e de tests pour le d?veloppement de votre appli 
+afin de mieux aider ? d?busquer les bugs etc.
+
+Dans un premier temps, j'avais pens? ? faire plusieurs branches dans le 
+d?pot (une branche pour la version developpeur, une autre pour la 
+version optimis? etc..) , mais je trouve que ?a risque vite d'?tre 
+lourdingue ? g?rer, ? cause des synchros ? faire entre les branches 
+lorsqu'il y a une ?volution, un bug etc.
+
+J'ai donc eu l'id?e de d?velopper un pr?processeur qui g?n?rerait les 
+sources de Jelix en fonction de param?tres. On disposerait alors de 
+directives de pr?processeur comme en C/C++ par exemple, du genre #ifdef, 
+#define (macros, constantes) etc.
+
+Cela apporterait alors plus de possibilit?s. On pourrait donc comme je 
+l'ai dit g?n?rer une version de jelix optimis?e, une autre pour le dev 
+avec des possibilit?s de debug. Ou encore, on pourrait faire des 
+versions optimis?es en fonction de la version de PHP. Du style, une 
+fonction foo qui existe en PHP 5.1 mais pas en PHP 5.0. Il faut donc 
+faire une fonction foo pour PHP 5.0. Mais il ne faut pas que cette 
+fonction foo soit d?finit en PHP 5.1. Bien s?r, on a en PHP la 
+possibilit? de faire
+
+if(!function_exists('foo')){
+    function foo(){
+     ...
+    }
+}
+
+Mais l'inconvenient, est que ce code est toujours l? quelque soit la 
+version : c'est donc du code mort dans certain cas, qui fait perdre du 
+temps en parsing PHP.
+
+Avec la possibilit? du preprocessing, on pourrait avoir ce genre de chose :
+
+#ifdef PHP_VERSION_5_0
+  // code existant uniquement dans Jelix pour PHP 5.0
+  function foo(){
+     // definition d'une fonction foo identique ? la version
+     // propos?e dans php5.1
+  }
+#endif
+
+Si on appelle le pr?processeur en d?finissant la constante 
+PHP_VERSION_5_0, on a la fonction foo qui est incluse dans le source 
+finale. Sinon elle ne l'est pas.
+
+On aurait donc un code plus l?ger pour la version speciale PHP5.1, tout 
+en restant fonctionnelle dans une version speciale PHP5.0.
+
+
+Un inconv?nient du preprocessing est que les sources de Jelix prisent 
+directement ? partir du d?pot svn ne seraient pas utilisables telle 
+quelles. Les contributeurs devront, ? chaque modification de fichier, 
+executer le preprocesseur pour g?nerer le source final et faire leurs tests.
+Cet inconv?nient peut-?tre supprim? en utilisant un ?diteur ?volu?, qui 
+offre la possibilit? d'executer un script lors de la sauvegarde d'un 
+fichier (Comme le permet Kate sous KDE), en l'occurence donc, d'?xecuter 
+le preprocesseur sur le fichier.
+
+Le d?veloppeur aurait donc deux r?pertoires : un r?pertoire contenant 
+les sources provenant du d?pot svn, non utilisables directement, avec 
+les directives de pr?processing, et un repertoire "resultat", contenant 
+les sources de Jelix, g?n?r?es par le preprocesseur, executable par PHP, 
+et sur lequel pointe Apache.
+
+Ce syst?me de pr?processing pourrait ?tre utilis? pour vos propres 
+applis bas?es sur jelix. Pour par exemple g?n?rer une version de dev, et 
+une autre de production. y a souvent des trucs qui changent entre les 
+deux, genre les param?tres de connections, donc des fichiers de conf 
+diff?rents etc.. Ou lors de la g?n?ration de la version de prod, on 
+n'inclus pas les test unitaires, les instructions de debogages etc..
+
+Qu'en pensez vous ? Un tel syst?me vous aiderait-il dans vos propres 
+applis ? Avez vous d'autres id?es pour r?gler ces probl?matiques de 
+version prod/dev etc ?
+
+Laurent
+
+
+From laurent at xulfr.org  Mon Jan 30 00:40:29 2006
+From: laurent at xulfr.org (Laurent Jouanneau)
+Date: Mon, 30 Jan 2006 00:40:29 +0100
+Subject: [Jelix-public] checkins du 17/01 au 29/01
+In-Reply-To: <43DD461A.7000504@xulfr.org>
+References: <43DD461A.7000504@xulfr.org>
+Message-ID: <43DD526D.4080002@xulfr.org>
+
+Au fait, merci aux quelques personnes qui m'ont aider ? d?bugger Jelix
+ces derniers temps.
+
+N'hesitez pas ? me signaler des disfonctionnements, ? proposer vos id?es
+d'?volutions etc..
+
+Laurent
+
+
+
